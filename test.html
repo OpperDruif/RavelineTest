@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>RaveUps & Meetings – Raveline Division</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (optioneel, staat al in je project) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Vendors + CSS (gelijk aan je andere pagina’s) -->
+  <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+  <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+  <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+  <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+  <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+  <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+  <link rel="stylesheet" href="assets/vendors/eventflow-icons/style.css">
+  <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+  <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+  <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
+  <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+
+  <link rel="stylesheet" href="assets/css/eventflow.css" />
+  <link rel="stylesheet" href="assets/css/eventflow-responsive.css" />
+
+  <style>
+    :root{
+      --rvln-bg:#0E0A17; --rvln-card:#161125; --rvln-soft:#1a1428;
+      --rvln-grad:linear-gradient(90deg,#ff5f00,#ffb300);
+    }
+    html,body{ height:100% }
+    body.body-bg-color1{ background:var(--rvln-bg); }
+    .page-wrapper{ min-height:100%; display:flex; flex-direction:column }
+    main{ flex:1 0 auto } footer.site-footer{ flex-shrink:0 }
+
+    .rvln-card{ background:var(--rvln-card); border:1px solid rgba(255,255,255,.08); border-radius:1rem }
+    .rvln-chip{ font-size:.72rem; color:#e5e7eb; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); border-radius:.5rem; padding:.18rem .5rem }
+    .rvln-btn{ background:var(--rvln-grad); color:#0e0a17; font-weight:800; border-radius:999px; padding:.6rem 1rem; box-shadow:0 0 14px rgba(255,95,0,.35); transition:.2s; display:inline-flex; align-items:center; gap:.5rem; text-decoration:none }
+    .rvln-btn:hover{ transform:translateY(-1px); box-shadow:0 0 22px rgba(255,95,0,.6) }
+    .rvln-btn-ghost{ background:#171228; color:#fff; border:1px solid rgba(255,255,255,.12); border-radius:999px; padding:.6rem 1rem; text-decoration:none }
+
+    .tab-pill{ color:#d1d5db; border:1px solid rgba(255,255,255,.08); background:#171228; padding:.5rem .9rem; border-radius:999px; cursor:pointer }
+    .tab-pill.active{ color:#0E0A17; background:var(--rvln-grad); border-color:transparent; font-weight:800 }
+    .sticky-tabs{ position:sticky; top:64px; z-index:20; backdrop-filter: blur(6px); background:rgba(14,10,23,.6) }
+
+    @keyframes fadeInUp{ 0%{opacity:0; transform: translateY(8px)} 100%{opacity:1; transform: translateY(0)} }
+    .fade-in-up{ animation: fadeInUp .25s ease both; }
+  </style>
+</head>
+<body class="body-bg-color1">
+<div class="page-wrapper">
+
+  <!-- ======= HEADER (zelfde structuur) ======= -->
+  <header class="main-header main-header-three">
+    <nav class="main-menu main-menu-three" aria-label="Hoofdmenu">
+      <div class="main-menu__wrapper">
+        <div class="main-menu__wrapper-inner">
+          <div class="main-menu__left">
+            <div class="main-menu__logo">
+              <a href="index.html" aria-label="Terug naar home">
+                <img src="assets/images/resources/logo-2.png" alt="Raveline Division Logo">
+              </a>
+            </div>
+          </div>
+          <div class="main-menu__right">
+            <div class="main-menu__main-menu-box">
+              <a href="#" class="mobile-nav__toggler" aria-label="Mobiele navigatie openen"><i class="fa fa-bars"></i></a>
+              <ul class="main-menu__list">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                  <a href="#">Over ons</a>
+                  <ul>
+                    <li><a href="About.html">Over ons</a></li>
+                    <li><a href="Team.html">De Crew</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#">Tribe</a>
+                  <ul>
+                    <li><a href="RaveUps.html">RaveUps & Meetings</a></li>
+                    <li><a href="Friendscamps.html">FriendsCamp</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#">Merch</a>
+                  <ul>
+                    <li><a href="coming-soonShop.html">Collectie</a></li>
+                    <li><a href="coming-soonShop.html">Pre-orders</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#">Vacatures</a>
+                  <ul>
+                    <li><a href="vacatures.html">Open Roles</a></li>
+                    <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
+                  </ul>
+                </li>
+                <li><a href="FAQ.html">FAQ & Contact</a></li>
+              </ul>
+            </div><!-- /.main-menu__main-menu-box -->
+          </div><!-- /.main-menu__right -->
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="stricky-header stricked-menu main-menu main-menu-three" aria-hidden="true">
+    <div class="sticky-header__content"></div>
+  </div>
+
+  <!-- ======= PAGE HEADER ======= -->
+  <section class="page-header">
+    <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);"></div>
+    <div class="page-header__shape-1 float-bob-y">
+      <img src="assets/images/shapes/page-header-shape-1.png" alt="">
+    </div>
+    <div class="page-header__shape-2 float-bob-x">
+      <img src="assets/images/shapes/page-header-shape-2.png" alt="">
+    </div>
+    <div class="container">
+      <div class="page-header__inner" style="text-align:left;">
+        <h2>RaveUps & Meetings</h2>
+        <div class="thm-breadcrumb__box">
+          <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><span class="icon-angle-right"></span></li>
+            <li>RaveUps & Meetings</li>
+          </ul>
+        </div>
+        <p style="color:#d7d7d7; max-width:740px; margin-top:14px;">
+          Onze eigen Tribe-uitjes: van <em>Winter Efteling</em> en <em>Safari</em> tot <em>Tribe Night</em> of <em>Bowlen</em> — plus online meetups.
+          Geen harde cap; hoe meer zielen, hoe meer vibes. Kies, schrijf je in, join de crew.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <main id="content" role="main">
+
+    <!-- ======= Tabs / Filters (sticky, zoals volunteers) ======= -->
+    <section class="sticky-tabs py-4 border-b border-white/10">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap items-center gap-2" id="tabs" role="tablist">
+          <button class="tab-pill active" data-tab="all" role="tab" aria-selected="true">Alle</button>
+          <button class="tab-pill" data-tab="upcoming" role="tab">Komend</button>
+          <button class="tab-pill" data-tab="past" role="tab">Archief</button>
+          <button class="tab-pill" data-tab="nl" role="tab">NL</button>
+          <button class="tab-pill" data-tab="be" role="tab">BE</button>
+          <button class="tab-pill" data-tab="online" role="tab">Online</button>
+          <span class="ms-auto"></span>
+          <input id="q" type="text" class="form-control w-[240px]" placeholder="Zoek (Efteling, bowlen…)" />
+          <select id="etype" class="form-select w-[180px]">
+            <option value="">Type: Alle</option>
+            <option value="dagtrip">Dagtrip</option>
+            <option value="avond">Avond</option>
+            <option value="social">Social</option>
+            <option value="online">Online</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Content: lijst (layout gelijk aan blog-list) ======= -->
+    <section class="blog-list">
+      <div class="container">
+        <div class="row">
+          <!-- Left -->
+          <div class="col-xl-8 col-lg-7">
+            <div id="raveups" class="blog-list__left">
+
+              <!-- Card: Winter Efteling -->
+              <div class="blog-list__single event fade-in-up"
+                   data-loc="nl" data-type="dagtrip" data-date="2026-01-03"
+                   data-text="winter efteling attractiepark polles keuken dagtrip raveup"
+                   data-name="RaveUp: Winter Efteling"
+                   data-time="12:00–18:00"
+                   data-locname="Kaatsheuvel (NL)"
+                   data-desc="Sprookjesachtige dag met de Tribe. Meetpoints, groepsfoto en warme afsluiter.">
+                <div class="blog-list__img-box">
+                  <div class="blog-list__img">
+                    <img src="assets/images/blog/blog-list-1-1.jpg" alt="Winter Efteling">
+                  </div>
+                  <div class="blog-list__date"><p>03 jan</p></div>
+                </div>
+                <div class="blog-list__content">
+                  <ul class="blog-list__meta list-unstyled">
+                    <li><a href="#"><span class="icon-location"></span>Kaatsheuvel (NL)</a></li>
+                    <li><a href="#"><span class="icon-calendar"></span>3 januari 2026</a></li>
+                  </ul>
+                  <h3 class="blog-list__title">RaveUp: Winter Efteling</h3>
+                  <div class="mb-2">
+                    <span class="rvln-chip">12:00–18:00</span>
+                    <span class="rvln-chip">Dagtrip</span>
+                    <span class="rvln-chip">Optioneel: Polles Keuken</span>
+                  </div>
+                  <p>Sprookjesachtige dag met de Tribe. Meetpoints, groepsfoto en warme afsluiter.</p>
+                  <ul style="color:#c8c8c8; margin-left:18px; margin-top:6px;">
+                    <li>Go/no-go: 28 dec 2025 (reserveringen)</li>
+                    <li>Kosten: eigen ticket/eten • carpool mogelijk</li>
+                    <li>Briefing + meetpoints in WhatsApp</li>
+                  </ul>
+                  <div class="blog-list__btn-box" style="margin-top:14px; display:flex; gap:8px; flex-wrap:wrap;">
+                    <a href="#" class="rvln-btn apply"
+                       data-apply='{"name":"RaveUp: Winter Efteling","date":"3 januari 2026","time":"12:00–18:00","loc":"Kaatsheuvel (NL)"}'>
+                      <i class="fas fa-paper-plane"></i> Inschrijven
+                    </a>
+                    <a href="#" class="rvln-btn-ghost btn-ics"><i class="far fa-calendar-plus"></i> Add to Calendar</a>
+                    <a href="#" class="rvln-btn-ghost btn-wa"><i class="fab fa-whatsapp"></i> Deel via WhatsApp</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card: Tribe Night Utrecht -->
+              <div class="blog-list__single event fade-in-up"
+                   data-loc="nl" data-type="avond" data-date="2025-12-31"
+                   data-text="tribe night utrecht oud en nieuw avond bowlen drinks social"
+                   data-name="Meeting: Tribe Night Utrecht (NYE)"
+                   data-time="19:30–00:30"
+                   data-locname="Utrecht (NL)"
+                   data-desc="Gezellige Tribe-avond om het jaar af te sluiten. Klein, knus en veel goede verhalen.">
+                <div class="blog-list__img-box">
+                  <div class="blog-list__img">
+                    <img src="assets/images/blog/blog-list-1-2.jpg" alt="Tribe Night Utrecht">
+                  </div>
+                  <div class="blog-list__date"><p>31 dec</p></div>
+                </div>
+                <div class="blog-list__content">
+                  <ul class="blog-list__meta list-unstyled">
+                    <li><a href="#"><span class="icon-location"></span>Utrecht (NL)</a></li>
+                    <li><a href="#"><span class="icon-calendar"></span>31 december 2025</a></li>
+                  </ul>
+                  <h3 class="blog-list__title">Meeting: Tribe Night Utrecht (NYE)</h3>
+                  <div class="mb-2">
+                    <span class="rvln-chip">19:30–00:30</span>
+                    <span class="rvln-chip">Avond</span>
+                    <span class="rvln-chip">Social</span>
+                  </div>
+                  <p>Gezellige Tribe-avond om het jaar af te sluiten. Klein, knus en veel goede verhalen.</p>
+                  <ul style="color:#c8c8c8; margin-left:18px; margin-top:6px;">
+                    <li>Reservering: niet nodig (pay-as-you-go)</li>
+                    <li>Kosten: drankjes/snacks eigen rekening</li>
+                    <li>Locatie wordt 24h vooraf gedeeld</li>
+                  </ul>
+                  <div class="blog-list__btn-box" style="margin-top:14px; display:flex; gap:8px; flex-wrap:wrap;">
+                    <a href="#" class="rvln-btn apply"
+                       data-apply='{"name":"Tribe Night Utrecht (NYE)","date":"31 december 2025","time":"19:30–00:30","loc":"Utrecht (NL)"}'>
+                      <i class="fas fa-paper-plane"></i> Inschrijven
+                    </a>
+                    <a href="#" class="rvln-btn-ghost btn-ics"><i class="far fa-calendar-plus"></i> Add to Calendar</a>
+                    <a href="#" class="rvln-btn-ghost btn-wa"><i class="fab fa-whatsapp"></i> Deel via WhatsApp</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card: Safari Blijdorp -->
+              <div class="blog-list__single event fade-in-up"
+                   data-loc="nl" data-type="dagtrip" data-date="2026-02-15"
+                   data-text="safari dierentuin blijdorp rangers ray isa diergaarde rotterdam dagtrip"
+                   data-name="RaveUp: Safari @ Diergaarde Blijdorp"
+                   data-time="10:30–17:00"
+                   data-locname="Rotterdam (NL)"
+                   data-desc="Samen de jungle in: tijgers, mangrove & oceanium. Meetpoints en educatieve mini-stops.">
+                <div class="blog-list__img-box">
+                  <div class="blog-list__img">
+                    <img src="assets/images/blog/blog-list-1-3.jpg" alt="Safari Blijdorp">
+                  </div>
+                  <div class="blog-list__date"><p>15 feb</p></div>
+                </div>
+                <div class="blog-list__content">
+                  <ul class="blog-list__meta list-unstyled">
+                    <li><a href="#"><span class="icon-location"></span>Rotterdam (NL)</a></li>
+                    <li><a href="#"><span class="icon-calendar"></span>15 februari 2026</a></li>
+                  </ul>
+                  <h3 class="blog-list__title">RaveUp: Safari @ Diergaarde Blijdorp</h3>
+                  <div class="mb-2">
+                    <span class="rvln-chip">10:30–17:00</span>
+                    <span class="rvln-chip">Dagtrip</span>
+                    <span class="rvln-chip">Host: Rangers Ray &amp; Isa</span>
+                  </div>
+                  <p>Samen de jungle in: tijgers, mangrove &amp; oceanium. Meetpoints en educatieve mini-stops.</p>
+                  <ul style="color:#c8c8c8; margin-left:18px; margin-top:6px;">
+                    <li>Go/no-go: 8 feb 2026 (tickets/weer)</li>
+                    <li>Kosten: entreeticket • OV/car-pool tip mee</li>
+                    <li>Briefing + route in WhatsApp</li>
+                  </ul>
+                  <div class="blog-list__btn-box" style="margin-top:14px; display:flex; gap:8px; flex-wrap:wrap;">
+                    <a href="#" class="rvln-btn apply"
+                       data-apply='{"name":"RaveUp: Safari @ Blijdorp","date":"15 februari 2026","time":"10:30–17:00","loc":"Rotterdam (NL)"}'>
+                      <i class="fas fa-paper-plane"></i> Inschrijven
+                    </a>
+                    <a href="#" class="rvln-btn-ghost btn-ics"><i class="far fa-calendar-plus"></i> Add to Calendar</a>
+                    <a href="#" class="rvln-btn-ghost btn-wa"><i class="fab fa-whatsapp"></i> Deel via WhatsApp</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Archief voorbeeld -->
+              <div class="blog-list__single event fade-in-up"
+                   data-loc="nl" data-type="social" data-date="2025-10-05"
+                   data-text="wandeling koffie meet social breda park archief"
+                   data-name="Meeting: Coffee Walk Breda"
+                   data-time="13:00–16:00"
+                   data-locname="Breda (NL)"
+                   data-desc="Rustige kennismakings-walk met koffiestop. Fijne gesprekken, mooie connecties.">
+                <div class="blog-list__img-box">
+                  <div class="blog-list__img">
+                    <img src="assets/images/blog/blog-list-1-1.jpg" alt="Coffee Walk Breda">
+                  </div>
+                  <div class="blog-list__date"><p>05 okt</p></div>
+                </div>
+                <div class="blog-list__content">
+                  <ul class="blog-list__meta list-unstyled">
+                    <li><a href="#"><span class="icon-location"></span>Breda (NL)</a></li>
+                    <li><a href="#"><span class="icon-calendar"></span>5 oktober 2025</a></li>
+                  </ul>
+                  <h3 class="blog-list__title">Meeting: Coffee Walk Breda</h3>
+                  <div class="mb-2">
+                    <span class="rvln-chip">13:00–16:00</span>
+                    <span class="rvln-chip">Social</span>
+                    <span class="rvln-chip">Archief</span>
+                  </div>
+                  <p>Rustige kennismakings-walk met koffiestop. Fijne gesprekken, mooie connecties.</p>
+                  <div class="blog-list__btn-box" style="margin-top:14px; display:flex; gap:8px; flex-wrap:wrap;">
+                    <a href="#" class="rvln-btn" style="opacity:.95;"><span class="icon-double-angle"></span> Bekijk sfeerfoto’s</a>
+                    <a href="#" class="rvln-btn-ghost btn-ics"><i class="far fa-calendar-plus"></i> Add to Calendar</a>
+                    <a href="#" class="rvln-btn-ghost btn-wa"><i class="fab fa-whatsapp"></i> Deel via WhatsApp</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- (optionele paginatie gelijk aan blog) -->
+              <div class="blog-list__pagination">
+                <ul class="pg-pagination list-unstyled">
+                  <li class="count"><a href="#">01</a></li>
+                  <li class="count"><a href="#">02</a></li>
+                  <li class="count"><a href="#">03</a></li>
+                  <li class="next"><a href="#" aria-label="Next"><i class="icon-double-angle"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right (sidebar) -->
+          <div class="col-xl-4 col-lg-5">
+            <div class="sidebar">
+              <div class="sidebar__single sidebar__search">
+                <h3 class="sidebar__title">Zoek</h3>
+                <form class="sidebar__search-form" onsubmit="return false;">
+                  <input type="search" id="searchInput" placeholder="Zoek RaveUp / Meeting...">
+                  <button type="submit"><i class="icon-loupe"></i></button>
+                </form>
+              </div>
+              <div class="sidebar__single sidebar__all-category">
+                <h3 class="sidebar__title">Types</h3>
+                <ul class="sidebar__all-category-list list-unstyled">
+                  <li><a href="#" data-type-filter=""><i class="icon-double-angle"></i>Alles</a></li>
+                  <li><a href="#" data-type-filter="dagtrip"><i class="icon-double-angle"></i>Dagtrip</a></li>
+                  <li><a href="#" data-type-filter="avond"><i class="icon-double-angle"></i>Avond</a></li>
+                  <li><a href="#" data-type-filter="social"><i class="icon-double-angle"></i>Social</a></li>
+                  <li><a href="#" data-type-filter="online"><i class="icon-double-angle"></i>Online</a></li>
+                </ul>
+              </div>
+              <div class="sidebar__single sidebar__tags">
+                <h3 class="sidebar__title">Tags</h3>
+                <div class="sidebar__tags-list">
+                  <a href="#" class="tag-q">Efteling</a>
+                  <a href="#" class="tag-q">Safari</a>
+                  <a href="#" class="tag-q">Bowlen</a>
+                  <a href="#" class="tag-q">Discord</a>
+                  <a href="#" class="tag-q">Utrecht</a>
+                  <a href="#" class="tag-q">Rotterdam</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /row -->
+      </div>
+    </section>
+
+    <!-- ======= CTA (consistent) ======= -->
+    <section class="cta-one">
+      <div class="container">
+        <div class="cta-one__inner">
+          <h3 class="cta-one__title">Mis geen RaveUp meer — meld je aan voor updates</h3>
+          <form class="cta-one__form mc-form" data-url="MC_FORM_URL" novalidate="novalidate">
+            <div class="cta-one__form-input-box">
+              <input type="email" placeholder="E-mailadres" name="EMAIL">
+              <button type="submit" class="cta-one__btn"><span class="icon-paper-plan"></span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= FOOTER (gelijk aan je andere pagina’s) ======= -->
+  <footer class="site-footer">
+    <div class="site-footer__shape-1 float-bob-y">
+      <img src="assets/images/shapes/site-footer-shape-1.png" alt="">
+    </div>
+    <div class="site-footer__top">
+      <div class="container">
+        <div class="site-footer__top-inner">
+          <div class="main-menu__logo">
+            <a href="index.html"><img src="assets/images/resources/logo-2.png" alt=""></a>
+          </div>
+          <div class="site-footer__social">
+            <a href="https://www.facebook.com/profile.php?id=61578060013046"><i class="icon-facebook"></i></a>
+            <a href="https://www.instagram.com/raveline_division/"><i class="icon-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__middle">
+      <div class="container">
+        <div class="site-footer__middle-inner">
+          <div class="row">
+            <div class="col-xl-3 col-lg-6 col-md-6">
+              <div class="footer-widget__column footer-widget__events">
+                <div class="footer-widget__title-box"><h3 class="footer-widget__title">RaveUp Agenda</h3></div>
+                <ul class="footer-widget__events-list list-unstyled">
+                  <li><p>31 December 2025 - Gouda</p><h5>Raveline's New Years Party</h5><a href="#">Meld je aan! <span class="icon-arrow-right"></span></a></li>
+                  <li><p>3 Januari 2026 - Kaatsheuvel</p><h5>RaveUp @ Winter Efteling</h5><a href="#">Meld je aan! <span class="icon-arrow-right"></span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6">
+              <div class="footer-widget__column footer-widget__link">
+                <div class="footer-widget__title-box"><h3 class="footer-widget__title">Quick links</h3></div>
+                <ul class="footer-widget__link-list list-unstyled">
+                  <li><a href="About.html">Over ons</a></li>
+                  <li><a href="RaveUps.html">RaveUps</a></li>
+                  <li><a href="Friendscamps.html">FriendsCamp</a></li>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="FAQ.html">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6">
+              <div class="footer-widget__column footer-widget__contact">
+                <div class="footer-widget__title-box"><h3 class="footer-widget__title">Contact</h3></div>
+                <div class="footer-widget__contact-inner">
+                  <ul class="footer-widget__contact-list list-unstyled">
+                    <li><div class="icon"><span class="icon-envelop"></span></div><div class="text"><p><a href="mailto:info@ravelinehq.com">Info@ravelinehq.com</a></p></div></li>
+                    <li><div class="icon"><span class="icon-pin"></span></div><div class="text"><p>Based in The Netherlands</p></div></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- extra kolom indien gewenst -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="container">
+        <div class="site-footer__bottom-inner">
+          <p class="site-footer__bottom-text">© Raveline Division 2025 | All Rights Reserved</p>
+          <ul class="list-unstyled site-footer__bottom-menu">
+            <li><a href="Terms.html">Terms & Condition</a></li>
+            <li><a href="Privacy.html">Privacy Policy</a></li>
+            <li><a href="FAQ.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ======= MOBILE NAV / SEARCH (zelfde componenten) ======= -->
+<div class="mobile-nav__wrapper">
+  <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+  <div class="mobile-nav__content">
+    <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+    <div class="logo-box">
+      <a href="index.html" aria-label="logo image">
+        <img src="assets/images/resources/logo-2.png" width="150" alt="" />
+      </a>
+    </div>
+    <div class="mobile-nav__container"></div>
+    <ul class="mobile-nav__contact list-unstyled">
+      <li><i class="fa fa-envelope"></i><a href="mailto:info@ravelinehq.com">info@ravelinehq.com</a></li>
+    </ul>
+    <div class="mobile-nav__top">
+      <div class="mobile-nav__social">
+        <a href="https://www.facebook.com/profile.php?id=61578060013046" class="fab fa-facebook-square"></a>
+        <a href="https://www.instagram.com/raveline_division/" class="fab fa-instagram"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="search-popup">
+  <div class="search-popup__overlay search-toggler"></div>
+  <div class="search-popup__content">
+    <form action="#">
+      <label for="search" class="sr-only">search here</label>
+      <input type="text" id="search" placeholder="Search Here..." />
+      <button type="submit" aria-label="search submit" class="thm-btn">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
+  </div>
+</div>
+
+<a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fas fa-arrow-up"></i></a>
+
+<!-- ======= Vendors JS (zelfde volgorde) ======= -->
+<script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+<script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendors/jarallax/jarallax.min.js"></script>
+<script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+<script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+<script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+<script src="assets/vendors/odometer/odometer.min.js"></script>
+<script src="assets/vendors/swiper/swiper.min.js"></script>
+<script src="assets/vendors/wnumb/wNumb.min.js"></script>
+<script src="assets/vendors/wow/wow.js"></script>
+<script src="assets/vendors/isotope/isotope.js"></script>
+<script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
+<script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
+<script src="assets/vendors/countdown/countdown.min.js"></script>
+<script src="assets/vendors/marque/marquee.min.js"></script>
+<script src="assets/vendors/sidebar-content/jquery-sidebar-content.js"></script>
+<script src="assets/js/eventflow.js"></script>
+<script src="assets/js/preloader.js"></script>
+
+<script>
+  // ===== Helpers NL datum/tijd
+  const NL_MONTHS = {'januari':0,'februari':1,'maart':2,'april':3,'mei':4,'juni':5,'juli':6,'augustus':7,'september':8,'oktober':9,'november':10,'december':11};
+  function parseDutchDate(str){ const p=str.trim().toLowerCase().split(/\s+/); const d=parseInt(p[0],10), m=NL_MONTHS[p[1]], y=parseInt(p[2],10); if(isNaN(d)||isNaN(m)||isNaN(y))return null; return new Date(y,m,d); }
+  function parseTimeRange(s){ const [a,b]=s.replace('-', '–').split('–').map(x=>x.trim()); return {start:a,end:b}; }
+  function toICSLocal(dt){ const y=dt.getFullYear(), m=String(dt.getMonth()+1).padStart(2,'0'), d=String(dt.getDate()).padStart(2,'0'), hh=String(dt.getHours()).padStart(2,'0'), mm=String(dt.getMinutes()).padStart(2,'0'); return `${y}${m}${d}T${hh}${mm}00`; }
+  function uid(){ return 'rvln-'+Math.random().toString(36).slice(2)+'@ravelinehq.com'; }
+
+  // ===== Flags voor upcoming/past
+  const cards=[...document.querySelectorAll('.event')];
+  function setTemporalFlags(){
+    const today=new Date(); today.setHours(0,0,0,0);
+    cards.forEach(c=>{ const d=new Date((c.dataset.date||'2100-01-01')+'T00:00:00'); c.dataset.when = (d>=today)?'upcoming':'past'; });
+  }
+  setTemporalFlags();
+
+  // ===== Filtering (tabs, zoek, type)
+  const tabs=[...document.querySelectorAll('#tabs .tab-pill')];
+  const qInput=document.getElementById('q');
+  const typeSel=document.getElementById('etype');
+  const searchSidebar=document.getElementById('searchInput');
+
+  function applyFilters(active='all'){
+    const q=(qInput?.value||'').toLowerCase();
+    const t=(typeSel?.value||'').toLowerCase();
+    cards.forEach(c=>{
+      const txt=(c.dataset.text||'').toLowerCase();
+      const loc=(c.dataset.loc||'').toLowerCase();
+      const when=(c.dataset.when||'upcoming');
+      const type=(c.dataset.type||'').toLowerCase();
+      let show=true;
+      if(active==='upcoming') show=(when==='upcoming');
+      if(active==='past')     show=(when==='past');
+      if(active==='nl')       show=(loc==='nl');
+      if(active==='be')       show=(loc==='be');
+      if(active==='online')   show=(loc==='online');
+      if(show && q) show=txt.includes(q);
+      if(show && t) show=(type===t);
+      const wasHidden=c.style.display==='none';
+      c.style.display=show?'':'none';
+      if(show && wasHidden){ c.classList.remove('fade-in-up'); void c.offsetWidth; c.classList.add('fade-in-up'); }
+    });
+  }
+
+  tabs.forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      tabs.forEach(x=>x.classList.remove('active'));
+      tab.classList.add('active');
+      applyFilters(tab.dataset.tab);
+    });
+  });
+  qInput?.addEventListener('input',()=>applyFilters(document.querySelector('#tabs .active')?.dataset.tab||'all'));
+  typeSel?.addEventListener('change',()=>applyFilters(document.querySelector('#tabs .active')?.dataset.tab||'all'));
+  searchSidebar?.addEventListener('input',e=>{ document.getElementById('q').value=e.target.value; applyFilters(document.querySelector('#tabs .active')?.dataset.tab||'all'); });
+  document.querySelectorAll('.sidebar__all-category-list a[data-type-filter]').forEach(a=>{
+    a.addEventListener('click',e=>{ e.preventDefault(); const v=a.getAttribute('data-type-filter')||''; if(typeSel) typeSel.value=v; applyFilters(document.querySelector('#tabs .active')?.dataset.tab||'all'); });
+  });
+  document.querySelectorAll('.tag-q').forEach(tag=>{
+    tag.addEventListener('click',e=>{ e.preventDefault(); const v=tag.textContent.trim().toLowerCase(); if(qInput) qInput.value=v; if(searchSidebar) searchSidebar.value=v; applyFilters(document.querySelector('#tabs .active')?.dataset.tab||'all'); });
+  });
+  applyFilters('all');
+
+  // ===== Quick Apply Drawer (zelfde look/feel als vrijwilligers)
+  const drawerHtml=`
+    <div id="drawer" class="fixed inset-0 z-[90] hidden" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+      <div class="absolute inset-0 bg-black/60" data-close></div>
+      <div class="absolute right-0 top-0 h-full w-[420px] max-w-full bg-[#120d1f] border-l border-white/10 shadow-2xl translate-x-full transition-transform duration-200" id="drawer-panel">
+        <div class="flex items-center justify-between p-4 border-b border-white/10">
+          <h3 id="drawer-title" class="text-white font-extrabold text-lg">Quick Apply</h3>
+          <button class="text-gray-400 hover:text-white" data-close aria-label="Sluiten"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="p-4 overflow-y-auto h-[calc(100%-64px)]">
+          <form action="https://formsubmit.co/recruitment@ravelinehq.com" method="POST" class="space-y-3">
+            <input type="hidden" name="_subject" value="RaveUp/Meeting – Inschrijving">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input id="nameField" type="hidden" name="Event">
+            <input id="dateField" type="hidden" name="Datum">
+            <input id="timeField" type="hidden" name="Tijd">
+            <input id="locField"  type="hidden" name="Locatie">
+
+            <div><label class="text-sm text-gray-400">Naam</label><input name="Naam" required class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200" /></div>
+            <div><label class="text-sm text-gray-400">E-mail</label><input type="email" name="Email" required class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200" /></div>
+            <div><label class="text-sm text-gray-400">Telefoon (optioneel)</label><input name="Telefoon" class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200" /></div>
+            <div><label class="text-sm text-gray-400">Opmerking</label><textarea name="Opmerking" rows="4" class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200" placeholder="Vragen, dieetwens, vervoer…"></textarea></div>
+
+            <button class="rvln-btn w-full justify-center"><i class="fas fa-paper-plane"></i> Verstuur</button>
+            <p class="text-xs text-gray-500 text-center">Of mail direct: <a class="underline text-orange-300" href="mailto:recruitment@ravelinehq.com">recruitment@ravelinehq.com</a></p>
+          </form>
+        </div>
+      </div>
+    </div>`;
+  document.body.insertAdjacentHTML('beforeend',drawerHtml);
+
+  const drawer=document.getElementById('drawer');
+  const panel=document.getElementById('drawer-panel');
+  const nameF=document.getElementById('nameField');
+  const dateF=document.getElementById('dateField');
+  const timeF=document.getElementById('timeField');
+  const locF=document.getElementById('locField');
+  const dTitle=document.getElementById('drawer-title');
+
+  function openDrawer(p){ nameF.value=p.name||''; dateF.value=p.date||''; timeF.value=p.time||''; locF.value=p.loc||''; dTitle.textContent=`Quick Apply — ${p.name||'RaveUp/Meeting'}`; drawer.classList.remove('hidden'); requestAnimationFrame(()=>{ panel.classList.remove('translate-x-full'); }); document.body.style.overflow='hidden'; }
+  function closeDrawer(){ panel.classList.add('translate-x-full'); setTimeout(()=>drawer.classList.add('hidden'),180); document.body.style.overflow=''; }
+  drawer.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click', closeDrawer));
+  drawer.addEventListener('click', e=>{ if(e.target===drawer) closeDrawer(); });
+
+  document.querySelectorAll('.apply').forEach(btn=>{
+    btn.addEventListener('click', e=>{
+      e.preventDefault();
+      const d=JSON.parse(btn.getAttribute('data-apply'));
+      openDrawer(d);
+    });
+  });
+
+  // ===== Add to Calendar (.ics) + WhatsApp share
+  function eventPayloadFromCard(card){
+    const name = card.dataset.name || card.querySelector('.blog-list__title')?.textContent?.trim() || 'RaveUp';
+    const dateText = card.querySelector('.blog-list__meta .icon-calendar')?.parentElement?.textContent?.trim() || '';
+    const time = card.dataset.time || '';
+    const locName = card.dataset.locname || card.querySelector('.icon-location')?.parentElement?.textContent?.trim() || '';
+    const desc = card.dataset.desc || card.querySelector('.blog-list__content p')?.textContent?.trim() || '';
+    let dateClean=(dateText.match(/(\d{1,2}\s+[a-zA-Z]+\s+\d{4})/)||[])[1]||'';
+    if(!dateClean && card.dataset.date){
+      const d=new Date(card.dataset.date+'T00:00:00');
+      dateClean=d.toLocaleDateString('nl-NL',{day:'numeric',month:'long',year:'numeric'});
+    }
+    return {name, date:dateClean, time, loc:locName, desc};
+  }
+  function buildICS(o){
+    const {name,date,time,loc,desc}=o;
+    const d=parseDutchDate(date)||new Date();
+    const {start,end}=parseTimeRange(time||'12:00–13:00');
+    const [sh,sm]=(start||'12:00').split(':').map(Number);
+    const [eh,em]=(end||'13:00').split(':').map(Number);
+    const dtS=new Date(d), dtE=new Date(d); dtS.setHours(sh||12,sm||0,0,0); dtE.setHours(eh||13,em||0,0,0);
+    return `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Raveline Division//RaveUps//NL
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:${uid()}
+SUMMARY:${name}
+DTSTART:${toICSLocal(dtS)}
+DTEND:${toICSLocal(dtE)}
+DESCRIPTION:${(desc||'').replace(/\n/g,' ')}\\nMeer info: ${window.location.href}
+LOCATION:${loc||'n.t.b.'}
+END:VEVENT
+END:VCALENDAR`;
+  }
+  function downloadICS(filename, content){
+    const blob=new Blob([content],{type:'text/calendar;charset=utf-8;'});
+    const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download=filename; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+  }
+  function waURL(o){
+    const {name,date,time,loc}=o;
+    const lines=[`🔥 ${name}`,`📅 ${date} • 🕒 ${time}`,`📍 ${loc||'n.t.b.'}`,'',`Join de Tribe → ${window.location.href}`];
+    return `https://wa.me/?text=${encodeURIComponent(lines.join('\\n'))}`;
+  }
+  document.querySelectorAll('.blog-list__single').forEach(card=>{
+    card.querySelector('.btn-ics')?.addEventListener('click',e=>{
+      e.preventDefault();
+      const p=eventPayloadFromCard(card);
+      const ics=buildICS(p);
+      const safe=p.name.replace(/[^\w\-]+/g,'_').slice(0,60)+'.ics';
+      downloadICS(safe,ics);
+    });
+    card.querySelector('.btn-wa')?.addEventListener('click',e=>{
+      e.preventDefault();
+      const p=eventPayloadFromCard(card);
+      window.open(waURL(p),'_blank');
+    });
+  });
+</script>
+</body>
+</html>

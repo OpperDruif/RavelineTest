@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="nl" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raveline Division – One Tribe, Worldwide</title>
+  <meta name="description" content="Raveline Division: Rising Through Sound — één community, één tribe. Join onze RaveUps, FriendsCamps en crew." />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind (utility-only) -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+
+  <!-- Vendor CSS -->
+  <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+  <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+  <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+  <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+  <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+  <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+  <link rel="stylesheet" href="assets/vendors/eventflow-icons/style.css" />
+  <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+  <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+  <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
+  <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="assets/css/eventflow.css" />
+  <link rel="stylesheet" href="assets/css/eventflow-responsive.css" />
+
+  <style>
+    /* Zorg dat CTA's niet door overlays worden geblokkeerd */
+    .banner-one { position: relative; }
+    .banner-one .container { position: relative; z-index: 10; }
+    .banner-one a { pointer-events: auto; }
+    /* Safety: als preloader vastloopt, blokkeer geen clicks */
+    .preloader { display: none !important; }
+  </style>
+</head>
+
+<body class="body-bg-color1 min-h-full text-white bg-black">
+  <!-- Preloader -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__image"></div>
+  </div>
+
+  <div class="page-wrapper">
+    <!-- HEADER -->
+    <header class="main-header main-header-three" role="banner">
+      <nav class="main-menu main-menu-three" aria-label="Hoofdmenu">
+        <div class="main-menu__wrapper">
+          <div class="main-menu__wrapper-inner">
+            <div class="main-menu__left">
+              <div class="main-menu__logo">
+                <a href="index.html" aria-label="Raveline Division home">
+                  <img src="assets/images/resources/logo-2.png" alt="Raveline Division logo" loading="lazy" />
+                </a>
+              </div>
+            </div>
+            <div class="main-menu__right">
+              <div class="main-menu__main-menu-box">
+                <button class="mobile-nav__toggler" aria-label="Open navigatie">
+                  <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+                <ul class="main-menu__list">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="dropdown">
+                    <a href="#">Over ons</a>
+                    <ul>
+                      <li><a href="About.html">Over ons</a></li>
+                      <li><a href="Team.html">De Crew</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">Tribe</a>
+                    <ul>
+                      <li><a href="RaveUp&amp;Meeting.html">Meetups &amp; RaveUps</a></li>
+                      <li><a href="Friendscamps.html">FriendsCamp</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">Merch</a>
+                    <ul>
+                      <li><a href="coming-soonShop.html">Collectie</a></li>
+                      <li><a href="coming-soonShop.html">Pre-orders</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">Vacatures</a>
+                    <ul>
+                      <li><a href="Vacatures.html">Open Roles</a></li>
+                      <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="FAQ.html">FAQ &amp; Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="stricky-header stricked-menu main-menu main-menu-three" aria-hidden="true">
+      <div class="sticky-header__content"></div>
+    </div>
+
+    <!-- HERO / Banner -->
+    <section class="banner-one" id="home">
+      <div class="banner-one__bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%" style="background-image:url(assets/images/backgrounds/banner-one-bg.jpg);"></div>
+      <div class="container">
+        <div class="mx-auto max-w-7xl px-4 py-0 md:py-26">
+          <div class="max-w-3xl">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+              <span class="block neon">RISING THROUGH SOUND</span>
+              <span class="block text-zinc-300 md:mt-2">UNITED AS ONE — ONE TRIBE, WORLDWIDE</span>
+            </h1>
+            <p class="mt-6 text-zinc-300/90 max-w-2xl">Tussen chaos en clarity, tussen bassdrop en stilte — daar leeft onze tribe. Rising through sound, driven by passion.</p>
+            <div class="mt-8 flex flex-wrap items-center gap-3">
+              <a href="https://chat.whatsapp.com/GAJv481JFi6J4nUNvtD264"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="px-5 py-3 rounded-xl bg-gradient-to-tr from-orange-600 to-amber-400 text-white font-semibold shadow-lg hover:shadow-orange-500/40 transition-all duration-300 shine flex items-center gap-2"
+                 role="link"
+                 aria-label="Join our WhatsApp community">
+                 <i class="fab fa-whatsapp text-xl"></i> Enter the Tribe
+              </a>
+
+              <a href="RaveUp&amp;Meeting.html" class="px-5 py-3 rounded-xl border border-zinc-700 hover:border-orange-500/60">View RaveUps</a>
+            </div>
+            <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+              <div class="p-4 rounded-xl border border-zinc-800/70 bg-zinc-900/40">🇳🇱 NL / 🇧🇪 BE</div>
+              <div class="p-4 rounded-xl border border-zinc-800/70 bg-zinc-900/40">⚡ FriendsCamp</div>
+              <div class="p-4 rounded-xl border border-zinc-800/70 bg-zinc-900/40">🎡 Meet-ups</div>
+              <div class="p-4 rounded-xl border border-zinc-800/70 bg-zinc-900/40">🛠️ Volunteer Crew</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="feature-one" id="join">
+      <div class="container">
+        <div class="section-title text-center">
+          <div class="section-title__tagline-box"><span class="section-title__tagline">Join the Tribe!</span></div>
+          <h2 class="section-title__title">Feel at home,<br />in the sound of the Tribe.</h2>
+        </div>
+        <div class="row">
+          <!-- Card 1 -->
+          <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay="100ms">
+            <div class="feature-one__single">
+              <div class="feature-one__icon"><i class="fas fa-microphone" aria-hidden="true"></i></div>
+              <div class="feature-one__content">
+                <h4 class="feature-one__title"><a href="team-details.html">We don't party — we connect.</a></h4>
+                <p class="feature-one__text">Onze RaveUps zijn meer dan samen feesten. Het zijn momenten waar onbekenden vrienden worden, en vrienden familie.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+            <div class="feature-one__single">
+              <div class="feature-one__icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
+              <div class="feature-one__content">
+                <h4 class="feature-one__title"><a href="event-details.html">FriendsCamps for life.</a></h4>
+                <p class="feature-one__text">Defqon.1, Decibel of Intents — we bouwen geen tentenkamp, we bouwen een mini-stad vol energie, vertrouwen en gecontroleerde chaos.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="300ms">
+            <div class="feature-one__single">
+              <div class="feature-one__icon"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
+              <div class="feature-one__content">
+                <h4 class="feature-one__title"><a href="contact.html">A community that never sleeps.</a></h4>
+                <p class="feature-one__text">Van Discord tot real life: always active, altijd in contact — en elk gesprek eindigt met: “zie je op de volgende?”</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay="400ms">
+            <div class="feature-one__single">
+              <div class="feature-one__icon"><i class="fas fa-calendar-alt" aria-hidden="true"></i></div>
+              <div class="feature-one__content">
+                <h4 class="feature-one__title"><a href="event.html">Meet-ups beyond the festivals.</a></h4>
+                <p class="feature-one__text">Bowlen, Winter Efteling, of spontaan wat eten: Raveline leeft niet alleen in de zomer — het leeft in alles wat we samen doen.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="500ms">
+            <div class="feature-one__single">
+              <div class="feature-one__icon"><i class="fas fa-users" aria-hidden="true"></i></div>
+              <div class="feature-one__content">
+                <h4 class="feature-one__title"><a href="team.html">Vibes over status.</a></h4>
+                <p class="feature-one__text">Geen ego's, geen poespas. Iedereen telt — of je nu vooraan stampt of achteraan lacht. De tribe draait om energie, niet om uiterlijk vertoon.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="600ms">
+            <div class="feature-one__single">
+              <div class="feature-one__icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+              <div class="feature-one__content">
+                <h4 class="feature-one__title"><a href="about.html">Once you're in, you get it.</a></h4>
+                <p class="feature-one__text">We kunnen het uitleggen, maar je moet het voelen. De sfeer, de lach, de muziek — het moment dat alles klopt. Dit. Is. Raveline!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agenda / Schedule -->
+    <section class="schedule-three" id="events">
+      <div class="container">
+        <div class="schedule-three__top">
+          <div class="section-title text-left">
+            <div class="section-title__tagline-box"><span class="section-title__tagline">The Tribe Agenda</span></div>
+            <h2 class="section-title__title">Next stops on the Raveline Route</h2>
+          </div>
+          <div class="schedule-three__time-box" aria-hidden="true">
+            <div class="schedule-three__time-info-box"><div class="schedule-three__time-info-box-content"><h4>31 Dec 2026</h4><p>Donderdag</p></div></div>
+            <div class="schedule-three__time-info-box"><div class="schedule-three__time-info-box-content"><h4>3 Jan 2026</h4><p>Zaterdag</p></div></div>
+            <div class="schedule-three__time-info-box"><div class="schedule-three__time-info-box-content"><h4>14 Feb 2026</h4><p>Zaterdag</p></div></div>
+          </div>
+        </div>
+
+        <div class="schedule-three__bottom">
+          <!-- Item 1 -->
+          <div class="schedule-three__routine-details wow fadeInLeft" data-wow-delay="100ms">
+            <div class="schedule-three__routine-details-description">
+              <h4 class="schedule-three__routine-details-description-title">
+                <a href="NewYearsEve.html">Raveline New Year’s Eve — Gouda 2026</a>
+              </h4>
+              <p class="schedule-three__routine-details-description-text">
+                Sluit het jaar af in stijl met de tribe! Op 31 december 2026 sluiten we het jaar af in onze eigen rave-haven.
+                Verwacht warme energie, harde kicks en een familiegevoel dat het nieuwe jaar in knalt.
+              </p>
+              <a href="NewYearsEve.html" class="schedule-three__routine-details-description-btn" aria-label="Meer over dit evenement">
+                Meer info
+              </a>
+            </div>
+            <div class="schedule-three__routine-details-img-box">
+              <div class="schedule-three__routine-details-img-single">
+                <img src="assets/images/resources/newyearseve-gouda-1.jpg" alt="Raveline New Year's Eve sfeerfoto" loading="lazy" />
+              </div>
+              <div class="schedule-three__routine-details-img-single">
+                <img src="assets/images/resources/newyearseve-gouda-2.jpg" alt="Tribe feest in Gouda" loading="lazy" />
+              </div>
+            </div>
+            <div class="schedule-three__routine-time-detail">
+              <p>31 december 2026 — Gouda</p>
+              <h6>Raveline New Year’s Eve Party</h6>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="schedule-three__routine-details wow fadeInRight" data-wow-delay="200ms">
+            <div class="schedule-three__routine-details-description">
+              <h4 class="schedule-three__routine-details-description-title">
+                <a href="WinterEfteling.html">RaveUp @ Winter Efteling — Kaatsheuvel</a>
+              </h4>
+              <p class="schedule-three__routine-details-description-text">
+                Op 3 januari 2026 dompelen we de Efteling onder in Raveline-vibes!<br />
+                Glijd door het winterse park, geniet van de attracties en de magische sfeer.<br />
+                In de avond sluiten we de dag samen af bij <strong>Polles Keuken</strong> — lekker eten, warme gezelligheid en die typische tribe-energy om het nieuwe jaar in te luiden.<br />
+                Magisch, sfeervol en vol energie: een RaveUp om het jaar goed te beginnen.
+              </p>
+              <a href="WinterEfteling.html" class="schedule-three__routine-details-description-btn" aria-label="Meer over Winter Efteling RaveUp">
+                Meer info
+              </a>
+            </div>
+            <div class="schedule-three__routine-details-img-box">
+              <div class="schedule-three__routine-details-img-single">
+                <img src="assets/images/resources/winter-efteling-1.jpg" alt="Raveline Winter Efteling sfeerfoto" loading="lazy" />
+              </div>
+              <div class="schedule-three__routine-details-img-single">
+                <img src="assets/images/resources/winter-efteling-2.jpg" alt="Efteling winterdecor met tribe" loading="lazy" />
+              </div>
+            </div>
+            <div class="schedule-three__routine-time-detail">
+              <p>3 januari 2026 — Kaatsheuvel</p>
+              <h6>RaveUp @ Winter Efteling</h6>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="schedule-three__routine-details wow fadeInLeft" data-wow-delay="300ms">
+            <div class="schedule-three__routine-details-description">
+              <h4 class="schedule-three__routine-details-description-title">
+                <a href="SafariRaveUp.html">RaveUp Safari @ Burgers’ Zoo — Arnhem</a>
+              </h4>
+              <p class="schedule-three__routine-details-description-text">
+                De tribe trekt de jungle in! 🌴<br />
+                Tijdens deze unieke RaveUp gaan we samen onder leiding van rangers Ray &amp; Isa op ontdekkingsreis door Burgers’ Zoo — van tropische regenwouden tot onderwaterwerelden.<br />
+                Een dag vol natuur, gezelligheid en Raveline-energy.<br />
+                Datum volgt binnenkort, maar één ding is zeker: deze safari wil je niet missen.
+              </p>
+              <a href="SafariRaveUp.html" class="schedule-three__routine-details-description-btn" aria-label="Meer over de Raveline Safari RaveUp">
+                Meer info
+              </a>
+            </div>
+            <div class="schedule-three__routine-details-img-box">
+              <div class="schedule-three__routine-details-img-single">
+                <img src="assets/images/resources/raveup-safari-1.jpg" alt="Raveline Safari sfeerfoto met dieren en tribe" loading="lazy" />
+              </div>
+              <div class="schedule-three__routine-details-img-single">
+                <img src="assets/images/resources/raveup-safari-2.jpg" alt="Tribe onderweg door Burgers’ Zoo" loading="lazy" />
+              </div>
+            </div>
+            <div class="schedule-three__routine-time-detail">
+              <p>Datum volgt — Arnhem</p>
+              <h6>RaveUp Safari @ Burgers’ Zoo</h6>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="schedule-three__routine-details wow fadeInLeft" data-wow-delay="400ms">
+            <div class="schedule-three__routine-details-description">
+              <h4 class="schedule-three__routine-details-description-title">
+                <a href="Carnaval2026.html">RaveUp Carnaval 2026 — Brabantse Madness</a>
+              </h4>
+              <p class="schedule-three__routine-details-description-text">
+                Van vrijdag 13 t/m dinsdag 17 februari dompelen we ons onder in de gezelligste gekte van het jaar — <strong>Carnaval!</strong> 🧡💚<br />
+                Verwacht kleurrijke outfits, stampende beats en pure Raveline-chaos met de tribe.<br />
+                Hoogtepunt van het weekend: <strong>Karnaval Festival</strong> op zaterdag 14 februari — samen losgaan, samen vieren, samen één tribe.<br />
+                De exacte planning en meetpoints volgen later!
+              </p>
+              <a href="Carnaval2026.html" class="schedule-three__routine-details-description-btn" aria-label="Meer over Raveline Carnaval 2026">
+                Meer info
+              </a>
+            </div>
+            <div class="schedule-three__routine-details-img-box">
+              <div class="schedule-three__routine-details-img-single">
+                <img src="assets/images/resources/carnaval-2026-1.jpg" alt="Raveline tribe viert carnaval" loading="lazy" />
+              </div>
+              <div class="schedule-three__routine-details-img-single">
+                <img src="assets/images/resources/carnaval-2026-2.jpg" alt="Karnaval Festival 2026 mainstage" loading="lazy" />
+              </div>
+            </div>
+            <div class="schedule-three__routine-time-detail">
+              <p>13 t/m 17 februari 2026 — Brabant</p>
+              <h6>RaveUp Carnaval 2026</h6>
+            </div>
+          </div>
+        </div><!-- /.schedule-three__bottom -->
+      </div><!-- /.container -->
+    </section>
+
+    <!-- Team -->
+    <section class="team-one team-three" id="crew">
+      <div class="container">
+        <div class="section-title text-center">
+          <div class="section-title__tagline-box"><span class="section-title__tagline">The Crew</span></div>
+          <h2 class="section-title__title">Division Leads</h2>
+        </div>
+        <div class="row">
+          <!-- Britt -->
+          <div class="col-xl-4 col-lg-6 wow fadeInLeft" data-wow-delay="100ms">
+            <div class="team-one__single">
+              <div class="team-one__img-box">
+                <div class="team-one__img">
+                  <img src="assets/images/team/team-1-1.jpg" alt="Portret van Britt" loading="lazy" />
+                  <div class="team-one__content">
+                    <h4 class="team-one__name"><a href="team-details.html">Britt</a></h4>
+                    <p class="team-one__sub-title">Division Lead &amp; Co-Owner</p>
+                  </div>
+                  <div class="team-one__content-hover">
+                    <h4 class="team-one__name-hover"><a href="team-details.html">Britt</a></h4>
+                    <p class="team-one__sub-title-hover">Division Lead &amp; Owner</p>
+                    <p class="team-one__text-hover">De levenslijn die de community in balans houdt, begeleidt gesprekken in de groepsapp en biedt als eerste lijn support een luisterend oor — met hart voor de tribe en oog voor harmonie.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Raymond -->
+          <div class="col-xl-4 col-lg-6 wow fadeInUp" data-wow-delay="200ms">
+            <div class="team-one__single">
+              <div class="team-one__img-box">
+                <div class="team-one__img">
+                  <img src="assets/images/team/team-1-2.jpg" alt="Portret van Raymond" loading="lazy" />
+                  <div class="team-one__content">
+                    <h4 class="team-one__name"><a href="team-details.html">Raymond</a></h4>
+                    <p class="team-one__sub-title">Division Lead &amp; Owner</p>
+                  </div>
+                  <div class="team-one__content-hover">
+                    <h4 class="team-one__name-hover"><a href="team-details.html">Raymond</a></h4>
+                    <p class="team-one__sub-title-hover">Division Lead &amp; Owner</p>
+                    <p class="team-one__text-hover">Het brein achter Raveline Division; waar visie en energie samenkomen. Hij stuwt de tribe vooruit, verbindt mensen en laat ideeën tot leven komen — Rising through Sound.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Je kan hier later extra crew toevoegen -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ANTHEM / AUDIO -->
+    <section class="py-20 md:py-10 bg-gradient-to-b from-zinc-950 to-black" aria-labelledby="anthem-title">
+      <div class="mx-auto max-w-7xl px-4 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 id="anthem-title" class="text-3xl md:text-4xl font-bold">Raveline Anthem</h2>
+          <p class="mt-3 text-zinc-300">Through Sound, We Rise — de heartbeat van onze tribe. Zet aan, voel mee.</p>
+          <audio controls class="mt-6 w-full" aria-label="Audio player Raveline Anthem">
+            <source src="" type="audio/mpeg" />
+            Je browser ondersteunt het afspelen van audio niet.
+          </audio>
+        </div>
+        <div class="h-56 md:h-72 rounded-2xl border border-zinc-800 bg-zinc-900/40 flex items-center justify-center" aria-hidden="true">
+          <div class="w-40 h-40 rounded-full border-4 border-orange-500/60"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="site-footer__shape-1 float-bob-y" aria-hidden="true">
+        <img src="assets/images/shapes/site-footer-shape-1.png" alt="" loading="lazy" />
+      </div>
+      <div class="site-footer__top">
+        <div class="container">
+          <div class="site-footer__top-inner">
+            <div class="main-menu__logo">
+              <a href="index.html" aria-label="Raveline Division home">
+                <img src="assets/images/resources/logo-2.png" alt="Raveline Division logo" loading="lazy" />
+              </a>
+            </div>
+            <div class="site-footer__social" aria-label="Social links">
+              <a href="https://www.facebook.com/profile.php?id=61578060013046" aria-label="Facebook"><i class="icon-facebook" aria-hidden="true"></i></a>
+              <a href="https://www.instagram.com/raveline_division/" aria-label="Instagram"><i class="icon-instagram" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__middle">
+        <div class="container">
+          <div class="site-footer__middle-inner">
+            <div class="row">
+              <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                <div class="footer-widget__column footer-widget__events">
+                  <div class="footer-widget__title-box"><h3 class="footer-widget__title">RaveUp Agenda</h3></div>
+                  <ul class="footer-widget__events-list list-unstyled">
+                    <li>
+                      <p>31 december 2026 — Gouda</p>
+                      <h5>Raveline's New Year's Party</h5>
+                      <a href="#">Meld je aan! <span class="icon-arrow-right" aria-hidden="true"></span></a>
+                    </li>
+                    <li>
+                      <p>3 januari 2026 — RaveUp!</p>
+                      <h5>RaveUp @ Winter Efteling</h5>
+                      <a href="#">Meld je aan! <span class="icon-arrow-right" aria-hidden="true"></span></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                <div class="footer-widget__column footer-widget__link">
+                  <div class="footer-widget__title-box"><h3 class="footer-widget__title">Quick links</h3></div>
+                  <ul class="footer-widget__link-list list-unstyled">
+                    <li><a href="About.html">Over ons</a></li>
+                    <li><a href="RaveUp&Meeting.html">RaveUps</a></li>
+                    <li><a href="Friendscamps.html">FriendsCamp</a></li>
+                    <li><a href="coming-soonShop.html">Merch</a></li>
+                    <li><a href="Vacatures.html">Vacatures</a></li>
+                    <li><a href="FAQ.html">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                <div class="footer-widget__column footer-widget__contact">
+                  <div class="footer-widget__title-box"><h3 class="footer-widget__title">Contact</h3></div>
+                  <div class="footer-widget__contact-inner">
+                    <ul class="footer-widget__contact-list list-unstyled">
+                      <li>
+                        <div class="icon"><span class="icon-envelop" aria-hidden="true"></span></div>
+                        <div class="text"><p><a href="mailto:info@ravelinehq.com">info@ravelinehq.com</a></p></div>
+                      </li>
+                      <li>
+                        <div class="icon"><span class="icon-pin" aria-hidden="true"></span></div>
+                        <div class="text"><p>Based in The Netherlands</p></div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Optional vierde kolom -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <div class="container">
+          <div class="site-footer__bottom-inner">
+            <p class="site-footer__bottom-text">© Raveline Division 2025 | All Rights Reserved</p>
+            <ul class="list-unstyled site-footer__bottom-menu">
+              <li><a href="Terms.html">Terms &amp; Conditions</a></li>
+              <li><a href="Privacy.html">Privacy Policy</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav__wrapper" aria-hidden="true">
+    <div class="mobile-nav__overlay mobile-nav__toggler" tabindex="-1"></div>
+    <div class="mobile-nav__content">
+      <button class="mobile-nav__close mobile-nav__toggler" aria-label="Sluit navigatie"><i class="fa fa-times" aria-hidden="true"></i></button>
+      <div class="logo-box">
+        <a href="index.html" aria-label="Raveline Division home">
+          <img src="assets/images/resources/logo-2.png" width="150" alt="Raveline Division logo" loading="lazy" />
+        </a>
+      </div>
+      <div class="mobile-nav__container"></div>
+      <ul class="mobile-nav__contact list-unstyled">
+        <li><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:info@ravelinehq.com">info@ravelinehq.com</a></li>
+      </ul>
+      <div class="mobile-nav__top">
+        <div class="mobile-nav__social">
+          <a href="https://www.facebook.com/profile.php?id=61578060013046" class="fab fa-facebook-square" aria-label="Facebook"></a>
+          <a href="https://www.instagram.com/raveline_division/" class="fab fa-instagram" aria-label="Instagram"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search -->
+  <div class="search-popup" aria-hidden="true">
+    <div class="search-popup__overlay search-toggler"></div>
+    <div class="search-popup__content">
+      <form action="#" role="search">
+        <label for="search" class="sr-only">Zoek hier</label>
+        <input type="text" id="search" placeholder="Search Here..." />
+        <button type="submit" aria-label="Zoeken" class="thm-btn"><i class="fas fa-search" aria-hidden="true"></i></button>
+      </form>
+    </div>
+  </div>
+
+  <a href="#" data-target="html" class="scroll-to-target scroll-to-top" aria-label="Scroll naar boven"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+
+  <!-- Vendor JS (deferred) -->
+  <script src="assets/vendors/jquery/jquery-3.6.0.min.js" defer></script>
+  <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendors/jarallax/jarallax.min.js" defer></script>
+  <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js" defer></script>
+  <script src="assets/vendors/jquery-appear/jquery.appear.min.js" defer></script>
+  <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js" defer></script>
+  <script src="assets/vendors/jquery-validate/jquery.validate.min.js" defer></script>
+  <script src="assets/vendors/odometer/odometer.min.js" defer></script>
+  <script src="assets/vendors/swiper/swiper.min.js" defer></script>
+  <script src="assets/vendors/wnumb/wNumb.min.js" defer></script>
+  <script src="assets/vendors/wow/wow.js" defer></script>
+  <script src="assets/vendors/isotope/isotope.js" defer></script>
+  <script src="assets/vendors/owl-carousel/owl.carousel.min.js" defer></script>
+  <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js" defer></script>
+  <script src="assets/vendors/jquery-ui/jquery-ui.js" defer></script>
+  <script src="assets/vendors/nice-select/jquery.nice-select.min.js" defer></script>
+  <script src="assets/vendors/countdown/countdown.min.js" defer></script>
+  <script src="assets/vendors/marque/marquee.min.js" defer></script>
+  <script src="assets/vendors/sidebar-content/jquery-sidebar-content.js" defer></script>
+  <script src="assets/js/eventflow.js" defer></script>
+  <script src="assets/js/preloader.js" defer></script>
+</body>
+</html>

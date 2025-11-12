@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic page needs -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raveline Division - One Tribe, Worldwide</title>
+  <meta name="description" content="Raveline Division — Limited drops, festival essentials en tribe gear. One Tribe, Worldwide." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind (utility styling if needed) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Vendors + CSS -->
+  <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+  <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+  <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+  <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+  <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+  <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+  <link rel="stylesheet" href="assets/vendors/eventflow-icons/style.css" />
+  <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+  <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+  <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
+  <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="assets/css/eventflow.css" />
+  <link rel="stylesheet" href="assets/css/eventflow-responsive.css" />
+</head>
+
+<body class="body-bg-color1">
+  <!-- Preloader -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__image" role="img" aria-label="Loading"></div>
+  </div>
+
+  <div class="page-wrapper">
+    <!-- HEADER -->
+    <header class="main-header main-header-three">
+      <nav class="main-menu main-menu-three" aria-label="primary">
+        <div class="main-menu__wrapper">
+          <div class="main-menu__wrapper-inner">
+            <div class="main-menu__left">
+              <div class="main-menu__logo">
+                <a href="index.html" aria-label="Raveline Division Home">
+                  <img src="assets/images/resources/logo-2.png" alt="Raveline Division Logo" />
+                </a>
+              </div>
+            </div>
+            <div class="main-menu__right">
+              <div class="main-menu__main-menu-box">
+                <button type="button" class="mobile-nav__toggler" aria-label="Toggle navigation">
+                  <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+                <ul class="main-menu__list">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="dropdown">
+                    <a href="#">Over ons</a>
+                    <ul>
+                      <li><a href="About.html">Over ons</a></li>
+                      <li><a href="Team.html">De Crew</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">Tribe</a>
+                    <ul>
+                      <li><a href="RaveUp&Meeting.html">Meetups &amp; RaveUps</a></li>
+                      <li><a href="Friendscamps.html">FriendsCamp</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">Merch</a>
+                    <ul>
+                      <li><a href="coming-soonShop.html">Collectie</a></li>
+                      <li><a href="coming-soonShop.html">Pre-orders</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">Vacatures</a>
+                    <ul>
+                      <li><a href="Vacatures.html">Open Roles</a></li>
+                      <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="FAQ.html">FAQ &amp; Contact</a></li>
+                </ul>
+              </div><!-- /.main-menu__main-menu-box -->
+            </div><!-- /.main-menu__right -->
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Coming Soon -->
+    <section class="coming-soon-page full-height" aria-labelledby="coming-soon-title">
+      <div class="coming-soon-page__bg" style="background-image: url(assets/images/backgrounds/coming-soon-page-bg.jpg);" role="img" aria-label="Coming soon background"></div>
+      <div class="coming-soon-page__content">
+        <div class="inner">
+          <h1 id="coming-soon-title" class="big-title">We're Coming Soon...</h1>
+
+          <div class="timer-box clearfix" aria-live="polite">
+            <div class="countdown-timer">
+              <div class="default-coundown">
+                <div class="box">
+                  <!-- TODO: update to your real launch date (YYYY/MM/DD) -->
+                  <div class="countdown coming-soon-countdown" data-countdown-time="2024/08/28"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text">
+            <p>
+              We bouwen aan de nieuwe Raveline Webshop.<br />
+              Limited drops, festival essentials en tribe gear — binnenkort beschikbaar.
+            </p>
+          </div>
+
+<div class="coming-soon-page__subscribe-box" aria-label="Subscribe">
+  <form id="subscribeForm" class="subscribe-form" novalidate>
+    <label for="subscribe-email" class="sr-only">Email address</label>
+    <input id="subscribe-email" name="email" placeholder="Enter your email address" type="email" required />
+    <button type="submit" class="thm-btn coming-soon-page__btn">
+      send message <span class="icon-arrow-right" aria-hidden="true"></span>
+    </button>
+    <p id="subscribe-feedback" style="margin-top:.5rem; color:#fff;"></p>
+  </form>
+</div>
+        </div>
+      </div>
+    </section>
+    <!-- /Coming Soon -->
+  </div><!-- /.page-wrapper -->
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav__wrapper" aria-hidden="true">
+    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+    <div class="mobile-nav__content" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+      <button type="button" class="mobile-nav__close mobile-nav__toggler" aria-label="Close navigation">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </button>
+
+      <div class="logo-box">
+        <a href="index.html" aria-label="logo image">
+          <img src="assets/images/resources/logo-1.png" width="150" alt="Raveline Division Logo" />
+        </a>
+      </div>
+
+      <div class="mobile-nav__container"><!-- menu is injected here --></div>
+
+      <ul class="mobile-nav__contact list-unstyled">
+        <li>
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <a href="mailto:needhelp@eventflow.com">needhelp@eventflow.com</a>
+        </li>
+        <li>
+          <i class="fa fa-phone-alt" aria-hidden="true"></i>
+          <a href="tel:666-888-0000">666 888 0000</a>
+        </li>
+      </ul>
+
+      <div class="mobile-nav__top">
+        <div class="mobile-nav__social" aria-label="Socials">
+          <a href="#" class="fab fa-twitter" aria-label="Twitter"></a>
+          <a href="#" class="fab fa-facebook-square" aria-label="Facebook"></a>
+          <a href="#" class="fab fa-pinterest-p" aria-label="Pinterest"></a>
+          <a href="#" class="fab fa-instagram" aria-label="Instagram"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search popup -->
+  <div class="search-popup" aria-hidden="true">
+    <div class="search-popup__overlay search-toggler"></div>
+    <div class="search-popup__content" role="dialog" aria-modal="true" aria-label="Search">
+      <form action="#" method="get">
+        <label for="search" class="sr-only">Search here</label>
+        <input type="text" id="search" name="q" placeholder="Search Here..." />
+        <button type="submit" aria-label="search submit" class="thm-btn">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <a href="#" data-target="html" class="scroll-to-target scroll-to-top" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </a>
+
+  <!-- JS: Vendors (once) -->
+  <script src="assets/vendors/jquery/jquery-3.6.0.min.js" defer></script>
+  <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendors/jarallax/jarallax.min.js" defer></script>
+  <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js" defer></script>
+  <script src="assets/vendors/jquery-appear/jquery.appear.min.js" defer></script>
+  <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js" defer></script>
+  <script src="assets/vendors/jquery-validate/jquery.validate.min.js" defer></script>
+  <script src="assets/vendors/odometer/odometer.min.js" defer></script>
+  <script src="assets/vendors/swiper/swiper.min.js" defer></script>
+  <script src="assets/vendors/wnumb/wNumb.min.js" defer></script>
+  <script src="assets/vendors/wow/wow.js" defer></script>
+  <script src="assets/vendors/isotope/isotope.js" defer></script>
+  <script src="assets/vendors/owl-carousel/owl.carousel.min.js" defer></script>
+  <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js" defer></script>
+  <script src="assets/vendors/jquery-ui/jquery-ui.js" defer></script>
+  <script src="assets/vendors/timepicker/timePicker.js" defer></script>
+  <script src="assets/vendors/jquery.circle-type/jquery.circleType.js" defer></script>
+  <script src="assets/vendors/jquery.circle-type/jquery.lettering.min.js" defer></script>
+  <script src="assets/vendors/nice-select/jquery.nice-select.min.js" defer></script>
+  <script src="assets/vendors/countdown/countdown.min.js" defer></script>
+  <script src="assets/vendors/marque/marquee.min.js" defer></script>
+  <script src="assets/vendors/sidebar-content/jquery-sidebar-content.js" defer></script>
+
+  <!-- Template JS -->
+  <script src="assets/js/eventflow.js" defer></script>
+  <script src="assets/js/preloader.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = "https://qqmpzkhnpjkbaqjvncce.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_Xwqpabb9FGW2WyKhS7RyTQ_KWc27x4s"; // uit API Keys-tab, NIET Legacy
+  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  const form = document.getElementById('subscribeForm');
+  const emailInput = document.getElementById('subscribe-email');
+  const feedback = document.getElementById('subscribe-feedback');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    feedback.textContent = "";
+
+    const raw = (emailInput.value || "").trim();
+    if (!/^\S+@\S+\.\S+$/.test(raw)) {
+      feedback.textContent = "Vul een geldig e-mailadres in.";
+      return;
+    }
+
+    const email = raw.toLowerCase(); // 👈 normaliseer
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true; btn.textContent = "Verzenden…";
+
+    const { error } = await supabase
+      .from('raveline_merch')
+      .insert({ email });
+
+    // Duplicate? Postgres geeft code 23505 (unique_violation) → Supabase vertaalt vaak naar 409
+    if (!error) {
+      feedback.textContent = "Bedankt! Je staat op de lijst 🎉";
+      form.reset();
+    } else if (
+      (error.code === "23505") ||                       // PG unique violation
+      (error.details && /duplicate/i.test(error.details)) ||
+      (error.message && /duplicate|conflict/i.test(error.message))
+    ) {
+      feedback.textContent = "Dit e-mailadres is al bij ons bekend 🙌";
+    } else {
+      console.error(error);
+      feedback.textContent = "Er ging iets mis. Probeer het later opnieuw.";
+    }
+
+    btn.disabled = false;
+    btn.innerHTML = 'send message <span class="icon-arrow-right" aria-hidden="true"></span>';
+  });
+</script>
+
+
+</body>
+</html>

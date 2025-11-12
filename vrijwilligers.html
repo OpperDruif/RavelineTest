@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vrijwilligers – Raveline Division</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+
+  <!-- Vendors + CSS -->
+  <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+  <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+  <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+  <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+  <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+  <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+  <link rel="stylesheet" href="assets/vendors/eventflow-icons/style.css">
+  <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+  <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+  <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
+  <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+  <link rel="stylesheet" href="assets/css/eventflow.css" />
+  <link rel="stylesheet" href="assets/css/eventflow-responsive.css" />
+
+  <style>
+    :root{
+      --rvln-bg:#0E0A17; --rvln-card:#161125; --rvln-soft:#1a1428;
+      --rvln-grad:linear-gradient(90deg,#ff5f00,#ffb300);
+    }
+    html,body{ height:100% }
+    body.body-bg-color1{ background:var(--rvln-bg); }
+    .page-wrapper{ min-height:100%; display:flex; flex-direction:column }
+    main{ flex:1 0 auto } footer.site-footer{ flex-shrink:0 }
+
+    .rvln-card{ background:var(--rvln-card); border:1px solid rgba(255,255,255,.08); border-radius:1rem }
+    .rvln-chip{ font-size:.72rem; color:#e5e7eb; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); border-radius:.5rem; padding:.18rem .5rem }
+    .rvln-btn{ background:var(--rvln-grad); color:#0e0a17; font-weight:800; border-radius:999px; padding:.6rem 1rem; box-shadow:0 0 14px rgba(255,95,0,.35); transition:.2s; display:inline-flex; align-items:center; gap:.5rem; text-decoration:none }
+    .rvln-btn:hover{ transform:translateY(-1px); box-shadow:0 0 22px rgba(255,95,0,.6) }
+    .rvln-btn-ghost{ background:#241b3d; color:#fff; border:1px solid rgba(255,255,255,.08); border-radius:999px; padding:.6rem 1rem }
+
+    .tab-pill{ color:#d1d5db; border:1px solid rgba(255,255,255,.08); background:#171228; padding:.5rem .9rem; border-radius:999px; cursor:pointer }
+    .tab-pill.active{ color:#0E0A17; background:linear-gradient(90deg,#ff5f00,#ffb300); border-color:transparent; font-weight:800 }
+
+    /* sticky tabbar on mobile */
+    .sticky-tabs{ position:sticky; top:64px; z-index:20; backdrop-filter: blur(6px); background:rgba(14,10,23,.6) }
+
+    /* === Animations === */
+    @keyframes fadeInUp {
+      0% { opacity:0; transform: translateY(8px) scale(.99); }
+      100%{ opacity:1; transform: translateY(0) scale(1); }
+    }
+    .fade-in-up { animation: fadeInUp .28s ease forwards; }
+
+    /* === Capacity bar === */
+    .rvln-capacity .track{
+      height:10px; background:var(--rvln-soft);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:999px; overflow:hidden;
+    }
+    .rvln-capacity .fill{
+      height:100%; width:0%;
+      background:linear-gradient(90deg,#ff5f00,#ffb300);
+      transition:width .6s ease;
+      box-shadow:0 0 10px rgba(255,95,0,.35) inset;
+    }
+    .rvln-capacity .fill.is-low{
+      box-shadow:0 0 16px rgba(255,179,0,.55) inset;
+    }
+    .rvln-capacity .fill.is-full{
+      background:linear-gradient(90deg,#ef4444,#f97316);
+      box-shadow:0 0 16px rgba(239,68,68,.55) inset;
+    }
+  </style>
+</head>
+<body class="body-bg-color1">
+<div class="page-wrapper">
+
+  <!-- ======= HEADER ======= -->
+  <header class="main-header main-header-three" role="banner">
+    <nav class="main-menu main-menu-three" aria-label="Hoofdmenu">
+      <div class="main-menu__wrapper">
+        <div class="main-menu__wrapper-inner">
+          <div class="main-menu__left">
+            <div class="main-menu__logo">
+              <a href="index.html" aria-label="Terug naar home">
+                <img src="assets/images/resources/logo-2.png" alt="Raveline Division Logo">
+              </a>
+            </div>
+          </div>
+          <div class="main-menu__right">
+            <div class="main-menu__main-menu-box">
+              <a href="#" class="mobile-nav__toggler" aria-label="Mobiele navigatie openen"><i class="fa fa-bars"></i></a>
+              <ul class="main-menu__list">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                  <a href="#">Over ons</a>
+                  <ul>
+                    <li><a href="About.html">Over ons</a></li>
+                    <li><a href="Team.html">De Crew</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#">Tribe</a>
+                  <ul>
+                    <li><a href="#">Meetups & RaveUps</a></li>
+                    <li><a href="Friendscamps.html">FriendsCamp</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#">Merch</a>
+                  <ul>
+                    <li><a href="coming-soonShop.html">Collectie</a></li>
+                    <li><a href="coming-soonShop.html">Pre-orders</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#">Vacatures</a>
+                  <ul>
+                    <li><a href="vacatures.html">Open Roles</a></li>
+                    <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
+                  </ul>
+                </li>
+                <li><a href="FAQ.html">FAQ & Contact</a></li>
+              </ul>
+            </div><!-- /.main-menu__main-menu-box -->
+          </div><!-- /.main-menu__right -->
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="stricky-header stricked-menu main-menu main-menu-three" aria-hidden="true">
+    <div class="sticky-header__content"></div>
+  </div>
+
+  <!-- ======= PAGE HEADER (image) ======= -->
+  <section class="page-header">
+    <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);"></div>
+    <div class="page-header__shape-1 float-bob-y">
+      <img src="assets/images/shapes/page-header-shape-1.png" alt="">
+    </div>
+    <div class="page-header__shape-2 float-bob-x">
+      <img src="assets/images/shapes/page-header-shape-2.png" alt="">
+    </div>
+    <div class="container">
+      <div class="page-header__inner" style="text-align:left;">
+        <h2>Vrijwilligers</h2>
+        <div class="thm-breadcrumb__box">
+          <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><span class="icon-angle-right"></span></li>
+            <li>Vrijwilligers</li>
+          </ul>
+        </div>
+        <p style="color:#d7d7d7; max-width:720px; margin-top:14px;">
+          Sluit je per event/project aan als vrijwilliger. Je helpt bij <em>RaveUps</em>, FriendsCamps of
+          content-creatie. Kies hieronder je shift. Is een shift <strong>vol</strong>? Schrijf je in voor de
+          <em>wachtlijst</em> — we pingen je zodra er plek vrijkomt.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <main id="content" role="main">
+
+    <!-- ======= Tabs ======= -->
+    <section class="sticky-tabs py-4 border-b border-white/10">
+      <div class="container mx-auto px-4">
+        <div id="shiftTabs" class="flex flex-wrap items-center gap-2" role="tablist" aria-label="Filter op categorie">
+          <button class="tab-pill active" data-tab="all" role="tab" aria-selected="true">Alle shifts</button>
+          <button class="tab-pill" data-tab="nl" role="tab">NL events</button>
+          <button class="tab-pill" data-tab="be" role="tab">BE events</button>
+          <button class="tab-pill" data-tab="waitlist" role="tab">Wachtlijst</button>
+          <button class="tab-pill" data-tab="full" role="tab">Vol</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Shifts ======= -->
+    <section class="py-10">
+      <div class="container mx-auto px-4 grid lg:grid-cols-12 gap-6">
+
+        <!-- Info / CTA -->
+        <aside class="lg:col-span-4">
+          <div class="rvln-card p-5">
+            <h3 class="text-white font-extrabold text-xl">Hoe werkt het?</h3>
+            <ol class="mt-3 list-decimal list-inside text-gray-300 space-y-1">
+              <li>Kies een shift en klik op <em>Inschrijven</em></li>
+              <li>Korte intake via e-mail/WhatsApp</li>
+              <li>Briefing + meetpoints in de crew-app</li>
+            </ol>
+            <p class="text-gray-400 text-sm mt-3">
+              Alle shifts zijn <strong>vrijwillig</strong>. Reiskosten/voorzieningen kunnen per event verschillen en
+              worden vooraf gecommuniceerd.
+            </p>
+          </div>
+
+          <div class="rvln-card p-5 mt-6">
+            <h3 class="text-white font-extrabold text-xl">Wat zoeken we?</h3>
+            <ul class="mt-2 text-gray-300 space-y-1">
+              <li>✔ Betrouwbare, positieve teamplayers</li>
+              <li>✔ Communicatief en zelfstandig</li>
+              <li>✔ Festival-mindset: samen uit, samen thuis</li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Shifts grid -->
+        <div class="lg:col-span-8" id="shiftsGrid">
+
+          <!-- SHIFT 1: Crew Support – Winter Efteling (NL) — data-fill 35% -->
+          <article class="rvln-card p-5 mb-5 shift fade-in-up"
+                   data-loc="nl" data-fill="35" data-date="2026-01-03"
+                   data-text="winter efteling crew support ontvangst meetpoint groepsapp gastheer">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h4 class="text-white font-bold">Shift: Crew Support – Winter Efteling</h4>
+                <p class="text-gray-300 text-sm mt-1">3 januari 2026 — Kaatsheuvel (NL)</p>
+
+                <div class="mt-2 flex flex-wrap gap-2">
+                  <span class="rvln-chip">12:00–18:00</span>
+                  <span class="rvln-chip">Kaatsheuvel</span>
+                </div>
+
+                <!-- Capaciteit -->
+                <div class="rvln-capacity mt-3" aria-label="Bezetting">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs text-gray-300">Bezetting</span>
+                    <span class="text-xs text-gray-400"><span class="cap-num">0</span>%</span>
+                  </div>
+                  <div class="track"><div class="fill" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div>
+                </div>
+
+                <p class="text-gray-400 text-sm mt-3">
+                  Ondersteun de Event Coördinator bij ontvangst, meetpoint-beheer en snelle updates in de groepsapp.
+                  Perfect als je graag het overzicht houdt en mensen welkom laat voelen.
+                </p>
+
+                <ul class="text-gray-400 text-sm list-disc ml-5 mt-2 space-y-1">
+                  <li>Check-in bij hoofdingang + doorverwijzen</li>
+                  <li>Meetpoint updates in WhatsApp</li>
+                  <li>Back-up voor praktische vragen</li>
+                </ul>
+              </div>
+
+              <div class="flex flex-col items-end justify-between">
+                <span class="text-xs text-gray-400 italic mb-2">Crew-lid aanwezig</span>
+                <button class="rvln-btn shrink-0 apply"
+                        data-apply='{"shift":"Crew Support – Winter Efteling","date":"3 januari 2026","slot":"12:00–18:00","loc":"Kaatsheuvel (NL)"}'>
+                  <i class="fas fa-paper-plane"></i> Inschrijven
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- SHIFT 2: Check-in Host – Tribe Night Utrecht (NL) — data-fill 82% -->
+          <article class="rvln-card p-5 mb-5 shift fade-in-up"
+                   data-loc="nl" data-fill="82" data-date="2025-12-31"
+                   data-text="check-in host ontvangst aanmeldlijst polsband meetpoint">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h4 class="text-white font-bold">Shift: Check-in Host – Tribe Night Utrecht</h4>
+                <p class="text-gray-300 text-sm mt-1">31 december 2025 — Utrecht (NL)</p>
+
+                <div class="mt-2 flex flex-wrap gap-2">
+                  <span class="rvln-chip">18:30–22:00</span>
+                  <span class="rvln-chip">Utrecht</span>
+                </div>
+
+                <!-- Capaciteit -->
+                <div class="rvln-capacity mt-3" aria-label="Bezetting">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs text-gray-300">Bezetting</span>
+                    <span class="text-xs text-gray-400"><span class="cap-num">0</span>%</span>
+                  </div>
+                  <div class="track"><div class="fill" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div>
+                </div>
+
+                <p class="text-gray-400 text-sm mt-3">
+                  Ontvangst bij het meetpoint, afvinken van de aanmeldlijst en mensen doorsturen naar de juiste groep.
+                </p>
+                <ul class="text-gray-400 text-sm list-disc ml-5 mt-2 space-y-1">
+                  <li>Aanmeldlijst bijhouden (mobiel)</li>
+                  <li>Verwijzing naar meetpoint / crew</li>
+                  <li>Korte uitleg “Tribe-regels”</li>
+                </ul>
+              </div>
+
+              <div class="flex flex-col items-end justify-between">
+                <span class="text-xs text-gray-400 italic mb-2">Crew-lid aanwezig</span>
+                <button class="rvln-btn shrink-0 apply"
+                        data-apply='{"shift":"Check-in Host – Tribe Night Utrecht","date":"31 december 2025","slot":"18:30–22:00","loc":"Utrecht (NL)"}'>
+                  <i class="fas fa-paper-plane"></i> Inschrijven
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- SHIFT 3: Communicatie Support – Rebirth (NL) — data-fill 76% -->
+          <article class="rvln-card p-5 mb-5 shift fade-in-up"
+                   data-loc="nl" data-fill="76" data-date="2026-04-12"
+                   data-text="communicatie support groepsapp updates meetpoints rebirth">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h4 class="text-white font-bold">Shift: Communicatie Support – Rebirth Festival</h4>
+                <p class="text-gray-300 text-sm mt-1">12 april 2026 — Haaren (NB, NL)</p>
+
+                <div class="mt-2 flex flex-wrap gap-2">
+                  <span class="rvln-chip">09:30–14:30</span>
+                  <span class="rvln-chip">Haaren (NB)</span>
+                </div>
+
+                <!-- Capaciteit -->
+                <div class="rvln-capacity mt-3" aria-label="Bezetting">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs text-gray-300">Bezetting</span>
+                    <span class="text-xs text-gray-400"><span class="cap-num">0</span>%</span>
+                  </div>
+                  <div class="track"><div class="fill" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div>
+                </div>
+
+                <p class="text-gray-400 text-sm mt-3">
+                  Beheer de crew-/groepsapp, deel updates over aankomsttijden en meetpoints en koppel meldingen terug naar de Event Coördinator.
+                </p>
+
+                <ul class="text-gray-400 text-sm list-disc ml-5 mt-2 space-y-1">
+                  <li>Live updates + “Tribe Check-in”</li>
+                  <li>Alerts doorgeven aan Event Coördinator</li>
+                  <li>Meetpoint info up-to-date houden</li>
+                </ul>
+              </div>
+
+              <div class="flex flex-col items-end justify-between">
+                <span class="text-xs text-gray-400 italic mb-2">Crew-lid aanwezig</span>
+                <button class="rvln-btn shrink-0 apply"
+                        data-apply='{"shift":"Communicatie Support – Rebirth Festival","date":"12 april 2026","slot":"09:30–14:30","loc":"Haaren (NB, NL)"}'>
+                  <i class="fas fa-paper-plane"></i> Inschrijven
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- SHIFT 4: Content Runner – Decibel Outdoor (BE demo) — data-fill 100% -->
+          <article class="rvln-card p-5 mb-5 shift fade-in-up"
+                   data-loc="be" data-fill="100" data-date="2026-08-16"
+                   data-text="content runner foto video social footage decibel">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h4 class="text-white font-bold">Shift: Content Runner – Decibel Outdoor</h4>
+                <p class="text-gray-300 text-sm mt-1">16 augustus 2026 — (BE demo)</p>
+
+                <div class="mt-2 flex flex-wrap gap-2">
+                  <span class="rvln-chip">14:00–20:00</span>
+                  <span class="rvln-chip">On-site</span>
+                </div>
+
+                <!-- Capaciteit -->
+                <div class="rvln-capacity mt-3" aria-label="Bezetting">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-xs text-gray-300">Bezetting</span>
+                    <span class="text-xs text-gray-400"><span class="cap-num">0</span>% • Vol</span>
+                  </div>
+                  <div class="track"><div class="fill" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div>
+                </div>
+
+                <p class="text-gray-400 text-sm mt-3">
+                  Haal korte foto/video-snippets op bij meetpoints en FriendsCamp, lever ze snel aan bij de content-editor.
+                </p>
+                <ul class="text-gray-400 text-sm list-disc ml-5 mt-2 space-y-1">
+                  <li>Korte loops (vertical, 10–20s)</li>
+                  <li>Snelle overdracht (AirDrop/Drive)</li>
+                  <li>Respecteer privacy & crew-richtlijnen</li>
+                </ul>
+              </div>
+
+              <div class="flex flex-col items-end justify-between">
+                <span class="text-xs text-gray-400 italic mb-2">Crew-lid aanwezig</span>
+                <div class="flex gap-2">
+                  <button class="rvln-btn shrink-0 opacity-60 cursor-not-allowed" disabled>
+                    <i class="fas fa-lock"></i> Vol
+                  </button>
+                  <button class="rvln-btn-ghost apply"
+                          data-apply='{"shift":"Wachtlijst – Content Runner – Decibel Outdoor","date":"16 augustus 2026","slot":"14:00–20:00","loc":"On-site (BE)"}'>
+                    <i class="fas fa-clock"></i> Wachtlijst
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= FAQ / Info ======= -->
+    <section class="pb-16">
+      <div class="container mx-auto px-4 grid md:grid-cols-3 gap-6">
+        <div class="rvln-card p-6">
+          <h3 class="text-white font-extrabold text-xl">Rave-Safe</h3>
+          <p class="text-gray-300 mt-2">We werken open-minded en zonder oordeel. Bij twijfel: altijd melden bij Crew / EHBO. Samen uit, samen thuis.</p>
+        </div>
+        <div class="rvln-card p-6">
+          <h3 class="text-white font-extrabold text-xl">Briefing</h3>
+          <p class="text-gray-300 mt-2">Je ontvangt vooraf een korte briefing met meetpoints, contactpunten en noodrouting. Check je WhatsApp tijdig.</p>
+        </div>
+        <div class="rvln-card p-6">
+          <h3 class="text-white font-extrabold text-xl">Vragen?</h3>
+          <p class="text-gray-300 mt-2">Mail <a class="underline text-orange-300" href="mailto:recruitment@ravelinehq.com">recruitment@ravelinehq.com</a> of kijk bij <a class="underline text-orange-300" href="FAQ.html">FAQ</a>.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer">
+    <div class="site-footer__shape-1 float-bob-y">
+      <img src="assets/images/shapes/site-footer-shape-1.png" alt="">
+    </div>
+    <div class="site-footer__top">
+      <div class="container">
+        <div class="site-footer__top-inner">
+          <div class="main-menu__logo">
+            <a href="index.html"><img src="assets/images/resources/logo-2.png" alt=""></a>
+          </div>
+          <div class="site-footer__social">
+            <a href="https://www.facebook.com/profile.php?id=61578060013046"><i class="icon-facebook"></i></a>
+            <a href="https://www.instagram.com/raveline_division/"><i class="icon-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__middle">
+      <div class="container">
+        <div class="site-footer__middle-inner">
+          <div class="row">
+            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+              <div class="footer-widget__column footer-widget__events">
+                <div class="footer-widget__title-box"><h3 class="footer-widget__title">RaveUp Agenda</h3></div>
+                <ul class="footer-widget__events-list list-unstyled">
+                  <li><p>31 December 2025 - Gouda</p><h5>Raveline's new years party!</h5><a href="#">Meld je aan! <span class="icon-arrow-right"></span></a></li>
+                  <li><p>3 Januari 2026 - RaveUp!</p><h5>RaveUp @ Winter Efteling</h5><a href="#">Meld je aan! <span class="icon-arrow-right"></span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+              <div class="footer-widget__column footer-widget__link">
+                <div class="footer-widget__title-box"><h3 class="footer-widget__title">Quick links</h3></div>
+                  <ul class="footer-widget__link-list list-unstyled">
+                    <li><a href="About.html">Over ons</a></li>
+                    <li><a href="RaveUp&Meeting.html">RaveUps</a></li>
+                    <li><a href="Friendscamps.html">FriendsCamp</a></li>
+                    <li><a href="coming-soonShop.html">Merch</a></li>
+                    <li><a href="Vacatures.html">Vacatures</a></li>
+                    <li><a href="FAQ.html">Contact</a></li>
+                  </ul>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+              <div class="footer-widget__column footer-widget__contact">
+                <div class="footer-widget__title-box"><h3 class="footer-widget__title">Contact</h3></div>
+                <div class="footer-widget__contact-inner">
+                  <ul class="footer-widget__contact-list list-unstyled">
+                    <li><div class="icon"><span class="icon-envelop"></span></div><div class="text"><p><a href="mailto:info@ravelinehq.com">Info@ravelinehq.com</a></p></div></li>
+                    <li><div class="icon"><span class="icon-pin"></span></div><div class="text"><p>Based in The Netherlands</p></div></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- extra kolom indien gewenst -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="container">
+        <div class="site-footer__bottom-inner">
+          <p class="site-footer__bottom-text">© Raveline Division 2025 | All Rights Reserved</p>
+          <ul class="list-unstyled site-footer__bottom-menu">
+            <li><a href="Terms.html">Terms & Condition</a></li>
+            <li><a href="Privacy.html">Privacy Policy</a></li>
+            <li><a href="FAQ.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ======= QUICK APPLY DRAWER ======= -->
+<div id="drawer" class="fixed inset-0 z-[90] hidden" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+  <div class="absolute inset-0 bg-black/60" data-close></div>
+  <div class="absolute right-0 top-0 h-full w-[420px] max-w-full bg-[#120d1f] border-l border-white/10 shadow-2xl translate-x-full transition-transform duration-200" id="drawer-panel">
+    <div class="flex items-center justify-between p-4 border-b border-white/10">
+      <h3 id="drawer-title" class="text-white font-extrabold text-lg">Quick Apply</h3>
+      <button class="text-gray-400 hover:text-white" data-close aria-label="Sluiten"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="p-4 overflow-y-auto h-[calc(100%-64px)]">
+      <form action="https://formsubmit.co/recruitment@ravelinehq.com" method="POST" class="space-y-3">
+        <input type="hidden" name="_subject" value="Vrijwilliger – Quick Apply">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input id="shiftField" type="hidden" name="Shift">
+        <input id="dateField"  type="hidden" name="Datum">
+        <input id="slotField"  type="hidden" name="Tijd">
+        <input id="locField"   type="hidden" name="Locatie">
+
+        <div><label class="text-sm text-gray-400">Naam</label><input name="Naam" required class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200" /></div>
+        <div><label class="text-sm text-gray-400">E-mail</label><input type="email" name="Email" required class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200" /></div>
+        <div><label class="text-sm text-gray-400">Telefoon (optioneel)</label><input name="Telefoon" class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200" /></div>
+        <div><label class="text-sm text-gray-400">Opmerking</label><textarea name="Opmerking" rows="4" class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200" placeholder="Beschikbaarheid, ervaring, vragen…"></textarea></div>
+
+        <button class="rvln-btn w-full justify-center"><i class="fas fa-paper-plane"></i> Verstuur</button>
+        <p class="text-xs text-gray-500 text-center">Of mail direct: <a class="underline text-orange-300" href="mailto:recruitment@ravelinehq.com">recruitment@ravelinehq.com</a></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Vendors JS -->
+<script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+<script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendors/jarallax/jarallax.min.js"></script>
+<script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+<script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+<script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+<script src="assets/vendors/odometer/odometer.min.js"></script>
+<script src="assets/vendors/swiper/swiper.min.js"></script>
+<script src="assets/vendors/wnumb/wNumb.min.js"></script>
+<script src="assets/vendors/wow/wow.js"></script>
+<script src="assets/vendors/isotope/isotope.js"></script>
+<script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
+<script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
+<script src="assets/vendors/countdown/countdown.min.js"></script>
+<script src="assets/vendors/marque/marquee.min.js"></script>
+<script src="assets/vendors/sidebar-content/jquery-sidebar-content.js"></script>
+<script src="assets/js/eventflow.js"></script>
+<script src="assets/js/preloader.js"></script>
+
+<script>
+  // === Tabs filter met animatie ===
+  const tabs = document.querySelectorAll('#shiftTabs .tab-pill');
+  const shifts = [...document.querySelectorAll('.shift')];
+
+  function animateIn(el){
+    el.classList.remove('fade-in-up'); void el.offsetWidth; el.classList.add('fade-in-up');
+  }
+
+  function applyTab(tab) {
+    shifts.forEach(s => {
+      const loc = s.dataset.loc;
+      const status = s.dataset.status || 'open';
+      let show = true;
+
+      if (tab === 'nl')   show = (loc === 'nl');
+      if (tab === 'be')   show = (loc === 'be');
+      if (tab === 'waitlist') show = (status === 'low');   // bijna vol = wachtlijst-geschikt
+      if (tab === 'full') show = (status === 'full');
+
+      const wasHidden = s.style.display === 'none';
+      s.style.display = show ? '' : 'none';
+      if (show && wasHidden) animateIn(s);
+    });
+  }
+
+  tabs.forEach(t => {
+    t.addEventListener('click', () => {
+      tabs.forEach(x => x.classList.remove('active'));
+      t.classList.add('active');
+      const tab = t.dataset.tab;
+      if (tab === 'all') {
+        shifts.forEach(s => { const wasHidden = s.style.display === 'none'; s.style.display = ''; if (wasHidden) animateIn(s); });
+      } else {
+        applyTab(tab);
+      }
+    });
+  });
+
+  // === Capaciteitsbalken initialiseren ===
+  function initCapacityBars(){
+    document.querySelectorAll('.shift').forEach(card=>{
+      const raw = parseInt(card.dataset.fill || '0', 10);
+      const fill = Math.max(0, Math.min(100, isNaN(raw)?0:raw));
+
+      // status voor tabs
+      let status = 'open';
+      if (fill >= 100) status = 'full';
+      else if (fill >= 70) status = 'low';
+      card.dataset.status = status;
+
+      // elementen
+      const bar = card.querySelector('.rvln-capacity');
+      const fillEl = bar.querySelector('.fill');
+      const numEl = bar.querySelector('.cap-num');
+
+      numEl.textContent = String(fill);
+      fillEl.setAttribute('aria-valuenow', String(fill));
+      fillEl.classList.toggle('is-low', status==='low');
+      fillEl.classList.toggle('is-full', status==='full');
+
+      requestAnimationFrame(()=>{ fillEl.style.width = fill + '%'; });
+    });
+  }
+
+  // Init bij load
+  initCapacityBars();
+
+  // === Quick Apply Drawer ===
+  const drawer = document.getElementById('drawer');
+  const panel = document.getElementById('drawer-panel');
+  const shiftField = document.getElementById('shiftField');
+  const dateField  = document.getElementById('dateField');
+  const slotField  = document.getElementById('slotField');
+  const locField   = document.getElementById('locField');
+  const dTitle     = document.getElementById('drawer-title');
+
+  function openDrawer(payload){
+    shiftField.value = payload.shift || '';
+    dateField.value  = payload.date  || '';
+    slotField.value  = payload.slot  || '';
+    locField.value   = payload.loc   || '';
+    dTitle.textContent = `Quick Apply — ${payload.shift || 'Vrijwilliger'}`;
+    drawer.classList.remove('hidden');
+    requestAnimationFrame(()=>{ panel.classList.remove('translate-x-full'); });
+    document.body.style.overflow='hidden';
+  }
+  function closeDrawer(){
+    panel.classList.add('translate-x-full');
+    setTimeout(()=>drawer.classList.add('hidden'), 180);
+    document.body.style.overflow='';
+  }
+
+  document.querySelectorAll('.apply').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const d = JSON.parse(btn.getAttribute('data-apply'));
+      openDrawer(d);
+    });
+  });
+  drawer.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click', closeDrawer));
+  drawer.addEventListener('click', (e)=>{ if(e.target===drawer) closeDrawer(); });
+</script>
+</body>
+</html>

@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vacatures – Raveline Division</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+
+  <!-- vendors + CSS
+  ================================================== -->
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/eventflow-icons/style.css">
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+
+  <!-- JS
+  ================================================== -->
+    <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
+    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="assets/vendors/odometer/odometer.min.js"></script>
+    <script src="assets/vendors/swiper/swiper.min.js"></script>
+    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="assets/vendors/wow/wow.js"></script>
+    <script src="assets/vendors/isotope/isotope.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
+    <script src="assets/vendors/countdown/countdown.min.js"></script>
+    <script src="assets/vendors/marque/marquee.min.js"></script>
+    <script src="assets/vendors/sidebar-content/jquery-sidebar-content.js"></script>
+    <script src="assets/js/eventflow.js"></script>
+    <script src="assets/js/preloader.js"></script>
+
+  <link rel="stylesheet" href="assets/css/eventflow.css" />
+  <link rel="stylesheet" href="assets/css/eventflow-responsive.css" />
+
+  <style>
+    :root{
+      --rvln-bg:#0E0A17; --rvln-card:#161125; --rvln-soft:#1a1428;
+      --rvln-grad:linear-gradient(90deg,#ff5f00,#ffb300);
+    }
+    html,body{ height:100% }
+    body{ background:var(--rvln-bg); }
+    .page-wrapper{ min-height:100%; display:flex; flex-direction:column }
+    main{ flex:1 0 auto } footer.site-footer{ flex-shrink:0 }
+
+    .rvln-grad{ background:var(--rvln-grad) }
+    .rvln-btn{ background:var(--rvln-grad); color:#0e0a17; font-weight:800; border-radius:999px; padding:.6rem 1rem; box-shadow:0 0 14px rgba(255,95,0,.35); transition:.2s; display:inline-flex; align-items:center; gap:.5rem; text-decoration:none }
+    .rvln-btn:hover{ transform:translateY(-1px); box-shadow:0 0 22px rgba(255,95,0,.6) }
+    .rvln-btn-ghost{ background:#241b3d; color:#fff; border-radius:999px; padding:.6rem 1rem }
+    .rvln-chip{ font-size:.72rem; color:#e5e7eb; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); border-radius:.5rem; padding:.18rem .45rem }
+    .rvln-card{ background:var(--rvln-card); border:1px solid rgba(255,255,255,.08); border-radius:1rem }
+    .rvln-acc-title{ cursor:pointer; }
+    .rvln-acc-body{ display:none; }
+    .rvln-acc.open .rvln-acc-body{ display:block; }
+    /* sticky sidebar on desktop */
+    @media (min-width:1024px){ .rvln-sticky{ position:sticky; top:6rem } }
+  </style>
+</head>
+<body>
+    <div class="page-wrapper">
+    <!-- HEADER -->
+    <header class="main-header main-header-three">
+      <nav class="main-menu main-menu-three">
+        <div class="main-menu__wrapper">
+          <div class="main-menu__wrapper-inner">
+            <div class="main-menu__left">
+              <div class="main-menu__logo">
+                <a href="index.html"><img src="assets/images/resources/logo-2.png" alt="Raveline Division Logo"></a>
+              </div>
+            </div>
+            <div class="main-menu__right">
+              <div class="main-menu__main-menu-box">
+                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                <ul class="main-menu__list">
+                  <li>
+                    <a href="index.html">Home </a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">Over ons</a>
+                    <ul>
+                      <li><a href="About.html">Over ons</a></li>
+                      <li><a href="Team.html">De Crew</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">Tribe</a>
+                    <ul>
+                      <li><a href="RaveUp&Meeting.html">Meetups & RaveUps</a></li>
+                      <li><a href="Friendscamps.html">FriendsCamp</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">Merch</a>
+                    <ul>
+                      <li><a href="coming-soonShop.html">Collectie</a></li>
+                      <li><a href="coming-soonShop.html">Pre-orders</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">Vacatures</a>
+                    <ul>
+                      <li><a href="Vacatures.html">Open Roles</a></li>
+                      <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="FAQ.html">FAQ & Contact</a>
+                  </li>
+                </ul>
+              </div><!-- /.main-menu__main-menu-box -->
+            </div><!-- /.main-menu__right -->
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ======= PAGE-HEADER (met afbeelding + breadcrumb) ======= -->
+    <section class="page-header">
+      <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);"></div>
+      <div class="page-header__shape-1 float-bob-y">
+        <img src="assets/images/shapes/page-header-shape-1.png" alt="">
+      </div>
+      <div class="page-header__shape-2 float-bob-x">
+        <img src="assets/images/shapes/page-header-shape-2.png" alt="">
+      </div>
+      <div class="container">
+        <div class="page-header__inner" style="text-align:left;">
+          <h2>Vacatures</h2>
+          <div class="thm-breadcrumb__box">
+            <ul class="thm-breadcrumb list-unstyled">
+              <li><a href="index.html">Home</a></li>
+              <li><span class="icon-angle-right"></span></li>
+              <li>Vacatures</li>
+            </ul>
+          </div>
+          <p style="color:#d7d7d7; max-width:680px; margin-top:14px;">
+            Sluit je aan bij Raveline Division: structurele (vrijwillige) kernrollen binnen organisatie, media, community,
+            tech en partnerships. Liever losse shifts? Check
+            <a href="vrijwilligers.html" class="underline" style="color:#ffb300;">Vrijwilligers</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- ======= /PAGE-HEADER ======= -->
+
+  <main>
+    <!-- Hero -->
+    <section class="py-14">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <span class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-orange-300/90 bg-white/5 px-3 py-1 rounded-full border border-white/10">
+            <i class="fas fa-people-group"></i> Join the Tribe
+          </span>
+          <h1 class="mt-4 text-4xl md:text-5xl font-extrabold text-white tracking-wide">Vacatures</h1>
+          <p class="mt-3 text-gray-300">
+            Dit zijn onze <em>kernrollen</em> (vrijwillig) waarmee je structureel impact maakt.  
+            Zoek je per-event hulp of losse shifts? Ga naar
+            <a class="underline text-orange-300" href="vrijwilligers.html">Vrijwilligers</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters + Content (A + B COMBO) -->
+    <section class="pb-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <!-- Sidebar filters (A) -->
+          <aside class="lg:col-span-4 rvln-sticky">
+            <div class="rvln-card p-5">
+              <h3 class="text-white font-bold text-lg flex items-center gap-2">
+                <i class="fas fa-sliders"></i> Filters
+              </h3>
+              <div class="mt-4 space-y-4">
+                <div>
+                  <label class="block text-sm text-gray-400">Zoekrol / skill</label>
+                  <input id="q" type="text" placeholder="bijv. video, coördinator…" class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200">
+                </div>
+                <div>
+                  <label class="block text-sm text-gray-400">Tijdsbesteding</label>
+                  <select id="time" class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200">
+                    <option value="">Alle</option>
+                    <option>2–4 u/w</option>
+                    <option>4–8 u/w</option>
+                    <option>Project-based</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm text-gray-400">Locatie</label>
+                  <select id="loc" class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200">
+                    <option value="">Alle</option>
+                    <option>Remote</option>
+                    <option>NL</option>
+                    <option>BE</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm text-gray-400">Type</label>
+                  <select id="type" class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200">
+                    <option value="">Alle</option>
+                    <option>Vrijwillig</option>
+                    <option>Stage</option>
+                  </select>
+                </div>
+                <div class="flex gap-2 pt-2">
+                  <button id="reset" class="rvln-btn w-full justify-center"><i class="fas fa-rotate-right"></i> Reset</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wervingsproces box -->
+            <div class="rvln-card p-5 mt-6">
+              <h3 class="text-white font-bold text-lg">Wervingsproces</h3>
+              <ol class="mt-2 list-decimal list-inside text-gray-300 space-y-1">
+                <li>Korte motivatie (portfolio/CV optioneel)</li>
+                <li>Intake-call of chat</li>
+                <li>Try-out (event/micro-opdracht)</li>
+                <li>Onboarding + vrijwilligersovereenkomst</li>
+              </ol>
+            </div>
+          </aside>
+
+          <!-- Content per categorie met accordions (B) -->
+          <div class="lg:col-span-8 space-y-10">
+
+            <!-- Categorie: Organisatie -->
+            <section data-cat="Organisatie">
+              <header class="flex items-center justify-between">
+                <h2 class="text-white font-extrabold text-2xl flex items-center gap-3">
+                  <span class="inline-flex w-10 h-10 items-center justify-center rounded-full rvln-grad text-[#0E0A17]"><i class="fas fa-map-location-dot"></i></span>
+                  Organisatie
+                </h2>
+              </header>
+
+              <!-- Role: Event Coördinator -->
+              <article class="rvln-card p-5 mt-4 role rvln-acc"
+                       data-cat="Organisatie" data-time="4–8 u/w" data-loc="NL BE" data-type="Vrijwillig"
+                       data-text="planning meetpoints friendscamp aanspreekpunt crew security ehbo coördinator">
+                <div class="rvln-acc-title flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="text-white font-bold text-lg">Event Coördinator</h3>
+                    <p class="mt-1 text-sm text-gray-300">Je zorgt voor een strak verloop van RaveUps & Friendscamps. Van aanmeldingen tot communicatie, jij voelt je hier perfect op je plek!</p>
+                    <div class="mt-2 flex flex-wrap gap-2">
+                      <span class="rvln-chip">4–8 u/w</span>
+                      <span class="rvln-chip">NL • BE</span>
+                      <span class="rvln-chip">Vrijwillig</span>
+                    </div>
+                  </div>
+                  <button class="text-gray-400 hover:text-white"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="rvln-acc-body mt-4 text-gray-300">
+                  <ul class="list-disc ml-5 space-y-1">
+                    <li>Plannen & coördineren van RaveUps en FriendsCamp-flows</li>
+                    <li>Beheren van groepsapps, aanmeldingen & crew-communicatie</li>
+                    <li>Afstemmen met Tribe-Crew, EHBO en/of andere coördinatoren</li>
+                  </ul>
+                  <div class="mt-4 flex items-center gap-2">
+                    <a href="https://formsubmit.co/recruitment@ravelinehq.com" class="rvln-btn"><i class="fas fa-paper-plane"></i> Solliciteer</a>
+                    <button class="rvln-btn-ghost" data-apply='{"role":"Event Coördinator","cat":"Organisatie"}'><i class="fas fa-bolt"></i> Quick Apply</button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Role: Crew Relations -->
+              <article class="rvln-card p-5 mt-4 role rvln-acc"
+                       data-cat="Organisatie" data-time="4–8 u/w" data-loc="NL BE" data-type="Vrijwillig"
+                       data-text="planning meetpoints friendscamp aanspreekpunt crew security ehbo coördinator">
+                <div class="rvln-acc-title flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="text-white font-bold text-lg">Crew Relations</h3>
+                    <p class="mt-1 text-sm text-gray-300">Je bewaakt de sfeer en samenwerking binnen het team. Je houdt contact met (nieuwe) crewleden, helpt onboarding en zorgt dat de onderlinge communicatie soepel blijft lopen.</p>
+                    <div class="mt-2 flex flex-wrap gap-2">
+                      <span class="rvln-chip">4–8 u/w</span>
+                      <span class="rvln-chip">NL • BE</span>
+                      <span class="rvln-chip">Vrijwillig</span>
+                    </div>
+                  </div>
+                  <button class="text-gray-400 hover:text-white"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="rvln-acc-body mt-4 text-gray-300">
+                  <ul class="list-disc ml-5 space-y-1">
+                    <li>Begeleiden van nieuwe Tribe-leden tijdens onboarding</li>
+                    <li>Organiseren van kleine interne crewmomenten of check-ins</li>
+                    <li>Signaleren van knelpuntne binnen het team en het doorgeven aan de organisatie</li>
+                  </ul>
+                  <div class="mt-4 flex items-center gap-2">
+                    <a href="https://formsubmit.co/recruitment@ravelinehq.com" class="rvln-btn"><i class="fas fa-paper-plane"></i> Solliciteer</a>
+                    <button class="rvln-btn-ghost" data-apply='{"role":"Crew Relations","cat":"Organisatie"}'><i class="fas fa-bolt"></i> Quick Apply</button>
+                  </div>
+                </div>
+              </article>
+            </section>
+
+            <!-- Categorie: Media & Design -->
+            <section data-cat="Media & Design">
+              <header class="flex items-center justify-between">
+                <h2 class="text-white font-extrabold text-2xl flex items-center gap-3">
+                  <span class="inline-flex w-10 h-10 items-center justify-center rounded-full rvln-grad text-[#0E0A17]"><i class="fas fa-wand-magic-sparkles"></i></span>
+                  Media & Design
+                </h2>
+              </header>
+
+<article class="rvln-card p-5 mt-4 role rvln-acc"
+         data-cat="Media & Design" data-time="Project-based" data-loc="Remote" data-type="Vrijwillig"
+         data-text="visual designer motion designer banners posters merch animaties figma adobe brand style">
+  <div class="rvln-acc-title flex items-start justify-between gap-4">
+    <div>
+      <h3 class="text-white font-bold text-lg">Visual & Motion Designer</h3>
+      <p class="mt-1 text-sm text-gray-300">Vertaal de Raveline-stijl naar visuals, animaties en merch met gevoel voor energie en ritme.</p>
+      <div class="mt-2 flex flex-wrap gap-2">
+        <span class="rvln-chip">Project-based</span>
+        <span class="rvln-chip">Remote</span>
+        <span class="rvln-chip">Vrijwillig</span>
+      </div>
+    </div>
+    <button class="text-gray-400 hover:text-white"><i class="fas fa-chevron-down"></i></button>
+  </div>
+  <div class="rvln-acc-body mt-4 text-gray-300">
+    <ul class="list-disc ml-5 space-y-1">
+      <li>Ontwerpen van visuals, motion clips en merch-mockups</li>
+      <li>Werken in Figma/Adobe met oog voor kleur, compositie & beweging</li>
+      <li>Afstemming met media- en communityteam bij drops & visuals</li>
+    </ul>
+    <div class="mt-4 flex items-center gap-2">
+      <a href="https://formsubmit.co/recruitment@ravelinehq.com" class="rvln-btn">Solliciteer</a>
+      <button class="rvln-btn-ghost" data-apply='{"role":"Visual & Motion Designer","cat":"Media & Design"}'>Quick Apply</button>
+    </div>
+  </div>
+</article>
+
+<article class="rvln-card p-5 mt-4 role rvln-acc"
+         data-cat="Media & Design" data-time="Project-based" data-loc="Remote NL BE" data-type="Vrijwillig"
+         data-text="video editor content creator photographer videographer reels aftermovie camera montage kleur grading">
+  <div class="rvln-acc-title flex items-start justify-between gap-4">
+    <div>
+      <h3 class="text-white font-bold text-lg">Video Editor / Content Creator</h3>
+      <p class="mt-1 text-sm text-gray-300">Vang de sfeer van de Tribe in beeld — van meetups tot mainstages, strak gemonteerd op de beat.</p>
+      <div class="mt-2 flex flex-wrap gap-2">
+        <span class="rvln-chip">Project-based</span>
+        <span class="rvln-chip">Remote • NL • BE</span>
+        <span class="rvln-chip">Vrijwillig</span>
+      </div>
+    </div>
+    <button class="text-gray-400 hover:text-white"><i class="fas fa-chevron-down"></i></button>
+  </div>
+  <div class="rvln-acc-body mt-4 text-gray-300">
+    <ul class="list-disc ml-5 space-y-1">
+      <li>Schieten en/of monteren van reels, clips en aftermovies</li>
+      <li>Kleurcorrectie, timing en edits met gevoel voor de beat</li>
+      <li>Werken volgens Raveline-branding & audiovisuele stijl</li>
+    </ul>
+    <div class="mt-4 flex items-center gap-2">
+      <a href="https://formsubmit.co/recruitment@ravelinehq.com" class="rvln-btn">Solliciteer</a>
+      <button class="rvln-btn-ghost" data-apply='{"role":"Video Editor / Content Creator","cat":"Media & Design"}'>Quick Apply</button>
+    </div>
+  </div>
+</article>
+
+<article class="rvln-card p-5 mt-4 role rvln-acc"
+         data-cat="Media & Design" data-time="4–8 u/w" data-loc="Remote" data-type="Vrijwillig"
+         data-text="brand designer huisstijl richtlijnen identiteit templates visuele strategie consistentie">
+  <div class="rvln-acc-title flex items-start justify-between gap-4">
+    <div>
+      <h3 class="text-white font-bold text-lg">Brand Designer</h3>
+      <p class="mt-1 text-sm text-gray-300">Bewaak de visuele identiteit van Raveline — van socials tot merch, alles klopt bij elkaar.</p>
+      <div class="mt-2 flex flex-wrap gap-2">
+        <span class="rvln-chip">4–8 u/w</span>
+        <span class="rvln-chip">Remote</span>
+        <span class="rvln-chip">Vrijwillig</span>
+      </div>
+    </div>
+    <button class="text-gray-400 hover:text-white"><i class="fas fa-chevron-down"></i></button>
+  </div>
+  <div class="rvln-acc-body mt-4 text-gray-300">
+    <ul class="list-disc ml-5 space-y-1">
+      <li>Ontwikkelen en onderhouden van brand-richtlijnen en templates</li>
+      <li>Zorgen voor visuele consistentie binnen alle teams</li>
+      <li>Samenwerken met Visual, Motion en Web voor brand-toepassingen</li>
+    </ul>
+    <div class="mt-4 flex items-center gap-2">
+      <a href="https://formsubmit.co/recruitment@ravelinehq.com" class="rvln-btn">Solliciteer</a>
+      <button class="rvln-btn-ghost" data-apply='{"role":"Brand Designer","cat":"Media & Design"}'>Quick Apply</button>
+    </div>
+  </div>
+</article>
+            </section>
+
+<!-- COMMUNITY ROLES -->
+<section data-cat="Community">
+  <header class="flex items-center justify-between">
+    <h2 class="text-white font-extrabold text-2xl flex items-center gap-3">
+      <span class="inline-flex w-10 h-10 items-center justify-center rounded-full rvln-grad text-[#0E0A17]"><i class="fas fa-users"></i></span>
+      Community
+    </h2>
+  </header>
+
+  <!-- Social Media Manager -->
+  <article class="rvln-card p-5 mt-4 role rvln-acc"
+           data-cat="Community" data-time="2–4 u/w" data-loc="Remote" data-type="Vrijwillig"
+           data-text="social media manager content kalender stories dm tone of voice nl en">
+    <div class="rvln-acc-title flex items-start justify-between gap-4">
+      <div>
+        <h3 class="text-white font-bold text-lg">Social Media Manager</h3>
+        <p class="mt-1 text-sm text-gray-300">Zorg dat Raveline zichtbaar blijft — van stories tot drops, jij houdt de energie hoog.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="rvln-chip">2–4 u/w</span>
+          <span class="rvln-chip">Remote</span>
+          <span class="rvln-chip">Vrijwillig</span>
+        </div>
+      </div>
+      <button class="text-gray-400 hover:text-white"><i class="fas fa-chevron-down"></i></button>
+    </div>
+    <div class="rvln-acc-body mt-4 text-gray-300">
+      <ul class="list-disc ml-5 space-y-1">
+        <li>Beheren van contentkalender, stories en DM’s</li>
+        <li>Afstemmen met design/video bij drops & events</li>
+        <li>Bewaken van tone-of-voice op socials (NL/EN is een pré)</li>
+      </ul>
+      <div class="mt-4 flex items-center gap-2">
+        <a href="https://formsubmit.co/recruitment@ravelinehq.com" class="rvln-btn">Solliciteer</a>
+        <button class="rvln-btn-ghost" data-apply='{"role":"Social Media Manager","cat":"Community"}'>Quick Apply</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- Content Strategist / Copywriter -->
+  <article class="rvln-card p-5 mt-4 role rvln-acc"
+           data-cat="Community" data-time="4–8 u/w" data-loc="Remote" data-type="Vrijwillig"
+           data-text="content strategist copywriter captions tone-of-voice storytelling campagnes teksten schrijven">
+    <div class="rvln-acc-title flex items-start justify-between gap-4">
+      <div>
+        <h3 class="text-white font-bold text-lg">Content Strategist / Copywriter</h3>
+        <p class="mt-1 text-sm text-gray-300">Vertaal de energie van de Tribe naar woorden — jij laat Raveline spreken in elke zin.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="rvln-chip">4–8 u/w</span>
+          <span class="rvln-chip">Remote</span>
+          <span class="rvln-chip">Vrijwillig</span>
+        </div>
+      </div>
+      <button class="text-gray-400 hover:text-white"><i class="fas fa-chevron-down"></i></button>
+    </div>
+    <div class="rvln-acc-body mt-4 text-gray-300">
+      <ul class="list-disc ml-5 space-y-1">
+        <li>Schrijven van captions, webteksten & korte contentseries</li>
+        <li>Vormgeven van creatieve campagnes samen met media-team</li>
+        <li>Consistente tone-of-voice in alle Raveline-uitingen bewaken</li>
+      </ul>
+      <div class="mt-4 flex items-center gap-2">
+        <a href="https://formsubmit.co/recruitment@ravelinehq.com" class="rvln-btn">Solliciteer</a>
+        <button class="rvln-btn-ghost" data-apply='{"role":"Content Strategist / Copywriter","cat":"Community"}'>Quick Apply</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- Event Reporter / Blog Editor -->
+  <article class="rvln-card p-5 mt-4 role rvln-acc"
+           data-cat="Community" data-time="Project-based" data-loc="Remote NL BE" data-type="Vrijwillig"
+           data-text="event reporter blog editor nieuwsbrief schrijven festivalverslagen content creation community media">
+    <div class="rvln-acc-title flex items-start justify-between gap-4">
+      <div>
+        <h3 class="text-white font-bold text-lg">Event Reporter / Blog Editor</h3>
+        <p class="mt-1 text-sm text-gray-300">Vertel de verhalen van de Tribe. Van festivals tot meetups — jij houdt Raveline levend via blog en nieuwsbrief.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="rvln-chip">Project-based</span>
+          <span class="rvln-chip">Remote • NL • BE</span>
+          <span class="rvln-chip">Vrijwillig</span>
+        </div>
+      </div>
+      <button class="text-gray-400 hover:text-white"><i class="fas fa-chevron-down"></i></button>
+    </div>
+    <div class="rvln-acc-body mt-4 text-gray-300">
+      <ul class="list-disc ml-5 space-y-1">
+        <li>Schrijven van blogs, terugblikken & nieuwsbriefcontent</li>
+        <li>Verzamelen van foto’s, quotes en bijdragen van Tribe-leden</li>
+        <li>Samenwerken met Event Coördinator voor uitnodigingen & updates</li>
+      </ul>
+      <div class="mt-4 flex items-center gap-2">
+        <a href="https://formsubmit.co/recruitment@ravelinehq.com" class="rvln-btn">Solliciteer</a>
+        <button class="rvln-btn-ghost" data-apply='{"role":"Event Reporter / Blog Editor","cat":"Community"}'>Quick Apply</button>
+      </div>
+    </div>
+  </article>
+
+</section>
+
+
+<!-- TECH ROLES -->
+<section data-cat="Tech">
+  <header class="flex items-center justify-between">
+    <h2 class="text-white font-extrabold text-2xl flex items-center gap-3">
+      <span class="inline-flex w-10 h-10 items-center justify-center rounded-full rvln-grad text-[#0E0A17]"><i class="fas fa-code"></i></span>
+      Tech
+    </h2>
+  </header>
+
+  <!-- Web/App Developer (Frontend-lean, React/Tailwind) -->
+  <article class="rvln-card p-5 mt-4 role rvln-acc"
+           data-cat="Tech" data-time="Project-based" data-loc="Remote" data-type="Vrijwillig"
+           data-text="web app developer react tailwind html css javascript performance ux forms supabase">
+    <div class="rvln-acc-title flex items-start justify-between gap-4">
+      <div>
+        <h3 class="text-white font-bold text-lg">Web/App Developer</h3>
+        <p class="mt-1 text-sm text-gray-300">Ship pixel-strakke pagina’s en tools in React/Tailwind die snel, stabiel en on-brand zijn.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="rvln-chip">Project-based</span>
+          <span class="rvln-chip">Remote</span>
+          <span class="rvln-chip">Vrijwillig</span>
+        </div>
+      </div>
+      <button class="text-gray-400 hover:text-white"><i class="fas fa-chevron-down"></i></button>
+    </div>
+    <div class="rvln-acc-body mt-4 text-gray-300">
+      <ul class="list-disc ml-5 space-y-1">
+        <li>Bouwen/onderhouden van pagina’s, formulieren en kleine tools (React/Tailwind)</li>
+        <li>UX/performance fixes en component-refactors (accessibility basics)</li>
+        <li>Werken met onze brand-richtlijnen en snelle iteraties op feedback</li>
+      </ul>
+      <div class="mt-4 flex items-center gap-2">
+        <a href="https://formsubmit.co/recruitment@ravelinehq.com" class="rvln-btn">Solliciteer</a>
+        <button class="rvln-btn-ghost" data-apply='{"role":"Web/App Developer","cat":"Tech"}'>Quick Apply</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- Backend & Integrations Engineer (FormSubmit/Supabase/Automations) -->
+  <article class="rvln-card p-5 mt-4 role rvln-acc"
+           data-cat="Tech" data-time="2–4 u/w" data-loc="Remote" data-type="Vrijwillig"
+           data-text="backend integraties api webhooks supabase database formsubmit automations security privacy">
+    <div class="rvln-acc-title flex items-start justify-between gap-4">
+      <div>
+        <h3 class="text-white font-bold text-lg">Backend & Integrations Engineer</h3>
+        <p class="mt-1 text-sm text-gray-300">Koppel onze formulieren, data en automations; houd alles simpel, veilig en betrouwbaar.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="rvln-chip">2–4 u/w</span>
+          <span class="rvln-chip">Remote</span>
+          <span class="rvln-chip">Vrijwillig</span>
+        </div>
+      </div>
+      <button class="text-gray-400 hover:text-white"><i class="fas fa-chevron-down"></i></button>
+    </div>
+    <div class="rvln-acc-body mt-4 text-gray-300">
+      <ul class="list-disc ml-5 space-y-1">
+        <li>Beheren en verbinden van integraties (FormSubmit, Supabase, webhooks, API’s)</li>
+        <li>Datastromen modelleren (aanmeldingen, nieuwsbrieflijsten, event-flows)</li>
+        <li>Basis-security, validatie en privacy-hygiëne borgen</li>
+      </ul>
+      <div class="mt-4 flex items-center gap-2">
+        <a href="https://formsubmit.co/recruitment@ravelinehq.com" class="rvln-btn">Solliciteer</a>
+        <button class="rvln-btn-ghost" data-apply='{"role":"Backend & Integrations Engineer","cat":"Tech"}'>Quick Apply</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- Discord Bot & Automation Engineer -->
+  <article class="rvln-card p-5 mt-4 role rvln-acc"
+           data-cat="Tech" data-time="Project-based" data-loc="Remote" data-type="Vrijwillig"
+           data-text="discord bot developer automations moderation slash commands onboarding webhooks scheduling node python">
+    <div class="rvln-acc-title flex items-start justify-between gap-4">
+      <div>
+        <h3 class="text-white font-bold text-lg">Discord Bot & Automation Engineer</h3>
+        <p class="mt-1 text-sm text-gray-300">Bouw slimme bots en flows voor onboarding, roles, announces en event-reminders.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="rvln-chip">Project-based</span>
+          <span class="rvln-chip">Remote</span>
+          <span class="rvln-chip">Vrijwillig</span>
+        </div>
+      </div>
+      <button class="text-gray-400 hover:text-white"><i class="fas fa-chevron-down"></i></button>
+    </div>
+    <div class="rvln-acc-body mt-4 text-gray-300">
+      <ul class="list-disc ml-5 space-y-1">
+        <li>Ontwikkelen van Discord-bots (slash-commands, role-flows, logging, webhooks)</li>
+        <li>Automations voor sign-ups, reminders, content-push en community health</li>
+        <li>Basis-monitoring en uptime (alerts) voor kritieke flows</li>
+      </ul>
+      <div class="mt-4 flex items-center gap-2">
+        <a href="https://formsubmit.co/recruitment@ravelinehq.com" class="rvln-btn">Solliciteer</a>
+        <button class="rvln-btn-ghost" data-apply='{"role":"Discord Bot & Automation Engineer","cat":"Tech"}'>Quick Apply</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- DevOps & Reliability Engineer (Hosting/CI/CD/Backups) -->
+  <article class="rvln-card p-5 mt-4 role rvln-acc"
+           data-cat="Tech" data-time="2–4 u/w" data-loc="Remote" data-type="Vrijwillig"
+           data-text="devops reliability ci cd hosting backups monitoring dns ssl performance">
+    <div class="rvln-acc-title flex items-start justify-between gap-4">
+      <div>
+        <h3 class="text-white font-bold text-lg">DevOps & Reliability Engineer</h3>
+        <p class="mt-1 text-sm text-gray-300">Zorg dat alles blijft draaien: hosting, CI/CD, SSL, back-ups en monitoring.</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="rvln-chip">2–4 u/w</span>
+          <span class="rvln-chip">Remote</span>
+          <span class="rvln-chip">Vrijwillig</span>
+        </div>
+      </div>
+      <button class="text-gray-400 hover:text-white"><i class="fas fa-chevron-down"></i></button>
+    </div>
+    <div class="rvln-acc-body mt-4 text-gray-300">
+      <ul class="list-disc ml-5 space-y-1">
+        <li>Hosting/DNS/SSL beheren en releases stroomlijnen (CI/CD)</li>
+        <li>Back-up/restore-procedures en basis-monitoring inrichten</li>
+        <li>Performance-checks en incident-response (lichtgewicht)</li>
+      </ul>
+      <div class="mt-4 flex items-center gap-2">
+        <a href="https://formsubmit.co/recruitment@ravelinehq.com" class="rvln-btn">Solliciteer</a>
+        <button class="rvln-btn-ghost" data-apply='{"role":"DevOps & Reliability Engineer","cat":"Tech"}'>Quick Apply</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- Game Server Admin (Future-ready) -->
+  <article class="rvln-card p-5 mt-4 role rvln-acc"
+           data-cat="Tech" data-time="Project-based" data-loc="Remote" data-type="Vrijwillig"
+           data-text="game server admin minecraft modpacks configs performance backups rules community events future">
+    <div class="rvln-acc-title flex items-start justify-between gap-4">
+      <div>
+        <h3 class="text-white font-bold text-lg">Game Server Admin (future)</h3>
+        <p class="mt-1 text-sm text-gray-300">Voor de lange termijn: set-up/beheer van community game servers (bijv. Minecraft).</p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span class="rvln-chip">Project-based</span>
+          <span class="rvln-chip">Remote</span>
+          <span class="rvln-chip">Vrijwillig</span>
+        </div>
+      </div>
+      <button class="text-gray-400 hover:text-white"><i class="fas fa-chevron-down"></i></button>
+    </div>
+    <div class="rvln-acc-body mt-4 text-gray-300">
+      <ul class="list-disc ml-5 space-y-1">
+        <li>Server-set-up, plugins/modpacks, performance & back-ups</li>
+        <li>Event-rotaties, simple ruleset en basis-moderation-koppeling</li>
+        <li>Roadmap opzetten met Tech + Community teams</li>
+      </ul>
+      <div class="mt-4 flex items-center gap-2">
+        <a href="https://formsubmit.co/recruitment@ravelinehq.com" class="rvln-btn">Solliciteer</a>
+        <button class="rvln-btn-ghost" data-apply='{"role":"Game Server Admin (future)","cat":"Tech"}'>Quick Apply</button>
+      </div>
+    </div>
+  </article>
+
+</section>
+
+
+            <!-- Categorie: Partnerships -->
+            <section data-cat="Partnerships">
+              <header class="flex items-center justify-between">
+                <h2 class="text-white font-extrabold text-2xl flex items-center gap-3">
+                  <span class="inline-flex w-10 h-10 items-center justify-center rounded-full rvln-grad text-[#0E0A17]"><i class="fas fa-handshake"></i></span>
+                  Partnerships
+                </h2>
+              </header>
+
+              <article class="rvln-card p-5 mt-4 role rvln-acc"
+                       data-cat="Partnerships" data-time="2–4 u/w" data-loc="Remote NL BE" data-type="Vrijwillig"
+                       data-text="partnerships coordinator samenwerkingen festivals merken artiesten deals">
+                <div class="rvln-acc-title flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="text-white font-bold text-lg">Partnerships Coördinator</h3>
+                    <p class="mt-1 text-sm text-gray-300">Activeer samenwerkingen met festivals/merken/artiesten.</p>
+                    <div class="mt-2 flex flex-wrap gap-2">
+                      <span class="rvln-chip">2–4 u/w</span>
+                      <span class="rvln-chip">Remote • NL • BE</span>
+                      <span class="rvln-chip">Vrijwillig</span>
+                    </div>
+                  </div>
+                  <button class="text-gray-400 hover:text-white"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="rvln-acc-body mt-4 text-gray-300">
+                  <ul class="list-disc ml-5 space-y-1">
+                    <li>Prospecting, outreach & relatiebeheer</li>
+                    <li>Acties, collabs en crew-support afstemmen</li>
+                  </ul>
+                  <div class="mt-4 flex items-center gap-2">
+                    <a href="https://formsubmit.co/recruitment@ravelinehq.com" class="rvln-btn">Solliciteer</a>
+                    <button class="rvln-btn-ghost" data-apply='{"role":"Partnerships Coordinator","cat":"Partnerships"}'>Quick Apply</button>
+                  </div>
+                </div>
+              </article>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+        <!--Site Footer Start-->
+        <footer class="site-footer">
+            <div class="site-footer__shape-1 float-bob-y">
+                <img src="assets/images/shapes/site-footer-shape-1.png" alt="">
+            </div>
+            <div class="site-footer__top">
+                <div class="container">
+                    <div class="site-footer__top-inner">
+                        <div class="main-menu__logo">
+                            <a href="index.html"><img src="assets/images/resources/logo-2.png" alt=""></a>
+                        </div>
+                        <div class="site-footer__social">
+                            <a href="https://www.facebook.com/profile.php?id=61578060013046"><i class="icon-facebook"></i></a>
+                            <a href="https://www.instagram.com/raveline_division/"><i class="icon-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="site-footer__middle">
+                <div class="container">
+                    <div class="site-footer__middle-inner">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                                <div class="footer-widget__column footer-widget__events">
+                                    <div class="footer-widget__title-box">
+                                        <h3 class="footer-widget__title">RaveUp Agenda</h3>
+                                    </div>
+                                    <ul class="footer-widget__events-list list-unstyled">
+                                        <li>
+                                            <p>31 December 2025 - Gouda</p>
+                                            <h5>Raveline's new years party!</h5>
+                                            <a href="#">Meld je aan! <span class="icon-arrow-right"></span></a>
+                                        </li>
+                                        <li>
+                                            <p>3 Januari 2026 - RaveUp!</p>
+                                            <h5>Raveup @ Winter Efteling</h5>
+                                            <a href="#">Meld je aan! <span class="icon-arrow-right"></span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                                <div class="footer-widget__column footer-widget__link">
+                                    <div class="footer-widget__title-box">
+                                        <h3 class="footer-widget__title">Quick links</h3>
+                                    </div>
+                  <ul class="footer-widget__link-list list-unstyled">
+                    <li><a href="About.html">Over ons</a></li>
+                    <li><a href="RaveUp&Meeting.html">RaveUps</a></li>
+                    <li><a href="Friendscamps.html">FriendsCamp</a></li>
+                    <li><a href="coming-soonShop.html">Merch</a></li>
+                    <li><a href="Vacatures.html">Vacatures</a></li>
+                    <li><a href="FAQ.html">Contact</a></li>
+                  </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                                <div class="footer-widget__column footer-widget__contact">
+                                    <div class="footer-widget__title-box">
+                                        <h3 class="footer-widget__title">Contact</h3>
+                                    </div>
+                                    <div class="footer-widget__contact-inner">
+                                        <ul class="footer-widget__contact-list list-unstyled">
+                                            <li>
+                                                <div class="icon">
+                                                    <span class="icon-envelop"></span>
+                                                </div>
+                                                <div class="text">
+                                                    <p><a href="mailto:info@ravelinehq.com">Info@ravelinehq.com</a>
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="icon">
+                                                    <span class="icon-pin"></span>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Based in The Netherlands</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <div class="container">
+                    <div class="site-footer__bottom-inner">
+                        <p class="site-footer__bottom-text">© Raveline Division 2025 | All Rights Reserved</p>
+                        <ul class="list-unstyled site-footer__bottom-menu">
+                            <li><a href="Terms.html">Terms & Condition</a></li>
+                            <li><a href="Privacy.html">Privacy Policy</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Site Footer End-->
+
+<!-- Slide-over Quick Apply Drawer -->
+<div id="drawer" class="fixed inset-0 z-[90] hidden">
+  <div class="absolute inset-0 bg-black/60" data-close></div>
+  <div class="absolute right-0 top-0 h-full w-[420px] max-w-full bg-[#120d1f] border-l border-white/10 shadow-2xl translate-x-full transition-transform duration-200" id="drawer-panel">
+    <div class="flex items-center justify-between p-4 border-b border-white/10">
+      <h3 id="drawer-title" class="text-white font-extrabold text-lg">Quick Apply</h3>
+      <button class="text-gray-400 hover:text-white" data-close><i class="fas fa-times"></i></button>
+    </div>
+    <div class="p-4 overflow-y-auto h-[calc(100%-64px)]">
+      <form action="https://formsubmit.co/recruitment@ravelinehq.com" method="POST" class="space-y-3">
+        <input type="hidden" name="_subject" value="Quick Apply – Raveline Division">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input id="roleField" type="hidden" name="Rol">
+        <input id="catField" type="hidden" name="Categorie">
+
+        <div>
+          <label class="text-sm text-gray-400">Naam</label>
+          <input name="Naam" required class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200" />
+        </div>
+        <div>
+          <label class="text-sm text-gray-400">E-mail</label>
+          <input type="email" name="Email" required class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200" />
+        </div>
+        <div>
+          <label class="text-sm text-gray-400">Korte motivatie</label>
+          <textarea name="Motivatie" rows="4" required class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200"></textarea>
+        </div>
+        <div>
+          <label class="text-sm text-gray-400">Portfolio / Link (optioneel)</label>
+          <input name="Link" class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200" placeholder="Link naar portfolio, Github, Instagram…" />
+        </div>
+
+        <button class="rvln-btn w-full justify-center"><i class="fas fa-paper-plane"></i> Verstuur</button>
+        <p class="text-xs text-gray-500 text-center">Of mail direct: <a class="underline text-orange-300" href="mailto:recruitment@ravelinehq.com">recruitment@ravelinehq.com</a></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Accordion toggle + één open per categorie
+  document.querySelectorAll('.rvln-acc .rvln-acc-title').forEach(t=>{
+    t.addEventListener('click',()=>{
+      const acc = t.closest('.rvln-acc');
+      const section = acc.closest('section[data-cat]');
+      // sluit andere in deze sectie
+      section.querySelectorAll('.rvln-acc').forEach(a=>{
+        if(a!==acc){ a.classList.remove('open'); }
+      });
+      acc.classList.toggle('open');
+    });
+  });
+
+  // Filters
+  const roles = [...document.querySelectorAll('.role')];
+  function applyFilters(){
+    const q = (document.getElementById('q').value||'').toLowerCase();
+    const time = (document.getElementById('time').value||'').toLowerCase();
+    const loc = (document.getElementById('loc').value||'').toLowerCase();
+    const type = (document.getElementById('type').value||'').toLowerCase();
+
+    roles.forEach(r=>{
+      const txt = (r.dataset.text||'').toLowerCase();
+      const t = (r.dataset.time||'').toLowerCase();
+      const l = (r.dataset.loc||'').toLowerCase();
+      const ty = (r.dataset.type||'').toLowerCase();
+      const ok = (!q || txt.includes(q))
+              && (!time || t.includes(time))
+              && (!loc || l.includes(loc))
+              && (!type || ty.includes(type));
+      r.style.display = ok ? '' : 'none';
+    });
+  }
+  ['q','time','loc','type'].forEach(id=>{
+    document.getElementById(id).addEventListener('input', applyFilters);
+  });
+  document.getElementById('reset').addEventListener('click', ()=>{
+    ['q','time','loc','type'].forEach(id=>document.getElementById(id).value='');
+    applyFilters();
+  });
+  applyFilters();
+
+  // Drawer Quick Apply
+  const drawer = document.getElementById('drawer');
+  const panel = document.getElementById('drawer-panel');
+  const roleField = document.getElementById('roleField');
+  const catField = document.getElementById('catField');
+  const dTitle = document.getElementById('drawer-title');
+
+  function openDrawer(role, cat){
+    roleField.value = role; catField.value = cat;
+    dTitle.textContent = `Quick Apply – ${role}`;
+    drawer.classList.remove('hidden');
+    requestAnimationFrame(()=>{ panel.classList.remove('translate-x-full'); });
+    document.body.style.overflow='hidden';
+  }
+  function closeDrawer(){
+    panel.classList.add('translate-x-full');
+    setTimeout(()=>{ drawer.classList.add('hidden'); }, 180);
+    document.body.style.overflow='';
+  }
+
+  document.querySelectorAll('[data-apply]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const d = JSON.parse(btn.getAttribute('data-apply'));
+      openDrawer(d.role, d.cat);
+    });
+  });
+  drawer.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click', closeDrawer));
+  drawer.addEventListener('click', (e)=>{ if(e.target===drawer) closeDrawer(); });
+</script>
+</body>
+</html>
