@@ -1547,6 +1547,28 @@ ul {
   overflow: hidden;
 }
 
+/* Verberg duplicaten bij 1 slide */
+.swiper-slide-duplicate {
+  display: none !important;
+}
+
+/* Eventueel pijltjes uitzetten */
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+}
+
+.swiper-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide {
+  flex: 0 0 auto;
+}
+
+
 .main-slider .swiper-slide {
   position: relative;
   background-color: var(--eventflow-black);

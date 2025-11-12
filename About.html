@@ -1,100 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <!-- Basic page needs
-  ================================================== -->
+  <!-- Basic page needs -->
   <meta charset="UTF-8" />
-  <title>Raveline Division - One Tribe, Worldwide</title>
-
-  <!-- mobile specific metas 
-  ================================================== -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raveline Division - One Tribe, Worldwide</title>
+  <meta name="description" content="Raveline Division — Limited drops, festival essentials en tribe gear. One Tribe, Worldwide." />
 
-  <!-- fonts 
-  ================================================== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@100..900&display=swap" rel="stylesheet" />
 
-  <!-- tailwinds  
-  ================================================== -->
+  <!-- Tailwind (optioneel, voor utilities) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- vendors + CSS
-  ================================================== -->
-    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
-    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
-    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
-    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
-    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
-    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
-    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
-    <link rel="stylesheet" href="assets/vendors/eventflow-icons/style.css">
-    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
-    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
-    <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
-    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+  <!-- Vendors + CSS -->
+  <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+  <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+  <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+  <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+  <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+  <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+  <link rel="stylesheet" href="assets/vendors/eventflow-icons/style.css" />
+  <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+  <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+  <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
+  <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
 
+  <!-- Theme CSS -->
   <link rel="stylesheet" href="assets/css/eventflow.css" />
   <link rel="stylesheet" href="assets/css/eventflow-responsive.css" />
-
-  <!-- JS
-  ================================================== -->
-    <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
-    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
-    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
-    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
-    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
-    <script src="assets/vendors/odometer/odometer.min.js"></script>
-    <script src="assets/vendors/swiper/swiper.min.js"></script>
-    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
-    <script src="assets/vendors/wow/wow.js"></script>
-    <script src="assets/vendors/isotope/isotope.js"></script>
-    <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
-    <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
-    <script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
-    <script src="assets/vendors/countdown/countdown.min.js"></script>
-    <script src="assets/vendors/marque/marquee.min.js"></script>
-    <script src="assets/vendors/sidebar-content/jquery-sidebar-content.js"></script>
-    <script src="assets/js/eventflow.js"></script>
-    <script src="assets/js/preloader.js"></script>
 </head>
 
 <body class="body-bg-color1">
-
-  <div class="preloader">
-    <div class="preloader__image"></div>
+  <!-- Preloader -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__image" role="img" aria-label="Loading"></div>
   </div>
-  <!-- /.preloader -->
 
-    <div class="page-wrapper">
+  <div class="page-wrapper">
     <!-- HEADER -->
     <header class="main-header main-header-three">
-      <nav class="main-menu main-menu-three">
+      <nav class="main-menu main-menu-three" aria-label="Primary">
         <div class="main-menu__wrapper">
           <div class="main-menu__wrapper-inner">
             <div class="main-menu__left">
               <div class="main-menu__logo">
-                <a href="index.html"><img src="assets/images/resources/logo-2.png" alt="Raveline Division Logo"></a>
+                <a href="index.html" aria-label="Raveline Division Home">
+                  <img src="assets/images/resources/logo-2.png" alt="Raveline Division Logo" />
+                </a>
               </div>
             </div>
             <div class="main-menu__right">
               <div class="main-menu__main-menu-box">
-                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                <button type="button" class="mobile-nav__toggler" aria-label="Toggle navigation">
+                  <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
                 <ul class="main-menu__list">
-                  <li>
-                    <a href="index.html">Home </a>
-                  </li>
+                  <li><a href="index.html">Home</a></li>
                   <li class="dropdown">
                     <a href="#">Over ons</a>
                     <ul>
@@ -105,10 +72,9 @@
                   <li class="dropdown">
                     <a href="#">Tribe</a>
                     <ul>
-                      <li><a href="RaveUp&Meeting.html">Meetups & RaveUps</a></li>
+                      <li><a href="RaveUp&Meeting.html">Meetups &amp; RaveUps</a></li>
                       <li><a href="Friendscamps.html">FriendsCamp</a></li>
                     </ul>
-                  </li>
                   </li>
                   <li class="dropdown">
                     <a href="#">Merch</a>
@@ -120,13 +86,11 @@
                   <li class="dropdown">
                     <a href="#">Vacatures</a>
                     <ul>
-                      <li><a href="#">Open Roles</a></li>
-                      <li><a href="#">Vrijwilligers</a></li>
+                      <li><a href="Vacatures.html">Open Roles</a></li>
+                      <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
                     </ul>
                   </li>
-                  <li>
-                    <a href="FAQ.html">FAQ & Contact</a>
-                  </li>
+                  <li><a href="FAQ.html">FAQ &amp; Contact</a></li>
                 </ul>
               </div><!-- /.main-menu__main-menu-box -->
             </div><!-- /.main-menu__right -->
@@ -135,551 +99,491 @@
       </nav>
     </header>
 
-        <div class="stricky-header stricked-menu main-menu main-menu-three">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
+    <div class="stricky-header stricked-menu main-menu main-menu-three">
+      <div class="sticky-header__content"></div>
+    </div>
 
-    <!-- Start sidebar widget content -->
+    <!-- Sidebar widget -->
     <div class="xs-sidebar-group info-group info-sidebar">
-        <div class="xs-overlay xs-bg-black"></div>
-        <div class="xs-sidebar-widget">
-            <div class="sidebar-widget-container">
-                <div class="widget-heading">
-                    <a href="#" class="close-side-widget">X</a>
+      <div class="xs-overlay xs-bg-black"></div>
+      <div class="xs-sidebar-widget">
+        <div class="sidebar-widget-container">
+          <div class="widget-heading">
+            <a href="#" class="close-side-widget" aria-label="Close sidebar">X</a>
+          </div>
+          <div class="sidebar-textwidget">
+            <div class="sidebar-info-contents">
+              <div class="content-inner">
+                <div class="logo">
+                  <a href="index.html"><img src="assets/images/resources/logo-1.png" alt="Raveline Division small logo" /></a>
                 </div>
-                <div class="sidebar-textwidget">
-                    <div class="sidebar-info-contents">
-                        <div class="content-inner">
-                            <div class="logo">
-                                <a href="index.html"><img src="assets/images/resources/logo-1.png" alt="" /></a>
-                            </div>
-                            <div class="content-box">
-                                <h4>Over ons</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut
-                                    labore et magna aliqua.</p>
-                            </div>
-                            <div class="form-inner">
-                                <h4>Get a free quote</h4>
-                                <form action="assets/inc/sendemail.php" class="contact-form-validated"
-                                    novalidate="novalidate">
-                                    <div class="form-group">
-                                        <input type="text" name="name" placeholder="Name" required="">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" name="email" placeholder="Email" required="">
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea name="message" placeholder="Message..."></textarea>
-                                    </div>
-                                    <div class="form-group message-btn">
-                                        <button type="submit" class="thm-btn form-inner__btn">Submit Now</button>
-                                    </div>
-                                </form>
-                                <div class="result"></div>
-                            </div>
-                        </div>
+                <div class="content-box">
+                  <h4>Over ons</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et magna aliqua.</p>
+                </div>
+                <div class="form-inner">
+                  <h4>Get a free quote</h4>
+                  <form action="assets/inc/sendemail.php" class="contact-form-validated" novalidate>
+                    <div class="form-group">
+                      <input type="text" name="name" placeholder="Name" required />
                     </div>
+                    <div class="form-group">
+                      <input type="email" name="email" placeholder="Email" required />
+                    </div>
+                    <div class="form-group">
+                      <textarea name="message" placeholder="Message..."></textarea>
+                    </div>
+                    <div class="form-group message-btn">
+                      <button type="submit" class="thm-btn form-inner__btn">Submit Now</button>
+                    </div>
+                  </form>
+                  <div class="result" aria-live="polite"></div>
                 </div>
+              </div><!-- /.content-inner -->
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <!-- End sidebar widget content -->
+    <!-- /Sidebar widget -->
 
-        <!--Page Header Start-->
-        <section class="page-header">
-            <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);">
-            </div>
-            <div class="page-header__shape-1 float-bob-y">
-                <img src="assets/images/shapes/page-header-shape-1.png" alt="">
-            </div>
-            <div class="page-header__shape-2 float-bob-x">
-                <img src="assets/images/shapes/page-header-shape-2.png" alt="">
-            </div>
-            <div class="container">
-                <div class="page-header__inner">
-                    <h2>Over ons</h2>
-                    <div class="thm-breadcrumb__box">
-                        <ul class="thm-breadcrumb list-unstyled">
-                            <li><a href="index.html">Home</a></li>
-                            <li><span class="icon-angle-right"></span></li>
-                            <li>Over ons</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Page Header End-->
-
-<!-- 1. ABOUT RAVELINE / WHO WE ARE -->
-<section class="event-one event-three">
-    <div class="container">
-        <div class="event-one__inner wow fadeInUp" data-wow-delay="300ms">
-            <div class="event-one__top">
-                <div class="section-title text-left">
-                    <div class="section-title__tagline-box">
-                        <span class="section-title__tagline">Over ons</span>
-                    </div>
-                    <h2 class="section-title__title">
-                        Raveline Division<br>
-                        One Tribe, Worldwide
-                    </h2>
-                    <p style="color:var(--eventflow-white);font-size:15px;line-height:1.5;margin-top:20px;max-width:460px;">
-                        Wij zijn een community in de harder styles scene. Niet zomaar “vriendengroep”, niet zomaar “crew”.
-                        Wij zorgen dat niemand alleen hoeft te gaan. We bouwen vertrouwen, veiligheid en familiegevoel –
-                        ook midden in chaos, lawaai en strobos.
-                        Through Sound, We Rise.
-                    </p>
-                </div>
-
-                <div class="event-one__btn-box">
-                    <a href="contact.html" class="event-one__btn thm-btn">
-                        Join the Tribe <span class="icon-arrow-right"></span>
-                    </a>
-                </div>
-            </div>
-
-            <ul class="list-unstyled event-one__points">
-                <li>
-                    <div class="icon">
-                        <span class="icon-air-horn"></span>
-                    </div>
-                    <div class="content">
-                        <h4><a href="events.html">We ontmoeten elkaar in real life</a></h4>
-                        <p>
-                            Festival meetups, FriendsCamp, Winter Efteling-trips, parkdays.
-                            We maken herinneringen buiten Discord en WhatsApp. Dit is geen “online clan” – dit is echt. <br><br>
-                        </p>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="icon">
-                        <span class="icon-party-blower"></span>
-                    </div>
-                    <div class="content">
-                        <h4><a href="contact.html">Veiligheid & mentale check-ins</a></h4>
-                        <p>
-                            We letten op elkaar. We normaliseren “gaat het echt met je?”. Je mag eerlijk zijn.
-                            Geen schaamte, geen ego-spelletjes. Gewoon tribe.
-                        </p>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="icon">
-                        <span class="icon-party-blower"></span>
-                    </div>
-                    <div class="content">
-                        <h4><a href="about.html">Respect boven status</a></h4>
-                        <p>
-                            We zijn niet bezig met wie het hardst schreeuwt of de meeste volgers heeft.
-                            Het gaat om hoe je met mensen omgaat. Dat is Raveline culture.
-                        </p>
-                    </div>
-                </li>
+    <!-- Page Header -->
+    <section class="page-header" aria-labelledby="page-title">
+      <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);"></div>
+      <div class="page-header__shape-1 float-bob-y">
+        <img src="assets/images/shapes/page-header-shape-1.png" alt="" />
+      </div>
+      <div class="page-header__shape-2 float-bob-x">
+        <img src="assets/images/shapes/page-header-shape-2.png" alt="" />
+      </div>
+      <div class="container">
+        <div class="page-header__inner">
+          <h2 id="page-title">Over ons</h2>
+          <div class="thm-breadcrumb__box">
+            <ul class="thm-breadcrumb list-unstyled">
+              <li><a href="index.html">Home</a></li>
+              <li><span class="icon-angle-right" aria-hidden="true"></span></li>
+              <li>Over ons</li>
             </ul>
-
-            <div class="event-one__img-box">
-                <img src="assets/images/resources/event-one-img-1.jpg" alt="Raveline moment">
-            </div>
+          </div>
         </div>
-    </div>
-</section>
-<!-- /ABOUT -->
+      </div>
+    </section>
+    <!-- /Page Header -->
 
+    <!-- 1. ABOUT -->
+    <section class="event-one event-three">
+      <div class="container">
+        <div class="event-one__inner wow fadeInUp" data-wow-delay="300ms">
+          <div class="event-one__top">
+            <div class="section-title text-left">
+              <div class="section-title__tagline-box">
+                <span class="section-title__tagline">Over ons</span>
+              </div>
+              <h2 class="section-title__title">
+                Raveline Division<br />One Tribe, Worldwide
+              </h2>
+              <p style="color:var(--eventflow-white);font-size:15px;line-height:1.5;margin-top:20px;max-width:460px;">
+                Wij zijn een community in de harder styles scene. Niet zomaar “vriendengroep”, niet zomaar “crew”.
+                Wij zorgen dat niemand alleen hoeft te gaan. We bouwen vertrouwen, veiligheid en familiegevoel – ook midden in chaos, lawaai en strobos.
+                Through Sound, We Rise.
+              </p>
+            </div>
 
-<!-- 2. WHAT WE DO / HOE WE WERKEN (hier gebruiken we je oude Event Direction blok) -->
-<section class="event-direction event-direction-two">
-    <div class="container">
+            <div class="event-one__btn-box">
+              <a href="https://chat.whatsapp.com/GAJv481JFi6J4nUNvtD264" target="_blank" class="event-one__btn thm-btn">
+                <i class="fab fa-whatsapp"></i>Join the Tribe <span class="icon-arrow-right"></span>
+              </a>
+            </div>
+          </div>
+
+          <ul class="list-unstyled event-one__points">
+            <li>
+              <div class="icon"><span class="icon-air-horn"></span></div>
+              <div class="content">
+                <h4><a href="RaveUp&Meeting.html">We ontmoeten elkaar in real life</a></h4>
+                <p>Festival meetups, FriendsCamp, Winter Efteling-trips, parkdays.
+                  We maken herinneringen buiten Discord en WhatsApp. Dit is geen “online clan” – dit is echt.</p>
+              </div>
+            </li>
+            <li>
+              <div class="icon"><span class="icon-party-blower"></span></div>
+              <div class="content">
+                <h4><a href="RaveUp&Meeting.html">Veiligheid & mentale check-ins</a></h4>
+                <p>We letten op elkaar. We normaliseren “gaat het echt met je?”. Je mag eerlijk zijn.
+                  Geen schaamte, geen ego-spelletjes. Gewoon tribe.</p>
+              </div>
+            </li>
+            <li>
+              <div class="icon"><span class="icon-party-blower"></span></div>
+              <div class="content">
+                <h4><a href="RaveUp&Meeting.html">Respect boven status</a></h4>
+                <p>We zijn niet bezig met wie het hardst schreeuwt of de meeste volgers heeft.
+                  Het gaat om hoe je met mensen omgaat. Dat is Raveline culture.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="event-one__img-box">
+            <img src="assets/images/resources/event-one-img-1.jpg" alt="Raveline moment" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /ABOUT -->
+
+    <!-- 2. WHAT WE DO -->
+    <section class="event-direction event-direction-two">
+      <div class="container">
         <div class="event-direction__inner">
-            <div class="row">
-                <div class="col-xl-7 wow fadeInLeft" data-wow-delay="100ms">
-                    <div class="event-direction__left">
-                        <div class="section-title text-left">
-                            <div class="section-title__tagline-box">
-                                <span class="section-title__tagline">Wat wij doen</span>
-                            </div>
-                            <h2 class="section-title__title">
-                                Samen naar de loudest music,<br>
-                                maar nooit alleen.
-                            </h2>
-                        </div>
-
-                        <p class="event-direction__text">
-                            Van het natte Nederland tot aan de Belgische Ardennen en van campfires tot aan de mainstage —
-                            We. Are. The Raveline Division! Een beweging die muziek gebruikt om mensen te verbinden,
-                            waar peace, love, unity en respect de line-up vormen. We organiseren meetups en momenten die blijven hangen.
-                            Together, we rise through sound.
-                        </p>
-
-                        <div class="event-direction__call">
-                            <div class="event-direction__call-icon">
-                                <img src="assets/images/icon/event-direction-chat-icon.png" alt="">
-                            </div>
-                            <div class="event-direction__call-content">
-                                <p>Wil je aansluiten of heb je vragen?</p>
-                                <h4>
-                                    <a href="contact.html">
-                                        Contact Crew
-                                    </a>
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
+          <div class="row">
+            <div class="col-xl-7 wow fadeInLeft" data-wow-delay="100ms">
+              <div class="event-direction__left">
+                <div class="section-title text-left">
+                  <div class="section-title__tagline-box">
+                    <span class="section-title__tagline">Wat wij doen</span>
+                  </div>
+                  <h2 class="section-title__title">Samen naar de loudest music,<br />maar nooit alleen.</h2>
                 </div>
 
-                <div class="col-xl-5 wow fadeInRight" data-wow-delay="300ms">
-                    <div class="event-direction__right">
-                        <ul class="event-direction__counter list-unstyled">
-                            <li>
-                                <div class="event-direction__counter-single">
-                                    <div class="event-direction__counter-box">
-                                        <h3 class="odometer" data-count="30">80</h3>
-                                        <span class="event-direction__counter-plus">+</span>
-                                    </div>
-                                    <p class="event-direction__counter-text">Tribe Members</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="event-direction__counter-single">
-                                    <div class="event-direction__counter-box">
-                                        <h3 class="odometer" data-count="10">10</h3>
-                                        <span class="event-direction__counter-plus">+</span>
-                                    </div>
-                                    <p class="event-direction__counter-text">RaveUps & Meetups gepland</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="event-direction__counter-single">
-                                    <div class="event-direction__counter-box">
-                                        <h3 class="odometer" data-count="4">4</h3>
-                                        <span class="event-direction__counter-plus">+</span>
-                                    </div>
-                                    <p class="event-direction__counter-text">Countries connected</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="event-direction__counter-single">
-                                    <div class="event-direction__counter-box">
-                                        <h3 class="odometer" data-count="1">1</h3>
-                                        <span class="event-direction__counter-plus">+</span>
-                                    </div>
-                                    <p class="event-direction__counter-text">Years in Motion</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!-- /.col-xl-5 -->
-            </div><!-- /.row -->
-        </div>
-    </div>
-</section>
-<!-- /WHAT WE DO -->
-
-
-<!-- 3. JOIN THE TRIBE / CALL TO ACTION (dit gebruikt jouw oude Buy Ticket layout) -->
-<section class="buy-ticket">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-6">
-                <div class="buy-ticket__left wow fadeInLeft" data-wow-delay="100ms">
-                    <ul class="buy-ticket__address list-unstyled">
-                        <li>
-                            <div class="icon">
-                                <span class="icon-clock"></span>
-                            </div>
-                            <div class="text">
-                                <p>NL / BE based — growing worldwide</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="icon">
-                                <span class="icon-pin"></span>
-                            </div>
-                            <div class="text">
-                                <p>Festival meetups · Theme park days · FriendsCamp</p>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <h3 class="buy-ticket__title">
-                        Join the Division!<br>
-                    </h3>
-
-                    <p class="buy-ticket__text">
-                        Je zoekt geen plek om bij te horen — je zoekt mensen die je begrijpen.
-                        Wij bouwen die plek, beat na beat, event na event
-                    </p>
-
-                    <div class="buy-ticket__btn-box">
-                        <a href="https://chat.whatsapp.com/GAJv481JFi6J4nUNvtD264" target="_blank" class="buy-ticket__btn-1 thm-btn">
-                            Join the Tribe<span class="icon-arrow-right"></span>
-                        </a>
-                        <a href="contact.html" class="buy-ticket__btn-2 thm-btn">
-                            Contact Crew<span class="icon-arrow-right"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-6">
-                <div class="buy-ticket__right wow fadeInRight" data-wow-delay="300ms">
-                    <div class="buy-ticket__img">
-                        <img src="assets/images/resources/buy-ticket-img.jpg" alt="Raveline family moment">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /JOIN -->
-
-
-<!-- 4. OUR NETWORK / BRANDS / PARTNERS (brand-one + sliding marquee samen als 1 vibe) -->
-<section class="brand-one">
-    <div class="container">
-        <div class="brand-one__inner">
-
-            <div class="section-title text-center" style="margin-bottom:20px;">
-                <div class="section-title__tagline-box">
-                    <span class="section-title__tagline">In collaboration with</span>
-                </div>
-                <h2 class="section-title__title">
-                    We move together
-                </h2>
-                <p style="color:var(--eventflow-white);font-size:14px;line-height:1.5;margin-top:15px;max-width:480px;margin-left:auto;margin-right:auto;">
-                    We werken samen met mensen, merken en creators die dezelfde mindset hebben:
-                    zorg voor elkaar, hard gaan, en tóch respectvol blijven.
+                <p class="event-direction__text">
+                  Van het natte Nederland tot aan de Belgische Ardennen en van campfires tot aan de mainstage —
+                  We. Are. The Raveline Division! Een beweging die muziek gebruikt om mensen te verbinden,
+                  waar peace, love, unity en respect de line-up vormen. We organiseren meetups en momenten die blijven hangen.
+                  Together, we rise through sound.
                 </p>
-            </div>
 
-            <!-- logo slider -->
-            <div class="thm-swiper__slider swiper-container"
-                data-swiper-options='{
-                    "spaceBetween": 100,
-                    "slidesPerView": 5,
-                    "loop": true,
-                    "navigation": {
-                        "nextEl": "#brand-one__swiper-button-next",
-                        "prevEl": "#brand-one__swiper-button-prev"
-                    },
-                    "autoplay": { "delay": 5000 },
-                    "breakpoints": {
-                        "0": {
-                            "spaceBetween": 30,
-                            "slidesPerView": 2
-                        },
-                        "575": {
-                            "spaceBetween": 30,
-                            "slidesPerView": 3
-                        },
-                        "767": {
-                            "spaceBetween": 50,
-                            "slidesPerView": 4
-                        },
-                        "1200": {
-                            "spaceBetween": 100,
-                            "slidesPerView": 5
-                        }
-                    }
-                }'>
-                <div class="swiper-wrapper">
-                    <!-- placeholders, vervang door echte logos -->
-                    <div class="swiper-slide">
-                        <div class="swiper-slide__img">
-                            <a href="https://youtube.com/@sellaz_dj"><img src="assets/images/brand/brand-1-1.png" alt="SELLAZ"></a>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="swiper-slide__img">
-                            <a href="#"><img src="assets/images/brand/brand-1-2.png" alt="Unity"></a>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="swiper-slide__img">
-                            <a href="#"><img src="assets/images/brand/brand-1-3.png" alt="Festicaps"></a>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="swiper-slide__img">
-                            <a href="#"><img src="assets/images/brand/brand-1-4.png" alt="Australian Gear"></a>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="swiper-slide__img">
-                            <a href="#"><img src="assets/images/brand/brand-1-5.png" alt="Raveline Division"></a>
-                        </div>
-                    </div>
+                <div class="event-direction__call">
+                  <div class="event-direction__call-icon">
+                    <img src="assets/images/icon/event-direction-chat-icon.png" alt="Chat icon" />
+                  </div>
+                  <div class="event-direction__call-content">
+                    <p>Wil je aansluiten of heb je vragen?</p>
+                    <h4><a href="FAQ.html">Contact Crew</a></h4>
+                  </div>
                 </div>
+              </div>
             </div>
+
+            <div class="col-xl-5 wow fadeInRight" data-wow-delay="300ms">
+              <div class="event-direction__right">
+                <ul class="event-direction__counter list-unstyled">
+                  <li>
+                    <div class="event-direction__counter-single">
+                      <div class="event-direction__counter-box">
+                        <h3 class="odometer" data-count="80">80</h3>
+                        <span class="event-direction__counter-plus">+</span>
+                      </div>
+                      <p class="event-direction__counter-text">Tribe Members</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="event-direction__counter-single">
+                      <div class="event-direction__counter-box">
+                        <h3 class="odometer" data-count="10">10</h3>
+                        <span class="event-direction__counter-plus">+</span>
+                      </div>
+                      <p class="event-direction__counter-text">RaveUps &amp; Meetups gepland</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="event-direction__counter-single">
+                      <div class="event-direction__counter-box">
+                        <h3 class="odometer" data-count="4">4</h3>
+                        <span class="event-direction__counter-plus">+</span>
+                      </div>
+                      <p class="event-direction__counter-text">Countries connected</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="event-direction__counter-single">
+                      <div class="event-direction__counter-box">
+                        <h3 class="odometer" data-count="1">1</h3>
+                        <span class="event-direction__counter-plus">+</span>
+                      </div>
+                      <p class="event-direction__counter-text">Years in Motion</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div><!-- /.col-xl-5 -->
+          </div><!-- /.row -->
         </div>
-    </div>
-</section>
-<!-- /NETWORK -->
+      </div>
+    </section>
+    <!-- /WHAT WE DO -->
 
-        <!--Site Footer Start-->
-        <footer class="site-footer">
-            <div class="site-footer__shape-1 float-bob-y">
-                <img src="assets/images/shapes/site-footer-shape-1.png" alt="">
-            </div>
-            <div class="site-footer__top">
-                <div class="container">
-                    <div class="site-footer__top-inner">
-                        <div class="main-menu__logo">
-                            <a href="index.html"><img src="assets/images/resources/logo-2.png" alt=""></a>
-                        </div>
-                        <div class="site-footer__social">
-                            <a href="https://www.facebook.com/profile.php?id=61578060013046"><i class="icon-facebook"></i></a>
-                            <a href="https://www.instagram.com/raveline_division/"><i class="icon-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="site-footer__middle">
-                <div class="container">
-                    <div class="site-footer__middle-inner">
-                        <div class="row">
-                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                                <div class="footer-widget__column footer-widget__events">
-                                    <div class="footer-widget__title-box">
-                                        <h3 class="footer-widget__title">RaveUp Agenda</h3>
-                                    </div>
-                                    <ul class="footer-widget__events-list list-unstyled">
-                                        <li>
-                                            <p>31 December 2025 - Gouda</p>
-                                            <h5>Raveline's new years party!</h5>
-                                            <a href="#">Meld je aan! <span class="icon-arrow-right"></span></a>
-                                        </li>
-                                        <li>
-                                            <p>3 Januari 2026 - RaveUp!</p>
-                                            <h5>Raveup @ Winter Efteling</h5>
-                                            <a href="#">Meld je aan! <span class="icon-arrow-right"></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                                <div class="footer-widget__column footer-widget__link">
-                                    <div class="footer-widget__title-box">
-                                        <h3 class="footer-widget__title">Quick links</h3>
-                                    </div>
-                                    <ul class="footer-widget__link-list list-unstyled">
-                                        <li><a href="about.html">Over ons</a></li>
-                                        <li><a href="#">Events</a></li>
-                                        <li><a href="#">Tribe</a></li>
-                                        <li><a href="#">Merch</a></li>
-                                        <li><a href="#">Vacatures</a></li>
-                                        <li><a href="#">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                                <div class="footer-widget__column footer-widget__contact">
-                                    <div class="footer-widget__title-box">
-                                        <h3 class="footer-widget__title">Contact</h3>
-                                    </div>
-                                    <div class="footer-widget__contact-inner">
-                                        <ul class="footer-widget__contact-list list-unstyled">
-                                            <li>
-                                                <div class="icon">
-                                                    <span class="icon-envelop"></span>
-                                                </div>
-                                                <div class="text">
-                                                    <p><a href="mailto:info@ravelinehq.com">Info@ravelinehq.com</a>
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="icon">
-                                                    <span class="icon-pin"></span>
-                                                </div>
-                                                <div class="text">
-                                                    <p>Based in The Netherlands</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="site-footer__bottom">
-                <div class="container">
-                    <div class="site-footer__bottom-inner">
-                        <p class="site-footer__bottom-text">© Raveline Division 2025 | All Rights Reserved</p>
-                        <ul class="list-unstyled site-footer__bottom-menu">
-                            <li><a href="Terms.html">Terms & Condition</a></li>
-                            <li><a href="Privacy.html">Privacy Policy</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!--Site Footer End-->
-
-
-    </div><!-- /.page-wrapper -->
-
-
-    <div class="mobile-nav__wrapper">
-        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-        <!-- /.mobile-nav__overlay -->
-        <div class="mobile-nav__content">
-            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
-
-            <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo-2.png" width="150"
-                        alt="" /></a>
-            </div>
-            <!-- /.logo-box -->
-            <div class="mobile-nav__container"></div>
-            <!-- /.mobile-nav__container -->
-
-            <ul class="mobile-nav__contact list-unstyled">
+    <!-- 3. JOIN / CTA -->
+    <section class="buy-ticket">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-6">
+            <div class="buy-ticket__left wow fadeInLeft" data-wow-delay="100ms">
+              <ul class="buy-ticket__address list-unstyled">
                 <li>
-                    <i class="fa fa-envelope"></i>
-                    <a href="mailto:info@ravelinehq.com">info@ravelinehq.com</a>
+                  <div class="icon"><span class="icon-clock"></span></div>
+                  <div class="text"><p>NL / BE based — growing worldwide</p></div>
                 </li>
-            </ul><!-- /.mobile-nav__contact -->
-            <div class="mobile-nav__top">
-                <div class="mobile-nav__social">
-                    <a href="#" class="fab fa-facebook-square"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                </div><!-- /.mobile-nav__social -->
-            </div><!-- /.mobile-nav__top -->
+                <li>
+                  <div class="icon"><span class="icon-pin"></span></div>
+                  <div class="text"><p>Festival meetups · Theme park days · FriendsCamp</p></div>
+                </li>
+              </ul>
 
+              <h3 class="buy-ticket__title">Join the Division!</h3>
+              <p class="buy-ticket__text">
+                Je zoekt geen plek om bij te horen — je zoekt mensen die je begrijpen.
+                Wij bouwen die plek, beat na beat, event na event
+              </p>
 
+              <div class="buy-ticket__btn-box">
+                <a href="https://chat.whatsapp.com/GAJv481JFi6J4nUNvtD264" target="_blank" class="buy-ticket__btn-1 thm-btn" rel="noopener">
+                  Join the Tribe<span class="icon-arrow-right"></span>
+                </a>
+                <a href="FAQ.html" class="buy-ticket__btn-2 thm-btn">
+                  Contact Crew<span class="icon-arrow-right"></span>
+                </a>
+              </div>
+            </div>
+          </div>
 
+          <div class="col-xl-6">
+            <div class="buy-ticket__right wow fadeInRight" data-wow-delay="300ms">
+              <div class="buy-ticket__img">
+                <img src="assets/images/resources/buy-ticket-img.jpg" alt="Raveline family moment" />
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- /.mobile-nav__content -->
-    </div>
-    <!-- /.mobile-nav__wrapper -->
+      </div>
+    </section>
+    <!-- /JOIN -->
 
-    <div class="search-popup">
-        <div class="search-popup__overlay search-toggler"></div>
-        <!-- /.search-popup__overlay -->
-        <div class="search-popup__content">
-            <form action="#">
-                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
-                <input type="text" id="search" placeholder="Search Here..." />
-                <button type="submit" aria-label="search submit" class="thm-btn">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
+    <!-- 4. NETWORK -->
+    <section class="brand-one">
+      <div class="container">
+        <div class="brand-one__inner">
+          <div class="section-title text-center" style="margin-bottom:20px;">
+            <div class="section-title__tagline-box">
+              <span class="section-title__tagline">In collaboration with</span>
+            </div>
+            <h2 class="section-title__title">We move together</h2>
+            <p style="color:var(--eventflow-white);font-size:14px;line-height:1.5;margin-top:15px;max-width:480px;margin-left:auto;margin-right:auto;">
+              We werken samen met mensen, merken en creators die dezelfde mindset hebben:
+              zorg voor elkaar, hard gaan, en tóch respectvol blijven.
+            </p>
+          </div>
+
+          <!-- logo slider -->
+          <div class="thm-swiper__slider swiper-container"
+               data-swiper-options='{
+                 "spaceBetween": 100,
+                 "slidesPerView": 5,
+                 "loop": true,
+                 "navigation": { "nextEl": "#brand-one__swiper-button-next", "prevEl": "#brand-one__swiper-button-prev" },
+                 "autoplay": { "delay": 5000 },
+                 "breakpoints": {
+                   "0":    { "spaceBetween": 30, "slidesPerView": 2 },
+                   "575":  { "spaceBetween": 30, "slidesPerView": 3 },
+                   "767":  { "spaceBetween": 50, "slidesPerView": 4 },
+                   "1200": { "spaceBetween": 100, "slidesPerView": 5 }
+                 }
+               }'>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="swiper-slide__img">
+                  <a href="https://youtube.com/@sellaz_dj" target="_blank" rel="noopener">
+                    <img src="assets/images/brand/brand-1-1.png" alt="SELLAZ" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div><!-- /.swiper -->
         </div>
-        <!-- /.search-popup__content -->
+      </div>
+    </section>
+    <!-- /NETWORK -->
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="site-footer__shape-1 float-bob-y">
+        <img src="assets/images/shapes/site-footer-shape-1.png" alt="" />
+      </div>
+      <div class="site-footer__top">
+        <div class="container">
+          <div class="site-footer__top-inner">
+            <div class="main-menu__logo">
+              <a href="index.html"><img src="assets/images/resources/logo-2.png" alt="Raveline Division footer logo" /></a>
+            </div>
+            <div class="site-footer__social">
+              <a href="https://www.facebook.com/profile.php?id=61578060013046" aria-label="Facebook"><i class="icon-facebook"></i></a>
+              <a href="https://www.instagram.com/raveline_division/" aria-label="Instagram"><i class="icon-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer__middle">
+        <div class="container">
+          <div class="site-footer__middle-inner">
+            <div class="row">
+              <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                <div class="footer-widget__column footer-widget__events">
+                  <div class="footer-widget__title-box">
+                    <h3 class="footer-widget__title">RaveUp Agenda</h3>
+                  </div>
+                  <ul class="footer-widget__events-list list-unstyled">
+                    <li>
+                      <p>31 December 2025 - Gouda</p>
+                      <h5>Raveline's New Year's Party!</h5>
+                      <a href="#">Meld je aan! <span class="icon-arrow-right"></span></a>
+                    </li>
+                    <li>
+                      <p>3 Januari 2026 - RaveUp!</p>
+                      <h5>RaveUp @ Winter Efteling</h5>
+                      <a href="#">Meld je aan! <span class="icon-arrow-right"></span></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                <div class="footer-widget__column footer-widget__link">
+                  <div class="footer-widget__title-box">
+                    <h3 class="footer-widget__title">Quick links</h3>
+                  </div>
+                  <ul class="footer-widget__link-list list-unstyled">
+                    <li><a href="About.html">Over ons</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Tribe</a></li>
+                    <li><a href="#">Merch</a></li>
+                    <li><a href="#">Vacatures</a></li>
+                    <li><a href="#">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                <div class="footer-widget__column footer-widget__contact">
+                  <div class="footer-widget__title-box">
+                    <h3 class="footer-widget__title">Contact</h3>
+                  </div>
+                  <div class="footer-widget__contact-inner">
+                    <ul class="footer-widget__contact-list list-unstyled">
+                      <li>
+                        <div class="icon"><span class="icon-envelop"></span></div>
+                        <div class="text">
+                          <p><a href="mailto:info@ravelinehq.com">info@ravelinehq.com</a></p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="icon"><span class="icon-pin"></span></div>
+                        <div class="text"><p>Based in The Netherlands</p></div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /.row -->
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <div class="container">
+          <div class="site-footer__bottom-inner">
+            <p class="site-footer__bottom-text">© Raveline Division 2025 | All Rights Reserved</p>
+            <ul class="list-unstyled site-footer__bottom-menu">
+              <li><a href="Terms.html">Terms &amp; Conditions</a></li>
+              <li><a href="Privacy.html">Privacy Policy</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- /Footer -->
+
+  </div><!-- /.page-wrapper -->
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav__wrapper" aria-hidden="true">
+    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+    <div class="mobile-nav__content" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+      <button type="button" class="mobile-nav__close mobile-nav__toggler" aria-label="Close navigation">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </button>
+
+      <div class="logo-box">
+        <a href="index.html" aria-label="Raveline logo small">
+          <img src="assets/images/resources/logo-2.png" width="150" alt="Raveline Division Logo" />
+        </a>
+      </div>
+
+      <div class="mobile-nav__container"><!-- menu inject --></div>
+
+      <ul class="mobile-nav__contact list-unstyled">
+        <li>
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <a href="mailto:info@ravelinehq.com">info@ravelinehq.com</a>
+        </li>
+      </ul>
+
+      <div class="mobile-nav__top">
+        <div class="mobile-nav__social" aria-label="Socials">
+          <a href="#" class="fab fa-facebook-square" aria-label="Facebook"></a>
+          <a href="#" class="fab fa-instagram" aria-label="Instagram"></a>
+        </div>
+      </div>
     </div>
-    <!-- /.search-popup -->
+  </div>
+  <!-- /Mobile Nav -->
 
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fas fa-arrow-up"></i></a>
+  <!-- Search popup -->
+  <div class="search-popup" aria-hidden="true">
+    <div class="search-popup__overlay search-toggler"></div>
+    <div class="search-popup__content" role="dialog" aria-modal="true" aria-label="Search">
+      <form action="#" method="get">
+        <label for="search" class="sr-only">Search here</label>
+        <input type="text" id="search" name="q" placeholder="Search Here..." />
+        <button type="submit" aria-label="search submit" class="thm-btn">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </button>
+      </form>
+    </div>
+  </div>
 
+  <a href="#" data-target="html" class="scroll-to-target scroll-to-top" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </a>
+
+  <!-- JS: Vendors (at end, deferred) -->
+  <script src="assets/vendors/jquery/jquery-3.6.0.min.js" defer></script>
+  <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendors/jarallax/jarallax.min.js" defer></script>
+  <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js" defer></script>
+  <script src="assets/vendors/jquery-appear/jquery.appear.min.js" defer></script>
+  <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js" defer></script>
+  <script src="assets/vendors/jquery-validate/jquery.validate.min.js" defer></script>
+  <script src="assets/vendors/odometer/odometer.min.js" defer></script>
+  <script src="assets/vendors/swiper/swiper.min.js" defer></script>
+  <script src="assets/vendors/wnumb/wNumb.min.js" defer></script>
+  <script src="assets/vendors/wow/wow.js" defer></script>
+  <script src="assets/vendors/isotope/isotope.js" defer></script>
+  <script src="assets/vendors/owl-carousel/owl.carousel.min.js" defer></script>
+  <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js" defer></script>
+  <script src="assets/vendors/jquery-ui/jquery-ui.js" defer></script>
+  <script src="assets/vendors/timepicker/timePicker.js" defer></script>
+  <script src="assets/vendors/jquery.circle-type/jquery.circleType.js" defer></script>
+  <script src="assets/vendors/jquery.circle-type/jquery.lettering.min.js" defer></script>
+  <script src="assets/vendors/nice-select/jquery.nice-select.min.js" defer></script>
+  <script src="assets/vendors/countdown/countdown.min.js" defer></script>
+  <script src="assets/vendors/marque/marquee.min.js" defer></script>
+  <script src="assets/vendors/sidebar-content/jquery-sidebar-content.js" defer></script>
+
+  <!-- Template JS -->
+  <script src="assets/js/eventflow.js" defer></script>
+  <script src="assets/js/preloader.js" defer></script>
 </body>
-
 </html>
