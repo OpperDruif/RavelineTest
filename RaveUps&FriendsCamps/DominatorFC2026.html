@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>FriendsCamp – Dominator Festival 2026 | Raveline Division</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Vendors + CSS -->
+  <link rel="stylesheet" href="../assets/vendors/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../assets/vendors/animate/animate.min.css" />
+  <link rel="stylesheet" href="../assets/vendors/animate/custom-animate.css" />
+  <link rel="stylesheet" href="../assets/vendors/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/vendors/jarallax/jarallax.css" />
+  <link rel="stylesheet" href="../assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+  <link rel="stylesheet" href="../assets/vendors/odometer/odometer.min.css" />
+  <link rel="stylesheet" href="../assets/vendors/swiper/swiper.min.css" />
+  <link rel="stylesheet" href="../assets/vendors/eventflow-icons/style.css" />
+  <link rel="stylesheet" href="../assets/vendors/owl-carousel/owl.carousel.min.css" />
+  <link rel="stylesheet" href="../assets/vendors/owl-carousel/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="../assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+  <link rel="stylesheet" href="../assets/vendors/nice-select/nice-select.css" />
+  <link rel="stylesheet" href="../assets/vendors/jquery-ui/jquery-ui.css" />
+
+  <!-- Template styles -->
+  <link rel="stylesheet" href="../assets/css/eventflow.css" />
+  <link rel="stylesheet" href="../assets/css/eventflow-responsive.css" />
+
+  <style>
+    :root {
+      --rvln-bg: #0e0a17;
+      --rvln-card: #161125;
+      --rvln-soft: #1a1428;
+      --rvln-grad: linear-gradient(90deg, #ff5f00, #ffb300);
+    }
+
+    body.body-bg-color1 {
+      background: var(--rvln-bg);
+      font-family: "DM Sans", "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+    }
+
+    .rvln-grad-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #fde68a;
+    }
+
+    .rvln-grad-pill i {
+      font-size: 0.8rem;
+    }
+
+    .rvln-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.7rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #e5e7eb;
+    }
+
+    .rvln-tag i {
+      font-size: 0.7rem;
+    }
+
+    .rvln-card {
+      background: var(--rvln-card);
+      border-radius: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+      overflow: hidden;
+    }
+
+    .rvln-card--soft {
+      background: var(--rvln-soft);
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .rvln-btn-main {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      background: var(--rvln-grad);
+      border: none;
+      color: #0b0714;
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      box-shadow: 0 0 18px rgba(255, 95, 0, 0.5);
+      transition: 0.18s ease;
+    }
+
+    .rvln-btn-main:hover {
+      color: #050208;
+      transform: translateY(-1px);
+      box-shadow: 0 0 26px rgba(255, 95, 0, 0.85);
+    }
+
+    .rvln-btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      background: rgba(10, 7, 20, 0.7);
+      color: #e5e7eb;
+      font-size: 0.85rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .rvln-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.65rem;
+      border-radius: 0.6rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      font-size: 0.7rem;
+      color: #e5e7eb;
+    }
+
+    .rvln-badge strong {
+      color: #fbbf24;
+    }
+
+    .rvln-list-check {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .rvln-list-check li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 0.5rem;
+      color: #e5e7eb;
+      font-size: 0.9rem;
+    }
+
+    .rvln-list-check i {
+      color: #f97316;
+      margin-top: 0.2rem;
+    }
+
+    /* timeline */
+    .rvln-timeline {
+      border-left: 1px dashed rgba(249, 115, 22, 0.65);
+      margin-left: 0.75rem;
+      padding-left: 1.25rem;
+    }
+
+    .rvln-timeline-item {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+
+    .rvln-timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.55rem;
+      top: 0.25rem;
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 999px;
+      background: var(--rvln-grad);
+      box-shadow: 0 0 12px rgba(251, 146, 60, 0.8);
+    }
+
+    @media (min-width: 992px) {
+      .rvln-sticky-right {
+        position: sticky;
+        top: 6.25rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="body-bg-color1">
+  <div class="preloader">
+    <div class="preloader__image"></div>
+  </div>
+
+  <div class="page-wrapper">
+    <!-- HEADER -->
+    <header class="main-header main-header-three">
+      <nav class="main-menu main-menu-three">
+        <div class="main-menu__wrapper">
+          <div class="main-menu__wrapper-inner">
+            <div class="main-menu__left">
+              <div class="main-menu__logo">
+                <a href="../index.html">
+                  <img src="../assets/images/resources/logo-2.png" alt="Raveline Division Logo" />
+                </a>
+              </div>
+            </div>
+            <div class="main-menu__right">
+              <div class="main-menu__main-menu-box">
+                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                <ul class="main-menu__list">
+                  <li><a href="../index.html">Home</a></li>
+                  <li class="dropdown">
+                    <a href="#">Over ons</a>
+                    <ul>
+                      <li><a href="../About.html">Over ons</a></li>
+                      <li><a href="../Team.html">De Crew</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown current">
+                    <a href="#">Tribe</a>
+                    <ul>
+                      <li><a href="../RaveUp&Meeting.html">Meetups &amp; RaveUps</a></li>
+                      <li><a href="../Friendscamps.html">FriendsCamp</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">Merch</a>
+                    <ul>
+                      <li><a href="../coming-soonShop.html">Collectie</a></li>
+                      <li><a href="../coming-soonShop.html">Pre-orders</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">Vacatures</a>
+                    <ul>
+                      <li><a href="../Vacatures.html">Open Roles</a></li>
+                      <li><a href="../vrijwilligers.html">Vrijwilligers</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="../FAQ.html">FAQ &amp; Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div><!-- /.main-menu__wrapper-inner -->
+        </div>
+      </nav>
+    </header>
+
+    <!-- Sticky header -->
+    <div class="stricky-header stricked-menu main-menu main-menu-three">
+      <div class="sticky-header__content"></div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div
+        class="page-header__bg"
+        style="background-image:url(../assets/images/backgrounds/Dominator2026.jpg);"
+      ></div>
+      <div class="page-header__shape-1 float-bob-y">
+        <img src="../assets/images/shapes/page-header-shape-1.png" alt="" />
+      </div>
+      <div class="page-header__shape-2 float-bob-x">
+        <img src="../assets/images/shapes/page-header-shape-2.png" alt="" />
+      </div>
+      <div class="container">
+        <div class="page-header__inner" style="text-align:left;">
+          <span class="rvln-grad-pill">
+            <i class="fas fa-skull"></i> FriendsCamp • Dominator Festival 2026
+          </span>
+          <h2 style="margin-top:14px;">FriendsCamp – Dominator Festival</h2>
+          <div class="thm-breadcrumb__box">
+            <ul class="thm-breadcrumb list-unstyled">
+              <li><a href="../index.html">Home</a></li>
+              <li><span class="icon-angle-right"></span></li>
+              <li><a href="../Friendscamps.html">FriendsCamps</a></li>
+              <li><span class="icon-angle-right"></span></li>
+              <li>Dominator Festival 2026</li>
+            </ul>
+          </div>
+          <p style="color:#d7d7d7; max-width:720px; margin-top:14px;">
+            Het grootste hardcore festival ter wereld, maar dan <strong>Raveline style</strong>:
+            één FriendsCamp op de Dominator camping, duidelijke meetpoints en een Tribe
+            met hardcore heads uit heel Europa die samen hun <strong>Weekend Experience</strong> leven.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Details / FriendsCamp content -->
+    <section class="event-details" style="padding-top:70px; padding-bottom:90px;">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Main content -->
+          <div class="col-xl-8 col-lg-7">
+            <div class="event-details__left">
+
+              <!-- Intro: wat / voor wie -->
+              <div class="rvln-card--soft" style="padding:24px; margin-bottom:24px;">
+                <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                  <span class="rvln-tag"><i class="fas fa-calendar"></i> 17–18 juli 2026</span>
+                  <span class="rvln-tag"><i class="fas fa-location-dot"></i> E3 Strand, Eersel (NL)</span>
+                  <span class="rvln-tag"><i class="fas fa-campground"></i> Dominator camping</span>
+                  <span class="rvln-tag"><i class="fas fa-user"></i> 18+ FriendsCamp</span>
+                </div>
+
+                <h3 class="event-details__title-1" style="color:#fff; margin-bottom:10px;">
+                  Jouw Weekend Experience, één Tribe
+                </h3>
+
+                <p class="event-details__text-1" style="color:#e5e7eb; font-size:.95rem;">
+                  Dominator is een <strong>twee-daags hardcore festival</strong> met fans uit meer dan 65 landen.
+                  Met het <strong>Raveline FriendsCamp</strong> maken we van jouw Dominator
+                  <strong>Weekend Experience</strong> een overzichtelijk en sociaal Tribe-weekend: één gezamenlijk kamp,
+                  korte lijnen met de Crew en een groep mensen die niet alleen voor de muziek komt, maar ook voor elkaar.
+                </p>
+
+                <p class="event-details__text-2" style="color:#cbd5f5; font-size:.9rem;">
+                  De officiële <strong>Dominator camping</strong> ligt direct aan het E3 Strand. Vanaf daar loop je in
+                  een paar minuten naar het festivalterrein. Camping is open van
+                  <strong>vrijdag 09:00 t/m zondag 12:00</strong> – daartussen draait alles om hardcore, samen eten,
+                  zwemmen, silent disco en nagenieten van twee dikke festivaldagen.
+                </p>
+
+                <p style="color:#d1d5db; font-size:.9rem; margin-top:8px; margin-bottom:4px;">
+                  Dit FriendsCamp is perfect als jij:
+                </p>
+                <ul class="rvln-list-check" style="margin-top:2px;">
+                  <li>
+                    <i class="fas fa-user-astronaut"></i>
+                    <span>
+                      Graag een <strong>vaste basiscrew</strong> wilt op de camping, in plaats van alleen of random
+                      tussen onbekenden te staan.
+                    </span>
+                  </li>
+                  <li>
+                    <i class="fas fa-people-group"></i>
+                    <span>
+                      Met je eigen vrienden gaat, maar het tof vindt om een <strong>grotere Tribe</strong> om je heen te
+                      hebben tijdens de Weekend Experience.
+                    </span>
+                  </li>
+                  <li>
+                    <i class="fas fa-music"></i>
+                    <span>
+                      Hardcore ademt, open-minded is en de camping ziet als plek om samen te leven –
+                      <strong>zonder drama</strong>, met respect voor elkaar.
+                    </span>
+                  </li>
+                </ul>
+
+                <p style="color:#9ca3af; font-size:.8rem; margin-top:6px;">
+                  Twijfel je of dit bij je past? Stuur ons een bericht via WhatsApp of Instagram – we denken graag met je mee.
+                </p>
+              </div>
+
+              <!-- Highlight rij (Weekend Experience facts) -->
+              <div class="rvln-card--soft" style="padding:18px 20px; margin-bottom:24px;">
+                <div class="row g-3">
+                  <div class="col-md-4">
+                    <div style="font-size:.85rem; color:#e5e7eb;">
+                      <strong style="display:block; color:#fbbf24; font-size:.9rem;">Vrijdag – Day 1</strong>
+                      Volwaardige Dominator festivaldag met meerdere area's &amp; een
+                      <strong>silent disco afterparty tot diep in de nacht</strong>.
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div style="font-size:.85rem; color:#e5e7eb;">
+                      <strong style="display:block; color:#fbbf24; font-size:.9rem;">Zaterdag – Main Day</strong>
+                      Het grootste hardcore festival ter wereld op volle sterkte met <strong>tien+ area's</strong> en
+                      brute showmomenten.
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div style="font-size:.85rem; color:#e5e7eb;">
+                      <strong style="display:block; color:#fbbf24; font-size:.9rem;">Zondag – Afterglow</strong>
+                      Chill ochtend op de camping, zwemmen in het meer, laatste koffie met de Tribe en uitchecken tot 12:00 uur.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Wat je krijgt / Wat regel jij zelf -->
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <div class="rvln-card--soft h-100" style="padding:20px;">
+                    <h4 style="color:#fff; margin-bottom:8px;">Wat je kunt verwachten</h4>
+                    <ul class="rvln-list-check">
+                      <li>
+                        <i class="fas fa-check"></i>
+                        <span>Een gezamenlijke Tribe-zone op de Dominator camping*</span>
+                      </li>
+                      <li>
+                        <i class="fas fa-check"></i>
+                        <span>Gezamenlijke camp-opbouw &amp; basis camp-aankleding</span>
+                      </li>
+                      <li>
+                        <i class="fas fa-check"></i>
+                        <span>Tribe-meetpoints bij aankomst &amp; per festivaldag</span>
+                      </li>
+                      <li>
+                        <i class="fas fa-check"></i>
+                        <span>WhatsApp-updategroep met tijden, meetpoints &amp; last-minute info</span>
+                      </li>
+                      <li>
+                        <i class="fas fa-check"></i>
+                        <span>Rave-Safe benadering: <em>samen uit, samen thuis</em></span>
+                      </li>
+                    </ul>
+                    <p style="color:#9ca3af; font-size:.8rem; margin-top:6px;">
+                      *Exacte locatie en grootte van het FriendsCamp-vak hangen af van het aantal aanmeldingen en de
+                      definitieve campingindeling van Dominator.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="rvln-card--soft h-100" style="padding:20px;">
+                    <h4 style="color:#fff; margin-bottom:8px;">Wat regel jij zelf?</h4>
+                    <ul class="rvln-list-check">
+                      <li>
+                        <i class="fas fa-check"></i>
+                        <span>
+                          Je <strong>Dominator Weekend Experience + FriendsCamp Pass</strong>
+                          (weekendticket + camping + FriendsCamp-spot) koop je via de RaveShop.
+                          Zo staat alles in één keer goed op jouw naam en ben je direct gekoppeld aan het FriendsCamp.
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fas fa-check"></i>
+                        <span>Tent + slaapspullen (volgens de campingregels van Dominator)</span>
+                      </li>
+                      <li>
+                        <i class="fas fa-check"></i>
+                        <span>Vervoer naar E3 Strand (bus, auto of OV + shuttle – carpoolen afstemmen kan in de Tribe-chat)</span>
+                      </li>
+                      <li>
+                        <i class="fas fa-check"></i>
+                        <span>FriendsCamp-decoratie (lampjes, vlaggen, banners, etc.)</span>
+                      </li>
+                    </ul>
+                    <p style="color:#9ca3af; font-size:.8rem; margin-top:6px;">
+                      Alle bedragen en exacte voorwaarden per pakket vind je op de aanmeld- &amp; ticketpagina in de RaveShop.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- KOSTEN & FriendsCamp-bijdrage -->
+              <div class="rvln-card--soft" style="padding:22px; margin-bottom:24px;">
+                <h3 class="event-details__title-2" style="color:#fff; margin-bottom:6px;">
+                  Kosten &amp; FriendsCamp-bijdrage
+                </h3>
+                <p style="color:#d1d5db; font-size:.9rem;">
+                  Je <strong>Dominator Weekend Experience + FriendsCamp Pass</strong> regel je via de RaveShop.
+                  In dit pakket combineren we je officiële Dominator-weekendtickets &amp; camping met je plek binnen het
+                  <strong>Raveline FriendsCamp</strong>, zodat alles in één overzichtelijke boeking valt.
+                </p>
+
+                <div class="row g-3 mt-2">
+                  <div class="col-md-6">
+                    <div class="rvln-card--soft" style="padding:16px;">
+                      <h4 style="color:#fbbf24; font-size:.95rem; margin-bottom:4px;">FriendsCamp Basic</h4>
+                      <p style="color:#e5e7eb; font-size:.85rem; margin-bottom:4px;">
+                        Richtbedrag: <strong>€XX,- p.p.</strong> (weekend)
+                        <br />
+                        <span style="font-size:.75rem; color:#9ca3af;">
+                          (definitief bedrag volgt op de RaveShop-pagina)
+                        </span>
+                      </p>
+                      <ul class="rvln-list-check" style="margin-top:4px;">
+                        <li>
+                          <i class="fas fa-check"></i>
+                          <span>Weekend Experience ticket Dominator (vr + za) + Dominator camping (via RaveShop-pakket)</span>
+                        </li>
+                        <li>
+                          <i class="fas fa-check"></i>
+                          <span>Toegang tot de Raveline FriendsCamp-zone</span>
+                        </li>
+                        <li>
+                          <i class="fas fa-check"></i>
+                          <span>Basis camp-opzet &amp; aankleding</span>
+                        </li>
+                        <li>
+                          <i class="fas fa-check"></i>
+                          <span>Meetpoints, groepschats &amp; info-updates</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="rvln-card--soft" style="padding:16px;">
+                      <h4 style="color:#fbbf24; font-size:.95rem; margin-bottom:4px;">Optionele extra's</h4>
+                      <p style="color:#e5e7eb; font-size:.85rem; margin-bottom:4px;">
+                        Afhankelijk van de animo kunnen we extra's toevoegen om jouw hardcore weekend nog comfortabeler te maken.
+                      </p>
+                      <ul class="rvln-list-check" style="margin-top:4px;">
+                        <li>
+                          <i class="fas fa-circle-dot"></i>
+                          <span>Extra Tribe-deco / licht / vlaggen</span>
+                        </li>
+                        <li>
+                          <i class="fas fa-circle-dot"></i>
+                          <span>Gezamenlijke breakfast / snack pot</span>
+                        </li>
+                        <li>
+                          <i class="fas fa-circle-dot"></i>
+                          <span>Eventuele Rave-Safe goodies</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <p style="color:#9ca3af; font-size:.8rem; margin-top:8px;">
+                  De <strong>definitieve bedragen</strong> en betaalinfo communiceren we via de RaveShop-aanmeldpagina en
+                  in de bevestigingsmail. We houden het zo transparant en eerlijk mogelijk.
+                </p>
+              </div>
+            </div><!-- /.event-details__left -->
+          </div><!-- /.col-xl-8 -->
+
+          <!-- Right sidebar: info + CTA + schedule -->
+          <div class="col-xl-4 col-lg-5">
+            <aside class="rvln-sticky-right">
+              <div class="rvln-card" style="padding:22px 22px 18px; margin-bottom:18px;">
+                <h3 style="color:#fff; font-size:1.1rem; margin-bottom:4px;">
+                  Event info – Dominator Festival 2026
+                </h3>
+                <p style="color:#9ca3af; font-size:.85rem; margin-bottom:10px;">
+                  <strong>The biggest hardcore gathering in the world</strong> – twee dagen Dominator Festival
+                  aan het E3 Strand + een volledig hardcore campingweekend.
+                </p>
+                <ul class="event-details__meta list-unstyled" style="margin-bottom:10px;">
+                  <li style="color:#e5e7eb; font-size:.9rem; display:flex; gap:.5rem;">
+                    <span class="icon-clock"></span>
+                    <p style="margin:0;">
+                      Festival: vrijdag t/m zondag<br />
+                      <small style="color:#9ca3af;">17–18 juli 2026</small>
+                    </p>
+                  </li>
+                  <li style="color:#e5e7eb; font-size:.9rem; display:flex; gap:.5rem;">
+                    <span class="icon-pin"></span>
+                    <p style="margin:0;">
+                      E3 Strand, Eersel, Nederland<br />
+                      <small style="color:#9ca3af;">
+                        Dominator festivalterrein &amp; Dominator camping
+                      </small>
+                    </p>
+                  </li>
+                </ul>
+                <p style="color:#9ca3af; font-size:.8rem;">
+                  Let op: de FriendsCamp Pass via de RaveShop omvat je
+                  <strong>Dominator Weekend Experience ticket(s) + camping</strong>
+                  én toegang tot het Raveline FriendsCamp. Je hoeft dus niet nog een los Dominator-ticket te kopen.
+                </p>
+                <div class="d-flex flex-column gap-2 mt-3">
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    class="rvln-btn-main"
+                  >
+                    <i class="fas fa-pen-to-square"></i> RaveShop – FriendsCamp Pass
+                  </a>
+                  <a
+                    href="https://www.dominatorfestival.com/nl/weekendexperience"
+                    target="_blank"
+                    rel="noopener"
+                    class="rvln-btn-ghost"
+                  >
+                    <i class="fas fa-globe"></i> Meer over de Weekend Experience
+                  </a>
+                </div>
+              </div>
+
+              <!-- Schedule / flow -->
+              <div class="rvln-card--soft" style="padding:22px; margin-bottom:24px;">
+                <h3 class="event-details__title-2" style="color:#fff; margin-bottom:8px; font-size:1rem;">
+                  Globale flow – Dominator FriendsCamp
+                </h3>
+                <p style="color:#d1d5db; font-size:.85rem;">
+                  Dit is een <em>voorbeeldplanning</em>. Definitieve tijden en details volgen via de Tribe-chat
+                  &amp; RaveShop-aanmeldpagina.
+                </p>
+
+                <div class="rvln-timeline" style="margin-top:10px;">
+                  <div class="rvln-timeline-item">
+                    <h5 style="color:#fbbf24; font-size:.9rem; margin-bottom:2px;">
+                      Vrijdag – Arrival &amp; Day 1
+                    </h5>
+                    <p style="color:#e5e7eb; font-size:.85rem; margin-bottom:0%;">
+                      • Ochtend: aankomst op Dominator camping &amp; inchecken<br />
+                      • Ochtend/middag: camp opbouwen + eerste Tribe-meet<br />
+                      • Middag/avond: volledige Dominator festivaldag<br />
+                      • Nacht: silent disco afterparty op de camping
+                    </p>
+                  </div>
+
+                  <div class="rvln-timeline-item">
+                    <h5 style="color:#fbbf24; font-size:.9rem; margin-bottom:2px;">
+                      Zaterdag – Main Day &amp; Finale
+                    </h5>
+                    <p style="color:#e5e7eb; font-size:.85rem; margin-bottom:0%;">
+                      • Ochtend: ontbijt/chill bij het camp of zwemmen in het meer<br />
+                      • Middag: gezamenlijke stage-runs &amp; groepsmoment<br />
+                      • Avond: main showmomenten en laatste Dominator-sets<br />
+                      • Nacht: afsluitende silent disco &amp; laten we elkaar veilig thuis brengen
+                    </p>
+                  </div>
+
+                  <div class="rvln-timeline-item">
+                    <h5 style="color:#fbbf24; font-size:.9rem; margin-bottom:2px;">
+                      Zondag – Uitchecken &amp; back to reality
+                    </h5>
+                    <p style="color:#e5e7eb; font-size:.85rem; margin-bottom:0%;">
+                      • Chill ochtend: koffie, nagenieten en laatste Tribe-momenten<br />
+                      • Opruimen &amp; uitchecken volgens campingtijden (tot ±12:00)<br />
+                      • Terug naar huis – met een hoofd vol hardcore-herinneringen
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div><!-- /.col-xl-4 -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__shape-1 float-bob-y">
+        <img src="../assets/images/shapes/site-footer-shape-1.png" alt="" />
+      </div>
+      <div class="site-footer__top">
+        <div class="container">
+          <div class="site-footer__top-inner">
+            <div class="main-menu__logo">
+              <a href="../index.html">
+                <img src="../assets/images/resources/logo-2.png" alt="Raveline Division Logo" />
+              </a>
+            </div>
+            <div class="site-footer__social">
+              <a href="https://www.facebook.com/profile.php?id=61578060013046">
+                <i class="icon-facebook"></i>
+              </a>
+              <a href="https://www.instagram.com/raveline_division/">
+                <i class="icon-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer__middle">
+        <div class="container">
+          <div class="site-footer__middle-inner">
+            <div class="row">
+              <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                <div class="footer-widget__column footer-widget__events">
+                  <div class="footer-widget__title-box">
+                    <h3 class="footer-widget__title">RaveUp Agenda</h3>
+                  </div>
+                  <ul class="footer-widget__events-list list-unstyled">
+                    <li>
+                      <p>31 December 2025 - Gouda</p>
+                      <h5>Raveline's New Years Party</h5>
+                      <a href="#">
+                        Meld je aan! <span class="icon-arrow-right"></span>
+                      </a>
+                    </li>
+                    <li>
+                      <p>3 Januari 2026 - RaveUp!</p>
+                      <h5>RaveUp @ Winter Efteling</h5>
+                      <a href="#">
+                        Meld je aan! <span class="icon-arrow-right"></span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                <div class="footer-widget__column footer-widget__link">
+                  <div class="footer-widget__title-box">
+                    <h3 class="footer-widget__title">Quick links</h3>
+                  </div>
+                  <ul class="footer-widget__link-list list-unstyled">
+                    <li><a href="../About.html">Over ons</a></li>
+                    <li><a href="../RaveUp&Meeting.html">RaveUps</a></li>
+                    <li><a href="../Friendscamps.html">FriendsCamp</a></li>
+                    <li><a href="../coming-soonShop.html">Merch</a></li>
+                    <li><a href="../Vacatures.html">Vacatures</a></li>
+                    <li><a href="../FAQ.html">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                <div class="footer-widget__column footer-widget__contact">
+                  <div class="footer-widget__title-box">
+                    <h3 class="footer-widget__title">Contact</h3>
+                  </div>
+                  <div class="footer-widget__contact-inner">
+                    <ul class="footer-widget__contact-list list-unstyled">
+                      <li>
+                        <div class="icon">
+                          <span class="icon-envelop"></span>
+                        </div>
+                        <div class="text">
+                          <p>
+                            <a href="mailto:info@ravelinehq.com">Info@ravelinehq.com</a>
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <span class="icon-pin"></span>
+                        </div>
+                        <div class="text">
+                          <p>Based in The Netherlands</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- extra kolom optioneel -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <div class="container">
+          <div class="site-footer__bottom-inner">
+            <p class="site-footer__bottom-text">
+              © Raveline Division 2025 | All Rights Reserved
+            </p>
+            <ul class="list-unstyled site-footer__bottom-menu">
+              <li><a href="../Terms.html">Terms &amp; Condition</a></li>
+              <li><a href="../Privacy.html">Privacy Policy</a></li>
+              <li><a href="../FAQ.html">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div><!-- /.page-wrapper -->
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav__wrapper">
+    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+    <div class="mobile-nav__content">
+      <span class="mobile-nav__close mobile-nav__toggler">
+        <i class="fa fa-times"></i>
+      </span>
+      <div class="logo-box">
+        <a href="../index.html" aria-label="logo image">
+          <img src="../assets/images/resources/logo-2.png" width="150" alt="" />
+        </a>
+      </div>
+      <div class="mobile-nav__container"></div>
+      <ul class="mobile-nav__contact list-unstyled">
+        <li>
+          <i class="fa fa-envelope"></i>
+          <a href="mailto:info@ravelinehq.com">info@ravelinehq.com</a>
+        </li>
+      </ul>
+      <div class="mobile-nav__top">
+        <div class="mobile-nav__social">
+          <a
+            href="https://www.facebook.com/profile.php?id=61578060013046"
+            class="fab fa-facebook-square"
+          ></a>
+          <a
+            href="https://www.instagram.com/raveline_division/"
+            class="fab fa-instagram"
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search popup -->
+  <div class="search-popup">
+    <div class="search-popup__overlay search-toggler"></div>
+    <div class="search-popup__content">
+      <form action="#">
+        <label for="search" class="sr-only">search here</label>
+        <input type="text" id="search" placeholder="Search Here..." />
+        <button type="submit" aria-label="search submit" class="thm-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <a href="#" data-target="html" class="scroll-to-target scroll-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- JS -->
+  <script src="../assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+  <script src="../assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendors/jarallax/jarallax.min.js"></script>
+  <script src="../assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+  <script src="../assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+  <script src="../assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="../assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+  <script src="../assets/vendors/odometer/odometer.min.js"></script>
+  <script src="../assets/vendors/swiper/swiper.min.js"></script>
+  <script src="../assets/vendors/wnumb/wNumb.min.js"></script>
+  <script src="../assets/vendors/wow/wow.js"></script>
+  <script src="../assets/vendors/isotope/isotope.js"></script>
+  <script src="../assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="../assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+  <script src="../assets/vendors/jquery-ui/jquery-ui.js"></script>
+  <script src="../assets/vendors/nice-select/jquery.nice-select.min.js"></script>
+  <script src="../assets/vendors/countdown/countdown.min.js"></script>
+  <script src="../assets/vendors/marque/marquee.min.js"></script>
+  <script src="../assets/vendors/sidebar-content/jquery-sidebar-content.js"></script>
+  <script src="../assets/js/eventflow.js"></script>
+</body>
+</html>
