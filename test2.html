@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="nl">
-<head>
-  <meta charset="UTF-8" />
-  <title>RaveUps & Meetings – Raveline Division</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- Fonts -->
+<head>
+  <!-- Basic page needs -->
+  <meta charset="UTF-8" />
+  <title>FriendsCamp – REBiRTH Festival 2026 | Raveline Division</title>
+
+  <!-- mobile specific metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
-  <!-- Tailwind (optioneel, staat al in je project) -->
+  <!-- optional tailwind (staat al in je project, kan je weghalen als je ‘m niet gebruikt) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Vendors + CSS (zelfde volgorde als je andere pagina’s) -->
+  <!-- vendors + CSS -->
   <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
   <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
@@ -28,959 +35,884 @@
   <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
   <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
   <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+
   <link rel="stylesheet" href="assets/css/eventflow.css" />
   <link rel="stylesheet" href="assets/css/eventflow-responsive.css" />
 
   <style>
-    :root{
-      --rvln-bg:#0E0A17; --rvln-card:#161125; --rvln-soft:#1a1428;
-      --rvln-grad:linear-gradient(90deg,#ff5f00,#ffb300);
+    :root {
+      --rvln-bg: #0E0A17;
+      --rvln-bg-soft: #161125;
+      --rvln-bg-softer: #1A1428;
+      --rvln-border-soft: rgba(255, 255, 255, .08);
+      --rvln-grad: linear-gradient(90deg, #ff5f00, #ffb300);
     }
-    html,body{ height:100% }
-    body.body-bg-color1{ background:var(--rvln-bg); }
-    .page-wrapper{ min-height:100%; display:flex; flex-direction:column }
-    main{ flex:1 0 auto } footer.site-footer{ flex-shrink:0 }
 
-    .rvln-card{ background:var(--rvln-card); border:1px solid rgba(255,255,255,.08); border-radius:1rem }
-    .rvln-chip{ font-size:.72rem; color:#e5e7eb; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); border-radius:.5rem; padding:.18rem .5rem }
-    .rvln-btn{ background:var(--rvln-grad); color:#0e0a17; font-weight:800; border-radius:999px; padding:.6rem 1rem; box-shadow:0 0 14px rgba(255,95,0,.35); transition:.2s; display:inline-flex; align-items:center; gap:.5rem; text-decoration:none }
-    .rvln-btn:hover{ transform:translateY(-1px); box-shadow:0 0 22px rgba(255,95,0,.6) }
-    .rvln-btn-ghost{ background:#171228; color:#fff; border:1px solid rgba(255,255,255,.12); border-radius:999px; padding:.6rem 1rem; text-decoration:none }
+    body.body-bg-color1 {
+      background-color: var(--rvln-bg);
+      color: #e5e7eb;
+      font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
 
-    .tab-pill{ color:#d1d5db; border:1px solid rgba(255,255,255,.08); background:#171228; padding:.5rem .9rem; border-radius:999px; cursor:pointer }
-    .tab-pill.active{ color:#0E0A17; background:var(--rvln-grad); border-color:transparent; font-weight:800 }
-    .sticky-tabs{ position:sticky; top:64px; z-index:20; backdrop-filter: blur(6px); background:rgba(14,10,23,.6) }
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-    /* Gradient kleur voor de dubbele pijl */
-    .sidebar__all-category-list i.icon-double-angle,
-    .pg-pagination .icon-double-angle{
+    main {
+      flex: 1 0 auto;
+    }
+
+    footer.site-footer {
+      flex-shrink: 0;
+    }
+
+    /* Raveline UI helpers */
+    .rvln-grad {
       background: var(--rvln-grad);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
     }
 
-    /* Blog images responsiever + nette hoogte */
-    .blog-list__img img{
-      width:100%; height:auto; display:block;
-      border-radius:.75rem;
+    .rvln-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+      line-height: 1;
+      padding: 0.22rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .14);
+      background: rgba(15, 23, 42, .85);
+      color: #f9fafb;
+      text-transform: uppercase;
+      letter-spacing: .06em;
     }
 
-    @keyframes fadeInUp{ 0%{opacity:0; transform: translateY(8px)} 100%{opacity:1; transform: translateY(0)} }
-    .fade-in-up{ animation: fadeInUp .25s ease both; }
+    .rvln-card {
+      background: var(--rvln-bg-soft);
+      border-radius: 16px;
+      border: 1px solid var(--rvln-border-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rvln-card--soft {
+      background: var(--rvln-bg-softer);
+      border-radius: 14px;
+      border: 1px solid var(--rvln-border-soft);
+    }
+
+    .rvln-tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .28rem .7rem;
+      border-radius: 999px;
+      font-size: .7rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      background: rgba(15, 23, 42, .9);
+      border: 1px solid rgba(249, 115, 22, .45);
+      color: #fed7aa;
+    }
+
+    .rvln-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      padding: .7rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      outline: none;
+      font-weight: 700;
+      font-size: .9rem;
+      background: var(--rvln-grad);
+      color: #0b0a12;
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(255, 95, 0, .45);
+      transition: all .2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .rvln-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 24px rgba(255, 148, 0, .7);
+      color: #050609;
+    }
+
+    .rvln-btn--ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .7rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .15);
+      background: rgba(15, 23, 42, .9);
+      color: #e5e7eb;
+      font-size: .85rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all .2s ease;
+      white-space: nowrap;
+    }
+
+    .rvln-btn--ghost:hover {
+      border-color: rgba(250, 204, 21, .8);
+      color: #facc15;
+    }
+
+    .rvln-list-check {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .rvln-list-check li {
+      display: flex;
+      align-items: flex-start;
+      gap: .55rem;
+      font-size: .9rem;
+      color: #e5e7eb;
+      margin-bottom: .25rem;
+    }
+
+    .rvln-list-check li i {
+      margin-top: .13rem;
+      font-size: .85rem;
+      color: #facc15;
+      flex-shrink: 0;
+    }
+
+    .rvln-divider-label {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: #9ca3af;
+    }
+
+    .rvln-divider-label::before,
+    .rvln-divider-label::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 42px;
+      background: linear-gradient(90deg, transparent, rgba(148, 163, 184, .7));
+    }
+
+    .rvln-divider-label::after {
+      background: linear-gradient(90deg, rgba(148, 163, 184, .7), transparent);
+    }
+
+    /* sticky sidebar on desktop */
+    @media (min-width: 992px) {
+      .rvln-sticky {
+        position: sticky;
+        top: 6rem;
+      }
+    }
   </style>
 </head>
+
 <body class="body-bg-color1">
-<div class="page-wrapper">
 
-    <!-- ======= Supabase library ======= -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.48.0/dist/umd/supabase.js"></script>
-
-  <!-- ======= HEADER ======= -->
-  <header class="main-header main-header-three">
-    <nav class="main-menu main-menu-three" aria-label="Hoofdmenu">
-      <div class="main-menu__wrapper">
-        <div class="main-menu__wrapper-inner">
-          <div class="main-menu__left">
-            <div class="main-menu__logo">
-              <a href="index.html" aria-label="Terug naar home">
-                <img src="assets/images/resources/logo-2.png" alt="Raveline Division Logo">
-              </a>
-            </div>
-          </div>
-          <div class="main-menu__right">
-            <div class="main-menu__main-menu-box">
-              <a href="#" class="mobile-nav__toggler" aria-label="Mobiele navigatie openen"><i class="fa fa-bars"></i></a>
-              <ul class="main-menu__list">
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                  <a href="#">Over ons</a>
-                  <ul>
-                    <li><a href="About.html">Over ons</a></li>
-                    <li><a href="Team.html">De Crew</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="#">Tribe</a>
-                  <ul>
-                    <li><a href="RaveUps.html">RaveUps & Meetings</a></li>
-                    <li><a href="Friendscamps.html">FriendsCamp</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="#">Merch</a>
-                  <ul>
-                    <li><a href="coming-soonShop.html">Collectie</a></li>
-                    <li><a href="coming-soonShop.html">Pre-orders</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="#">Vacatures</a>
-                  <ul>
-                    <li><a href="vacatures.html">Open Roles</a></li>
-                    <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
-                  </ul>
-                </li>
-                <li><a href="FAQ.html">FAQ & Contact</a></li>
-              </ul>
-            </div><!-- /.main-menu__main-menu-box -->
-          </div><!-- /.main-menu__right -->
-        </div>
-      </div>
-    </nav>
-  </header>
-  <div class="stricky-header stricked-menu main-menu main-menu-three" aria-hidden="true">
-    <div class="sticky-header__content"></div>
+  <div class="preloader">
+    <div class="preloader__image"></div>
   </div>
+  <!-- /.preloader -->
 
-  <!-- ======= PAGE HEADER ======= -->
-  <section class="page-header">
-    <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);"></div>
-    <div class="page-header__shape-1 float-bob-y">
-      <img src="assets/images/shapes/page-header-shape-1.png" alt="" loading="lazy" decoding="async">
-    </div>
-    <div class="page-header__shape-2 float-bob-x">
-      <img src="assets/images/shapes/page-header-shape-2.png" alt="" loading="lazy" decoding="async">
-    </div>
-    <div class="container">
-      <div class="page-header__inner" style="text-align:left;">
-        <h2>RaveUps & Meetings</h2>
-        <div class="thm-breadcrumb__box">
-          <ul class="thm-breadcrumb list-unstyled">
-            <li><a href="index.html">Home</a></li>
-            <li><span class="icon-angle-right" aria-hidden="true"></span></li>
-            <li aria-current="page">RaveUps & Meetings</li>
-          </ul>
+  <div class="page-wrapper">
+    <!-- HEADER -->
+    <header class="main-header main-header-three">
+      <nav class="main-menu main-menu-three">
+        <div class="main-menu__wrapper">
+          <div class="main-menu__wrapper-inner">
+            <div class="main-menu__left">
+              <div class="main-menu__logo">
+                <a href="index.html"><img src="assets/images/resources/logo-2.png" alt="Raveline Division Logo"></a>
+              </div>
+            </div>
+            <div class="main-menu__right">
+              <div class="main-menu__main-menu-box">
+                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                <ul class="main-menu__list">
+                  <li>
+                    <a href="index.html">Home </a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">Over ons</a>
+                    <ul>
+                      <li><a href="About.html">Over ons</a></li>
+                      <li><a href="Team.html">De Crew</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">Tribe</a>
+                    <ul>
+                      <li><a href="RaveUp&Meeting.html">Meetups & RaveUps</a></li>
+                      <li><a href="Friendscamps.html">FriendsCamp</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">Merch</a>
+                    <ul>
+                      <li><a href="coming-soonShop.html">Collectie</a></li>
+                      <li><a href="coming-soonShop.html">Pre-orders</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#">Vacatures</a>
+                    <ul>
+                      <li><a href="Vacatures.html">Open Roles</a></li>
+                      <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="FAQ.html">FAQ & Contact</a>
+                  </li>
+                </ul>
+              </div><!-- /.main-menu__main-menu-box -->
+            </div><!-- /.main-menu__right -->
+          </div>
         </div>
-        <p style="color:#d7d7d7; max-width:740px; margin-top:14px;">
-          Onze eigen Tribe-uitjes: van <em>Winter Efteling</em> en <em>Safari</em> tot <em>Tribe Night</em> of <em>Bowlen</em> — plus online meetups.
-          Geen harde cap; hoe meer zielen, hoe meer vibes. Kies, schrijf je in, join de crew.
-        </p>
+      </nav>
+    </header>
+
+    <!-- STICKY HEADER (moet blijven voor scroll-gedrag) -->
+    <div class="stricky-header stricked-menu main-menu main-menu-three">
+      <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+    </div><!-- /.stricky-header -->
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);"></div>
+      <div class="page-header__shape-1 float-bob-y">
+        <img src="assets/images/shapes/page-header-shape-1.png" alt="">
       </div>
-    </div>
-  </section>
-
-  <main id="content" role="main">
-
-    <!-- ======= Tabs / Filters ======= -->
-    <section class="sticky-tabs py-4 border-b border-white/10">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-wrap items-center gap-2" id="tabs" role="tablist" aria-label="RaveUp filters">
-          <button class="tab-pill active" data-tab="all" role="tab" aria-selected="true">Alle</button>
-          <button class="tab-pill" data-tab="upcoming" role="tab" aria-selected="false">Komend</button>
-          <button class="tab-pill" data-tab="past" role="tab" aria-selected="false">Archief</button>
-          <button class="tab-pill" data-tab="nl" role="tab" aria-selected="false">NL</button>
-          <button class="tab-pill" data-tab="be" role="tab" aria-selected="false">BE</button>
-          <button class="tab-pill" data-tab="online" role="tab" aria-selected="false">Online</button>
-          <span class="ms-auto" aria-hidden="true"></span>
-          <input id="q" type="text" class="form-control w-[240px]" placeholder="Zoek (Efteling, bowlen…)" aria-label="Zoekterm" />
-          <select id="etype" class="form-select w-[180px]" aria-label="Type filter">
-            <option value="">Type: Alle</option>
-            <option value="dagtrip">Dagtrip</option>
-            <option value="avond">Avond</option>
-            <option value="social">Social</option>
-            <option value="online">Online</option>
-          </select>
+      <div class="page-header__shape-2 float-bob-x">
+        <img src="assets/images/shapes/page-header-shape-2.png" alt="">
+      </div>
+      <div class="container">
+        <div class="page-header__inner" style="text-align:left;">
+          <h2>FriendsCamp – REBiRTH Festival 2026</h2>
+          <div class="thm-breadcrumb__box">
+            <ul class="thm-breadcrumb list-unstyled">
+              <li><a href="index.html">Home</a></li>
+              <li><span class="icon-angle-right"></span></li>
+              <li><a href="Friendscamps.html">FriendsCamps</a></li>
+              <li><span class="icon-angle-right"></span></li>
+              <li>REBiRTH Festival 2026</li>
+            </ul>
+          </div>
+          <p style="color:#d7d7d7; max-width:720px; margin-top:14px;">
+            Trap het festivalseizoen af met de Tribe. Eén FriendsCamp, duidelijke meetpoints en een crew die op je let –
+            van eerste bassklap tot de allerlaatste klapper op zondag.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- ======= Content ======= -->
-    <section class="blog-list">
-      <div class="container">
-        <div class="row">
-          <!-- Left -->
-          <div class="col-xl-8 col-lg-7">
-            <div id="raveups" class="blog-list__left">
-
-<!-- Card: NYE -->
-<div class="blog-list__single event fade-in-up"
-     data-slug="nye-gouda-2025"
-     data-loc="nl" data-type="avond" data-date="2025-12-31"
-     data-text="tribe raveup gouda oud en nieuw fireworks party feest drinks"
-     data-name="RaveUp: New Year’s Party – Gouda"
-     data-time="21:00–03:00"
-     data-locname="Gouda (NL)"
-     data-wa="https://chat.whatsapp.com/FnrTzde28qfH30Us9XoUrN"
-     data-desc="Sluit het jaar af met vuurwerk, muziek en Tribe-energy tijdens onze RaveUp: New Year’s Party in Gouda!">
-  <div class="blog-list__img-box">
-    <div class="blog-list__img">
-      <img src="assets/images/RaveUps/NewYearsEve.png" alt="NYE Gouda Fireworks" loading="lazy" decoding="async">
-    </div>
-    <div class="blog-list__date"><p>31 dec</p></div>
-  </div>
-  <div class="blog-list__content">
-    <ul class="blog-list__meta list-unstyled">
-      <li><a href="#"><span class="icon-location" aria-hidden="true"></span>Gouda (NL)</a></li>
-      <li><a href="#"><span class="icon-calendar" aria-hidden="true"></span>31 december 2025</a></li>
-    </ul>
-    <h3 class="blog-list__title">RaveUp: New Year’s Party – Gouda</h3>
-    <div class="mb-2">
-      <span class="rvln-chip">21:00–03:00</span>
-      <span class="rvln-chip">Avond</span>
-      <span class="rvln-chip">Feest</span>
-    </div>
-    <p>Knallend het nieuwe jaar in! Een exclusieve Tribe-night met muziek, vuurwerk en een drankje in de hand.
-       Sluit 2025 samen af en luid 2026 in met de hele Tribe. 🎆</p>
-    <ul style="color:#c8c8c8; margin-left:18px; margin-top:6px;">
-      <li><strong>Reservering:</strong> verplicht via inschrijving</li>
-      <li><strong>Alcohol:</strong> Eigen sterke drank meenemen; fris, bier en champagne worden geregeld</li>
-      <li><strong>Vuurwerk:</strong> Eigen vuurwerk mag, geef het vooraf door. Er wordt vanuit België geregeld; bestellen kan</li>
-      <li><strong>Locatie:</strong> Gouda (exacte locatie via de WhatsApp-groep)</li>
-    </ul>
-    <div class="blog-list__btn-box" style="margin-top:14px; display:flex; gap:8px; flex-wrap:wrap;">
-      <a href="#" class="rvln-btn apply"
-         data-apply='{"name":"RaveUp: New Year’s Party – Gouda","date":"31 december 2025","time":"21:00–03:00","loc":"Gouda (NL)"}'>
-        <i class="fas fa-paper-plane"></i> Inschrijven
-      </a>
-      <a href="#" class="rvln-btn-ghost btn-ics"><i class="far fa-calendar-plus"></i> Add to Calendar</a>
-      <a href="#" class="rvln-btn-ghost btn-wa"><i class="fab fa-whatsapp"></i> Deel via WhatsApp</a>
-    </div>
-  </div>
-</div>
-
-<!-- Card: Winter Efteling -->
-<div class="blog-list__single event fade-in-up"
-     data-slug="winter-efteling-2026"
-     data-loc="nl" data-type="dagtrip" data-date="2026-01-03"
-     data-text="winter efteling attractiepark polles keuken dagtrip raveup"
-     data-name="RaveUp: Winter Efteling"
-     data-time="12:00–18:00"
-     data-locname="Kaatsheuvel (NL)"
-     data-wa="https://chat.whatsapp.com/DipQPg3gQEY0JWLIYDj4Ea"
-     data-desc="Sprookjesachtige dag met de Tribe. Meetpoints, groepsfoto en warme afsluiter.">
-  <div class="blog-list__img-box">
-    <div class="blog-list__img">
-      <img src="assets/images/RaveUps/WinterEfteling2026.png" alt="Winter Efteling" loading="lazy" decoding="async">
-    </div>
-    <div class="blog-list__date"><p>03 jan</p></div>
-  </div>
-  <div class="blog-list__content">
-    <ul class="blog-list__meta list-unstyled">
-      <li><a href="#"><span class="icon-location" aria-hidden="true"></span>Kaatsheuvel (NL)</a></li>
-      <li><a href="#"><span class="icon-calendar" aria-hidden="true"></span>3 januari 2026</a></li>
-    </ul>
-    <h3 class="blog-list__title">RaveUp: Winter Efteling</h3>
-    <div class="mb-2">
-      <span class="rvln-chip">12:00–18:00</span>
-      <span class="rvln-chip">Dagtrip</span>
-      <span class="rvln-chip">Optioneel: Polles Keuken</span>
-    </div>
-    <p>Sprookjesachtige dag met de Tribe. Meetpoints, groepsfoto en warme afsluiter.</p>
-    <ul style="color:#c8c8c8; margin-left:18px; margin-top:6px;">
-      <li><strong>Go/No-Go:</strong> 28 dec 2025 (reserveringen)</li>
-      <li><strong>Kosten ticket:</strong> Betaling na aanmelden (groepskorting) • carpool mogelijk</li>
-      <li><strong>Eten:</strong> Afsluiten bij Polles Keuken (eigen kosten)</li>
-      <li>Briefing + meetpoints in WhatsApp</li>
-    </ul>
-    <div class="blog-list__btn-box" style="margin-top:14px; display:flex; gap:8px; flex-wrap:wrap;">
-      <a href="#" class="rvln-btn apply"
-         data-apply='{"name":"RaveUp: Winter Efteling","date":"3 januari 2026","time":"12:00–18:00","loc":"Kaatsheuvel (NL)"}'>
-        <i class="fas fa-paper-plane"></i> Inschrijven
-      </a>
-      <a href="#" class="rvln-btn-ghost btn-ics"><i class="far fa-calendar-plus"></i> Add to Calendar</a>
-      <a href="#" class="rvln-btn-ghost btn-wa"><i class="fab fa-whatsapp"></i> Deel via WhatsApp</a>
-    </div>
-  </div>
-</div>
-
-<!-- Card: Safari Burgers' Zoo -->
-<div class="blog-list__single event fade-in-up"
-     data-slug="safari-burgerszoo-2026"
-     data-loc="nl" data-type="dagtrip" data-date="2026-02-15"
-     data-text="safari burgers zoo arnhem rangers ray isa tropen rimba ocean jungle dagtrip"
-     data-name="RaveUp: Safari @ Burgers’ Zoo"
-     data-time="10:00–17:00"
-     data-locname="Arnhem (NL)"
-     data-wa="#"
-     data-desc="Rangers Ray & Isa nemen de Tribe mee op avontuur door de jungle, Rimba en Ocean van Burgers’ Zoo.">
-  <div class="blog-list__img-box">
-    <div class="blog-list__img">
-      <img src="assets/images/RaveUps/Safari2026.png" alt="Safari Burgers' Zoo" loading="lazy" decoding="async">
-    </div>
-    <div class="blog-list__date"><p>15 feb</p></div>
-  </div>
-  <div class="blog-list__content">
-    <ul class="blog-list__meta list-unstyled">
-      <li><a href="#"><span class="icon-location" aria-hidden="true"></span>Arnhem (NL)</a></li>
-      <li><a href="#"><span class="icon-calendar" aria-hidden="true"></span>15 februari 2026</a></li>
-    </ul>
-    <h3 class="blog-list__title">RaveUp: Safari @ Burgers’ Zoo</h3>
-    <div class="mb-2">
-      <span class="rvln-chip">10:00–17:00</span>
-      <span class="rvln-chip">Dagtrip</span>
-      <span class="rvln-chip">Hosts: Rangers Isa &amp; Ray</span>
-    </div>
-    <p>
-      🌿 Rangers Isa &amp; Ray nemen de Tribe mee op een avontuurlijke dag door de tropische jungle, 
-      de dichtbegroeide Rimba en de mysterieuze Ocean van Burgers’ Zoo.  
-      Van het gebrul van tijgers tot het schimmen van zeeschildpadden — dit wordt een dag vol ontdekkingen, Tribe-vibes en avontuur!
-    </p>
-    <ul style="color:#c8c8c8; margin-left:18px; margin-top:6px;">
-      <li><strong>Go/No-Go:</strong> 8 feb 2026 (tickets &amp; weer)</li>
-      <li><strong>Kosten:</strong> entreeticket • carpool/OV-tips volgen</li>
-      <li>Meetpoints & route in WhatsApp-groep</li>
-    </ul>
-    <div class="blog-list__btn-box" style="margin-top:14px; display:flex; gap:8px; flex-wrap:wrap;">
-      <a href="#" class="rvln-btn apply"
-         data-apply='{"name":"RaveUp: Safari @ Burgers’ Zoo","date":"15 februari 2026","time":"10:00–17:00","loc":"Arnhem (NL)"}'>
-        <i class="fas fa-paper-plane"></i> Inschrijven
-      </a>
-      <a href="#" class="rvln-btn-ghost btn-ics"><i class="far fa-calendar-plus"></i> Add to Calendar</a>
-      <a href="#" class="rvln-btn-ghost btn-wa"><i class="fab fa-whatsapp"></i> Deel via WhatsApp</a>
-    </div>
-  </div>
-</div>
-
-<!-- Archief: Bowling & Dinner Utrecht -->
-<div class="blog-list__single event fade-in-up"
-     data-loc="nl" data-type="avond" data-date="2025-09-26"
-     data-text="raveup utrecht bowlen diner avond social uit eten tribe"
-     data-name="RaveUp: Bowling & Dinner – Utrecht"
-     data-time="18:00–23:30"
-     data-locname="Utrecht (NL)"
-     data-desc="Avondje uit met de Tribe: eerst bowlen, daarna gezellig uit eten in Utrecht. Kosten per persoon, per activiteit.">
-  <div class="blog-list__img-box">
-    <div class="blog-list__img">
-      <img src="assets/images/RaveUps/RaveUp2025.png" alt="Bowling & Dinner Utrecht" loading="lazy" decoding="async">
-    </div>
-    <div class="blog-list__date"><p>26 sep</p></div>
-  </div>
-  <div class="blog-list__content">
-    <ul class="blog-list__meta list-unstyled">
-      <li><a href="#"><span class="icon-location" aria-hidden="true"></span>Utrecht (NL)</a></li>
-      <li><a href="#"><span class="icon-calendar" aria-hidden="true"></span>26 september 2025</a></li>
-    </ul>
-    <h3 class="blog-list__title">RaveUp: Bowling & Dinner – Utrecht</h3>
-    <div class="mb-2">
-      <span class="rvln-chip">18:00–23:30</span>
-      <span class="rvln-chip">Avond</span>
-      <span class="rvln-chip">Social</span>
-    </div>
-    <p>We trappen af met een paar strikes bij de bowlingbaan en sluiten af met een gezellig diner. Perfect om bij te praten en nieuwe Tribe-members te leren kennen.</p>
-    <ul style="color:#c8c8c8; margin-left:18px; margin-top:6px;">
-      <li>Kosten: <strong>per persoon, per activiteit</strong> (bowlen &amp; diner los afrekenen)</li>
-      <li>Reservering: verplicht via inschrijving</li>
-      <li>Startlocatie &amp; exacte tijden volgen in de WhatsApp-groep</li>
-    </ul>
-  </div>
-</div>
-
-              <!-- Paginatie -->
-              <div class="blog-list__pagination" aria-label="Paginatie">
-                <ul class="pg-pagination list-unstyled">
-                  <li class="count"><a href="#">01</a></li>
-                  <li class="count"><a href="#">02</a></li>
-                  <li class="count"><a href="#">03</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right (sidebar) -->
-          <div class="col-xl-4 col-lg-5">
-            <div class="sidebar">
-              <div class="sidebar__single sidebar__search">
-                <h3 class="sidebar__title">Zoek</h3>
-                <form class="sidebar__search-form" onsubmit="return false;">
-                  <input type="search" id="searchInput" placeholder="Zoek RaveUp / Meeting..." aria-label="Zoeken">
-                  <button type="submit" aria-label="Zoek"><i class="icon-loupe" aria-hidden="true"></i></button>
-                </form>
-              </div>
-              <div class="sidebar__single sidebar__all-category">
-                <h3 class="sidebar__title">Types</h3>
-                <ul class="sidebar__all-category-list list-unstyled">
-                  <li><a href="#" data-type-filter=""><i class="icon-double-angle" aria-hidden="true"></i>Alles</a></li>
-                  <li><a href="#" data-type-filter="dagtrip"><i class="icon-double-angle" aria-hidden="true"></i>Dagtrip</a></li>
-                  <li><a href="#" data-type-filter="avond"><i class="icon-double-angle" aria-hidden="true"></i>Avond</a></li>
-                  <li><a href="#" data-type-filter="social"><i class="icon-double-angle" aria-hidden="true"></i>Social</a></li>
-                  <li><a href="#" data-type-filter="online"><i class="icon-double-angle" aria-hidden="true"></i>Online</a></li>
-                </ul>
-              </div>
-              <div class="sidebar__single sidebar__tags">
-                <h3 class="sidebar__title">Tags</h3>
-                <div class="sidebar__tags-list">
-                  <a href="#" class="tag-q">Efteling</a>
-                  <a href="#" class="tag-q">Safari</a>
-                  <a href="#" class="tag-q">Bowlen</a>
-                  <a href="#" class="tag-q">Discord</a>
-                  <a href="#" class="tag-q">Utrecht</a>
-                  <a href="#" class="tag-q">Rotterdam</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div><!-- /row -->
-      </div>
-    </section>
-  </main>
-
-  <!-- ======= FOOTER ======= -->
-  <footer class="site-footer">
-    <div class="site-footer__shape-1 float-bob-y">
-      <img src="assets/images/shapes/site-footer-shape-1.png" alt="" loading="lazy" decoding="async">
-    </div>
-    <div class="site-footer__top">
-      <div class="container">
-        <div class="site-footer__top-inner">
-          <div class="main-menu__logo">
-            <a href="index.html"><img src="assets/images/resources/logo-2.png" alt="Raveline Division logo" loading="lazy" decoding="async"></a>
-          </div>
-          <div class="site-footer__social">
-            <a href="https://www.facebook.com/profile.php?id=61578060013046" aria-label="Facebook"><i class="icon-facebook"></i></a>
-            <a href="https://www.instagram.com/raveline_division/" aria-label="Instagram"><i class="icon-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="site-footer__middle">
-      <div class="container">
-        <div class="site-footer__middle-inner">
+    <main>
+      <!-- REBIRTH FRIENDSCAMP DETAIL -->
+      <section class="event-details" style="padding-top:70px; padding-bottom:70px;">
+        <div class="container">
           <div class="row">
+            <!-- LEFT CONTENT -->
+            <div class="col-xl-8 col-lg-7">
+              <div class="event-details__left">
 
-            <div class="col-xl-3 col-lg-6 col-md-6">
-              <div class="footer-widget__column footer-widget__events">
-                <div class="footer-widget__title-box"><h3 class="footer-widget__title">RaveUp Agenda</h3></div>
-                <ul class="footer-widget__events-list list-unstyled">
-                  <li>
-                    <p>31 December 2025 - Gouda</p>
-                    <h5>Raveline's New Years Party</h5>
-                    <a href="#">Meld je aan! <span class="icon-arrow-right"></span></a>
-                  </li>
-                  <li>
-                    <p>3 Januari 2026 - Kaatsheuvel</p>
-                    <h5>RaveUp @ Winter Efteling</h5>
-                    <a href="#">Meld je aan! <span class="icon-arrow-right"></span></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+                <!-- Hero / Header kaart -->
+                <div class="event-details__img rvln-card" style="margin-bottom:24px;">
+                  <img src="assets/images/friendscamps/rebirth-hero.jpg"
+                    alt="FriendsCamp – REBiRTH Festival 2026"
+                    style="width:100%; display:block; object-fit:cover; max-height:380px;">
+                  <div
+                    style="position:absolute; inset:0; background:radial-gradient(circle at 10% 0%, rgba(0,0,0,.65), transparent 55%), radial-gradient(circle at 95% 100%, rgba(15,23,42,.9), transparent 58%);">
+                  </div>
+                  <div style="position:absolute; inset:0; padding:20px 22px; display:flex; flex-direction:column; justify-content:space-between;">
+                    <div style="display:flex; flex-wrap:wrap; gap:.6rem;">
+                      <span class="rvln-tag-pill">
+                        <i class="fas fa-bolt"></i> Season Opener
+                      </span>
+                      <span class="rvln-chip">
+                        <i class="fas fa-campground"></i> FriendsCamp
+                      </span>
+                      <span class="rvln-chip">
+                        <i class="fas fa-location-dot"></i> Regio Haaren (NB)
+                      </span>
+                    </div>
+                    <div style="max-width:520px;">
+                      <h1 style="color:#fff; font-size:1.9rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; margin-bottom:.35rem;">
+                        REBiRTH Festival 2026 – FriendsCamp
+                      </h1>
+                      <p style="color:#e5e7eb; font-size:.92rem; margin:0;">
+                        <strong>Rising Through Sound — United As One.</strong> Samen naar REBiRTH, samen kamperen,
+                        samen wakker worden in de bassmist. Jij brengt de goede vibe, wij zorgen voor structuur,
+                        meetpoints en een Tribe die achter je staat.
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-            <div class="col-xl-3 col-lg-6 col-md-6">
-              <div class="footer-widget__column footer-widget__link">
-                <div class="footer-widget__title-box"><h3 class="footer-widget__title">Quick links</h3></div>
-                <ul class="footer-widget__link-list list-unstyled">
-                  <li><a href="About.html">Over ons</a></li>
-                  <li><a href="RaveUps.html">RaveUps</a></li>
-                  <li><a href="Friendscamps.html">FriendsCamp</a></li>
-                  <li><a href="coming-soonShop.html">Merch</a></li>
-                  <li><a href="vacatures.html">Vacatures</a></li>
-                  <li><a href="FAQ.html">Contact</a></li>
-                </ul>
-              </div>
-            </div>
+                <!-- Key facts strip -->
+                <div class="rvln-card" style="padding:16px 18px; margin-bottom:24px;">
+                  <div class="row g-3 align-items-center">
+                    <div class="col-md-3 col-6">
+                      <p style="font-size:.7rem; text-transform:uppercase; letter-spacing:.16em; color:#9ca3af; margin-bottom:2px;">
+                        Festival
+                      </p>
+                      <p style="color:#f9fafb; font-weight:600; margin:0;">REBiRTH 2026</p>
+                    </div>
+                    <div class="col-md-3 col-6">
+                      <p style="font-size:.7rem; text-transform:uppercase; letter-spacing:.16em; color:#9ca3af; margin-bottom:2px;">
+                        Locatie
+                      </p>
+                      <p style="color:#f9fafb; font-weight:600; margin:0;">Regio Haaren (NB)</p>
+                    </div>
+                    <div class="col-md-3 col-6">
+                      <p style="font-size:.7rem; text-transform:uppercase; letter-spacing:.16em; color:#9ca3af; margin-bottom:2px;">
+                        Periode
+                      </p>
+                      <p style="color:#f9fafb; font-weight:600; margin:0;">Voorjaar 2026</p>
+                    </div>
+                    <div class="col-md-3 col-6">
+                      <p style="font-size:.7rem; text-transform:uppercase; letter-spacing:.16em; color:#9ca3af; margin-bottom:2px;">
+                        Type
+                      </p>
+                      <p style="color:#f9fafb; font-weight:600; margin:0;">Festival FriendsCamp (18+)</p>
+                    </div>
+                  </div>
+                </div>
 
-            <div class="col-xl-3 col-lg-6 col-md-6">
-              <div class="footer-widget__column footer-widget__contact">
-                <div class="footer-widget__title-box"><h3 class="footer-widget__title">Contact</h3></div>
-                <div class="footer-widget__contact-inner">
-                  <ul class="footer-widget__contact-list list-unstyled">
+                <!-- Intro tekst: samen in, samen uit -->
+                <div class="rvln-card--soft" style="padding:22px; margin-bottom:24px;">
+                  <span class="rvln-divider-label">
+                    <span>Het idee</span>
+                  </span>
+                  <h3 class="event-details__title-2" style="color:#fff; margin:10px 0 6px;">
+                    Samen het festivalseizoen aftrappen
+                  </h3>
+                  <p class="event-details__text-1" style="color:#d1d5db; font-size:.95rem;">
+                    REBiRTH Festival is voor veel ravers het officiële begin van het seizoen. Met het Raveline FriendsCamp
+                    maken we daar een <strong>volledig Tribe-weekend</strong> van: één kamp, één chillzone, korte lijnen met
+                    de Crew en een groep mensen die elkaar niet laat vallen.
+                  </p>
+                  <p style="color:#9ca3af; font-size:.85rem; margin:0;">
+                    Dit FriendsCamp is geen “massa campingplek”. We kiezen bewust voor sfeer, overzicht en
+                    <strong>samen uit, samen thuis</strong>.
+                  </p>
+                </div>
+
+                <!-- VOOR WIE -->
+                <div class="rvln-card--soft" style="padding:22px; margin-bottom:24px;">
+                  <h3 class="event-details__title-2" style="color:#fff; margin-bottom:6px;">
+                    Voor wie is dit FriendsCamp?
+                  </h3>
+                  <p style="color:#d1d5db; font-size:.9rem;">
+                    Dit FriendsCamp is voor iedereen die:
+                  </p>
+                  <ul class="rvln-list-check" style="margin-top:4px;">
                     <li>
-                      <div class="icon"><span class="icon-envelop"></span></div>
-                      <div class="text"><p><a href="mailto:info@ravelinehq.com">info@ravelinehq.com</a></p></div>
+                      <i class="fas fa-user-astronaut"></i>
+                      <span>Graag met een <strong>chille groep</strong> naar REBiRTH wil, maar (nog) geen vaste festivalcrew heeft.</span>
                     </li>
                     <li>
-                      <div class="icon"><span class="icon-pin"></span></div>
-                      <div class="text"><p>Based in The Netherlands</p></div>
+                      <i class="fas fa-people-group"></i>
+                      <span>Al met een eigen groep gaat, maar het leuk vindt om een <strong>grotere Tribe</strong> om zich heen te hebben.</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-music"></i>
+                      <span>Van <strong>hardere stijlen</strong> houdt, open-minded is en geen drama mee naar de camping neemt.</span>
+                    </li>
+                    <li>
+                      <i class="fas fa-hand-holding-heart"></i>
+                      <span>“Samen uit, samen thuis” belangrijk vindt en anderen ook in de gaten wil houden.</span>
+                    </li>
+                  </ul>
+                  <p style="color:#9ca3af; font-size:.8rem; margin-top:6px;">
+                    Twijfel je of dit bij je past? Drop ons een bericht via WhatsApp of Instagram – we denken graag met je mee.
+                  </p>
+                </div>
+
+                <!-- Wat je kunt verwachten -->
+                <div class="rvln-card--soft" style="padding:22px; margin-bottom:24px;">
+                  <span class="rvln-divider-label">
+                    <span>Flow & structuur</span>
+                  </span>
+                  <h3 class="event-details__title-2" style="color:#fff; margin:10px 0 6px;">
+                    Wat je kunt verwachten van het FriendsCamp
+                  </h3>
+
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <h4 style="color:#fbbf24; font-size:.92rem; margin-bottom:4px;">Samen opstelling & chillzone</h4>
+                      <ul class="rvln-list-check">
+                        <li><i class="fas fa-check"></i><span>Gezamenlijke FriendsCamp-opstelling met herkenbare Raveline aankleding.</span></li>
+                        <li><i class="fas fa-check"></i><span>Een centrale chillspot waar we elkaar altijd terugvinden.</span></li>
+                        <li><i class="fas fa-check"></i><span>Ruimte voor je <strong>eigen tent</strong>, maar wel in Tribe-opstelling.</span></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6">
+                      <h4 style="color:#fbbf24; font-size:.92rem; margin-bottom:4px;">Meetpoints & communicatie</h4>
+                      <ul class="rvln-list-check">
+                        <li><i class="fas fa-check"></i><span>Meetpoints en korte briefings via de WhatsApp-groep(en).</span></li>
+                        <li><i class="fas fa-check"></i><span>Duidelijke info over tijden, routes en updates.</span></li>
+                        <li><i class="fas fa-check"></i><span>Vaste aanspreekpunten in de Crew (FriendsCamp-coördinatie).</span></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="row g-3" style="margin-top:10px;">
+                    <div class="col-md-6">
+                      <h4 style="color:#fbbf24; font-size:.92rem; margin-bottom:4px;">Rave-Safe & Tribe vibe</h4>
+                      <ul class="rvln-list-check">
+                        <li><i class="fas fa-check"></i><span>Geen oordeel, wel <strong>eerlijk advies</strong> als iemand niet oké lijkt.</span></li>
+                        <li><i class="fas fa-check"></i><span>Check-ins, water-reminders en groepsgevoel.</span></li>
+                        <li><i class="fas fa-check"></i><span>Respect voor elkaar, andere campinggasten en de organisatie.</span></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6">
+                      <h4 style="color:#fbbf24; font-size:.92rem; margin-bottom:4px;">Wat regel jij zelf?</h4>
+                      <ul class="rvln-list-check">
+                        <li><i class="fas fa-circle-dot"></i><span>Je eigen <strong>REBiRTH ticket(s)</strong> en camping via de officiële ticketshop.</span></li>
+                        <li><i class="fas fa-circle-dot"></i><span>Reis naar/van het festivalterrein.</span></li>
+                        <li><i class="fas fa-circle-dot"></i><span>Tent, slaapspullen en persoonlijke gear (zie checklist FriendsCamp pagina).</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- KOSTEN -->
+                <div class="rvln-card--soft" style="padding:22px; margin-bottom:24px;">
+                  <h3 class="event-details__title-2" style="color:#fff; margin-bottom:6px;">
+                    Kosten &amp; FriendsCamp-bijdrage
+                  </h3>
+                  <p style="color:#d1d5db; font-size:.9rem;">
+                    Je boekt je <strong>REBiRTH tickets en camping</strong> altijd zelf via de officiële ticketshop.
+                    Daar bovenop betaal je een <strong>FriendsCamp-bijdrage</strong> aan Raveline Division voor de gezamenlijke camp-opzet.
+                  </p>
+
+                  <div class="row g-3 mt-2">
+                    <div class="col-md-6">
+                      <div class="rvln-card--soft" style="padding:16px;">
+                        <h4 style="color:#fbbf24; font-size:.95rem; margin-bottom:4px;">FriendsCamp Basic</h4>
+                        <p style="color:#e5e7eb; font-size:.85rem; margin-bottom:4px;">
+                          Richtbedrag: <strong>€XX,- p.p.</strong> (weekend)
+                          <br><span style="font-size:.75rem; color:#9ca3af;">(definitief bedrag volgt op aanmeldpagina)</span>
+                        </p>
+                        <ul class="rvln-list-check" style="margin-top:4px;">
+                          <li><i class="fas fa-check"></i><span>Toegang tot Raveline FriendsCamp-zone*</span></li>
+                          <li><i class="fas fa-check"></i><span>Basis camp-opzet &amp; aankleding</span></li>
+                          <li><i class="fas fa-check"></i><span>Meetpoints, groepschats &amp; info-updates</span></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="rvln-card--soft" style="padding:16px;">
+                        <h4 style="color:#fbbf24; font-size:.95rem; margin-bottom:4px;">Optionele extra's</h4>
+                        <p style="color:#e5e7eb; font-size:.85rem; margin-bottom:4px;">
+                          Worden later gecommuniceerd (bijv. gezamenlijke boodschappen, extra deco, etc.).
+                        </p>
+                        <ul class="rvln-list-check" style="margin-top:4px;">
+                          <li><i class="fas fa-circle-dot"></i><span>Extra Tribe-deco / licht / vlaggen</span></li>
+                          <li><i class="fas fa-circle-dot"></i><span>Gezamenlijke breakfast / snack pot</span></li>
+                          <li><i class="fas fa-circle-dot"></i><span>Eventuele Rave-Safe goodies</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p style="color:#9ca3af; font-size:.8rem; margin-top:8px;">
+                    De <strong>definitieve bedragen</strong> en betaalinfo staan op de toekomstige aanmeldpagina en in de bevestigingsmail.
+                    We houden het altijd zo transparant en eerlijk mogelijk.
+                  </p>
+                </div>
+
+                <!-- Rave-safe / regels -->
+                <div class="rvln-card--soft" style="padding:22px; margin-bottom:24px;">
+                  <span class="rvln-divider-label">
+                    <span>Rave-Safe</span>
+                  </span>
+                  <h3 class="event-details__title-2" style="color:#fff; margin:10px 0 6px;">
+                    Rave-Safe & FriendsCamp regels
+                  </h3>
+                  <p style="color:#d1d5db; font-size:.9rem;">
+                    Rave-Safe is ons motto om <strong>veilig feesten</strong> groter te maken dan alleen jezelf. Geen
+                    veroordeling, wel eerlijk advies en een Tribe die op je let.
+                  </p>
+
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <ul class="rvln-list-check">
+                        <li><i class="fas fa-heart"></i><span>Respect voor elkaar, campinggasten, beveiliging &amp; organisatie.</span></li>
+                        <li><i class="fas fa-headphones"></i><span>Altijd oordoppen – muziek is geen wegwerpartikel.</span></li>
+                        <li><i class="fas fa-droplet"></i><span>Drink genoeg water, maar niet té veel – balans is key.</span></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6">
+                      <ul class="rvln-list-check">
+                        <li><i class="fas fa-person-walking-arrow-loop-left"></i><span>Spreek af waar je elkaar vindt als iemand kwijtraakt.</span></li>
+                        <li><i class="fas fa-kit-medical"></i><span>Weet waar EHBO en Security zijn – zij zijn er om je te helpen.</span></li>
+                        <li><i class="fas fa-triangle-exclamation"></i><span>Gaat het niet goed met jou of iemand anders? Meld het direct bij Crew, Security of EHBO.</span></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <p style="color:#9ca3af; font-size:.8rem; margin-top:8px;">
+                    Samen uit, samen thuis. Zie je iets dat niet oké voelt? Liever één keer te vaak melden dan één keer te weinig.
+                  </p>
+                </div>
+
+                <!-- MINI FAQ REBIRTH -->
+                <div class="rvln-card--soft" style="padding:22px; margin-bottom:10px;">
+                  <h3 class="event-details__title-2" style="color:#fff; margin-bottom:8px;">
+                    Mini FAQ – REBiRTH FriendsCamp
+                  </h3>
+
+                  <div style="margin-bottom:10px;">
+                    <p style="color:#fbbf24; font-weight:600; font-size:.9rem; margin-bottom:2px;">
+                      Moet ik per se alle dagen gaan?
+                    </p>
+                    <p style="color:#e5e7eb; font-size:.9rem; margin-bottom:0;">
+                      Nee, je kunt ook 1 of 2 dagen gaan, zolang je <strong>camping &amp; overnachting</strong> via REBiRTH geregeld zijn.
+                      Geef in je aanmelding door welke dagen je aanwezig bent, dan houden we daar rekening mee.
+                    </p>
+                  </div>
+
+                  <div style="margin-bottom:10px;">
+                    <p style="color:#fbbf24; font-weight:600; font-size:.9rem; margin-bottom:2px;">
+                      Kan ik later aansluiten of eerder vertrekken?
+                    </p>
+                    <p style="color:#e5e7eb; font-size:.9rem; margin-bottom:0;">
+                      Ja, mits je dit <strong>van tevoren</strong> aangeeft. We plannen meetpoints en zorgen dat iemand van de Tribe of Crew je kan opvangen bij het camp.
+                    </p>
+                  </div>
+
+                  <div style="margin-bottom:10px;">
+                    <p style="color:#fbbf24; font-weight:600; font-size:.9rem; margin-bottom:2px;">
+                      Is dit officieel onderdeel van REBiRTH Festival?
+                    </p>
+                    <p style="color:#e5e7eb; font-size:.9rem; margin-bottom:0;">
+                      Nee. Dit is een <strong>onafhankelijk FriendsCamp</strong> door Raveline Division,
+                      binnen de regels en campingstructuur van REBiRTH Festival zelf.
+                    </p>
+                  </div>
+
+                  <div style="margin-bottom:10px;">
+                    <p style="color:#fbbf24; font-weight:600; font-size:.9rem; margin-bottom:2px;">
+                      Wat als ik alleen kom en niemand ken?
+                    </p>
+                    <p style="color:#e5e7eb; font-size:.9rem; margin-bottom:0;">
+                      Dan ben je juist extra welkom. We hebben een laagdrempelige sfeer, een gezamenlijke chillzone
+                      en crew die je helpt landen in de groep. Iedereen is ooit “de nieuwe” geweest.
+                    </p>
+                  </div>
+
+                  <div>
+                    <p style="color:#fbbf24; font-weight:600; font-size:.9rem; margin-bottom:2px;">
+                      Hoe blijf ik op de hoogte van alle info?
+                    </p>
+                    <p style="color:#e5e7eb; font-size:.9rem; margin-bottom:0;">
+                      Na je aanmelding voegen we je toe aan de juiste WhatsApp-groep(en) en sturen we één duidelijk overzicht
+                      met campregels, meetpoints en belangrijkste tijden.
+                    </p>
+                  </div>
+                </div>
+
+                <p style="color:#6b7280; font-size:.78rem;">
+                  *FriendsCamp is 18+ (tenzij anders vermeld). Deelname is volledig op eigen verantwoordelijkheid.
+                </p>
+
+              </div>
+            </div>
+
+            <!-- RIGHT SIDEBAR -->
+            <div class="col-xl-4 col-lg-5">
+              <aside class="event-details__right rvln-sticky">
+
+                <!-- Rebirth festival info -->
+                <div class="event-details__speakers rvln-card" style="padding:20px 20px 18px; margin-bottom:18px;">
+                  <h3 class="event-details__speakers-title" style="color:#fff;">REBiRTH Festival 2026</h3>
+                  <p class="event-details__speakers-sub-title" style="color:#f97316; font-weight:600;">
+                    Season Opener – Harder Styles
+                  </p>
+                  <p class="event-details__speakers-text" style="color:#d1d5db; font-size:.9rem;">
+                    Officiële festivalinfo, line-up en tickets vind je altijd op de website van REBiRTH Festival.
+                  </p>
+                  <div style="display:flex; flex-direction:column; gap:.45rem; margin-top:.4rem;">
+                    <div style="display:flex; gap:.5rem; align-items:center; font-size:.85rem; color:#e5e7eb;">
+                      <span class="icon-pin" style="font-size:.9rem;"></span>
+                      <span>Regio Haaren, Noord-Brabant</span>
+                    </div>
+                    <div style="display:flex; gap:.5rem; align-items:center; font-size:.85rem; color:#e5e7eb;">
+                      <span class="icon-clock" style="font-size:.9rem;"></span>
+                      <span>Voorjaar 2026 (exacte data volgens REBiRTH website)</span>
+                    </div>
+                  </div>
+                  <div style="display:flex; flex-wrap:wrap; gap:.45rem; margin-top:10px;">
+                    <a href="https://www.rebirth-festival.nl/" target="_blank" rel="noopener" class="rvln-btn"
+                      style="font-size:.85rem;">
+                      <i class="fas fa-globe"></i> Officiële website
+                    </a>
+                    <a href="https://tickets.rebirth-festival.nl/" target="_blank" rel="noopener" class="rvln-btn--ghost"
+                      style="font-size:.8rem;">
+                      <i class="fas fa-ticket"></i> Ticketshop
+                    </a>
+                  </div>
+                </div>
+
+                <!-- FriendsCamp status -->
+                <div class="event-details__ticket rvln-card" style="padding:20px 20px 18px; margin-bottom:18px;">
+                  <h3 class="event-details__ticket-title" style="color:#fff;">FriendsCamp status</h3>
+                  <p class="event-details__ticket-sub-title" style="color:#facc15; font-weight:600;">
+                    Concept / In voorbereiding
+                  </p>
+                  <p class="event-details__ticket-sub-title-2" style="color:#e5e7eb;">
+                    We zijn bezig met het uitwerken van:
+                  </p>
+                  <ul class="rvln-list-check">
+                    <li><i class="fas fa-swatchbook"></i><span>Camp-layout &amp; aankleding</span></li>
+                    <li><i class="fas fa-clipboard-list"></i><span>FriendsCamp-bijdrage &amp; extra opties</span></li>
+                    <li><i class="fas fa-link"></i><span>Aanmeldproces &amp; bevestigingsflow</span></li>
+                  </ul>
+                  <p style="color:#9ca3af; font-size:.78rem; margin-top:6px;">
+                    Zodra alles rond is, vind je hier de directe aanmeldlink.
+                  </p>
+                </div>
+
+                <!-- CTA: Tribe join -->
+                <div class="event-details__ticket-two rvln-card" style="padding:20px 20px 18px; margin-bottom:18px;">
+                  <h3 class="event-details__ticket-two-title" style="color:#fff;">Wil je mee naar FriendsCamp?</h3>
+                  <p class="event-details__ticket-two-text" style="color:#d1d5db; font-size:.9rem;">
+                    De eerste stap is <strong>deel uitmaken van de Tribe</strong>. In de WhatsApp-community delen we alle
+                    updates, polls en aanmeldlinks voor FriendsCamps en RaveUps.
+                  </p>
+                  <div class="event-details__ticket-two-btn-box" style="margin-top:8px;">
+                    <a href="https://chat.whatsapp.com/GAJv481JFi6J4nUNvtD264" target="_blank" rel="noopener"
+                      class="event-details__ticket-two-btn thm-btn"
+                      style="background:var(--rvln-grad); border:none; color:#0b0a12;">
+                      Join de Tribe <span class="icon-arrow-right"></span>
+                    </a>
+                  </div>
+                  <p style="color:#9ca3af; font-size:.78rem; margin-top:6px;">
+                    Geen WhatsApp? Stuur ons een mail via
+                    <a href="mailto:info@ravelinehq.com" style="color:#f97316;">info@ravelinehq.com</a>
+                    en vermeld dat je interesse hebt in het REBiRTH FriendsCamp.
+                  </p>
+                </div>
+
+                <!-- Toekomstige shop / tribe gear -->
+                <div class="event-details__follow-us rvln-card" style="padding:20px 20px 16px; margin-bottom:18px;">
+                  <h3 class="event-details__follow-us-title" style="color:#fff;">Tribe Gear &amp; Merch</h3>
+                  <p style="color:#d1d5db; font-size:.9rem; margin-bottom:8px;">
+                    We werken aan een <strong>online shop</strong> met Raveline-gear (kleding, vlaggen &amp; accessories).
+                    Perfect om het camp en de stages oranje-goud te kleuren.
+                  </p>
+                  <p style="color:#9ca3af; font-size:.8rem; margin-bottom:8px;">
+                    Zodra de eerste drop live gaat, kondigen we dat aan via Insta en de WhatsApp-community.
+                  </p>
+                  <div class="event-details__follow-us-social">
+                    <a href="https://www.instagram.com/raveline_division/" target="_blank" rel="noopener">
+                      <span class="icon-instagram"></span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Kleine disclaimer -->
+                <div class="event-details__location rvln-card" style="padding:16px 16px 14px;">
+                  <h3 class="event-details__location-title" style="color:#fff; font-size:1rem;">Belangrijk</h3>
+                  <p style="color:#e5e7eb; font-size:.85rem; margin-bottom:4px;">
+                    Raveline FriendsCamp is een <strong>onafhankelijk initiatief</strong> door Raveline Division en geen
+                    officieel onderdeel van de organisatie van REBiRTH Festival.
+                  </p>
+                  <p style="color:#9ca3af; font-size:.78rem; margin:0;">
+                    Respecteer altijd de regels van het festival, camping en security.
+                  </p>
+                </div>
+
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--Site Footer Start-->
+    <footer class="site-footer">
+      <div class="site-footer__shape-1 float-bob-y">
+        <img src="assets/images/shapes/site-footer-shape-1.png" alt="">
+      </div>
+      <div class="site-footer__top">
+        <div class="container">
+          <div class="site-footer__top-inner">
+            <div class="main-menu__logo">
+              <a href="index.html"><img src="assets/images/resources/logo-2.png" alt=""></a>
+            </div>
+            <div class="site-footer__social">
+              <a href="https://www.facebook.com/profile.php?id=61578060013046"><i class="icon-facebook"></i></a>
+              <a href="https://www.instagram.com/raveline_division/"><i class="icon-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__middle">
+        <div class="container">
+          <div class="site-footer__middle-inner">
+            <div class="row">
+              <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                <div class="footer-widget__column footer-widget__events">
+                  <div class="footer-widget__title-box">
+                    <h3 class="footer-widget__title">RaveUp Agenda</h3>
+                  </div>
+                  <ul class="footer-widget__events-list list-unstyled">
+                    <li>
+                      <p>31 December 2025 - Gouda</p>
+                      <h5>Raveline's New Year's Party</h5>
+                      <a href="#">Meld je aan! <span class="icon-arrow-right"></span></a>
+                    </li>
+                    <li>
+                      <p>3 Januari 2026 - RaveUp!</p>
+                      <h5>RaveUp @ Winter Efteling</h5>
+                      <a href="#">Meld je aan! <span class="icon-arrow-right"></span></a>
                     </li>
                   </ul>
                 </div>
               </div>
+              <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                <div class="footer-widget__column footer-widget__link">
+                  <div class="footer-widget__title-box">
+                    <h3 class="footer-widget__title">Quick links</h3>
+                  </div>
+                  <ul class="footer-widget__link-list list-unstyled">
+                    <li><a href="About.html">Over ons</a></li>
+                    <li><a href="RaveUp&Meeting.html">RaveUps</a></li>
+                    <li><a href="Friendscamps.html">FriendsCamp</a></li>
+                    <li><a href="coming-soonShop.html">Merch</a></li>
+                    <li><a href="Vacatures.html">Vacatures</a></li>
+                    <li><a href="FAQ.html">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                <div class="footer-widget__column footer-widget__contact">
+                  <div class="footer-widget__title-box">
+                    <h3 class="footer-widget__title">Contact</h3>
+                  </div>
+                  <div class="footer-widget__contact-inner">
+                    <ul class="footer-widget__contact-list list-unstyled">
+                      <li>
+                        <div class="icon">
+                          <span class="icon-envelop"></span>
+                        </div>
+                        <div class="text">
+                          <p><a href="mailto:info@ravelinehq.com">Info@ravelinehq.com</a></p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <span class="icon-pin"></span>
+                        </div>
+                        <div class="text">
+                          <p>Based in The Netherlands</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- vierde kolom eventueel later -->
             </div>
-
-            <!-- extra kolom indien nodig -->
-
           </div>
         </div>
       </div>
-    </div>
+      <div class="site-footer__bottom">
+        <div class="container">
+          <div class="site-footer__bottom-inner">
+            <p class="site-footer__bottom-text">© Raveline Division 2025 | All Rights Reserved</p>
+            <ul class="list-unstyled site-footer__bottom-menu">
+              <li><a href="Terms.html">Terms & Condition</a></li>
+              <li><a href="Privacy.html">Privacy Policy</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--Site Footer End-->
 
-    <div class="site-footer__bottom">
-      <div class="container">
-        <div class="site-footer__bottom-inner">
-          <p class="site-footer__bottom-text">© Raveline Division 2025 | All Rights Reserved</p>
-          <ul class="list-unstyled site-footer__bottom-menu">
-            <li><a href="Terms.html">Terms & Condition</a></li>
-            <li><a href="Privacy.html">Privacy Policy</a></li>
-            <li><a href="FAQ.html">Contact Us</a></li>
-          </ul>
+  </div><!-- /.page-wrapper -->
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav__wrapper">
+    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+    <div class="mobile-nav__content">
+      <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+      <div class="logo-box">
+        <a href="index.html" aria-label="logo image">
+          <img src="assets/images/resources/logo-2.png" width="150" alt="" />
+        </a>
+      </div>
+      <div class="mobile-nav__container"></div>
+
+      <ul class="mobile-nav__contact list-unstyled">
+        <li>
+          <i class="fa fa-envelope"></i>
+          <a href="mailto:info@ravelinehq.com">info@ravelinehq.com</a>
+        </li>
+      </ul>
+      <div class="mobile-nav__top">
+        <div class="mobile-nav__social">
+          <a href="https://www.facebook.com/profile.php?id=61578060013046" class="fab fa-facebook-square"></a>
+          <a href="https://www.instagram.com/raveline_division/" class="fab fa-instagram"></a>
         </div>
       </div>
     </div>
-  </footer>
-
-</div> <!-- /page-wrapper -->
-
-<!-- ======= MOBILE NAV / SEARCH ======= -->
-<div class="mobile-nav__wrapper" aria-hidden="true">
-  <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-  <div class="mobile-nav__content" role="dialog" aria-modal="true" aria-label="Mobiele navigatie">
-    <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
-    <div class="logo-box">
-      <a href="index.html"><img src="assets/images/resources/logo-2.png" width="150" alt="" /></a>
-    </div>
-    <div class="mobile-nav__container"></div>
-    <ul class="mobile-nav__contact list-unstyled">
-      <li><i class="fa fa-envelope"></i><a href="mailto:info@ravelinehq.com">info@ravelinehq.com</a></li>
-    </ul>
-    <div class="mobile-nav__top">
-      <div class="mobile-nav__social">
-        <a href="https://www.facebook.com/profile.php?id=61578060013046" class="fab fa-facebook-square"></a>
-        <a href="https://www.instagram.com/raveline_division/" class="fab fa-instagram"></a>
-      </div>
-    </div>
   </div>
-</div>
 
-<div class="search-popup">
-  <div class="search-popup__overlay search-toggler"></div>
-  <div class="search-popup__content">
-    <form action="#">
-      <input type="text" placeholder="Search Here..." />
-      <button type="submit" class="thm-btn"><i class="fas fa-search"></i></button>
-    </form>
-  </div>
-</div>
-
-<a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fas fa-arrow-up"></i></a>
-
-<!-- ===== Quick Apply Drawer ===== -->
-<div id="drawer" class="fixed inset-0 z-[90] hidden" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
-  <div class="absolute inset-0 bg-black/60" data-close></div>
-  <div class="absolute right-0 top-0 h-full w-[420px] max-w-full bg-[#120d1f] border-l border-white/10 shadow-2xl translate-x-full transition-transform duration-200" id="drawer-panel">
-    <div class="flex items-center justify-between p-4 border-b border-white/10">
-      <h3 id="drawer-title" class="text-white font-extrabold text-lg">Quick Apply</h3>
-      <button class="text-gray-400 hover:text-white" data-close aria-label="Sluiten">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-    <div class="p-4 overflow-y-auto h-[calc(100%-64px)]">
-      <form id="applyForm" class="space-y-3">
-        <!-- Hidden event velden -->
-        <input id="eventNameField" type="hidden" name="event_name">
-        <input id="eventDateField" type="hidden" name="event_date">
-        <input id="eventTimeField" type="hidden" name="event_time">
-        <input id="eventLocField"  type="hidden" name="event_location">
-
-        <!-- Honeypot -->
-        <input type="text" name="website" id="hpWebsite" class="hidden" tabindex="-1" autocomplete="off">
-
-        <div>
-          <label class="text-sm text-gray-400">Naam</label>
-          <input name="name" required class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200" />
-        </div>
-        <div>
-          <label class="text-sm text-gray-400">E-mail</label>
-          <input type="email" name="email" required class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200" />
-        </div>
-        <div>
-          <label class="text-sm text-gray-400">Telefoon (optioneel)</label>
-          <input name="phone" class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200" />
-        </div>
-        <div>
-          <label class="text-sm text-gray-400">Opmerking / dieetwensen</label>
-          <textarea name="note" rows="4" class="mt-1 w-full bg-[var(--rvln-soft)] border border-white/10 rounded-lg px-3 py-2 text-gray-200" placeholder="Dieetwensen, vragen, vervoer…"></textarea>
-        </div>
-
-        <button class="rvln-btn w-full justify-center" id="applySubmit" type="submit">
-          <i class="fas fa-paper-plane"></i> Verstuur
+  <!-- Search popup -->
+  <div class="search-popup">
+    <div class="search-popup__overlay search-toggler"></div>
+    <div class="search-popup__content">
+      <form action="#">
+        <label for="search" class="sr-only">search here</label>
+        <input type="text" id="search" placeholder="Search Here..." />
+        <button type="submit" aria-label="search submit" class="thm-btn">
+          <i class="fas fa-search"></i>
         </button>
-        <p class="text-xs text-gray-500 text-center mt-1">
-          Of mail direct: <a class="underline text-orange-300" href="mailto:events@ravelinehq.com">events@ravelinehq.com</a>
-        </p>
       </form>
-      <div id="applyMsg" class="mt-3 text-sm"></div>
     </div>
   </div>
-</div>
 
-<!-- ======= Vendors JS ======= -->
-<script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
-<script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendors/jarallax/jarallax.min.js"></script>
-<script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
-<script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
-<script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
-<script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
-<script src="assets/vendors/odometer/odometer.min.js"></script>
-<script src="assets/vendors/swiper/swiper.min.js"></script>
-<script src="assets/vendors/wnumb/wNumb.min.js"></script>
-<script src="assets/vendors/wow/wow.js"></script>
-<script src="assets/vendors/isotope/isotope.js"></script>
-<script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
-<script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
-<script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
-<script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
-<script src="assets/vendors/countdown/countdown.min.js"></script>
-<script src="assets/vendors/marque/marquee.min.js"></script>
-<script src="assets/vendors/sidebar-content/jquery-sidebar-content.js"></script>
-<script src="assets/js/eventflow.js"></script>
-
-<script>
-  // ===== Helpers: NL datum/tijd parsing =====
-  const NL_MONTHS = {
-    'januari':0,'februari':1,'maart':2,'april':3,'mei':4,'juni':5,
-    'juli':6,'augustus':7,'september':8,'oktober':9,'november':10,'december':11
-  };
-
-  function parseDutchDate(str){
-    const p = String(str||'').trim().toLowerCase().split(/\s+/);
-    const d = parseInt(p[0],10);
-    const m = NL_MONTHS[p[1]];
-    const y = parseInt(p[2],10);
-    if(isNaN(d)||isNaN(m)||isNaN(y)) return null;
-    return new Date(y,m,d);
-  }
-
-  function parseTimeRange(s){
-    const norm = String(s||'').replace(/\s*[-–—]\s*/,'–');
-    const [a,b] = norm.split('–').map(x=>x.trim());
-    return { start:a||'12:00', end:b||'13:00' };
-  }
-
-  function two(n){ return String(n).padStart(2,'0'); }
-
-  function toICSLocal(dt){
-    return `${dt.getFullYear()}${two(dt.getMonth()+1)}${two(dt.getDate())}T${two(dt.getHours())}${two(dt.getMinutes())}00`;
-  }
-
-  function uid(){
-    return 'rvln-'+Math.random().toString(36).slice(2)+'@ravelinehq.com';
-  }
-
-  // ===== Event kaarten verzamelen =====
-  const cards = [...document.querySelectorAll('.event')];
-
-  // ===== Flag: upcoming/past =====
-  function setTemporalFlags(){
-    const today = new Date();
-    today.setHours(0,0,0,0);
-    cards.forEach(c=>{
-      const d = new Date((c.dataset.date||'2100-01-01') + 'T00:00:00');
-      c.dataset.when = (d>=today) ? 'upcoming' : 'past';
-    });
-  }
-  setTemporalFlags();
-
-  // ====== Filtering ======
-  const tabs = [...document.querySelectorAll('#tabs .tab-pill')];
-  const qInput = document.getElementById('q');
-  const typeSel = document.getElementById('etype');
-  const searchSidebar = document.getElementById('searchInput');
-
-  function applyFilters(active='all'){
-    const q = (qInput?.value||'').toLowerCase();
-    const t = (typeSel?.value||'').toLowerCase();
-
-    cards.forEach(c=>{
-      const txt  = (c.dataset.text||'').toLowerCase();
-      const loc  = (c.dataset.loc||'').toLowerCase();
-      const when = (c.dataset.when||'upcoming');
-      const type = (c.dataset.type||'').toLowerCase();
-
-      let show = true;
-
-      if(active==='upcoming') show = (when==='upcoming');
-      if(active==='past')     show = (when==='past');
-      if(active==='nl')       show = (loc==='nl');
-      if(active==='be')       show = (loc==='be');
-      if(active==='online')   show = (loc==='online');
-
-      if(show && q) show = txt.includes(q);
-      if(show && t) show = (type===t);
-
-      const wasHidden = c.style.display==='none';
-      c.style.display = show ? '' : 'none';
-
-      if(show && wasHidden){
-        c.classList.remove('fade-in-up');
-        void c.offsetWidth;
-        c.classList.add('fade-in-up');
-      }
-    });
-  }
-
-  tabs.forEach(tab=>{
-    tab.addEventListener('click',()=>{
-      tabs.forEach(x=>x.classList.remove('active'));
-      tab.classList.add('active');
-      tabs.forEach(x=>x.setAttribute('aria-selected', x===tab ? 'true':'false'));
-      applyFilters(tab.dataset.tab);
-    });
-  });
-
-  qInput?.addEventListener('input',()=>applyFilters(document.querySelector('#tabs .active')?.dataset.tab||'all'));
-  typeSel?.addEventListener('change',()=>applyFilters(document.querySelector('#tabs .active')?.dataset.tab||'all'));
-
-  searchSidebar?.addEventListener('input',(e)=>{
-    const v = e.target.value;
-    if(qInput) qInput.value = v;
-    applyFilters(document.querySelector('#tabs .active')?.dataset.tab||'all');
-  });
-
-  document.querySelectorAll('.sidebar__all-category-list a[data-type-filter]').forEach(a=>{
-    a.addEventListener('click',(e)=>{
-      e.preventDefault();
-      const v = a.getAttribute('data-type-filter')||'';
-      if(typeSel) typeSel.value = v;
-      applyFilters(document.querySelector('#tabs .active')?.dataset.tab||'all');
-    });
-  });
-
-  document.querySelectorAll('.tag-q').forEach(tag=>{
-    tag.addEventListener('click',(e)=>{
-      e.preventDefault();
-      const v = tag.textContent.trim().toLowerCase();
-      if(qInput) qInput.value = v;
-      if(searchSidebar) searchSidebar.value = v;
-      applyFilters(document.querySelector('#tabs .active')?.dataset.tab||'all');
-    });
-  });
-
-  applyFilters('all');
-
-  // ===== Calendar & WhatsApp =====
-  function eventPayloadFromCard(card){
-    const name = card.dataset.name || card.querySelector('.blog-list__title')?.textContent?.trim() || 'RaveUp';
-    const dateText = card.querySelector('.icon-calendar')?.parentElement?.textContent?.trim() || '';
-    const time = card.dataset.time || '';
-    const locName = card.dataset.locname || card.querySelector('.icon-location')?.parentElement?.textContent?.trim() || '';
-    const desc = card.dataset.desc || card.querySelector('.blog-list__content p')?.textContent?.trim() || '';
-
-    let dateClean = (dateText.match(/(\d{1,2}\s+[a-zA-Z]+\s+\d{4})/)||[])[1] || '';
-
-    if(!dateClean && card.dataset.date){
-      const d = new Date(card.dataset.date+'T00:00:00');
-      dateClean = d.toLocaleDateString('nl-NL',{day:'numeric',month:'long',year:'numeric'});
-    }
-
-    return { name, date:dateClean, time, loc:locName, desc };
-  }
-
-  function buildICS(o){
-    const {name,date,time,loc,desc}=o;
-
-    const d = parseDutchDate(date) || new Date();
-    const {start,end} = parseTimeRange(time||'12:00–13:00');
-    const [sh,sm] = (start||'12:00').split(':').map(Number);
-    const [eh,em] = (end||'13:00').split(':').map(Number);
-
-    const dtS = new Date(d);
-    const dtE = new Date(d);
-    dtS.setHours(sh||12,sm||0,0,0);
-    dtE.setHours(eh||13,em||0,0,0);
-
-    const stamp = toICSLocal(new Date());
-
-    return `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//Raveline Division//RaveUps//NL
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-BEGIN:VEVENT
-UID:${uid()}
-DTSTAMP:${stamp}
-SUMMARY:${name}
-DTSTART:${toICSLocal(dtS)}
-DTEND:${toICSLocal(dtE)}
-DESCRIPTION:${(desc||'').replace(/\n/g,' ')}\\nMeer info: ${window.location.href}
-LOCATION:${loc||'n.t.b.'}
-END:VEVENT
-END:VCALENDAR`;
-  }
-
-  function downloadICS(filename, content){
-    const blob = new Blob([content],{type:'text/calendar;charset=utf-8;'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
-  }
-
-  function waURL(o){
-    const {name,date,time,loc}=o;
-    const lines = [
-      `🔥 ${name}`,
-      `📅 ${date} • 🕒 ${time}`,
-      `📍 ${loc||'n.t.b.'}`,
-      '',
-      `Join de Tribe → ${window.location.href}`
-    ];
-    return `https://wa.me/?text=${encodeURIComponent(lines.join('\n'))}`;
-  }
-
-  document.querySelectorAll('.blog-list__single').forEach(card=>{
-    card.querySelector('.btn-ics')?.addEventListener('click',e=>{
-      e.preventDefault();
-      const p = eventPayloadFromCard(card);
-      const ics = buildICS(p);
-      const safe = p.name.replace(/[^\w\-]+/g,'_').slice(0,60)+'.ics';
-      downloadICS(safe, ics);
-    });
-
-    card.querySelector('.btn-wa')?.addEventListener('click',e=>{
-      e.preventDefault();
-      const p = eventPayloadFromCard(card);
-      window.open(waURL(p),'_blank','noopener,noreferrer');
-    });
-  });
-
-  // ===== Supabase init (Raveline Aanmeldingen) =====
-  const SUPABASE_URL  = 'https://jtcjpvjlxupwhgqzkkyk.supabase.co';
-  const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp0Y2pwdmpseHVwd2hncXpra3lrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMwMzczNjIsImV4cCI6MjA3ODYxMzM2Mn0.293S9sZww2P85-lrouIjN9xibHzyG-h6wcu76kSqIxY';
-
-  const sbTest = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
-
-/* ============================================================================
-   FORM ELEMENTS
-============================================================================ */
-const drawer      = document.getElementById('drawer');
-const drawerPanel = document.getElementById('drawer-panel');
-const applyForm   = document.getElementById('applyForm');
-const applyMsg    = document.getElementById('applyMsg');
-const applySubmit = document.getElementById('applySubmit');
-
-/* Hidden fields */
-const fEventName = document.getElementById('eventNameField');
-const fEventDate = document.getElementById('eventDateField');
-const fEventTime = document.getElementById('eventTimeField');
-const fEventLoc  = document.getElementById('eventLocField');
-
-/* Honeypot */
-const hpWebsite  = document.getElementById('hpWebsite');
-
-
-/* ============================================================================
-   HELPER — Meldingen tonen
-============================================================================ */
-function setApplyMsg(type, text) {
-  applyMsg.textContent = text;
-  applyMsg.className = `mt-3 text-sm ${type === "ok" ? "text-green-400" : "text-red-400"}`;
-}
-
-
-/* ============================================================================
-   DRAWER OPENEN DOOR OP EEN EVENT TE DRUKKEN
-============================================================================ */
-document.querySelectorAll('.apply').forEach(btn => {
-  btn.addEventListener('click', e => {
-    e.preventDefault();
-
-    const card = btn.closest('.blog-list__single');
-    if (!card) return;
-
-    // Haal data op van HTML (data-attributes)
-    const name = card.dataset.name || "RaveUp";
-    const date = card.dataset.date || null;
-    const time = card.dataset.time || null;
-    const loc  = card.dataset.locname || null;
-
-    // Stop het in de hidden velden
-    fEventName.value = name;
-    fEventDate.value = date;
-    fEventTime.value = time;
-    fEventLoc.value  = loc;
-
-    // Titel van drawer aanpassen
-    document.getElementById("drawer-title").textContent = `Quick Apply — ${name}`;
-
-    applyMsg.textContent = "";
-    drawer.classList.remove("hidden");
-    requestAnimationFrame(() =>
-      drawerPanel.classList.remove("translate-x-full")
-    );
-    document.body.style.overflow = "hidden";
-  });
-});
-
-
-/* ============================================================================
-   DRAWER SLUITEN
-============================================================================ */
-function closeDrawer() {
-  drawerPanel.classList.add("translate-x-full");
-  setTimeout(() => drawer.classList.add("hidden"), 180);
-  document.body.style.overflow = "";
-}
-
-drawer.querySelectorAll("[data-close]").forEach(el =>
-  el.addEventListener("click", closeDrawer)
-);
-
-drawer.addEventListener("click", e => {
-  if (e.target === drawer) closeDrawer();
-});
-
-
-/* ============================================================================
-   VERSTUREN NAAR SUPABASE — Zelfde structuur als Merchandise
-============================================================================ */
-applyForm.addEventListener("submit", async e => {
-  e.preventDefault();
-  setApplyMsg("ok", "");
-
-  // Honeypot (anti-bot)
-  if (hpWebsite.value) {
-    setApplyMsg("err", "Er ging iets mis. Probeer het opnieuw.");
-    return;
-  }
-
-  // Verwerk input
-  const formData = new FormData(applyForm);
-
-  const event_name     = formData.get("event_name")     || null;
-  const event_date     = formData.get("event_date")     || null;
-  const event_time     = formData.get("event_time")     || null;
-  const event_location = formData.get("event_location") || null;
-
-  const name  = (formData.get("name")  || "").trim();
-  const email = (formData.get("email") || "").trim().toLowerCase();
-  const phone = (formData.get("phone") || "").trim();
-  const note  = (formData.get("note")  || "").trim();
-
-  if (!name || !email) {
-    setApplyMsg("err", "Vul alsjeblieft je naam en e-mail in.");
-    return;
-  }
-
-  // Disable knop
-  applySubmit.disabled = true;
-  applySubmit.textContent = "Versturen…";
-
-  // Versturen naar Supabase
-  const { error } = await sbTest
-    .from("raveline_raveup")
-    .insert({
-      event_name,
-      event_date,
-      event_time,
-      event_location,
-      name,
-      email,
-      phone: phone || null,
-      note: note || null
-    });
-
-  if (!error) {
-    setApplyMsg("ok", "🎉 Inschrijving ontvangen! Dankjewel.");
-    applyForm.reset();
-    setTimeout(closeDrawer, 1500);
-  } else {
-    console.error(error);
-    setApplyMsg("err", "Er ging iets mis. Probeer het later opnieuw.");
-  }
-
-  // Reset knop
-  applySubmit.disabled = false;
-  applySubmit.innerHTML = '<i class="fas fa-paper-plane"></i> Verstuur';
-});
-</script>
+  <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- JS -->
+  <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+  <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendors/jarallax/jarallax.min.js"></script>
+  <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+  <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+  <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+  <script src="assets/vendors/odometer/odometer.min.js"></script>
+  <script src="assets/vendors/swiper/swiper.min.js"></script>
+  <script src="assets/vendors/wnumb/wNumb.min.js"></script>
+  <script src="assets/vendors/wow/wow.js"></script>
+  <script src="assets/vendors/isotope/isotope.js"></script>
+  <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+  <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
+  <script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
+  <script src="assets/vendors/countdown/countdown.min.js"></script>
+  <script src="assets/vendors/marque/marquee.min.js"></script>
+  <script src="assets/vendors/sidebar-content/jquery-sidebar-content.js"></script>
+  <script src="assets/js/eventflow.js"></script>
+  <script src="assets/js/preloader.js"></script>
 
 </body>
 </html>
