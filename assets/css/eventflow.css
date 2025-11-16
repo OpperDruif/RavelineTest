@@ -7217,6 +7217,15 @@ ul {
   z-index: 1;
 }
 
+.page-header__label {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffb347;
+  margin-bottom: 8px;
+}
+
 .page-header__shape-1 {
   position: absolute;
   top: 30px;

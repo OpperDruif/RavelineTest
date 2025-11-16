@@ -6,258 +6,944 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
 
-  <!-- Template CSS -->
+  <!-- Tailwind (optioneel / utility-only) -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+
+  <!-- Vendor CSS -->
   <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+  <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
   <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+  <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+  <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+  <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+  <link rel="stylesheet" href="assets/vendors/eventflow-icons/style.css" />
+  <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+  <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+  <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
+  <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+
+  <!-- Theme CSS -->
   <link rel="stylesheet" href="assets/css/eventflow.css" />
   <link rel="stylesheet" href="assets/css/eventflow-responsive.css" />
 
+  <!-- Page CSS -->
   <style>
+    body {
+      background-color: #0e0a17;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* Page header */
+    .page-header {
+      position: relative;
+      background-color: #1a1425;
+      padding: 80px 0;
+      color: #fff;
+    }
+
+    .page-header__bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(.35);
+      z-index: 0;
+    }
+
+    .page-header__inner {
+      position: relative;
+      z-index: 5;
+      padding-left: 80px;
+    }
+
+    @media (max-width: 991px) {
+      .page-header__inner {
+        padding-left: 24px;
+      }
+    }
+
+    .page-header__label {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ffb347;
+      margin-bottom: 8px;
+    }
+
+    /* Legal wrapper */
     .legal-wrap {
-      background: #0E0A17;
-      border: 2px solid rgba(255,255,255,.08);
+      background: #0e0a17;
+      border: 2px solid rgba(255, 255, 255, 0.08);
       border-radius: 20px;
       padding: 40px;
     }
-    .legal-wrap h2, .legal-wrap h3 { color:#fff; }
-    .legal-wrap p, .legal-wrap li { color:#d7d7d7; line-height:1.7; }
-    .legal-accent {
-      background:linear-gradient(90deg,#fb8b23 0%,#c44a00 100%);
-      -webkit-background-clip:text;
-      color:transparent;
+
+    .legal-wrap h1,
+    .legal-wrap h2,
+    .legal-wrap h3,
+    .legal-wrap h4 {
+      color: #fff;
     }
-    .legal-meta { color:#aaa; font-size:14px; margin-top:4px; }
-    .legal-wrap a { color:#ffb347; text-decoration:none; }
-    .legal-wrap a:hover { text-decoration:underline; }
-    .page-header__inner { padding-left:80px; text-align:left; }
-    @media (max-width:991px){ .page-header__inner{padding-left:24px;} }
+
+    .legal-wrap p,
+    .legal-wrap li {
+      color: #d7d7d7;
+      line-height: 1.7;
+    }
+
+    .legal-accent {
+      background: linear-gradient(90deg, #fb8b23 0%, #c44a00 100%);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .legal-meta {
+      color: #aaa;
+      font-size: 14px;
+      margin-top: 4px;
+      margin-bottom: 24px;
+    }
+
+    .legal-wrap a {
+      color: #ffb347;
+      text-decoration: none;
+    }
+
+    .legal-wrap a:hover {
+      text-decoration: underline;
+    }
+
+    /* Inhoudsopgave */
+    .legal-toc {
+      background: #120c1e;
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .legal-toc h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .legal-toc ol {
+      padding-left: 18px;
+      margin: 0;
+      column-gap: 40px;
+      column-count: 2;
+    }
+
+    @media (max-width: 767px) {
+      .legal-toc ol {
+        column-count: 1;
+      }
+    }
+
+    .legal-toc li {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .legal-toc a {
+      color: #d7d7d7;
+      text-decoration: none;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+
+    .legal-toc a:hover,
+    .legal-toc a:focus {
+      color: #ffb347;
+      text-decoration: underline;
+      text-decoration-color: #ffb347;
+    }
+
+    /* Sections */
+    .section-block {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .section-block:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .section-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ffb347;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .section-block h3 {
+      margin-bottom: 8px;
+    }
+
+    .section-block h4 {
+      font-size: 15px;
+      margin-top: 16px;
+      margin-bottom: 4px;
+    }
+
+    /* Tooltip list voor rechten */
+    .tooltip-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .tooltip-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 12px;
+      cursor: help;
+    }
+
+    .tooltip-list .tip {
+      display: none;
+      position: absolute;
+      left: 20px;
+      top: 22px;
+      background: #1a1425;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 12px;
+      border-radius: 10px;
+      color: #d7d7d7;
+      width: 100%;
+      max-width: 420px;
+      z-index: 10;
+      font-size: 13px;
+    }
+
+    .tooltip-list li:hover .tip {
+      display: block;
+    }
+
+    /* Tables */
+    table.table {
+      margin-top: 12px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    table.table th {
+      font-weight: 600;
+    }
   </style>
 </head>
 
-<body class="body-bg-color-1">
+<body>
+<div class="page-wrapper">
 
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader" class="dots-jump">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-
-  <div class="page-wrapper">
-
-    <!-- HERO -->
-    <section class="page-header" style="background-color:#1a1425; position:relative;">
-      <div class="page-header__bg" style="background-image:url(assets/images/backgrounds/page-header-bg.jpg); filter:brightness(.4);"></div>
-      <div class="container">
-        <div class="page-header__inner">
-          <h2 style="color:#fff;">Privacy Policy</h2>
-          <div class="thm-breadcrumb__box">
-            <ul class="thm-breadcrumb list-unstyled">
-              <li><a href="index.html">Home</a></li>
-              <li><span class="icon-angle-right"></span></li>
-              <li>Privacy Policy</li>
-            </ul>
+  <!-- ========================================
+       MAIN HEADER
+  ========================================= -->
+  <header class="main-header main-header-three" role="banner">
+    <nav class="main-menu main-menu-three" aria-label="Hoofdmenu">
+      <div class="main-menu__wrapper">
+        <div class="main-menu__wrapper-inner">
+          <div class="main-menu__left">
+            <div class="main-menu__logo">
+              <a href="index.html" aria-label="Raveline Division home">
+                <img src="assets/images/resources/logo-2.png" alt="Raveline Division logo" loading="lazy" />
+              </a>
+            </div>
           </div>
-          <p style="color:#d7d7d7; max-width:720px; margin-top:18px;">
-            Deze verklaring legt uit hoe Raveline Division omgaat met persoonsgegevens, in lijn met de Europese AVG/GDPR.
-          </p>
+          <div class="main-menu__right">
+            <div class="main-menu__main-menu-box">
+              <button class="mobile-nav__toggler" aria-label="Open navigatie">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+              </button>
+              <ul class="main-menu__list">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                  <a href="#">Over ons</a>
+                  <ul>
+                    <li><a href="About.html">Over ons</a></li>
+                    <li><a href="Team.html">De Crew</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#">Tribe</a>
+                  <ul>
+                    <li><a href="RaveUp&amp;Meeting.html">Meetups &amp; RaveUps</a></li>
+                    <li><a href="Friendscamps.html">FriendsCamp</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#">Merch</a>
+                  <ul>
+                    <li><a href="coming-soonShop.html">Collectie</a></li>
+                    <li><a href="coming-soonShop.html">Pre-orders</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#">Vacatures</a>
+                  <ul>
+                    <li><a href="Vacatures.html">Open Roles</a></li>
+                    <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
+                  </ul>
+                </li>
+                <li><a href="FAQ.html">FAQ &amp; Contact</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </nav>
+  </header>
 
-    <!-- PRIVACY CONTENT -->
-    <section class="service-details" style="padding-top:60px; padding-bottom:90px;">
-      <div class="container">
-        <div class="legal-wrap">
+  <div class="stricky-header stricked-menu main-menu main-menu-three" aria-hidden="true">
+    <div class="sticky-header__content"></div>
+  </div>
+
+  <!-- ========================================
+       PAGE HEADER
+  ========================================= -->
+  <header class="page-header">
+    <div class="page-header__bg" style="background-image:url('assets/images/backgrounds/PrivacyPolicy.jpg');"></div>
+    <div class="container">
+      <div class="page-header__inner">
+        <span class="page-header__label">Legal &amp; Compliance</span>
+        <h1>Privacy Policy</h1>
+
+        <nav class="thm-breadcrumb__box" aria-label="Breadcrumb">
+          <ul class="thm-breadcrumb list-unstyled d-flex">
+            <li><a href="index.html">Home</a></li>
+            <li class="mx-2">/</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </nav>
+
+        <p class="mt-3" style="max-width:720px;">
+          Deze verklaring legt uit hoe Raveline Division omgaat met persoonsgegevens, in lijn met de Europese AVG/GDPR.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================
+       MAIN CONTENT
+  ========================================= -->
+  <main class="service-details py-5">
+    <div class="container">
+      <article class="legal-wrap">
+
+        <!-- Intro & meta -->
+        <header>
           <h2>Raveline Division <span class="legal-accent">Privacy Policy</span></h2>
-          <div class="legal-meta">Laatst bijgewerkt: oktober 2025 • Nederland</div>
+          <p class="legal-meta">Laatst bijgewerkt: oktober 2025 • Nederland</p>
 
-          <p>Bij Raveline Division hechten we waarde aan privacy, veiligheid en transparantie. Of je nu deel uitmaakt van onze community, een RaveUp bezoekt of onze website gebruikt — jouw gegevens zijn bij ons veilig.</p>
+          <p>
+            Bij Raveline Division hechten we grote waarde aan privacy, veiligheid en transparantie.
+            Of je nu deel uitmaakt van onze community, een RaveUp bezoekt of onze website gebruikt —
+            jouw gegevens zijn bij ons in goede handen.
+          </p>
+        </header>
 
-          <h3 class="mt-4">1. Wie wij zijn</h3>
-          <p><strong>Raveline Division</strong><br>
-          📍 Gevestigd in Nederland<br>
-          🌐 <a href="https://www.ravelinehq.com">www.ravelinehq.com</a><br>
-          📧 <a href="mailto:compliance@ravelinehq.com">compliance@ravelinehq.com</a></p>
+        <!-- Inhoudsopgave -->
+        <nav class="legal-toc" aria-label="Inhoudsopgave privacy policy">
+          <h2>Inhoudsopgave</h2>
+          <ol>
+            <li><a href="#sec1">1. Wie wij zijn</a></li>
+            <li><a href="#sec2">2. Welke gegevens wij verzamelen</a></li>
+            <li><a href="#sec3">3. Rechtsgrondslagen voor verwerking</a></li>
+            <li><a href="#sec4">4. Waarvoor wij gegevens gebruiken</a></li>
+            <li><a href="#sec5">5. Delen met derden</a></li>
+            <li><a href="#sec6">6. Bewaartermijnen</a></li>
+            <li><a href="#sec7">7. Cookies &amp; analytics</a></li>
+            <li><a href="#sec8">8. Beveiliging &amp; datalekken</a></li>
+            <li><a href="#sec9">9. Jouw rechten onder de AVG</a></li>
+            <li><a href="#sec10">10. Minderjarigen</a></li>
+            <li><a href="#sec11">11. Logging &amp; serverveiligheid</a></li>
+            <li><a href="#sec12">12. Geen terugwerkende kracht</a></li>
+            <li><a href="#sec13">13. Wijzigingen in deze verklaring</a></li>
+            <li><a href="#sec14">14. Contact &amp; klachten</a></li>
+          </ol>
+        </nav>
 
-          <p>Raveline Division is verantwoordelijk voor de verwerking van persoonsgegevens in overeenstemming met de <strong>Algemene Verordening Gegevensbescherming (AVG/GDPR)</strong>.</p>
+        <!-- ========================================
+             1. Wie wij zijn
+        ========================================= -->
+        <section id="sec1" class="section-block">
+          <span class="section-label">1. Organisatie</span>
+          <h3>Wie wij zijn</h3>
 
-          <h3 class="mt-4">2. Welke gegevens wij verzamelen</h3>
-          <p>Wij verzamelen alleen gegevens die noodzakelijk zijn voor onze community, evenementen en communicatie:</p>
+          <p>
+            <strong>Raveline Division</strong><br />
+            📍 Gevestigd in Nederland<br />
+            🌐 <a href="https://www.ravelinehq.com" target="_blank" rel="noopener">www.ravelinehq.com</a><br />
+            📧 <a href="mailto:compliance@ravelinehq.com">compliance@ravelinehq.com</a>
+          </p>
+
+          <p>
+            Raveline Division is (verwerkings)verantwoordelijke voor de verwerking van persoonsgegevens zoals bedoeld
+            in de <strong>Algemene Verordening Gegevensbescherming (AVG/GDPR)</strong>, voor zover het gaat om de
+            activiteiten die in deze privacyverklaring zijn beschreven.
+          </p>
+        </section>
+
+        <!-- ========================================
+             2. Welke gegevens wij verzamelen
+        ========================================= -->
+        <section id="sec2" class="section-block">
+          <span class="section-label">2. Gegevens</span>
+          <h3>Welke gegevens wij verzamelen</h3>
+
+          <p>
+            Wij verzamelen alleen gegevens die noodzakelijk zijn voor onze community, evenementen en communicatie.
+            Afhankelijk van de situatie kunnen wij onder andere de volgende persoonsgegevens verwerken:
+          </p>
+
+          <h4>2.1 Basisgegevens</h4>
           <ul>
-            <li>Naam en contactgegevens (e-mail, telefoonnummer)</li>
-            <li>Voorkeuren of aanvullende informatie (bijv. dieet, communityvoorkeuren)</li>
-            <li>Cookie- en analytische data via onze website</li>
+            <li>Naam en voornaam</li>
+            <li>E-mailadres en andere contactgegevens</li>
+            <li>Basisprofielinformatie (zoals username of Discord-tag)</li>
           </ul>
 
-          <p>Gegevens worden verkregen via:</p>
+          <h4>2.2 Event- &amp; voorkeurgegevens</h4>
           <ul>
-            <li>Websiteformulieren (aanmeldingen, contact, vacatures)</li>
-            <li>Eventregistraties (FriendsCamp, RaveUps)</li>
-            <li>Communityplatforms (Discord, WhatsApp)</li>
-            <li>Cookies en analytische tools (Google Analytics, hostinglogs)</li>
+            <li>Deelnamestatus aan events (bijv. FriendsCamps, RaveUps)</li>
+            <li>Praktische informatie die je zelf doorgeeft (bijv. aankomsttijd, groepsindeling, slaapplek voorkeur)</li>
+            <li>Dieetwensen of gezondheidsmeldingen die relevant zijn voor een event (altijd vrijwillig verstrekt)</li>
           </ul>
 
-          <h3 class="mt-4">3. Rechtsgrondslagen voor verwerking</h3>
-          <p>De verwerking van persoonsgegevens door Raveline Division berust op de volgende wettelijke grondslagen:</p>
+          <h4>2.3 Technische en gebruiksgegevens</h4>
           <ul>
-            <li><strong>Toestemming:</strong> je geeft vrijwillig toestemming bij inschrijving of deelname.</li>
-            <li><strong>Overeenkomst:</strong> nodig om een eventdeelname, bestelling of aanvraag af te handelen.</li>
-            <li><strong>Wettelijke verplichting:</strong> bv. fiscale bewaarplicht of veiligheidsregistratie.</li>
-            <li><strong>Gerechtvaardigd belang:</strong> interne administratie, beveiliging en communitybeheer.</li>
+            <li>IP-adres en browsertype bij websitebezoek</li>
+            <li>Anonieme of geaggregeerde statistieken over gebruik van onze website</li>
+            <li>Basisinformatie vanuit cookies en analytische tools</li>
           </ul>
 
-          <h3 class="mt-4">4. Waarvoor wij gegevens gebruiken</h3>
+          <h4>2.4 Hoe wij gegevens verkrijgen</h4>
           <ul>
-            <li><strong>Communitybeheer:</strong> toegang, moderatie en communicatie binnen onze tribe.</li>
-            <li><strong>Eventbeheer:</strong> aanmeldingen, lijsten en noodcontacten tijdens FriendsCamps of RaveUps.</li>
-            <li><strong>Websiteoptimalisatie:</strong> inzicht in gebruikspatronen via anonieme analytics.</li>
-            <li><strong>Veiligheid & compliance:</strong> naleving van wet- en regelgeving (bijv. 18+ beleid, verzekering).</li>
+            <li>Websiteformulieren (contact, aanmeldingen, sollicitaties/vacatures)</li>
+            <li>Eventregistraties (zoals FriendsCamp- en RaveUp-inschrijvingen)</li>
+            <li>Communityplatforms (zoals Discord, WhatsApp of vergelijkbare kanalen)</li>
+            <li>Cookies en analytische tools op onze website</li>
           </ul>
-          <p>Wij gebruiken gegevens <strong>nooit voor reclame</strong> tenzij je daar expliciet toestemming voor hebt gegeven.</p>
+        </section>
 
-          <h3 class="mt-4">5. Delen met derden</h3>
-          <p>Wij delen persoonsgegevens alleen met zorgvuldig geselecteerde partners of verwerkers, indien strikt noodzakelijk voor onze werking:</p>
+        <!-- ========================================
+             3. Rechtsgrondslagen
+        ========================================= -->
+        <section id="sec3" class="section-block">
+          <span class="section-label">3. Rechtsgrondslagen</span>
+          <h3>Rechtsgrondslagen voor verwerking</h3>
+
+          <p>
+            Wij verwerken persoonsgegevens alleen wanneer daar een geldige juridische basis voor bestaat.
+            Afhankelijk van de context gaat het om:
+          </p>
+
           <ul>
-            <li>Google Forms / Sheets – voor aanmeldingen</li>
-            <li>Discord & WhatsApp – community-communicatie</li>
-            <li>Hostingprovider / webserver – beveiligde opslag</li>
-            <li>Evenementpartners (zoals campings of festivalorganisaties) – bij deelname</li>
+            <li>
+              <strong>Toestemming</strong> – bijvoorbeeld wanneer je je vrijwillig aanmeldt voor een event,
+              formulier of mailing.
+            </li>
+            <li>
+              <strong>Overeenkomst</strong> – wanneer verwerking nodig is voor het uitvoeren van een
+              (betaald) event of een andere overeenkomst met jou.
+            </li>
+            <li>
+              <strong>Wettelijke verplichting</strong> – bijvoorbeeld voor bewaarplichten in de financiële administratie.
+            </li>
+            <li>
+              <strong>Gerechtvaardigd belang</strong> – bijvoorbeeld voor communitybeheer, veiligheid en het verbeteren
+              van onze diensten, waarbij wij jouw privacybelang zorgvuldig meewegen.
+            </li>
           </ul>
-          <p>Met deze partijen zijn verwerkersovereenkomsten gesloten conform artikel 28 AVG.  
-          Indien een verwerker buiten de EU is gevestigd, zorgen wij voor passende waarborgen (zoals <em>Standard Contractual Clauses</em>).</p>
-          <p>Wij verkopen, verhuren of verhandelen <strong>nooit</strong> persoonsgegevens aan derden.</p>
+        </section>
 
-          <h3 class="mt-4">6. Bewaartermijnen</h3>
-          <table class="table table-dark table-sm" style="color:#d7d7d7;">
-            <tr><th>Type gegevens</th><th>Bewaartermijn</th></tr>
-            <tr><td>Websiteformulieren</td><td>Max. 1 jaar</td></tr>
-            <tr><td>Event- en deelnemersgegevens</td><td>Max. 6 maanden na afloop</td></tr>
-            <tr><td>Community-accounts</td><td>Zolang het lidmaatschap actief is</td></tr>
-            <tr><td>Financiële administratie</td><td>8 jaar (Belastingwet)</td></tr>
+        <!-- ========================================
+             4. Waarvoor wij gegevens gebruiken
+        ========================================= -->
+        <section id="sec4" class="section-block">
+          <span class="section-label">4. Doeleinden</span>
+          <h3>Waarvoor wij gegevens gebruiken</h3>
+
+          <h4>4.1 Communitybeheer</h4>
+          <ul>
+            <li>Beheer van leden en rollen binnen onze communitykanalen (bijv. Discord, WhatsApp)</li>
+            <li>Toegangsbeheer tot specifieke kanalen, groepen of functies</li>
+          </ul>
+
+          <h4>4.2 Eventorganisatie &amp; veiligheid</h4>
+          <ul>
+            <li>Registratie van deelname aan FriendsCamps en RaveUps</li>
+            <li>Communicatie over planning, locaties en praktische informatie</li>
+            <li>Gebruik van noodcontactgegevens bij incidenten tijdens evenementen</li>
+          </ul>
+
+          <h4>4.3 Communicatie</h4>
+          <ul>
+            <li>Beantwoorden van vragen via e-mail, social media en formulieren</li>
+            <li>Sturen van updates over door jou gekozen events of community-informatie</li>
+          </ul>
+
+          <h4>4.4 Websiteoptimalisatie &amp; beveiliging</h4>
+          <ul>
+            <li>Technische monitoring en analyse om de website stabiel en veilig te houden</li>
+            <li>Anonieme statistieken om content en gebruikservaring te verbeteren</li>
+          </ul>
+
+          <p class="mt-2">
+            Wij gebruiken persoonsgegevens <strong>nooit</strong> voor ongevraagde reclame of verkoop aan derden
+            zonder jouw <strong>expliciete</strong> toestemming.
+          </p>
+        </section>
+
+        <!-- ========================================
+             5. Delen met derden
+        ========================================= -->
+        <section id="sec5" class="section-block">
+          <span class="section-label">5. Derden</span>
+          <h3>Delen met derden</h3>
+
+          <p>
+            Wij delen persoonsgegevens alleen met partijen die noodzakelijk zijn om onze diensten te kunnen leveren.
+            Denk hierbij aan:
+          </p>
+
+          <ul>
+            <li>Online formulieren en opslag (bijvoorbeeld Google Forms en Google Sheets)</li>
+            <li>Communityplatforms (zoals Discord en WhatsApp)</li>
+            <li>Hostingproviders voor onze website en e-mail</li>
+            <li>Evenementpartners, indien nodig voor jouw deelname (bijv. verblijfsaccommodaties of festivalorganisaties)</li>
+          </ul>
+
+          <p>
+            Met deze partijen worden waar mogelijk verwerkersovereenkomsten gesloten. Let op: sommige platforms,
+            zoals Discord en WhatsApp, zijn zelf ook verwerkingsverantwoordelijke voor bepaalde gegevensverwerkingen.
+            In dat geval is ook hun eigen privacyverklaring van toepassing.
+          </p>
+
+          <p>
+            Raveline Division verkoopt of verhuurt <strong>nooit</strong> persoonsgegevens aan derden.
+          </p>
+
+          <h4>5.1 Doorgifte buiten de Europese Economische Ruimte (EER)</h4>
+          <p>
+            Sommige van onze dienstverleners zijn gevestigd buiten de Europese Economische Ruimte (EER), of maken
+            deel uit van internationale groepen. Dit kan betekenen dat je gegevens worden doorgegeven naar landen met
+            een ander niveau van gegevensbescherming dan binnen de EER.
+          </p>
+          <p>
+            Waar mogelijk maken wij gebruik van passende waarborgen, zoals door de Europese Commissie goedgekeurde
+            standaardcontractbepalingen (Standard Contractual Clauses). Daarnaast verwijzen wij naar de
+            privacyverklaringen van de betreffende dienstverleners voor meer informatie over hun beveiligings- en
+            overdrachtsmaatregelen.
+          </p>
+        </section>
+
+        <!-- ========================================
+             6. Bewaartermijnen
+        ========================================= -->
+        <section id="sec6" class="section-block">
+          <span class="section-label">6. Bewaartermijnen</span>
+          <h3>Bewaartermijnen</h3>
+
+          <p>
+            Wij bewaren persoonsgegevens niet langer dan nodig is voor het doel waarvoor ze zijn verzameld,
+            tenzij een langere bewaartermijn wettelijk verplicht is (bijvoorbeeld voor fiscale bewaarplichten).
+          </p>
+
+          <table class="table table-dark table-sm">
+            <thead>
+              <tr>
+                <th>Type gegevens</th>
+                <th>Bewaartermijn</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Websiteformulieren (contact &amp; algemene vragen)</td>
+                <td>Max. 1 jaar</td>
+              </tr>
+              <tr>
+                <td>Eventgegevens (aanmeldingen, deelnemerslijsten)</td>
+                <td>Max. 6 maanden na het event</td>
+              </tr>
+              <tr>
+                <td>Community-accounts / ledengegevens</td>
+                <td>Zolang het account actief is</td>
+              </tr>
+              <tr>
+                <td>Financiële administratie (facturen, betalingen)</td>
+                <td>8 jaar (wettelijke bewaarplicht)</td>
+              </tr>
+            </tbody>
           </table>
+        </section>
 
-          <h3 class="mt-4">7. Cookies & analytics</h3>
-          <p>Onze site gebruikt uitsluitend functionele en anonieme analytische cookies. Geen tracking of advertentiecookies zonder toestemming.</p>
+        <!-- ========================================
+             7. Cookies & analytics
+        ========================================= -->
+        <section id="sec7" class="section-block">
+          <span class="section-label">7. Cookies</span>
+          <h3>Cookies &amp; analytics</h3>
+
+          <p>
+            Onze website maakt gebruik van cookies om goed te functioneren en inzicht te krijgen in het gebruik van de site.
+            Waar mogelijk beperken we dit tot functionele en anonieme of geaggregeerde analytische cookies.
+            We gebruiken geen trackingcookies voor gepersonaliseerde advertenties.
+          </p>
+
+          <h4>7.1 Functionele cookies</h4>
+          <p>
+            Deze cookies zijn noodzakelijk voor het basisgebruik van de website, zoals navigatie en het opslaan van
+            bepaalde voorkeuren.
+          </p>
+
+          <h4>7.2 Analytische cookies (anoniem of geaggregeerd)</h4>
+          <p>
+            Analytische cookies helpen ons te begrijpen hoe bezoekers de website gebruiken. Waar mogelijk worden deze
+            gegevens geanonimiseerd of geaggregeerd, zodat ze niet direct tot jou herleidbaar zijn.
+          </p>
+
+          <p>
+            Je kunt cookies beheren of verwijderen via de instellingen van je browser. Houd er rekening mee dat het
+            uitschakelen van cookies invloed kan hebben op de werking van (delen van) de website.
+          </p>
+        </section>
+
+        <!-- ========================================
+             8. Beveiliging & datalekken
+        ========================================= -->
+        <section id="sec8" class="section-block">
+          <span class="section-label">8. Beveiliging</span>
+          <h3>Beveiliging &amp; datalekken</h3>
+
+          <p>
+            Wij nemen passende technische en organisatorische maatregelen om jouw persoonsgegevens te beschermen tegen
+            misbruik, verlies, onbevoegde toegang, ongewenste openbaarmaking en ongeoorloofde wijziging.
+          </p>
+
           <ul>
-            <li>Analytische cookies – meten bezoekersstatistieken (geanonimiseerd)</li>
-            <li>Functionele cookies – onthouden voorkeuren (zoals taalinstellingen)</li>
+            <li>Beperkte toegang tot persoonsgegevens (alleen voor personen die deze echt nodig hebben)</li>
+            <li>Gebruik van beveiligde verbindingen (HTTPS) waar mogelijk</li>
+            <li>Gebruik van sterke wachtwoorden en waar mogelijk two-factor-authenticatie</li>
           </ul>
-          <p>Bij je eerste bezoek kun je jouw voorkeuren instellen. Je kunt deze altijd wijzigen via de browserinstellingen.</p>
 
-          <h3 class="mt-4">8. Beveiliging & datalekken</h3>
-          <p>Raveline Division hanteert technische en organisatorische maatregelen om jouw data te beschermen (SSL, wachtwoordbeleid, beperkte toegang).  
-          In het geval van een <strong>datalek</strong> wordt dit, indien vereist, gemeld aan de <em>Autoriteit Persoonsgegevens</em> en – indien relevant – aan de betrokkenen zelf via e-mail of communitykanaal.</p>
+          <p>
+            Bij een (vermoeden van een) datalek onderzoeken wij de situatie en nemen we waar nodig maatregelen.
+            Indien wettelijk verplicht melden wij het datalek bij de <strong>Autoriteit Persoonsgegevens</strong>
+            en, indien relevant, bij de betrokken personen.
+          </p>
 
-          <h3 class="mt-4">9. Jouw rechten onder de AVG</h3>
+          <h4>8.1 Geen geautomatiseerde besluitvorming</h4>
+          <p>
+            Wij nemen geen besluiten op basis van uitsluitend geautomatiseerde verwerkingen (profiling) die
+            rechtsgevolgen voor jou hebben of jou op vergelijkbare wijze in aanmerkelijke mate treffen.
+          </p>
+        </section>
+
+        <!-- ========================================
+             9. Jouw rechten
+        ========================================= -->
+        <section id="sec9" class="section-block">
+          <span class="section-label">9. Rechten</span>
+          <h3>Jouw rechten onder de AVG</h3>
+
+          <p>
+            Op grond van de AVG heb je als betrokkene een aantal rechten met betrekking tot je persoonsgegevens.
+            Hieronder een kort overzicht, met extra uitleg via de tooltips:
+          </p>
+
           <ul class="tooltip-list">
             <li>
               Recht op inzage
-              <span class="tip">
-                Je mag bevestiging krijgen of wij jouw persoonsgegevens verwerken en zo ja:
-                een overzicht (kopie) van die gegevens en de doeleinden, categorieën en bewaartermijnen.
-              </span>
+              <span class="tip">Je mag opvragen welke persoonsgegevens wij van je verwerken en een overzicht ontvangen.</span>
             </li>
             <li>
-              Recht op correctie (rectificatie)
-              <span class="tip">
-                Je mag onjuiste of onvolledige persoonsgegevens laten verbeteren of aanvullen,
-                zodat ze actueel en accuraat zijn.
-              </span>
+              Recht op correctie
+              <span class="tip">Je mag onjuiste of onvolledige persoonsgegevens laten aanpassen of aanvullen.</span>
             </li>
             <li>
-              Recht op verwijdering (“recht om vergeten te worden”)
+              Recht op verwijdering
               <span class="tip">
-                Je mag in bepaalde gevallen vragen om je gegevens te verwijderen (bijv. als ze niet langer nodig zijn
-                of je toestemming intrekt). Dit geldt niet als er een zwaardere wettelijke plicht is om ze te bewaren
-                (zoals fiscale bewaartermijn). <br>
-                <strong>Let op: het recht op verwijdering geldt niet wanneer gegevens nog nodig zijn voor de uitvoering van een overeenkomst, bijvoorbeeld bij deelname aan een actie of samenwerking (zoals een promotieticket in ruil voor foto- of videomateriaal).
-                In die gevallen bewaren wij de gegevens totdat de overeenkomst is afgerond of de wettelijke bewaartermijn is verstreken.</strong>
+                Je mag verzoeken om verwijdering van jouw gegevens, tenzij wij deze moeten bewaren op grond van een wettelijke verplichting.
               </span>
             </li>
             <li>
               Recht op beperking van verwerking
-              <span class="tip">
-                Je mag tijdelijk pauzeren/beperken van het gebruik van je gegevens vragen, bijvoorbeeld terwijl
-                wij de juistheid controleren of bij bezwaar. We bewaren dan wel, maar gebruiken niet verder.
-              </span>
+              <span class="tip">Je kunt in bepaalde gevallen vragen om de verwerking tijdelijk te beperken.</span>
             </li>
             <li>
               Recht van bezwaar
               <span class="tip">
-                Je mag bezwaar maken tegen verwerking op basis van gerechtvaardigd belang.
-                Wij stoppen dan, tenzij wij dwingende gerechtvaardigde gronden hebben die zwaarder wegen.
-                (Wij doen geen direct marketing zonder jouw toestemming.)
+                Je mag bezwaar maken tegen verwerking op basis van gerechtvaardigd belang of tegen gebruik voor direct marketing.
               </span>
             </li>
             <li>
-              Recht op overdraagbaarheid (dataportabiliteit)
+              Recht op overdraagbaarheid
               <span class="tip">
-                Je mag een kopie van de door jou verstrekte gegevens in een gestructureerd, gangbaar en
-                machine-leesbaar formaat ontvangen en die (laten) doorgeven aan een andere partij.
+                Je mag vragen om jouw gegevens in een gestructureerd, gangbaar en machineleesbaar formaat te ontvangen.
               </span>
             </li>
           </ul>
-          <p style="color:#a7a7a7; font-size:14px; margin-top:8px;">
-            Wil je een van deze rechten uitoefenen? Mail <a href="mailto:compliance@ravelinehq.com">compliance@ravelinehq.com</a>.
+
+          <p class="mt-3">
+            Wil je één van deze rechten uitoefenen? Mail dan naar
+            <a href="mailto:compliance@ravelinehq.com">compliance@ravelinehq.com</a>.
+            We kunnen je vragen om aanvullende informatie om je identiteit te verifiëren. We reageren zo snel mogelijk
+            en uiterlijk binnen de wettelijke termijn.
+          </p>
+        </section>
+
+        <!-- ========================================
+             10. Minderjarigen
+        ========================================= -->
+        <section id="sec10" class="section-block">
+          <span class="section-label">10. Minderjarigen</span>
+          <h3>Minderjarigen</h3>
+
+          <p>
+            Raveline Division richt zich in de basis op een 18+ doelgroep. Deelname aan bepaalde events kan daarom
+            beperkt zijn tot personen van 18 jaar of ouder.
           </p>
 
-          <p>Stuur je verzoek naar <a href="mailto:compliance@ravelinehq.com">compliance@ravelinehq.com</a>.  
-          We reageren binnen 30 dagen, tenzij de wet een andere termijn toestaat.</p>
-
-          <h3 class="mt-4">10. Minderjarigen</h3>
           <p>
-            Raveline Division richt zich in de basis op personen van <strong>18 jaar en ouder</strong>.  
-            Wij verzamelen of verwerken niet bewust persoonsgegevens van minderjarigen zonder ouderlijke toestemming.  
-          </p> <br>
+            Voor activiteiten of events die expliciet toegankelijk zijn voor minderjarigen of all-ages, kan
+            ouderlijke of wettelijke toestemming vereist zijn. Dit wordt dan duidelijk vermeld bij de betreffende activiteit.
+          </p>
+        </section>
 
-          <p>
-            In uitzonderlijke gevallen, zoals bij <strong>openbare of all-ages events</strong> waarbij deelname mogelijk is voor personen jonger dan 18 jaar,  
-            is deelname uitsluitend toegestaan met <strong>schriftelijke toestemming van een ouder, voogd of verantwoordelijke</strong> van 18 jaar of ouder.  
-            Deze persoon blijft <strong>wettelijk verantwoordelijk</strong> voor de minderjarige gedurende deelname aan communityactiviteiten,  
-            online interacties of fysieke evenementen die onder Raveline Division vallen.
-          </p> <br>
+        <!-- ========================================
+             11. Logging & serverveiligheid
+        ========================================= -->
+        <section id="sec11" class="section-block">
+          <span class="section-label">11. Logging</span>
+          <h3>Logging &amp; serverveiligheid</h3>
 
           <p>
-            Indien wij ontdekken dat persoonsgegevens van een minderjarige zonder geldige ouderlijke toestemming zijn verzameld,  
-            zullen wij deze <strong>direct verwijderen</strong> en, indien nodig, contact opnemen met de ouder of voogd ter verificatie.
+            Onze servers en systemen kunnen technische logbestanden bijhouden, zoals IP-adressen, foutmeldingen en
+            toegangstijden, om de performance, stabiliteit en veiligheid van onze diensten te bewaken.
           </p>
 
-          <h3 class="mt-4">11. Logging & serverveiligheid</h3>
-          <p>Onze servers houden beperkte technische logs bij (zoals IP-adres, tijdstip en foutmeldingen) om beveiliging en prestaties te waarborgen. Deze gegevens zijn niet persoonlijk identificeerbaar en worden na 30 dagen automatisch verwijderd.</p>
+          <p>
+            Deze logs worden in principe maximaal 30 dagen bewaard, tenzij een langere bewaartermijn noodzakelijk is
+            in het kader van een onderzoek naar beveiligingsincidenten of misbruik.
+          </p>
+        </section>
 
-          <h3 class="mt-4">12. Geen terugwerkende kracht</h3>
-          <p>De AVG heeft geen terugwerkende kracht. Persoonsgegevens die vóór 25 mei 2018 rechtmatig zijn verkregen, worden uitsluitend verwerkt conform de op dat moment geldende wetgeving en worden bij hergebruik aangepast aan de huidige AVG-normen.</p>
+        <!-- ========================================
+             12. Geen terugwerkende kracht
+        ========================================= -->
+        <section id="sec12" class="section-block">
+          <span class="section-label">12. Geldigheid</span>
+          <h3>Geen terugwerkende kracht</h3>
 
-          <h3 class="mt-4">13. Wijzigingen in deze verklaring</h3>
-          <p>Raveline Division behoudt zich het recht voor deze Privacy Policy te wijzigen.  
-          De meest actuele versie staat altijd op <a href="https://www.ravelinehq.com/privacy">ravelinehq.com/privacy</a>.  
-          Bij grote wijzigingen informeren wij onze leden via WhatsApp, Discord of e-mail.</p>
+          <p>
+            Deze privacyverklaring is van toepassing vanaf de datum zoals vermeld bovenaan deze pagina.
+            Wijzigingen in deze verklaring gelden niet met terugwerkende kracht voor verwerkingen die al volledig
+            zijn afgerond, tenzij de wet dit vereist of wij dit expliciet anders aangeven.
+          </p>
+        </section>
 
-          <h3 class="mt-4">14. Contact & klachten</h3>
-          <p>Voor privacy- of compliancevragen:</p>
+        <!-- ========================================
+             13. Wijzigingen in deze verklaring
+        ========================================= -->
+        <section id="sec13" class="section-block">
+          <span class="section-label">13. Wijzigingen</span>
+          <h3>Wijzigingen in deze verklaring</h3>
+
+          <p>
+            Raveline Division kan deze privacyverklaring van tijd tot tijd aanpassen, bijvoorbeeld bij wijzigingen in
+            wet- en regelgeving, onze diensten of de structuur van de community.
+          </p>
+
+          <p>
+            De meest recente versie is altijd te vinden op
+            <a href="https://www.ravelinehq.com" target="_blank" rel="noopener">www.ravelinehq.com</a>.
+            Bij ingrijpende wijzigingen proberen wij dit actief te communiceren via onze gebruikelijke kanalen.
+          </p>
+        </section>
+
+        <!-- ========================================
+             14. Contact & klachten
+        ========================================= -->
+        <section id="sec14" class="section-block">
+          <span class="section-label">14. Contact</span>
+          <h3>Contact &amp; klachten</h3>
+
+          <p>
+            Heb je vragen, verzoeken of klachten over deze privacyverklaring of de verwerking van jouw gegevens?
+            Neem dan contact met ons op:
+          </p>
+
           <ul>
-            <li>📧 <strong><a href="mailto:compliance@ravelinehq.com">compliance@ravelinehq.com</a></strong></li>
-            <li>🌐 <a href="https://www.ravelinehq.com">www.ravelinehq.com</a></li>
-            <li>🏛️ Nederland – The Netherlands</li>
+            <li>📧 <a href="mailto:compliance@ravelinehq.com">compliance@ravelinehq.com</a></li>
+            <li>🌐 <a href="https://www.ravelinehq.com" target="_blank" rel="noopener">www.ravelinehq.com</a></li>
+            <li>🏛️ Nederland</li>
           </ul>
-          <p>Als je vindt dat wij niet zorgvuldig omgaan met je gegevens, kun je een klacht indienen bij de <a href="https://www.autoriteitpersoonsgegevens.nl" target="_blank">Autoriteit Persoonsgegevens</a>.</p>
 
-          <p style="margin-top:20px; color:#ffb347;"><strong>⫸ One Tribe, Worldwide – We protect what connects us.</strong><br>
-          Jouw vertrouwen is de basis van onze community. We beschermen jouw gegevens met dezelfde toewijding waarmee we onze tribe samenbrengen: met respect, eerlijkheid en verantwoordelijkheid.</p>
+          <p>
+            Kom je er met ons niet uit, dan heb je het recht om een klacht in te dienen bij de
+            <strong>Autoriteit Persoonsgegevens</strong>. Kijk voor meer informatie op de website van de
+            Autoriteit Persoonsgegevens.
+          </p>
+
+          <p class="mt-4" style="color:#ffb347;">
+            <strong>⫸ One Tribe, Worldwide – We protect what connects us.</strong>
+          </p>
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+</div>
+
+<!-- ========================================
+     FOOTER
+========================================= -->
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer__shape-1 float-bob-y" aria-hidden="true">
+    <img src="assets/images/shapes/site-footer-shape-1.png" alt="" loading="lazy" />
+  </div>
+  <div class="site-footer__top">
+    <div class="container">
+      <div class="site-footer__top-inner">
+        <div class="main-menu__logo">
+          <a href="index.html" aria-label="Raveline Division home">
+            <img src="assets/images/resources/logo-2.png" alt="Raveline Division logo" loading="lazy" />
+          </a>
+        </div>
+        <div class="site-footer__social" aria-label="Social links">
+          <a href="https://www.facebook.com/profile.php?id=61578060013046" aria-label="Facebook">
+            <i class="icon-facebook" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.instagram.com/raveline_division/" aria-label="Instagram">
+            <i class="icon-instagram" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
-    </section>
-
+    </div>
   </div>
+  <div class="site-footer__middle">
+    <div class="container">
+      <div class="site-footer__middle-inner">
+        <div class="row">
+          <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+            <div class="footer-widget__column footer-widget__events">
+              <div class="footer-widget__title-box">
+                <h3 class="footer-widget__title">RaveUp Agenda</h3>
+              </div>
+              <ul class="footer-widget__events-list list-unstyled">
+                <li>
+                  <p>31 december 2026 — Gouda</p>
+                  <h5>Raveline's New Year's Party</h5>
+                  <a href="#">Meld je aan! <span class="icon-arrow-right" aria-hidden="true"></span></a>
+                </li>
+                <li>
+                  <p>3 januari 2026 — RaveUp!</p>
+                  <h5>RaveUp @ Winter Efteling</h5>
+                  <a href="#">Meld je aan! <span class="icon-arrow-right" aria-hidden="true"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+            <div class="footer-widget__column footer-widget__link">
+              <div class="footer-widget__title-box">
+                <h3 class="footer-widget__title">Quick links</h3>
+              </div>
+              <ul class="footer-widget__link-list list-unstyled">
+                <li><a href="About.html">Over ons</a></li>
+                <li><a href="RaveUp&Meeting.html">RaveUps</a></li>
+                <li><a href="Friendscamps.html">FriendsCamp</a></li>
+                <li><a href="coming-soonShop.html">Merch</a></li>
+                <li><a href="Vacatures.html">Vacatures</a></li>
+                <li><a href="FAQ.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+            <div class="footer-widget__column footer-widget__contact">
+              <div class="footer-widget__title-box">
+                <h3 class="footer-widget__title">Contact</h3>
+              </div>
+              <div class="footer-widget__contact-inner">
+                <ul class="footer-widget__contact-list list-unstyled">
+                  <li>
+                    <div class="icon"><span class="icon-envelop" aria-hidden="true"></span></div>
+                    <div class="text">
+                      <p><a href="mailto:info@ravelinehq.com">info@ravelinehq.com</a></p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="icon"><span class="icon-pin" aria-hidden="true"></span></div>
+                    <div class="text">
+                      <p>Based in The Netherlands</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Vierde kolom eventueel later -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <div class="container">
+      <div class="site-footer__bottom-inner">
+        <p class="site-footer__bottom-text">
+          © Raveline Division 2025 | All Rights Reserved
+        </p>
+        <ul class="list-unstyled site-footer__bottom-menu">
+          <li><a href="Terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="Privacy.html">Privacy Policy</a></li>
+          <li><a href="FAQ.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
 
-  <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Vendor JS (deferred) -->
+<script src="assets/vendors/jquery/jquery-3.6.0.min.js" defer></script>
+<script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+<script src="assets/vendors/jarallax/jarallax.min.js" defer></script>
+<script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js" defer></script>
+<script src="assets/vendors/jquery-appear/jquery.appear.min.js" defer></script>
+<script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js" defer></script>
+<script src="assets/vendors/jquery-validate/jquery.validate.min.js" defer></script>
+<script src="assets/vendors/odometer/odometer.min.js" defer></script>
+<script src="assets/vendors/swiper/swiper.min.js" defer></script>
+<script src="assets/vendors/wnumb/wNumb.min.js" defer></script>
+<script src="assets/vendors/wow/wow.js" defer></script>
+<script src="assets/vendors/isotope/isotope.js" defer></script>
+<script src="assets/vendors/owl-carousel/owl.carousel.min.js" defer></script>
+<script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js" defer></script>
+<script src="assets/vendors/jquery-ui/jquery-ui.js" defer></script>
+<script src="assets/vendors/nice-select/jquery.nice-select.min.js" defer></script>
+<script src="assets/vendors/countdown/countdown.min.js" defer></script>
+<script src="assets/vendors/marque/marquee.min.js" defer></script>
+<script src="assets/vendors/sidebar-content/jquery-sidebar-content.js" defer></script>
+<script src="assets/js/eventflow.js" defer></script>
+<script src="assets/js/preloader.js" defer></script>
 </body>
 </html>
