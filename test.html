@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Festival Checklist – Raveline Division</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Vendor CSS -->
+  <link rel="stylesheet" href="../assets/vendors/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../assets/vendors/animate/animate.min.css" />
+  <link rel="stylesheet" href="../assets/vendors/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/vendors/jarallax/jarallax.css" />
+  <link rel="stylesheet" href="../assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+  <link rel="stylesheet" href="../assets/vendors/odometer/odometer.min.css" />
+  <link rel="stylesheet" href="../assets/vendors/swiper/swiper.min.css" />
+  <link rel="stylesheet" href="../assets/vendors/eventflow-icons/style.css" />
+  <link rel="stylesheet" href="../assets/vendors/owl-carousel/owl.carousel.min.css" />
+  <link rel="stylesheet" href="../assets/vendors/owl-carousel/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="../assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+  <link rel="stylesheet" href="../assets/vendors/nice-select/nice-select.css" />
+  <link rel="stylesheet" href="../assets/vendors/jquery-ui/jquery-ui.css" />
+
+  <!-- Template styles -->
+  <link rel="stylesheet" href="../assets/css/eventflow.css" />
+  <link rel="stylesheet" href="../assets/css/eventflow-responsive.css" />
+
+  <!-- Custom Raveline Styles -->
+  <style>
+    :root {
+      --rvln-bg: #0e0a17;
+      --rvln-card: #161125;
+      --rvln-soft: #1a1428;
+      --rvln-grad: linear-gradient(90deg, #ff5f00, #ffb300);
+    }
+
+    body.body-bg-color1 {
+      background: var(--rvln-bg);
+      font-family: "DM Sans", "Inter", system-ui;
+    }
+
+    .rvln-grad-pill {
+      display:inline-flex;align-items:center;gap:.5rem;
+      padding:.45rem .9rem;border-radius:999px;
+      font-size:.7rem;text-transform:uppercase;
+      letter-spacing:.18em;background:rgba(0,0,0,.4);
+      border:1px solid rgba(255,255,255,.15);color:#fde68a;
+    }
+    .rvln-card {background:var(--rvln-card);border-radius:1.25rem;
+      border:1px solid rgba(255,255,255,.08);box-shadow:0 18px 40px rgba(0,0,0,.55);}
+    .rvln-card--soft {background:var(--rvln-soft);border-radius:1rem;
+      border:1px solid rgba(255,255,255,.06);}
+
+    .rvln-list-check {list-style:none;padding-left:0;margin:0;}
+    .rvln-list-check li {display:flex;gap:.6rem;margin-bottom:.45rem;color:#e5e7eb;font-size:.9rem;}
+    .rvln-list-check i {color:#f97316;}
+
+    .rvln-btn-main {
+      display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.4rem;
+      background:var(--rvln-grad);border:none;border-radius:999px;color:#0b0714;
+      font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+      box-shadow:0 0 18px rgba(255,95,0,.5);text-decoration:none;transition:.18s ease;
+    }
+    .rvln-btn-main:hover {transform:translateY(-1px);box-shadow:0 0 28px rgba(255,95,0,.9);}
+  </style>
+</head>
+
+<body class="body-bg-color1">
+<div class="page-wrapper">
+
+  <!-- HEADER -->
+  <header class="main-header main-header-three">
+    <nav class="main-menu main-menu-three">
+      <div class="main-menu__wrapper">
+        <div class="main-menu__wrapper-inner">
+
+          <div class="main-menu__left">
+            <div class="main-menu__logo">
+              <a href="../index.html">
+                <img src="../assets/images/resources/logo-2.png" alt="Raveline Division Logo" />
+              </a>
+            </div>
+          </div>
+
+          <div class="main-menu__right">
+            <div class="main-menu__main-menu-box">
+              <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+              <ul class="main-menu__list">
+                <li><a href="../index.html">Home</a></li>
+                <li class="dropdown">
+                  <a href="#">Over ons</a>
+                  <ul>
+                    <li><a href="../About.html">Over ons</a></li>
+                    <li><a href="../Team.html">De Crew</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown current">
+                  <a href="#">Tribe</a>
+                  <ul>
+                    <li><a href="../RaveUp&Meeting.html">Meetups & RaveUps</a></li>
+                    <li><a href="../Friendscamps.html">FriendsCamp</a></li>
+                    <li><a href="#">Festival Checklist</a></li>
+                  </ul>
+                </li>
+                <li><a href="../coming-soonShop.html">Merch</a></li>
+                <li><a href="../Vacatures.html">Vacatures</a></li>
+                <li><a href="../FAQ.html">FAQ & Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="page-header__bg"
+      style="background-image:url(../assets/images/backgrounds/FestivalChecklist2026.jpg);"></div>
+
+    <div class="container">
+      <div class="page-header__inner" style="text-align:left;">
+        <span class="rvln-grad-pill">
+          <i class="fas fa-clipboard-check"></i> Festival Checklist
+        </span>
+        <h2 style="margin-top:14px;">Festival FriendsCamp Checklist</h2>
+        <p style="color:#d7d7d7; max-width:720px; margin-top:14px;">
+          Alles wat je wél moet meenemen. Alles wat je beter thuis laat.<br>
+          En alle tips om jouw festivalweekend 10× soepeler te laten verlopen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="event-details" style="padding-top:70px; padding-bottom:90px;">
+    <div class="container">
+      <div class="rvln-card--soft" style="padding:24px;">
+
+        <h3 style="color:#fff;">🎒 Must-Haves (Meenemen!)</h3>
+        <p style="color:#d1d5db; font-size:.9rem;">De onmisbare essentials:</p>
+
+        <ul class="rvln-list-check">
+          <li><i class="fas fa-check"></i><span>Ticket(s) + ID</span></li>
+          <li><i class="fas fa-check"></i><span>Tent, haringen, hamer</span></li>
+          <li><i class="fas fa-check"></i><span>Slaapzak + mat / luchtbed</span></li>
+          <li><i class="fas fa-check"></i><span>Powerbanks</span></li>
+          <li><i class="fas fa-check"></i><span>Waterfles (leeg bij entree)</span></li>
+          <li><i class="fas fa-check"></i><span>Oordopjes (concertgrade)</span></li>
+          <li><i class="fas fa-check"></i><span>Zonnebrand + aftersun</span></li>
+          <li><i class="fas fa-check"></i><span>Hygiëne essentials</span></li>
+          <li><i class="fas fa-check"></i><span>Goede schoenen</span></li>
+          <li><i class="fas fa-check"></i><span>Regenponcho</span></li>
+          <li><i class="fas fa-check"></i><span>Medicatie</span></li>
+          <li><i class="fas fa-check"></i><span>Kleding voor warm + koud</span></li>
+          <li><i class="fas fa-check"></i><span>Snacks, ontbijt, kleine maaltijden</span></li>
+          <li><i class="fas fa-check"></i><span>Lampjes of deco</span></li>
+        </ul>
+
+        <hr style="border-color:rgba(255,255,255,.08); margin:26px 0;">
+
+        <h3 style="color:#fff;">🚫 Leave at Home (Niet meenemen!)</h3>
+
+        <ul class="rvln-list-check">
+          <li><i class="fas fa-times"></i><span>Glaswerk of glazen flessen</span></li>
+          <li><i class="fas fa-times"></i><span>BBQ’s, open vuur</span></li>
+          <li><i class="fas fa-times"></i><span>Grote speakers / geluidssets</span></li>
+          <li><i class="fas fa-times"></i><span>Onnodig dure spullen</span></li>
+          <li><i class="fas fa-times"></i><span>Overmatig alcohol</span></li>
+          <li><i class="fas fa-times"></i><span>Verboden middelen</span></li>
+          <li><i class="fas fa-times"></i><span>Negativity — vibe killers blijven thuis</span></li>
+        </ul>
+
+        <hr style="border-color:rgba(255,255,255,.08); margin:26px 0;">
+
+        <h3 style="color:#fff;">✨ Nice-to-Haves (Aanrader!)</h3>
+
+        <ul class="rvln-list-check">
+          <li><i class="fas fa-circle-dot"></i><span>Kampeerstoel</span></li>
+          <li><i class="fas fa-circle-dot"></i><span>Cooling towel</span></li>
+          <li><i class="fas fa-circle-dot"></i><span>Mini-spiegel</span></li>
+          <li><i class="fas fa-circle-dot"></i><span>Kluisjesgeld / muntjes</span></li>
+          <li><i class="fas fa-circle-dot"></i><span>Droge sokken (extra!)</span></li>
+          <li><i class="fas fa-circle-dot"></i><span>Vuilniszakken</span></li>
+          <li><i class="fas fa-circle-dot"></i><span>Goedkope zonnebril</span></li>
+        </ul>
+
+        <hr style="border-color:rgba(255,255,255,.08); margin:26px 0;">
+
+        <h3 style="color:#fff;">🔥 FriendsCamp Tips</h3>
+
+        <ul class="rvln-list-check">
+          <li><i class="fas fa-lightbulb"></i><span>Markeer je tent zodat je hem ’s nachts terugvindt.</span></li>
+          <li><i class="fas fa-lightbulb"></i><span>Bewaar altijd één droge outfit.</span></li>
+          <li><i class="fas fa-lightbulb"></i><span>Loop nooit alleen weg — samen uit, samen thuis.</span></li>
+          <li><i class="fas fa-lightbulb"></i><span>Vraag in de groep waar je tent bij past.</span></li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer__shape-1 float-bob-y">
+      <img src="../assets/images/shapes/site-footer-shape-1.png" alt="">
+    </div>
+
+    <div class="site-footer__top">
+      <div class="container">
+        <div class="site-footer__top-inner">
+          <div class="main-menu__logo">
+            <img src="../assets/images/resources/logo-2.png" alt="Raveline Division Logo" />
+          </div>
+          <div class="site-footer__social">
+            <a href="https://www.facebook.com/profile.php?id=61578060013046"><i class="icon-facebook"></i></a>
+            <a href="https://www.instagram.com/raveline_division/"><i class="icon-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <div class="container">
+        <p class="site-footer__bottom-text">© Raveline Division 2025 | All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- JS -->
+<script src="../assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+<script src="../assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/eventflow.js"></script>
+
+</body>
+</html>
