@@ -5,22 +5,7 @@
   <title>Shop – Raveline Division</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Tailwind (zoals bij Vacatures / RaveUps) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Vendors + CSS (zelfde volgorde als je andere pagina’s) -->
+  <!-- Bestaande CSS / vendors van je site -->
   <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
   <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
@@ -41,161 +26,61 @@
 
   <style>
     :root {
-      --rvln-bg: #0e0a17;
-      --rvln-card: #161125;
-      --rvln-soft: #1a1428;
       --rvln-grad: linear-gradient(90deg, #ff5f00, #ffb300);
-    }
-
-    html,
-    body {
-      height: 100%;
+      --rvln-card: #181325;
+      --rvln-card-soft: #1f1733;
     }
 
     body.body-bg-color1 {
-      background: var(--rvln-bg);
+      background-color: #0e0a17;
     }
 
-    .page-wrapper {
-      min-height: 100%;
+    /* Kleine extra shop-styling bovenop je theme */
+
+    .shop-usps {
       display: flex;
-      flex-direction: column;
-    }
-
-    main {
-      flex: 1 0 auto;
-    }
-
-    footer.site-footer {
-      flex-shrink: 0;
-    }
-
-    /* Raveline styled knoppen + chips, zelfde vibe als RaveUps */
-    .rvln-chip {
-      font-size: 0.72rem;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      font-size: 12px;
       color: #e5e7eb;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 10px 16px;
       border-radius: 999px;
-      padding: 0.18rem 0.55rem;
+      background: rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 20px;
+    }
+    .shop-usps span {
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
+      gap: 6px;
+    }
+    .shop-usps i {
+      color: #ffb300;
+      font-size: 13px;
     }
 
-    .rvln-btn {
-      background: var(--rvln-grad);
-      color: #0e0a17;
-      font-weight: 700;
-      font-size: 0.85rem;
-      border-radius: 999px;
-      padding: 0.6rem 1.3rem;
-      display: inline-flex;
+    .shop-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-      border: none;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      gap: 14px;
+      margin-bottom: 24px;
     }
 
-    .rvln-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 0 22px rgba(255, 95, 0, 0.6);
-    }
-
-    .rvln-btn-ghost {
-      background: #171228;
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 999px;
-      padding: 0.6rem 1.1rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.8rem;
-      text-decoration: none;
-    }
-
-    .rvln-btn-ghost:hover {
-      background: #1f1733;
-    }
-
-    /* Shop intro */
-    .shop-intro {
-      color: #d7d7d7;
-      max-width: 720px;
-      margin-top: 14px;
-    }
-
-    .shop-intro strong {
-      color: #fff;
-    }
-
-    /* Productkaart in blog-list stijl */
-    .blog-list__single.shop-card {
-      background: var(--rvln-card);
-      border-radius: 1.2rem;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      overflow: hidden;
-    }
-
-    .blog-list__single.shop-card .blog-list__content {
-      padding-bottom: 1.4rem;
-    }
-
-    .blog-list__single.shop-card .blog-list__img img {
-      border-radius: 0.9rem;
-    }
-
-    .blog-list__single.shop-card .blog-list__date p {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    .shop-price {
-      font-weight: 700;
-      background: var(--rvln-grad);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .shop-meta-label {
-      font-size: 0.8rem;
-      color: #cfd0dd;
-    }
-
-    .shop-sidebar-box {
-      background: var(--rvln-soft);
-      border-radius: 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 1.3rem 1.4rem;
-      color: #e5e7eb;
-    }
-
-    .shop-sidebar-box + .shop-sidebar-box {
-      margin-top: 1rem;
-    }
-
-    .shop-sidebar-title {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-bottom: 0.6rem;
-      color: #f9fafb;
+    .shop-filter-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .shop-filter-chip {
-      font-size: 0.78rem;
-      padding: 0.3rem 0.7rem;
+      font-size: 11px;
+      padding: 6px 11px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      background: rgba(0, 0, 0, 0.4);
-      margin: 0 0.35rem 0.35rem 0;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #f9fafb;
+      background: rgba(0,0,0,0.5);
       cursor: pointer;
     }
 
@@ -206,55 +91,203 @@
       font-weight: 600;
     }
 
-    /* Gradient kleur voor .icon-double-angle (pagination / sidebar) */
-    .sidebar__all-category-list i.icon-double-angle,
-    .pg-pagination .icon-double-angle {
+    .shop-sort {
+      font-size: 12px;
+      color: #d1d5db;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .shop-sort select {
+      font-size: 12px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(0,0,0,0.6);
+      color: #f9fafb;
+    }
+
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
+    }
+
+    .shop-item {
+      background: var(--rvln-card);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .shop-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .shop-item__img {
+      background: #120d22;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+    }
+
+    .shop-item__img img {
+      max-width: 100%;
+      max-height: 160px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .shop-item__badge {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.8);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .shop-item__badge--highlight {
+      background: var(--rvln-grad);
+      border-color: transparent;
+      color: #111827;
+      font-weight: 600;
+    }
+
+    .shop-item__body {
+      padding: 14px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+
+    .shop-item__category {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #9ca3af;
+    }
+
+    .shop-item__title {
+      font-size: 15px;
+      margin: 2px 0 4px;
+      color: #f9fafb;
+    }
+
+    .shop-item__title a {
+      color: inherit;
+    }
+
+    .shop-item__text {
+      font-size: 13px;
+      color: #d1d5db;
+      margin-bottom: 6px;
+    }
+
+    .shop-item__meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      gap: 8px;
+    }
+
+    .shop-price {
+      font-weight: 700;
+      background: var(--rvln-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-size: 15px;
+    }
+
+    .shop-item__buttons {
+      display: flex;
+      gap: 6px;
+    }
+
+    .shop-btn-main {
+      font-size: 12px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      border: none;
+      background: var(--rvln-grad);
+      color: #111827;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+
+    .shop-btn-ghost {
+      font-size: 11px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(0,0,0,0.55);
+      color: #e5e7eb;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .shop-tagline {
+      font-size: 13px;
+      color: #e5e7eb;
+      margin-top: 10px;
+    }
+
+    /* icon-double-angle oranje */
+    .pg-pagination .icon-double-angle,
+    .sidebar__all-category-list i.icon-double-angle {
       background: var(--rvln-grad);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
-    /* Responsief: iets meer ruimte op mobiel */
-    @media (max-width: 991px) {
-      .blog-list__left {
-        margin-bottom: 2.5rem;
+    @media (max-width: 575px) {
+      .shop-usps {
+        border-radius: 16px;
       }
     }
   </style>
 </head>
 
 <body class="body-bg-color1">
-  <!-- preloader -->
-  <div id="preloader">
-    <div id="loader" class="dots-jump">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-
   <div class="page-wrapper">
-    <!-- HEADER (zelfde als Vacatures / RaveUps, maar Merch verwijst naar deze pagina) -->
-    <header class="main-header main-header-three" role="banner">
-      <nav class="main-menu main-menu-three" aria-label="Hoofdmenu">
+
+    <!-- HEADER (gebruik je eigen header hier) -->
+    <header class="main-header main-header-three">
+      <nav class="main-menu main-menu-three">
         <div class="main-menu__wrapper">
           <div class="main-menu__wrapper-inner">
             <div class="main-menu__left">
               <div class="main-menu__logo">
-                <a href="index.html" aria-label="Raveline Division home">
-                  <img
-                    src="assets/images/resources/logo-2.png"
-                    alt="Raveline Division logo"
-                    loading="lazy"
-                  />
+                <a href="index.html">
+                  <img src="assets/images/resources/logo-2.png" alt="Raveline Division" />
                 </a>
               </div>
             </div>
             <div class="main-menu__right">
               <div class="main-menu__main-menu-box">
-                <button class="mobile-nav__toggler" aria-label="Open navigatie">
-                  <i class="fa fa-bars" aria-hidden="true"></i>
+                <button class="mobile-nav__toggler">
+                  <i class="fa fa-bars"></i>
                 </button>
                 <ul class="main-menu__list">
                   <li><a href="index.html">Home</a></li>
@@ -275,18 +308,10 @@
                   <li class="dropdown current">
                     <a href="#">Merch</a>
                     <ul>
-                      <!-- hier kun je later extra shop-subpagina's aanhangen -->
                       <li><a href="Shop.html">Collectie</a></li>
-                      <li><a href="Shop.html">Pre-orders</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown">
-                    <a href="#">Vacatures</a>
-                    <ul>
-                      <li><a href="Vacatures.html">Open Roles</a></li>
-                      <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
-                    </ul>
-                  </li>
+                  <li><a href="Vacatures.html">Vacatures</a></li>
                   <li><a href="FAQ.html">FAQ &amp; Contact</a></li>
                 </ul>
               </div>
@@ -303,10 +328,7 @@
 
     <!-- PAGE HEADER -->
     <section class="page-header">
-      <div
-        class="page-header__bg"
-        style="background-image: url(assets/images/backgrounds/Merch.jpg);"
-      ></div>
+      <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/Merch.jpg);"></div>
       <div class="page-header__shape-1 float-bob-y">
         <img src="assets/images/shapes/page-header-shape-1.png" alt="" />
       </div>
@@ -314,7 +336,7 @@
         <img src="assets/images/shapes/page-header-shape-2.png" alt="" />
       </div>
       <div class="container">
-        <div class="page-header__inner" style="text-align:left;">
+        <div class="page-header__inner">
           <h2>Merch &amp; Shop</h2>
           <div class="thm-breadcrumb__box">
             <ul class="thm-breadcrumb list-unstyled">
@@ -323,306 +345,196 @@
               <li>Merch</li>
             </ul>
           </div>
-          <p class="shop-intro">
-            From <strong>camp to mainstage</strong> – limited drops, festival essentials en full-on Tribe gear.
-            Deze pagina wordt jouw overzicht van alle Raveline producten: shirts, hoodies, bucket hats,
-            festival kits en recovery items.
+          <p class="shop-tagline">
+            From <strong>camp to mainstage</strong> – de officiële Raveline Division gear, festival kits en recovery items.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- SHOP LIST IN BLOG-LIST STIJL -->
-    <main>
-      <section class="blog-list">
-        <div class="container">
-          <div class="row">
-            <!-- Producten -->
-            <div class="col-xl-8 col-lg-7">
-              <div class="blog-list__left">
+    <!-- SHOP OVERVIEW (FestivalSupply/Q-dance achtig, maar in jouw layout) -->
+    <section class="blog-list shop-overview">
+      <div class="container">
 
-                <!-- Product: T-shirt Black -->
-                <div class="blog-list__single shop-card">
-                  <div class="blog-list__img-box">
-                    <div class="blog-list__img">
-                      <img
-                        src="assets/images/shop/products/rd-shirt-black.png"
-                        alt="Raveline Division T-Shirt Black Edition"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div class="blog-list__date">
-                      <p>Nieuw</p>
-                    </div>
-                  </div>
-                  <div class="blog-list__content">
-                    <ul class="blog-list__meta list-unstyled">
-                      <li>
-                        <a href="#">
-                          <span class="icon-ticket" aria-hidden="true"></span>
-                          <span class="shop-meta-label">Kleding</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <span class="icon-price" aria-hidden="true"></span>
-                          <span class="shop-price">€34,95</span>
-                        </a>
-                      </li>
-                    </ul>
-                    <h3 class="blog-list__title">Raveline Division T-Shirt – Black Edition</h3>
-                    <div class="mb-2">
-                      <span class="rvln-chip">Unisex</span>
-                      <span class="rvln-chip">S t/m XXL</span>
-                      <span class="rvln-chip">Everyday &amp; festival</span>
-                    </div>
-                    <p>
-                      Zwart T-shirt met subtiele Raveline branding. Comfortabele fit, ideaal voor lange festivaldagen,
-                      RaveUps en dagelijks gebruik.
-                    </p>
-                    <div class="blog-list__btn-box" style="margin-top:14px; display:flex; gap:8px; flex-wrap:wrap;">
-                      <a href="product-tshirt-black.html" class="rvln-btn">
-                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                        Bekijk product
-                      </a>
-                      <a href="#" class="rvln-btn-ghost">
-                        <i class="far fa-heart" aria-hidden="true"></i>
-                        Wishlist
-                      </a>
-                    </div>
-                  </div>
-                </div>
+        <!-- USP-balk zoals FestivalSupply -->
+        <div class="shop-usps">
+          <span><i class="fas fa-truck"></i> Gratis verzending vanaf €40,-</span>
+          <span><i class="fas fa-clock"></i> Besteld vóór 17:00 = volgende werkdag verzonden*</span>
+          <span><i class="fas fa-shield-alt"></i> Veilig &amp; achteraf betalen</span>
+          <span><i class="fas fa-users"></i> One Tribe • Worldwide</span>
+        </div>
 
-                <!-- Product: Bucket Hat -->
-                <div class="blog-list__single shop-card">
-                  <div class="blog-list__img-box">
-                    <div class="blog-list__img">
-                      <img
-                        src="assets/images/shop/products/rd-bucket-orange.png"
-                        alt="Raveline Bucket Hat – Orange Tribe"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div class="blog-list__date">
-                      <p>Limited</p>
-                    </div>
-                  </div>
-                  <div class="blog-list__content">
-                    <ul class="blog-list__meta list-unstyled">
-                      <li>
-                        <a href="#">
-                          <span class="icon-ticket"></span>
-                          <span class="shop-meta-label">Accessoire</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <span class="icon-price"></span>
-                          <span class="shop-price">€29,95</span>
-                        </a>
-                      </li>
-                    </ul>
-                    <h3 class="blog-list__title">Raveline Bucket Hat – Orange Tribe</h3>
-                    <div class="mb-2">
-                      <span class="rvln-chip">Festival proof</span>
-                      <span class="rvln-chip">One size</span>
-                      <span class="rvln-chip">Sun &amp; rain ready</span>
-                    </div>
-                    <p>
-                      De herkenbare Raveline bucket hat in Orange Tribe-stijl. Perfect voor in de crowd,
-                      op de camping en voor herkenbare groepsfoto’s.
-                    </p>
-                    <div class="blog-list__btn-box" style="margin-top:14px; display:flex; gap:8px; flex-wrap:wrap;">
-                      <a href="product-bucket-orange.html" class="rvln-btn">
-                        <i class="fas fa-shopping-cart"></i>
-                        Bekijk product
-                      </a>
-                      <a href="#" class="rvln-btn-ghost">
-                        <i class="far fa-heart"></i>
-                        Wishlist
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Product: Festival Kit -->
-                <div class="blog-list__single shop-card">
-                  <div class="blog-list__img-box">
-                    <div class="blog-list__img">
-                      <img
-                        src="assets/images/shop/products/festikit.png"
-                        alt="Festival Survival Kit – One Tribe Edition"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div class="blog-list__date">
-                      <p>Kit</p>
-                    </div>
-                  </div>
-                  <div class="blog-list__content">
-                    <ul class="blog-list__meta list-unstyled">
-                      <li>
-                        <a href="#">
-                          <span class="icon-ticket"></span>
-                          <span class="shop-meta-label">Festival kit</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <span class="icon-price"></span>
-                          <span class="shop-price">€19,95</span>
-                        </a>
-                      </li>
-                    </ul>
-                    <h3 class="blog-list__title">Festival Survival Kit – One Tribe Edition</h3>
-                    <div class="mb-2">
-                      <span class="rvln-chip">Essentials only</span>
-                      <span class="rvln-chip">Compact &amp; licht</span>
-                      <span class="rvln-chip">Ideaal als gift</span>
-                    </div>
-                    <p>
-                      Compacte kit met festival-essentials (fanny pack, basic care items, earplugs, etc.)
-                      zodat je weekend soepel verloopt – van eerste dag tot sluit.
-                    </p>
-                    <div class="blog-list__btn-box" style="margin-top:14px; display:flex; gap:8px; flex-wrap:wrap;">
-                      <a href="product-festikit.html" class="rvln-btn">
-                        <i class="fas fa-shopping-cart"></i>
-                        Bekijk product
-                      </a>
-                      <a href="#" class="rvln-btn-ghost">
-                        <i class="far fa-heart"></i>
-                        Wishlist
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Product: MDMA Recovery Kit -->
-                <div class="blog-list__single shop-card">
-                  <div class="blog-list__img-box">
-                    <div class="blog-list__img">
-                      <img
-                        src="assets/images/shop/products/recovery-kit.png"
-                        alt="MDMA Recovery Kit – 24h Rest Mode"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div class="blog-list__date">
-                      <p>Recovery</p>
-                    </div>
-                  </div>
-                  <div class="blog-list__content">
-                    <ul class="blog-list__meta list-unstyled">
-                      <li>
-                        <a href="#">
-                          <span class="icon-ticket"></span>
-                          <span class="shop-meta-label">Recovery</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <span class="icon-price"></span>
-                          <span class="shop-price">€14,95</span>
-                        </a>
-                      </li>
-                    </ul>
-                    <h3 class="blog-list__title">MDMA Recovery Kit – 24h Rest Mode</h3>
-                    <div class="mb-2">
-                      <span class="rvln-chip">Day-after support</span>
-                      <span class="rvln-chip">Hydratatie &amp; care</span>
-                      <span class="rvln-chip">Stay safe</span>
-                    </div>
-                    <p>
-                      Day-after kit met focus op herstel, hydratatie en wat extra self-care.
-                      Ideaal na een zwaar festivalweekend of intensieve RaveUp.
-                    </p>
-                    <div class="blog-list__btn-box" style="margin-top:14px; display:flex; gap:8px; flex-wrap:wrap;">
-                      <a href="product-recovery.html" class="rvln-btn">
-                        <i class="fas fa-shopping-cart"></i>
-                        Bekijk product
-                      </a>
-                      <a href="#" class="rvln-btn-ghost">
-                        <i class="far fa-heart"></i>
-                        Wishlist
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- TODO: hier kun je later pagination (pg-pagination) toevoegen -->
-
-              </div>
-            </div>
-
-            <!-- Sidebar rechts -->
-            <div class="col-xl-4 col-lg-5">
-              <aside class="blog-list__sidebar">
-                <div class="shop-sidebar-box">
-                  <h3 class="shop-sidebar-title">Categorieën</h3>
-                  <div>
-                    <button class="shop-filter-chip active">Alles</button>
-                    <button class="shop-filter-chip">Kleding</button>
-                    <button class="shop-filter-chip">Accessoires</button>
-                    <button class="shop-filter-chip">Festival Kits</button>
-                    <button class="shop-filter-chip">Recovery</button>
-                  </div>
-                </div>
-
-                <div class="shop-sidebar-box">
-                  <h3 class="shop-sidebar-title">Verzending</h3>
-                  <p class="mb-2 text-sm">
-                    We werken met batches &amp; pre-orders. Levering kan per drop verschillen, maar we communiceren
-                    dit altijd duidelijk in de productomschrijving en bevestigingsmail.
-                  </p>
-                  <ul class="list-unstyled text-sm" style="color:#e5e7eb; margin-bottom:0;">
-                    <li>• Verzending vanuit NL</li>
-                    <li>• Group shipping mogelijk voor FriendsCamps</li>
-                    <li>• Tracking info via e-mail</li>
-                  </ul>
-                </div>
-
-                <div class="shop-sidebar-box">
-                  <h3 class="shop-sidebar-title">Vragen over merch?</h3>
-                  <p class="text-sm mb-3">
-                    Twijfel je over maten, kwaliteit of levering? Stuur ons een berichtje via WhatsApp of mail.
-                  </p>
-                  <a href="mailto:shop@ravelinehq.com" class="rvln-btn-ghost">
-                    <i class="far fa-envelope"></i>
-                    shop@ravelinehq.com
-                  </a>
-                </div>
-              </aside>
-            </div>
+        <!-- Filters / categorieën zoals Q-dance tabs -->
+        <div class="shop-filters">
+          <div class="shop-filter-chips">
+            <button class="shop-filter-chip active">Alles</button>
+            <button class="shop-filter-chip">Kleding</button>
+            <button class="shop-filter-chip">Accessoires</button>
+            <button class="shop-filter-chip">Festival Kits</button>
+            <button class="shop-filter-chip">Australian gear</button>
+            <button class="shop-filter-chip">Recovery</button>
+          </div>
+          <div class="shop-sort">
+            Sorteren op:
+            <select>
+              <option>Uitgelicht</option>
+              <option>Prijs: laag &gt; hoog</option>
+              <option>Prijs: hoog &gt; laag</option>
+              <option>Nieuwste eerst</option>
+            </select>
           </div>
         </div>
-      </section>
-    </main>
 
-    <!-- Footer kun je 1-op-1 overnemen van bijv. Vacatures.html -->
+        <!-- Product grid -->
+        <div class="shop-grid">
+
+          <!-- PRODUCT 1 -->
+          <article class="shop-item">
+            <div class="shop-item__img" style="position:relative;">
+              <span class="shop-item__badge shop-item__badge--highlight">Nieuw</span>
+              <img src="assets/images/shop/products/rd-shirt-black.png"
+                   alt="Raveline Division T-Shirt – Black Edition" />
+            </div>
+            <div class="shop-item__body">
+              <div class="shop-item__category">Kleding</div>
+              <div class="shop-item__title">
+                <a href="product-tshirt-black.html">
+                  Raveline Division T-Shirt – Black Edition
+                </a>
+              </div>
+              <p class="shop-item__text">
+                Zwart unisex shirt met subtiele Raveline branding. Perfect voor RaveUps, festivals en daily wear.
+              </p>
+              <div class="shop-item__meta">
+                <span class="shop-price">€34,95</span>
+                <div class="shop-item__buttons">
+                  <a href="product-tshirt-black.html" class="shop-btn-main">
+                    <i class="fas fa-shopping-cart"></i> Bekijk
+                  </a>
+                  <a href="#" class="shop-btn-ghost">
+                    <i class="far fa-heart"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUCT 2 -->
+          <article class="shop-item">
+            <div class="shop-item__img" style="position:relative;">
+              <span class="shop-item__badge shop-item__badge--highlight">Limited</span>
+              <img src="assets/images/shop/products/rd-bucket-orange.png"
+                   alt="Raveline Bucket Hat – Orange Tribe" />
+            </div>
+            <div class="shop-item__body">
+              <div class="shop-item__category">Accessoire</div>
+              <div class="shop-item__title">
+                <a href="product-bucket-orange.html">
+                  Raveline Bucket Hat – Orange Tribe
+                </a>
+              </div>
+              <p class="shop-item__text">
+                Iconische bucket hat in Orange Tribe-stijl. Herkenbaar in de crowd, handig tegen zon én regen.
+              </p>
+              <div class="shop-item__meta">
+                <span class="shop-price">€29,95</span>
+                <div class="shop-item__buttons">
+                  <a href="product-bucket-orange.html" class="shop-btn-main">
+                    <i class="fas fa-shopping-cart"></i> Bekijk
+                  </a>
+                  <a href="#" class="shop-btn-ghost">
+                    <i class="far fa-heart"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUCT 3 -->
+          <article class="shop-item">
+            <div class="shop-item__img" style="position:relative;">
+              <span class="shop-item__badge">Kit</span>
+              <img src="assets/images/shop/products/festikit.png"
+                   alt="Festival Survival Kit – One Tribe Edition" />
+            </div>
+            <div class="shop-item__body">
+              <div class="shop-item__category">Festival kit</div>
+              <div class="shop-item__title">
+                <a href="product-festikit.html">
+                  Festival Survival Kit – One Tribe Edition
+                </a>
+              </div>
+              <p class="shop-item__text">
+                Compacte kit met essentials voor een vol festivalweekend: fanny pack + basic care items.
+              </p>
+              <div class="shop-item__meta">
+                <span class="shop-price">€19,95</span>
+                <div class="shop-item__buttons">
+                  <a href="product-festikit.html" class="shop-btn-main">
+                    <i class="fas fa-shopping-cart"></i> Bekijk
+                  </a>
+                  <a href="#" class="shop-btn-ghost">
+                    <i class="far fa-heart"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUCT 4 -->
+          <article class="shop-item">
+            <div class="shop-item__img" style="position:relative;">
+              <span class="shop-item__badge">Recovery</span>
+              <img src="assets/images/shop/products/recovery-kit.png"
+                   alt="MDMA Recovery Kit – 24h Rest Mode" />
+            </div>
+            <div class="shop-item__body">
+              <div class="shop-item__category">Recovery</div>
+              <div class="shop-item__title">
+                <a href="product-recovery.html">
+                  MDMA Recovery Kit – 24h Rest Mode
+                </a>
+              </div>
+              <p class="shop-item__text">
+                Day-after kit met focus op herstel, hydratatie en self-care. Ideaal na een zwaar weekend.
+              </p>
+              <div class="shop-item__meta">
+                <span class="shop-price">€14,95</span>
+                <div class="shop-item__buttons">
+                  <a href="product-recovery.html" class="shop-btn-main">
+                    <i class="fas fa-shopping-cart"></i> Bekijk
+                  </a>
+                  <a href="#" class="shop-btn-ghost">
+                    <i class="far fa-heart"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Hier kun je meer producten toevoegen in dezelfde structuur -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER – gebruik je bestaande footer -->
     <!-- <footer class="site-footer"> ... </footer> -->
+
   </div>
 
   <!-- Vendor JS -->
   <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
   <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendors/jarallax/jarallax.min.js"></script>
-  <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
-  <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
   <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
   <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
-  <script src="assets/vendors/odometer/odometer.min.js"></script>
   <script src="assets/vendors/swiper/swiper.min.js"></script>
-  <script src="assets/vendors/wnumb/wNumb.min.js"></script>
   <script src="assets/vendors/wow/wow.js"></script>
-  <script src="assets/vendors/isotope/isotope.js"></script>
   <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
   <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
   <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
   <script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
-  <script src="assets/vendors/countdown/countdown.min.js"></script>
-  <script src="assets/vendors/marque/marquee.min.js"></script>
-  <script src="assets/vendors/sidebar-content/jquery-sidebar-content.js"></script>
   <script src="assets/js/eventflow.js"></script>
-  <script src="assets/js/preloader.js"></script>
 </body>
 </html>

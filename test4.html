@@ -1,664 +1,712 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Raveline Division – Shop Catalogus</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Raveline Division – Merch & Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <style>
-    :root {
-      --rd-orange: #ff7a18;
-      --rd-gold: #ffb45e;
-      --rd-gradient: linear-gradient(135deg, #ff7a18 0%, #ffb45e 100%);
-      --bg-main: #050509;
-      --bg-panel: #111119;
-      --bg-card: #171724;
-      --text-muted: #a8a8c0;
-    }
+    <!-- Tailwind via CDN zodat de Bolt/Tailwind classes werken -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    * {
-      box-sizing: border-box;
-    }
+    <!-- Inter font (zoals Bolt-project) -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-      background: radial-gradient(circle at top, #222232 0, #050509 50%, #000 100%);
-      color: #fff;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: 92%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* HEADER – simpel en compact */
-    .site-header {
-      background: rgba(5, 5, 9, 0.96);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 30;
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 0;
-      gap: 16px;
-    }
-
-    .logo img {
-      height: 38px;
-      display: block;
-    }
-
-    .main-nav {
-      display: flex;
-      gap: 18px;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-
-    .main-nav a {
-      color: #b9b9c9;
-      padding-bottom: 2px;
-      border-bottom: 2px solid transparent;
-      transition: 0.25s;
-    }
-
-    .main-nav a:hover,
-    .main-nav .active {
-      color: #fff;
-      border-bottom-color: var(--rd-orange);
-    }
-
-    .header-right {
-      font-size: 0.8rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .pill {
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .cart-mini {
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      background: rgba(0, 0, 0, 0.55);
-      cursor: pointer;
-    }
-
-    /* HERO / INTRO */
-    .shop-header {
-      padding: 28px 0 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    }
-
-    .shop-badge {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      opacity: 0.75;
-      margin-bottom: 6px;
-    }
-
-    .shop-title-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .shop-title-row h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-
-    .shop-sub {
-      margin: 4px 0 0;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      max-width: 420px;
-    }
-
-    .shop-meta {
-      font-size: 0.8rem;
-      text-align: right;
-      color: var(--text-muted);
-    }
-
-    /* FILTER STRIP BOVEN PRODUCTEN */
-    .filter-strip {
-      padding: 12px 0 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .filter-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .filter-tag {
-      font-size: 0.78rem;
-      padding: 5px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      background: rgba(0, 0, 0, 0.6);
-      cursor: pointer;
-    }
-
-    .filter-tag.active {
-      border-color: transparent;
-      background-image: var(--rd-gradient);
-    }
-
-    .filter-sort {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .filter-sort select {
-      font-size: 0.8rem;
-      margin-left: 8px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: rgba(0, 0, 0, 0.6);
-      color: #fff;
-    }
-
-    /* PRODUCTLIST / CATALOGUS */
-    .shop-main {
-      padding: 18px 0 50px;
-    }
-
-    .catalog-note {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-    }
-
-    .product-list {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .product-row {
-      display: grid;
-      grid-template-columns: 160px minmax(0, 1.8fr) 0.7fr;
-      gap: 16px;
-      background: var(--bg-panel);
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      padding: 10px 12px;
-      align-items: stretch;
-    }
-
-    .product-row:hover {
-      border-color: rgba(255, 255, 255, 0.18);
-      background: linear-gradient(135deg, rgba(255, 122, 24, 0.06), rgba(5, 5, 9, 0.8));
-    }
-
-    .product-thumb {
-      background: #141421;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8px;
-    }
-
-    .product-thumb img {
-      max-width: 100%;
-      max-height: 110px;
-      object-fit: contain;
-      display: block;
-    }
-
-    .product-info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 3px;
-    }
-
-    .product-category {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-    }
-
-    .product-title {
-      font-size: 1rem;
-      margin-top: 2px;
-    }
-
-    .product-desc {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    .product-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 5px;
-    }
-
-    .tag {
-      font-size: 0.75rem;
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      background: rgba(0, 0, 0, 0.4);
-    }
-
-    .product-meta {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-align: right;
-      gap: 6px;
-    }
-
-    .price-block {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 3px;
-    }
-
-    .price {
-      font-size: 1.05rem;
-      font-weight: 600;
-      background-image: var(--rd-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .price-note {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .stock-label {
-      font-size: 0.75rem;
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      display: inline-block;
-    }
-
-    .stock-label.low {
-      border-color: transparent;
-      background-image: var(--rd-gradient);
-      color: #000;
-      font-weight: 600;
-    }
-
-    .product-actions {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 6px;
-    }
-
-    .btn-primary {
-      font-size: 0.8rem;
-      padding: 6px 14px;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      background-image: var(--rd-gradient);
-      color: #000;
-      font-weight: 600;
-    }
-
-    .btn-outline {
-      font-size: 0.78rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      cursor: pointer;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .product-row {
-        grid-template-columns: 130px minmax(0, 1.5fr);
-        grid-template-rows: auto auto;
+    <style>
+      * {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       }
 
-      .product-meta {
-        grid-column: 1 / -1;
-        flex-direction: row;
-        align-items: center;
-        text-align: left;
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
       }
 
-      .product-actions {
-        flex-direction: row;
-        align-items: center;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .main-nav {
-        display: none; /* eventueel later burger-menu van maken */
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
       }
 
-      .product-row {
-        grid-template-columns: 1fr;
+      body {
+        background: radial-gradient(circle at top, #202034 0, #050509 40%, #000 100%);
+        color: #f9fafb;
       }
+    </style>
+  </head>
+  <body class="bg-[#050509] text-white">
+    <div class="min-h-screen flex flex-col">
+      <!-- HEADER (zoals Header.tsx) -->
+      <header class="sticky top-0 z-50 bg-[#050509]/95 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-16 sm:h-20">
+            <!-- Logo -->
+            <button class="flex items-center gap-3 group cursor-pointer">
+              <div
+                class="w-10 h-10 rounded-lg bg-gradient-to-r from-[#FF5F00] to-[#FFB300] flex items-center justify-center font-bold text-black text-xl"
+              >
+                RV
+              </div>
+              <div class="flex flex-col items-start">
+                <span class="text-xs uppercase tracking-[0.28em] text-gray-400">
+                  Raveline Division
+                </span>
+                <span class="text-sm sm:text-base font-semibold text-white">
+                  Merch &amp; Shop
+                </span>
+              </div>
+            </button>
 
-      .product-thumb {
-        max-width: 200px;
-        margin: 0 auto;
-      }
+            <!-- Desktop nav -->
+            <nav class="hidden md:flex items-center gap-6 text-xs sm:text-sm uppercase tracking-[0.18em]">
+              <a href="#" class="text-white font-semibold border-b-2 border-[#FF5F00] pb-1">
+                Merch / Shop
+              </a>
+              <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                RaveUps &amp; Meetups
+              </a>
+              <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                FriendsCamp
+              </a>
+              <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                Over ons
+              </a>
+              <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                FAQ &amp; Contact
+              </a>
+            </nav>
 
-      .product-meta {
-        align-items: flex-start;
-        text-align: left;
-      }
+            <!-- Right -->
+            <div class="flex items-center gap-3">
+              <div
+                class="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full border border-white/15 bg-white/5 text-[11px] uppercase tracking-[0.18em] text-gray-200"
+              >
+                One Tribe • Merch
+              </div>
+              <button
+                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 bg-black/60 text-xs"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gradient-to-r from-[#FF5F00] to-[#FFB300] text-black text-[11px] font-bold"
+                >
+                  0
+                </span>
+                <span class="hidden sm:inline">Winkelmand</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.6"
+                    d="M3 3h2l.4 2M7 13h10l3-8H6.4M7 13L5.4 5M7 13l-2 7m0 0h3m-3 0h-1m14-7l2 7m0 0h-3m3 0h1"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
 
-      .product-actions {
-        align-items: flex-start;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container">
-      <div class="header-inner">
-        <a href="index.html" class="logo">
-          <img src="assets/images/resources/logo-light.png" alt="Raveline Division">
-        </a>
-
-        <nav class="main-nav">
-          <a href="index.html">Home</a>
-          <a href="raveups.html">RaveUps</a>
-          <a href="about.html">Over ons</a>
-          <a href="shopindex.html" class="active">Shop</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-
-        <div class="header-right">
-          <span class="pill">One Tribe • Merch</span>
-          <div class="cart-mini">🛒 Cart</div>
+          <!-- Mobile nav (simpler static variant) -->
+          <div class="md:hidden border-t border-white/5 py-2">
+            <nav class="flex flex-wrap gap-4 text-[11px] uppercase tracking-[0.18em] text-gray-300">
+              <a href="#" class="text-white font-semibold">Merch / Shop</a>
+              <a href="#" class="hover:text-white">RaveUps</a>
+              <a href="#" class="hover:text-white">FriendsCamp</a>
+              <a href="#" class="hover:text-white">Over ons</a>
+              <a href="#" class="hover:text-white">FAQ &amp; Contact</a>
+            </nav>
+          </div>
         </div>
-      </div>
-    </div>
-  </header>
+      </header>
 
-  <!-- SHOP INTRO -->
-  <section class="shop-header">
-    <div class="container">
-      <div class="shop-badge">Shop • Catalogus</div>
+      <!-- SHOP HERO (zoals ShopHero.tsx) -->
+      <main class="flex-1">
+        <section class="relative">
+          <div
+            class="relative h-52 sm:h-64 lg:h-72 bg-cover bg-center"
+            style="
+              background-image: url('https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=1920');
+              background-blend-mode: overlay;
+            "
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-b from-[#050509]/80 via-[#0A0612]/90 to-[#0E0A17]"
+            ></div>
+            <div
+              class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center"
+            >
+              <div class="max-w-xl">
+                <p
+                  class="text-[11px] uppercase tracking-[0.26em] text-gray-300 mb-2 flex items-center gap-2"
+                >
+                  <span class="w-5 h-[1px] bg-gradient-to-r from-[#FF5F00] to-[#FFB300]"></span>
+                  Raveline Division • Merch Store
+                </p>
+                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-2">
+                  Dress like the Tribe, rave like a legend.
+                </h1>
+                <p class="text-sm sm:text-base text-gray-200 mb-4">
+                  Officiële Raveline gear, festival kits en recovery items. Alles wat je nodig hebt
+                  van <span class="font-semibold">camp tot mainstage</span> in één shop.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-200 mb-4">
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center border border-white/10"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-3.5 h-3.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.6"
+                          d="M3 3h2l.4 2M7 13h10l3-8H6.4M7 13L5.4 5M7 13l-2 7m0 0h3m-3 0h-1m14-7l2 7m0 0h-3m3 0h1"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="font-semibold">From camp to mainstage</p>
+                      <p class="text-[11px] text-gray-300">Gear voor elk moment van het weekend.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center border border-white/10"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-3.5 h-3.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.6"
+                          d="M3 13h2l1 9h12l1-9h2M6 13V6a6 6 0 1112 0v7"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="font-semibold">Limited drops</p>
+                      <p class="text-[11px] text-gray-300">
+                        Kleine oplage, geen massaproductie – Tribe only.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center border border-white/10"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-3.5 h-3.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.6"
+                          d="M3 12a9 9 0 0118 0v3a3 3 0 01-3 3H6a3 3 0 01-3-3v-3z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="font-semibold">Veilig &amp; bewust</p>
+                      <p class="text-[11px] text-gray-300">
+                        Recovery &amp; care voor de day-after.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center border border-white/10"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-3.5 h-3.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.6"
+                          d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 0c-3.33 0-6 1.57-6 3.5V20h12v-4.5C18 13.57 15.33 12 12 12z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="font-semibold">One Tribe • Worldwide</p>
+                      <p class="text-[11px] text-gray-300">
+                        Van NL tot internationaal – herken de Tribe.
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-      <div class="shop-title-row">
-        <div>
-          <h1>Raveline Division Merchandise</h1>
-          <p class="shop-sub">
-            Een rustig overzicht van alle items in één lijst.
-            Van T-shirts en hoodies tot festival kits en recovery gear.
-          </p>
+                <div class="flex flex-wrap gap-3">
+                  <a
+                    href="#products"
+                    class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-[#FF5F00] to-[#FFB300] text-black text-xs font-bold uppercase tracking-[0.18em]"
+                  >
+                    <span>Shop de collectie</span>
+                  </a>
+                  <a
+                    href="#kits"
+                    class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/20 bg-black/40 text-xs font-semibold"
+                  >
+                    Bekijk festival kits
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CATEGORY TABS (zoals CategoryTabs.tsx) -->
+        <section class="border-b border-white/5 bg-[#050509]/90">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div class="flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.18em]">
+              <button
+                class="px-3 py-1.5 rounded-full border border-white/0 bg-gradient-to-r from-[#FF5F00] to-[#FFB300] text-black font-semibold"
+              >
+                Alle producten
+              </button>
+              <button
+                class="px-3 py-1.5 rounded-full border border-white/15 bg-black/60 text-gray-200 hover:border-white/30"
+              >
+                Kleding
+              </button>
+              <button
+                class="px-3 py-1.5 rounded-full border border-white/15 bg-black/60 text-gray-200 hover:border-white/30"
+              >
+                Accessoires
+              </button>
+              <button
+                class="px-3 py-1.5 rounded-full border border-white/15 bg-black/60 text-gray-200 hover:border-white/30"
+              >
+                Festival Kits
+              </button>
+              <button
+                class="px-3 py-1.5 rounded-full border border-white/15 bg-black/60 text-gray-200 hover:border-white/30"
+              >
+                Recovery
+              </button>
+            </div>
+            <p class="text-[11px] text-gray-400">
+              5 producten • kleine oplage, geen massaproductie.
+            </p>
+          </div>
+        </section>
+
+        <!-- MAIN SHOP LAYOUT (zoals ShopLayout.tsx + Sidebar.tsx + ProductGrid.tsx) -->
+        <section id="products" class="py-6 sm:py-8">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-[280px,minmax(0,1fr)] gap-6 lg:gap-8">
+              <!-- SIDEBAR -->
+              <aside class="space-y-4">
+                <!-- Categorieën -->
+                <div class="bg-[#181325] border border-white/10 rounded-2xl p-4">
+                  <h2
+                    class="text-[11px] uppercase tracking-[0.22em] text-gray-300 mb-2 flex items-center gap-2"
+                  >
+                    <span class="w-4 h-[1px] bg-gradient-to-r from-[#FF5F00] to-[#FFB300]"></span>
+                    Categorieën
+                  </h2>
+                  <ul class="space-y-1.5 text-sm">
+                    <li>
+                      <div
+                        class="flex items-center justify-between px-2 py-1.5 rounded-lg bg-white/5 text-white"
+                      >
+                        <span>Alle producten</span>
+                        <span class="text-xs text-gray-300">5</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div
+                        class="flex items-center justify-between px-2 py-1.5 rounded-lg hover:bg-white/5 text-gray-200"
+                      >
+                        <span>Kleding</span>
+                        <span class="text-xs text-gray-400">2</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div
+                        class="flex items-center justify-between px-2 py-1.5 rounded-lg hover:bg-white/5 text-gray-200"
+                      >
+                        <span>Accessoires</span>
+                        <span class="text-xs text-gray-400">1</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div
+                        class="flex items-center justify-between px-2 py-1.5 rounded-lg hover:bg-white/5 text-gray-200"
+                      >
+                        <span>Festival Kits</span>
+                        <span class="text-xs text-gray-400">1</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div
+                        class="flex items-center justify-between px-2 py-1.5 rounded-lg hover:bg-white/5 text-gray-200"
+                      >
+                        <span>Recovery</span>
+                        <span class="text-xs text-gray-400">1</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Snelle filters -->
+                <div class="bg-[#181325] border border-white/10 rounded-2xl p-4">
+                  <h2
+                    class="text-[11px] uppercase tracking-[0.22em] text-gray-300 mb-2 flex items-center gap-2"
+                  >
+                    <span class="w-4 h-[1px] bg-gradient-to-r from-[#FF5F00] to-[#FFB300]"></span>
+                    Snelle filters
+                  </h2>
+                  <div class="flex flex-wrap gap-2 text-[11px]">
+                    <button
+                      class="px-3 py-1.5 rounded-full border border-white/20 bg-black/50 text-gray-200"
+                    >
+                      Unisex fit
+                    </button>
+                    <button
+                      class="px-3 py-1.5 rounded-full border border-white/20 bg-black/50 text-gray-200"
+                    >
+                      Limited
+                    </button>
+                    <button
+                      class="px-3 py-1.5 rounded-full border border-white/20 bg-black/50 text-gray-200"
+                    >
+                      Pre-order
+                    </button>
+                    <button
+                      class="px-3 py-1.5 rounded-full border border-white/20 bg-black/50 text-gray-200"
+                    >
+                      Camp-ready
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Verzending & support -->
+                <div class="bg-[#181325] border border-white/10 rounded-2xl p-4 text-sm">
+                  <h2
+                    class="text-[11px] uppercase tracking-[0.22em] text-gray-300 mb-2 flex items-center gap-2"
+                  >
+                    <span class="w-4 h-[1px] bg-gradient-to-r from-[#FF5F00] to-[#FFB300]"></span>
+                    Verzending &amp; support
+                  </h2>
+                  <p class="text-gray-200 text-xs mb-3">
+                    We werken met drops &amp; pre-orders. Levertijd verschilt per product, maar wordt
+                    duidelijk gecommuniceerd in je bevestiging.
+                  </p>
+                  <ul class="text-xs text-gray-300 space-y-1 mb-3">
+                    <li>• Verzending vanuit NL</li>
+                    <li>• Group shipping mogelijk voor FriendsCamps</li>
+                    <li>• Tracking info via e-mail</li>
+                  </ul>
+                  <p class="text-[11px] text-gray-400">
+                    Vragen? Mail
+                    <a href="mailto:shop@ravelinehq.com" class="underline">shop@ravelinehq.com</a>
+                  </p>
+                </div>
+              </aside>
+
+              <!-- PRODUCTGRID -->
+              <div class="space-y-4">
+                <!-- Sortbar -->
+                <div
+                  class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-gray-300"
+                >
+                  <span>Toon: alle producten</span>
+                  <div class="flex items-center gap-2">
+                    <span>Sorteren op:</span>
+                    <select
+                      class="text-xs px-3 py-1.5 rounded-full border border-white/20 bg-black/60 text-gray-100"
+                    >
+                      <option>Uitgelicht</option>
+                      <option>Prijs: laag → hoog</option>
+                      <option>Prijs: hoog → laag</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Grid -->
+                <div
+                  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5"
+                >
+                  <!-- PRODUCT 1: T-shirt -->
+                  <article
+                    class="bg-[#181325] border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:border-white/25 hover:shadow-xl hover:shadow-black/70 transition"
+                  >
+                    <div class="relative bg-[#120D22] h-44 flex items-center justify-center">
+                      <span
+                        class="absolute top-3 left-3 text-[10px] uppercase tracking-[0.18em] px-3 py-1 rounded-full bg-gradient-to-r from-[#FF5F00] to-[#FFB300] text-black font-semibold"
+                      >
+                        Nieuw
+                      </span>
+                      <span class="text-xs text-gray-400">
+                        400x350 – product visual (T-Shirt Black)
+                      </span>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col gap-2">
+                      <p class="text-[11px] uppercase tracking-[0.18em] text-gray-400">
+                        Kleding
+                      </p>
+                      <h3 class="text-sm sm:text-base font-semibold">
+                        Raveline Division T-Shirt – Black Edition
+                      </h3>
+                      <p class="text-xs text-gray-300">
+                        Zwart unisex shirt met subtiele Raveline branding. Gaat met je mee van
+                        pre-party tot after.
+                      </p>
+                      <div class="flex items-center justify-between mt-2">
+                        <div
+                          class="text-base font-bold bg-gradient-to-r from-[#FF5F00] to-[#FFB300] bg-clip-text text-transparent"
+                        >
+                          €34,95
+                        </div>
+                        <div class="flex gap-2">
+                          <button
+                            class="px-3 py-1.5 rounded-full bg-gradient-to-r from-[#FF5F00] to-[#FFB300] text-black text-[11px] font-semibold"
+                          >
+                            Toevoegen
+                          </button>
+                          <button
+                            class="px-3 py-1.5 rounded-full border border-white/20 bg-black/50 text-[11px]"
+                          >
+                            Bekijk
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <!-- PRODUCT 2: Bucket hat -->
+                  <article
+                    class="bg-[#181325] border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:border-white/25 hover:shadow-xl hover:shadow-black/70 transition"
+                  >
+                    <div class="relative bg-[#120D22] h-44 flex items-center justify-center">
+                      <span
+                        class="absolute top-3 left-3 text-[10px] uppercase tracking-[0.18em] px-3 py-1 rounded-full bg-gradient-to-r from-[#FF5F00] to-[#FFB300] text-black font-semibold"
+                      >
+                        Best seller
+                      </span>
+                      <span class="text-xs text-gray-400">
+                        400x350 – product visual (Bucket Orange)
+                      </span>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col gap-2">
+                      <p class="text-[11px] uppercase tracking-[0.18em] text-gray-400">
+                        Accessoire
+                      </p>
+                      <h3 class="text-sm sm:text-base font-semibold">
+                        Raveline Bucket Hat – Orange Tribe
+                      </h3>
+                      <p class="text-xs text-gray-300">
+                        Iconische bucket hat in Orange Tribe-stijl. Herkenbaar in de crowd, handig
+                        tegen zon én regen.
+                      </p>
+                      <div class="flex items-center justify-between mt-2">
+                        <div
+                          class="text-base font-bold bg-gradient-to-r from-[#FF5F00] to-[#FFB300] bg-clip-text text-transparent"
+                        >
+                          €29,95
+                        </div>
+                        <div class="flex gap-2">
+                          <button
+                            class="px-3 py-1.5 rounded-full bg-gradient-to-r from-[#FF5F00] to-[#FFB300] text-black text-[11px] font-semibold"
+                          >
+                            Toevoegen
+                          </button>
+                          <button
+                            class="px-3 py-1.5 rounded-full border border-white/20 bg-black/50 text-[11px]"
+                          >
+                            Bekijk
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <!-- PRODUCT 3: Festival kit -->
+                  <article
+                    id="kits"
+                    class="bg-[#181325] border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:border-white/25 hover:shadow-xl hover:shadow-black/70 transition"
+                  >
+                    <div class="relative bg-[#120D22] h-44 flex items-center justify-center">
+                      <span
+                        class="absolute top-3 left-3 text-[10px] uppercase tracking-[0.18em] px-3 py-1 rounded-full bg-black/80 border border-white/30 text-gray-100"
+                      >
+                        Kit
+                      </span>
+                      <span class="text-xs text-gray-400">
+                        400x350 – product visual (Festival Kit)
+                      </span>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col gap-2">
+                      <p class="text-[11px] uppercase tracking-[0.18em] text-gray-400">
+                        Festival kit
+                      </p>
+                      <h3 class="text-sm sm:text-base font-semibold">
+                        Festival Survival Kit – One Tribe Edition
+                      </h3>
+                      <p class="text-xs text-gray-300">
+                        Fanny pack + essentials. Alles in één pack zodat jij alleen nog hoeft te
+                        ragen.
+                      </p>
+                      <div class="flex items-center justify-between mt-2">
+                        <div
+                          class="text-base font-bold bg-gradient-to-r from-[#FF5F00] to-[#FFB300] bg-clip-text text-transparent"
+                        >
+                          €19,95
+                        </div>
+                        <div class="flex gap-2">
+                          <button
+                            class="px-3 py-1.5 rounded-full bg-gradient-to-r from-[#FF5F00] to-[#FFB300] text-black text-[11px] font-semibold"
+                          >
+                            Toevoegen
+                          </button>
+                          <button
+                            class="px-3 py-1.5 rounded-full border border-white/20 bg-black/50 text-[11px]"
+                          >
+                            Bekijk
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <!-- PRODUCT 4: Recovery kit -->
+                  <article
+                    class="bg-[#181325] border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:border-white/25 hover:shadow-xl hover:shadow-black/70 transition"
+                  >
+                    <div class="relative bg-[#120D22] h-44 flex items-center justify-center">
+                      <span
+                        class="absolute top-3 left-3 text-[10px] uppercase tracking-[0.18em] px-3 py-1 rounded-full bg-black/80 border border-white/30 text-gray-100"
+                      >
+                        Recovery
+                      </span>
+                      <span class="text-xs text-gray-400">
+                        400x350 – product visual (Recovery Kit)
+                      </span>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col gap-2">
+                      <p class="text-[11px] uppercase tracking-[0.18em] text-gray-400">
+                        Recovery
+                      </p>
+                      <h3 class="text-sm sm:text-base font-semibold">
+                        MDMA Recovery Kit – 24h Rest Mode
+                      </h3>
+                      <p class="text-xs text-gray-300">
+                        Day-after support met focus op hydratatie &amp; self-care om net wat beter
+                        bij te komen.
+                      </p>
+                      <div class="flex items-center justify-between mt-2">
+                        <div
+                          class="text-base font-bold bg-gradient-to-r from-[#FF5F00] to-[#FFB300] bg-clip-text text-transparent"
+                        >
+                          €14,95
+                        </div>
+                        <div class="flex gap-2">
+                          <button
+                            class="px-3 py-1.5 rounded-full bg-gradient-to-r from-[#FF5F00] to-[#FFB300] text-black text-[11px] font-semibold"
+                          >
+                            Toevoegen
+                          </button>
+                          <button
+                            class="px-3 py-1.5 rounded-full border border-white/20 bg-black/50 text-[11px]"
+                          >
+                            Bekijk
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <!-- PRODUCT 5: Hoodie -->
+                  <article
+                    class="bg-[#181325] border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:border-white/25 hover:shadow-xl hover:shadow-black/70 transition"
+                  >
+                    <div class="relative bg-[#120D22] h-44 flex items-center justify-center">
+                      <span
+                        class="absolute top-3 left-3 text-[10px] uppercase tracking-[0.18em] px-3 py-1 rounded-full bg-black/80 border border-white/30 text-gray-100"
+                      >
+                        Drop
+                      </span>
+                      <span class="text-xs text-gray-400">
+                        400x350 – product visual (Hoodie Night Shift)
+                      </span>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col gap-2">
+                      <p class="text-[11px] uppercase tracking-[0.18em] text-gray-400">
+                        Kleding
+                      </p>
+                      <h3 class="text-sm sm:text-base font-semibold">
+                        Tribe Hoodie – Night Shift
+                      </h3>
+                      <p class="text-xs text-gray-300">
+                        Dikke hoodie voor koude nachten op de camping of tijdens winter RaveUps.
+                      </p>
+                      <div class="flex items-center justify-between mt-2">
+                        <div
+                          class="text-base font-bold bg-gradient-to-r from-[#FF5F00] to-[#FFB300] bg-clip-text text-transparent"
+                        >
+                          €54,95
+                        </div>
+                        <div class="flex gap-2">
+                          <button
+                            class="px-3 py-1.5 rounded-full bg-gradient-to-r from-[#FF5F00] to-[#FFB300] text-black text-[11px] font-semibold"
+                          >
+                            Toevoegen
+                          </button>
+                          <button
+                            class="px-3 py-1.5 rounded-full border border-white/20 bg-black/50 text-[11px]"
+                          >
+                            Bekijk
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Simpele footer -->
+      <footer class="border-t border-white/5 bg-[#050509] py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between text-[11px] text-gray-400">
+          <p>© Raveline Division • One Tribe, Worldwide.</p>
+          <p>Merch store – demo layout gebaseerd op Bolt-opstelling.</p>
         </div>
-        <div class="shop-meta">
-          <div>Nieuwe drops: Core Apparel, Survival Kits</div>
-          <div>Alle prijzen incl. btw • beperkte oplage</div>
-        </div>
-      </div>
+      </footer>
     </div>
-  </section>
-
-  <!-- FILTER STRIP -->
-  <section class="filter-strip">
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;">
-      <div class="filter-tags">
-        <button class="filter-tag active">Alles</button>
-        <button class="filter-tag">Kleding</button>
-        <button class="filter-tag">Accessoires</button>
-        <button class="filter-tag">Festival Kits</button>
-        <button class="filter-tag">Recovery</button>
-      </div>
-
-      <div class="filter-sort">
-        Sorteren op:
-        <select>
-          <option>Uitgelicht</option>
-          <option>Prijs: Laag - Hoog</option>
-          <option>Prijs: Hoog - Laag</option>
-          <option>Nieuwste eerst</option>
-        </select>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCTLIST / CATALOGUS -->
-  <main class="shop-main">
-    <div class="container">
-
-      <p class="catalog-note">
-        Hieronder zie je een line-up van alle producten. Klik op <strong>Bekijk details</strong> voor meer info, maten en foto’s.
-      </p>
-
-      <div class="product-list">
-
-        <!-- PRODUCT 1 -->
-        <article class="product-row">
-          <div class="product-thumb">
-            <img src="assets/images/shop/products/rd-shirt-black.png" alt="Raveline T-Shirt Black">
-          </div>
-
-          <div class="product-info">
-            <div class="product-category">Kleding</div>
-            <div class="product-title">Raveline Division T-Shirt – Black Edition</div>
-            <div class="product-desc">
-              Zwart T-shirt met subtiele Raveline branding. Perfect voor camp, mainstage en dagelijkse wear.
-            </div>
-            <div class="product-tags">
-              <span class="tag">Unisex fit</span>
-              <span class="tag">Zwart • Tribe logo</span>
-              <span class="tag">Machine washable</span>
-            </div>
-          </div>
-
-          <div class="product-meta">
-            <div class="price-block">
-              <div class="price">€34,95</div>
-              <div class="price-note">Beschikbaar in S t/m XXL</div>
-              <span class="stock-label">Op voorraad</span>
-            </div>
-            <div class="product-actions">
-              <button class="btn-primary" onclick="location.href='product-tshirt-black.html'">
-                Bekijk details
-              </button>
-              <button class="btn-outline">
-                Toevoegen aan wishlist
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- PRODUCT 2 -->
-        <article class="product-row">
-          <div class="product-thumb">
-            <img src="assets/images/shop/products/rd-bucket-orange.png" alt="Raveline Bucket Hat Orange">
-          </div>
-
-          <div class="product-info">
-            <div class="product-category">Accessoire</div>
-            <div class="product-title">Raveline Bucket Hat – Orange Tribe</div>
-            <div class="product-desc">
-              De ultieme festival bucket: bescherming tegen zon én regen, met herkenbare Tribe vibe op elk terrein.
-            </div>
-            <div class="product-tags">
-              <span class="tag">Festival proof</span>
-              <span class="tag">Orange gradient</span>
-              <span class="tag">One size</span>
-            </div>
-          </div>
-
-          <div class="product-meta">
-            <div class="price-block">
-              <div class="price">€29,95</div>
-              <div class="price-note">Limited run • kleine oplage</div>
-              <span class="stock-label low">Laatste stuks</span>
-            </div>
-            <div class="product-actions">
-              <button class="btn-primary" onclick="location.href='product-bucket-orange.html'">
-                Bekijk details
-              </button>
-              <button class="btn-outline">
-                Toevoegen aan wishlist
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- PRODUCT 3 -->
-        <article class="product-row">
-          <div class="product-thumb">
-            <img src="assets/images/shop/products/festikit.png" alt="Festival Survival Kit">
-          </div>
-
-          <div class="product-info">
-            <div class="product-category">Festival kit</div>
-            <div class="product-title">Festival Survival Kit – One Tribe Edition</div>
-            <div class="product-desc">
-              Compacte kit met essentials voor een vol festivalweekend: fanny pack, oordoppen, mini care items en meer.
-            </div>
-            <div class="product-tags">
-              <span class="tag">Essentials only</span>
-              <span class="tag">Lightweight</span>
-              <span class="tag">Perfect als gift</span>
-            </div>
-          </div>
-
-          <div class="product-meta">
-            <div class="price-block">
-              <div class="price">€19,95</div>
-              <div class="price-note">1 kit per persoon aanbevolen</div>
-              <span class="stock-label">Op voorraad</span>
-            </div>
-            <div class="product-actions">
-              <button class="btn-primary" onclick="location.href='product-festikit.html'">
-                Bekijk details
-              </button>
-              <button class="btn-outline">
-                Toevoegen aan wishlist
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- PRODUCT 4 -->
-        <article class="product-row">
-          <div class="product-thumb">
-            <img src="assets/images/shop/products/recovery-kit.png" alt="MDMA Recovery Kit">
-          </div>
-
-          <div class="product-info">
-            <div class="product-category">Recovery</div>
-            <div class="product-title">MDMA Recovery Kit – 24h Rest Mode</div>
-            <div class="product-desc">
-              Voor de dag erna: hydratatie, vitamines en chill items om je lichaam een extra zetje te geven in herstel.
-            </div>
-            <div class="product-tags">
-              <span class="tag">Day-after</span>
-              <span class="tag">Selfcare</span>
-              <span class="tag">Stay safe</span>
-            </div>
-          </div>
-
-          <div class="product-meta">
-            <div class="price-block">
-              <div class="price">€14,95</div>
-              <div class="price-note">Ideaal na een zwaar weekend</div>
-              <span class="stock-label">Op voorraad</span>
-            </div>
-            <div class="product-actions">
-              <button class="btn-primary" onclick="location.href='product-recovery.html'">
-                Bekijk details
-              </button>
-              <button class="btn-outline">
-                Toevoegen aan wishlist
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- EXTRA DUMMY PRODUCTEN – pas aan / verwijder -->
-        <article class="product-row">
-          <div class="product-thumb">
-            <img src="assets/images/shop/products/hoodie-tribe.png" alt="Tribe Hoodie">
-          </div>
-
-          <div class="product-info">
-            <div class="product-category">Kleding</div>
-            <div class="product-title">Tribe Hoodie – Night Shift</div>
-            <div class="product-desc">
-              Dikke hoodie voor koude nachten op de camping of tijdens winter RaveUps. Comfort + stijl in één.
-            </div>
-            <div class="product-tags">
-              <span class="tag">Warm</span>
-              <span class="tag">Unisex</span>
-              <span class="tag">Heavy cotton</span>
-            </div>
-          </div>
-
-          <div class="product-meta">
-            <div class="price-block">
-              <div class="price">€54,95</div>
-              <div class="price-note">Pre-order mogelijk</div>
-              <span class="stock-label">Op voorraad</span>
-            </div>
-            <div class="product-actions">
-              <button class="btn-primary">
-                Bekijk details
-              </button>
-              <button class="btn-outline">
-                Toevoegen aan wishlist
-              </button>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-    </div>
-  </main>
-
-</body>
+  </body>
 </html>
