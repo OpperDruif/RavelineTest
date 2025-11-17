@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raveline Division – Shop Catalogus</title>
+
+  <style>
+    :root {
+      --rd-orange: #ff7a18;
+      --rd-gold: #ffb45e;
+      --rd-gradient: linear-gradient(135deg, #ff7a18 0%, #ffb45e 100%);
+      --bg-main: #050509;
+      --bg-panel: #111119;
+      --bg-card: #171724;
+      --text-muted: #a8a8c0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      background: radial-gradient(circle at top, #222232 0, #050509 50%, #000 100%);
+      color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* HEADER – simpel en compact */
+    .site-header {
+      background: rgba(5, 5, 9, 0.96);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      gap: 16px;
+    }
+
+    .logo img {
+      height: 38px;
+      display: block;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 18px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .main-nav a {
+      color: #b9b9c9;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: 0.25s;
+    }
+
+    .main-nav a:hover,
+    .main-nav .active {
+      color: #fff;
+      border-bottom-color: var(--rd-orange);
+    }
+
+    .header-right {
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pill {
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .cart-mini {
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(0, 0, 0, 0.55);
+      cursor: pointer;
+    }
+
+    /* HERO / INTRO */
+    .shop-header {
+      padding: 28px 0 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .shop-badge {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      opacity: 0.75;
+      margin-bottom: 6px;
+    }
+
+    .shop-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .shop-title-row h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .shop-sub {
+      margin: 4px 0 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 420px;
+    }
+
+    .shop-meta {
+      font-size: 0.8rem;
+      text-align: right;
+      color: var(--text-muted);
+    }
+
+    /* FILTER STRIP BOVEN PRODUCTEN */
+    .filter-strip {
+      padding: 12px 0 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .filter-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-tag {
+      font-size: 0.78rem;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+    }
+
+    .filter-tag.active {
+      border-color: transparent;
+      background-image: var(--rd-gradient);
+    }
+
+    .filter-sort {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .filter-sort select {
+      font-size: 0.8rem;
+      margin-left: 8px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+    }
+
+    /* PRODUCTLIST / CATALOGUS */
+    .shop-main {
+      padding: 18px 0 50px;
+    }
+
+    .catalog-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .product-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .product-row {
+      display: grid;
+      grid-template-columns: 160px minmax(0, 1.8fr) 0.7fr;
+      gap: 16px;
+      background: var(--bg-panel);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 10px 12px;
+      align-items: stretch;
+    }
+
+    .product-row:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+      background: linear-gradient(135deg, rgba(255, 122, 24, 0.06), rgba(5, 5, 9, 0.8));
+    }
+
+    .product-thumb {
+      background: #141421;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+    }
+
+    .product-thumb img {
+      max-width: 100%;
+      max-height: 110px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+    }
+
+    .product-category {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .product-title {
+      font-size: 1rem;
+      margin-top: 2px;
+    }
+
+    .product-desc {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .product-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 5px;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .product-meta {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: right;
+      gap: 6px;
+    }
+
+    .price-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 3px;
+    }
+
+    .price {
+      font-size: 1.05rem;
+      font-weight: 600;
+      background-image: var(--rd-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .price-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .stock-label {
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: inline-block;
+    }
+
+    .stock-label.low {
+      border-color: transparent;
+      background-image: var(--rd-gradient);
+      color: #000;
+      font-weight: 600;
+    }
+
+    .product-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+    }
+
+    .btn-primary {
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background-image: var(--rd-gradient);
+      color: #000;
+      font-weight: 600;
+    }
+
+    .btn-outline {
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .product-row {
+        grid-template-columns: 130px minmax(0, 1.5fr);
+        grid-template-rows: auto auto;
+      }
+
+      .product-meta {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+      }
+
+      .product-actions {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .main-nav {
+        display: none; /* eventueel later burger-menu van maken */
+      }
+
+      .product-row {
+        grid-template-columns: 1fr;
+      }
+
+      .product-thumb {
+        max-width: 200px;
+        margin: 0 auto;
+      }
+
+      .product-meta {
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .product-actions {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="assets/images/resources/logo-light.png" alt="Raveline Division">
+        </a>
+
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="raveups.html">RaveUps</a>
+          <a href="about.html">Over ons</a>
+          <a href="shopindex.html" class="active">Shop</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="header-right">
+          <span class="pill">One Tribe • Merch</span>
+          <div class="cart-mini">🛒 Cart</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SHOP INTRO -->
+  <section class="shop-header">
+    <div class="container">
+      <div class="shop-badge">Shop • Catalogus</div>
+
+      <div class="shop-title-row">
+        <div>
+          <h1>Raveline Division Merchandise</h1>
+          <p class="shop-sub">
+            Een rustig overzicht van alle items in één lijst.
+            Van T-shirts en hoodies tot festival kits en recovery gear.
+          </p>
+        </div>
+        <div class="shop-meta">
+          <div>Nieuwe drops: Core Apparel, Survival Kits</div>
+          <div>Alle prijzen incl. btw • beperkte oplage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER STRIP -->
+  <section class="filter-strip">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;">
+      <div class="filter-tags">
+        <button class="filter-tag active">Alles</button>
+        <button class="filter-tag">Kleding</button>
+        <button class="filter-tag">Accessoires</button>
+        <button class="filter-tag">Festival Kits</button>
+        <button class="filter-tag">Recovery</button>
+      </div>
+
+      <div class="filter-sort">
+        Sorteren op:
+        <select>
+          <option>Uitgelicht</option>
+          <option>Prijs: Laag - Hoog</option>
+          <option>Prijs: Hoog - Laag</option>
+          <option>Nieuwste eerst</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTLIST / CATALOGUS -->
+  <main class="shop-main">
+    <div class="container">
+
+      <p class="catalog-note">
+        Hieronder zie je een line-up van alle producten. Klik op <strong>Bekijk details</strong> voor meer info, maten en foto’s.
+      </p>
+
+      <div class="product-list">
+
+        <!-- PRODUCT 1 -->
+        <article class="product-row">
+          <div class="product-thumb">
+            <img src="assets/images/shop/products/rd-shirt-black.png" alt="Raveline T-Shirt Black">
+          </div>
+
+          <div class="product-info">
+            <div class="product-category">Kleding</div>
+            <div class="product-title">Raveline Division T-Shirt – Black Edition</div>
+            <div class="product-desc">
+              Zwart T-shirt met subtiele Raveline branding. Perfect voor camp, mainstage en dagelijkse wear.
+            </div>
+            <div class="product-tags">
+              <span class="tag">Unisex fit</span>
+              <span class="tag">Zwart • Tribe logo</span>
+              <span class="tag">Machine washable</span>
+            </div>
+          </div>
+
+          <div class="product-meta">
+            <div class="price-block">
+              <div class="price">€34,95</div>
+              <div class="price-note">Beschikbaar in S t/m XXL</div>
+              <span class="stock-label">Op voorraad</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn-primary" onclick="location.href='product-tshirt-black.html'">
+                Bekijk details
+              </button>
+              <button class="btn-outline">
+                Toevoegen aan wishlist
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUCT 2 -->
+        <article class="product-row">
+          <div class="product-thumb">
+            <img src="assets/images/shop/products/rd-bucket-orange.png" alt="Raveline Bucket Hat Orange">
+          </div>
+
+          <div class="product-info">
+            <div class="product-category">Accessoire</div>
+            <div class="product-title">Raveline Bucket Hat – Orange Tribe</div>
+            <div class="product-desc">
+              De ultieme festival bucket: bescherming tegen zon én regen, met herkenbare Tribe vibe op elk terrein.
+            </div>
+            <div class="product-tags">
+              <span class="tag">Festival proof</span>
+              <span class="tag">Orange gradient</span>
+              <span class="tag">One size</span>
+            </div>
+          </div>
+
+          <div class="product-meta">
+            <div class="price-block">
+              <div class="price">€29,95</div>
+              <div class="price-note">Limited run • kleine oplage</div>
+              <span class="stock-label low">Laatste stuks</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn-primary" onclick="location.href='product-bucket-orange.html'">
+                Bekijk details
+              </button>
+              <button class="btn-outline">
+                Toevoegen aan wishlist
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUCT 3 -->
+        <article class="product-row">
+          <div class="product-thumb">
+            <img src="assets/images/shop/products/festikit.png" alt="Festival Survival Kit">
+          </div>
+
+          <div class="product-info">
+            <div class="product-category">Festival kit</div>
+            <div class="product-title">Festival Survival Kit – One Tribe Edition</div>
+            <div class="product-desc">
+              Compacte kit met essentials voor een vol festivalweekend: fanny pack, oordoppen, mini care items en meer.
+            </div>
+            <div class="product-tags">
+              <span class="tag">Essentials only</span>
+              <span class="tag">Lightweight</span>
+              <span class="tag">Perfect als gift</span>
+            </div>
+          </div>
+
+          <div class="product-meta">
+            <div class="price-block">
+              <div class="price">€19,95</div>
+              <div class="price-note">1 kit per persoon aanbevolen</div>
+              <span class="stock-label">Op voorraad</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn-primary" onclick="location.href='product-festikit.html'">
+                Bekijk details
+              </button>
+              <button class="btn-outline">
+                Toevoegen aan wishlist
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUCT 4 -->
+        <article class="product-row">
+          <div class="product-thumb">
+            <img src="assets/images/shop/products/recovery-kit.png" alt="MDMA Recovery Kit">
+          </div>
+
+          <div class="product-info">
+            <div class="product-category">Recovery</div>
+            <div class="product-title">MDMA Recovery Kit – 24h Rest Mode</div>
+            <div class="product-desc">
+              Voor de dag erna: hydratatie, vitamines en chill items om je lichaam een extra zetje te geven in herstel.
+            </div>
+            <div class="product-tags">
+              <span class="tag">Day-after</span>
+              <span class="tag">Selfcare</span>
+              <span class="tag">Stay safe</span>
+            </div>
+          </div>
+
+          <div class="product-meta">
+            <div class="price-block">
+              <div class="price">€14,95</div>
+              <div class="price-note">Ideaal na een zwaar weekend</div>
+              <span class="stock-label">Op voorraad</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn-primary" onclick="location.href='product-recovery.html'">
+                Bekijk details
+              </button>
+              <button class="btn-outline">
+                Toevoegen aan wishlist
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- EXTRA DUMMY PRODUCTEN – pas aan / verwijder -->
+        <article class="product-row">
+          <div class="product-thumb">
+            <img src="assets/images/shop/products/hoodie-tribe.png" alt="Tribe Hoodie">
+          </div>
+
+          <div class="product-info">
+            <div class="product-category">Kleding</div>
+            <div class="product-title">Tribe Hoodie – Night Shift</div>
+            <div class="product-desc">
+              Dikke hoodie voor koude nachten op de camping of tijdens winter RaveUps. Comfort + stijl in één.
+            </div>
+            <div class="product-tags">
+              <span class="tag">Warm</span>
+              <span class="tag">Unisex</span>
+              <span class="tag">Heavy cotton</span>
+            </div>
+          </div>
+
+          <div class="product-meta">
+            <div class="price-block">
+              <div class="price">€54,95</div>
+              <div class="price-note">Pre-order mogelijk</div>
+              <span class="stock-label">Op voorraad</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn-primary">
+                Bekijk details
+              </button>
+              <button class="btn-outline">
+                Toevoegen aan wishlist
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

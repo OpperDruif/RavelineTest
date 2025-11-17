@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raveline Division – Merch Drops</title>
+
+  <style>
+    :root {
+      --rd-orange: #ff7a18;
+      --rd-gold: #ffb45e;
+      --rd-gradient: linear-gradient(135deg, #ff7a18 0%, #ffb45e 100%);
+      --bg-main: #050509;
+      --bg-panel: #101018;
+      --bg-card: #161623;
+      --text-muted: #a7a7c0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      background: radial-gradient(circle at top, #222234 0, #050509 45%, #000 100%);
+      color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    .site-header {
+      background: rgba(5, 5, 9, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 18px;
+    }
+
+    .logo img {
+      height: 40px;
+      display: block;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 26px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .main-nav a {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 2px;
+      transition: 0.25s;
+    }
+
+    .main-nav li.active a,
+    .main-nav a:hover {
+      border-bottom-color: var(--rd-orange);
+      color: #fff;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+
+    .header-pill {
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.03);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .cart-btn {
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+    }
+
+    /* HERO / DROPS HEADER */
+    .hero-wrap {
+      padding: 40px 0 32px;
+    }
+
+    .drops-hero {
+      position: relative;
+      border-radius: 26px;
+      overflow: hidden;
+      padding: 28px 26px 26px;
+      background:
+        radial-gradient(circle at top left, rgba(255, 122, 24, 0.3) 0, transparent 55%),
+        radial-gradient(circle at bottom right, rgba(255, 180, 94, 0.22) 0, transparent 55%),
+        linear-gradient(145deg, #050509 0, #111120 55%, #050509 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    .drops-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      opacity: 0.78;
+      margin-bottom: 8px;
+    }
+
+    .drops-title {
+      font-size: 2.25rem;
+      margin: 0 0 8px;
+    }
+
+    .drops-sub {
+      margin: 0 0 18px;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      max-width: 420px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .hero-badge {
+      font-size: 0.78rem;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .drops-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .btn-primary {
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background-image: var(--rd-gradient);
+      cursor: pointer;
+    }
+
+    .btn-ghost {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: transparent;
+      color: #fff;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .drops-side {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(5, 5, 10, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .drops-side-title {
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      opacity: 0.78;
+      margin-bottom: 10px;
+    }
+
+    .drops-side-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+      font-size: 0.9rem;
+    }
+
+    .drops-side-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .drops-side-item span.meta {
+      font-size: 0.78rem;
+      opacity: 0.7;
+    }
+
+    /* COLLECTION STRIPES */
+    .collections-section {
+      padding-bottom: 36px;
+    }
+
+    .collections-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .collections-header h2 {
+      margin: 0;
+      font-size: 1.35rem;
+    }
+
+    .collections-header p {
+      margin: 4px 0 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .collections-link {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .collections-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .collection-card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      padding: 16px 15px;
+      background: radial-gradient(circle at top, rgba(255, 122, 24, 0.18), transparent 55%),
+        #12121f;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      min-height: 130px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    .collection-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      opacity: 0.75;
+      margin-bottom: 4px;
+    }
+
+    .collection-title {
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .collection-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .collection-tag {
+      font-size: 0.75rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      align-self: flex-start;
+      margin-top: 6px;
+    }
+
+    .collection-card:hover {
+      border-color: rgba(255, 255, 255, 0.22);
+      transform: translateY(-3px);
+    }
+
+    /* PRODUCTS GRID */
+    .products-section {
+      padding-bottom: 70px;
+    }
+
+    .products-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .products-header-left span {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      opacity: 0.75;
+    }
+
+    .products-header-left strong {
+      font-size: 0.98rem;
+    }
+
+    .products-header-right {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .products-panel {
+      border-radius: 22px;
+      background: rgba(9, 9, 16, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 16px 16px 20px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+    }
+
+    .product-card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      flex-direction: column;
+      transition: 0.18s;
+    }
+
+    .product-card:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    }
+
+    .product-flag {
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.26);
+    }
+
+    .product-flag.hot {
+      background-image: var(--rd-gradient);
+      border-color: transparent;
+    }
+
+    .product-img {
+      padding: 14px;
+      background: #151522;
+      min-height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-img img {
+      max-width: 100%;
+      max-height: 140px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .product-body {
+      padding: 12px 13px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .product-category {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .product-title {
+      font-size: 0.96rem;
+    }
+
+    .product-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 6px;
+    }
+
+    .product-price {
+      font-weight: 600;
+      background-image: var(--rd-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .product-cta {
+      font-size: 0.78rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .drops-hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .main-nav {
+        display: none; /* eventueel burger van maken later */
+      }
+
+      .header-inner {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .drops-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="assets/images/resources/logo-light.png" alt="Raveline Division" />
+        </a>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="raveups.html">RaveUps</a></li>
+            <li><a href="about.html">Over ons</a></li>
+            <li class="active"><a href="shopindex.html">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-right">
+          <span class="header-pill">One Tribe • Merch</span>
+          <button class="cart-btn">🛒 Cart</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO / DROPS -->
+  <section class="hero-wrap">
+    <div class="container">
+      <div class="drops-hero">
+        <div>
+          <div class="drops-label">Raveline Division • Merch Drops</div>
+          <h1 class="drops-title">Dress like the Tribe, rave like a Legend.</h1>
+          <p class="drops-sub">
+            Limited drops, kleine oplages en gear die van camp tot mainstage met je mee gaat.
+            Klaar voor je volgende RaveUp of festivalweekend.
+          </p>
+
+          <div class="hero-badges">
+            <span class="hero-badge">Pre-order batches</span>
+            <span class="hero-badge">Festival-proof</span>
+            <span class="hero-badge">One Tribe identity</span>
+          </div>
+
+          <div class="drops-cta-row">
+            <button class="btn-primary" onclick="location.href='#products'">
+              Bekijk alle producten
+            </button>
+            <button class="btn-ghost" onclick="location.href='#collections'">
+              Bekijk collecties
+            </button>
+          </div>
+        </div>
+
+        <div class="drops-side">
+          <div class="drops-side-title">Actieve collecties</div>
+          <div class="drops-side-item">
+            <div>
+              <strong>Core Tribe Essentials</strong><br />
+              <span class="meta">T-shirts, hoodies & flags</span>
+            </div>
+            <div>LIVE</div>
+          </div>
+          <div class="drops-side-item">
+            <div>
+              <strong>Festival Survival Kits</strong><br />
+              <span class="meta">Fanny packs & essentials</span>
+            </div>
+            <div>LIMITED</div>
+          </div>
+          <div class="drops-side-item">
+            <div>
+              <strong>Recovery Series</strong><br />
+              <span class="meta">MDMA recovery & chill</span>
+            </div>
+            <div>RESTOCK</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTION STRIPES -->
+  <section class="collections-section" id="collections">
+    <div class="container">
+      <div class="collections-header">
+        <div>
+          <h2>Merch collecties</h2>
+          <p>Kies een vibe en duik de collectie in.</p>
+        </div>
+        <a href="#products" class="collections-link">Of scrol door alle producten ↓</a>
+      </div>
+
+      <div class="collections-row">
+        <article class="collection-card" onclick="location.href='shop-clothing.html'">
+          <div>
+            <div class="collection-kicker">Core collectie</div>
+            <div class="collection-title">Tribe Apparel</div>
+            <div class="collection-meta">T-shirts, hoodies en long sleeves in vol Raveline DNA.</div>
+          </div>
+          <span class="collection-tag">Kleding • 5 items</span>
+        </article>
+
+        <article class="collection-card" onclick="location.href='shop-accessories.html'">
+          <div>
+            <div class="collection-kicker">Camp & crowd</div>
+            <div class="collection-title">Flags & Accessories</div>
+            <div class="collection-meta">Banners, bucket hats en gear voor in de pit.</div>
+          </div>
+          <span class="collection-tag">Accessoires • 3 items</span>
+        </article>
+
+        <article class="collection-card" onclick="location.href='shop-festivalkits.html'">
+          <div>
+            <div class="collection-kicker">Next-level ready</div>
+            <div class="collection-title">Festival Kits</div>
+            <div class="collection-meta">Fanny packs & essentials voor lange weekends.</div>
+          </div>
+          <span class="collection-tag">Kits • 2 items</span>
+        </article>
+
+        <article class="collection-card" onclick="location.href='shop-recovery.html'">
+          <div>
+            <div class="collection-kicker">Day-after mode</div>
+            <div class="collection-title">Recovery Line</div>
+            <div class="collection-meta">MDMA recovery kits en chill items voor thuis.</div>
+          </div>
+          <span class="collection-tag">Recovery • 1 item</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS GRID -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <div class="products-header">
+        <div class="products-header-left">
+          <span>Alle producten</span>
+          <strong>Mix & match je eigen Tribe loadout.</strong>
+        </div>
+        <div class="products-header-right">
+          8 producten in deze view (dummy aantallen – pas zelf aan)
+        </div>
+      </div>
+
+      <div class="products-panel">
+        <div class="product-grid">
+
+          <!-- Product 1 -->
+          <article class="product-card">
+            <span class="product-flag hot">Nieuw</span>
+            <div class="product-img">
+              <img src="assets/images/shop/products/rd-shirt-black.png" alt="Raveline T-Shirt Black" />
+            </div>
+            <div class="product-body">
+              <div class="product-category">Kleding</div>
+              <div class="product-title">Raveline Division T-Shirt – Black Edition</div>
+              <div class="product-meta-row">
+                <div class="product-price">€34,95</div>
+                <button class="product-cta" onclick="location.href='product-tshirt-black.html'">
+                  Bekijk
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="product-card">
+            <span class="product-flag hot">Hot</span>
+            <div class="product-img">
+              <img src="assets/images/shop/products/rd-bucket-orange.png" alt="Raveline Bucket Hat Orange" />
+            </div>
+            <div class="product-body">
+              <div class="product-category">Accessoire</div>
+              <div class="product-title">Raveline Bucket Hat – Orange Tribe</div>
+              <div class="product-meta-row">
+                <div class="product-price">€29,95</div>
+                <button class="product-cta" onclick="location.href='product-bucket-orange.html'">
+                  Bekijk
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="product-card">
+            <div class="product-img">
+              <img src="assets/images/shop/products/festikit.png" alt="Festival Survival Kit" />
+            </div>
+            <div class="product-body">
+              <div class="product-category">Festival kit</div>
+              <div class="product-title">Festival Survival Kit – One Tribe Edition</div>
+              <div class="product-meta-row">
+                <div class="product-price">€19,95</div>
+                <button class="product-cta" onclick="location.href='product-festikit.html'">
+                  Bekijk
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 4 -->
+          <article class="product-card">
+            <div class="product-img">
+              <img src="assets/images/shop/products/recovery-kit.png" alt="MDMA Recovery Kit" />
+            </div>
+            <div class="product-body">
+              <div class="product-category">Recovery</div>
+              <div class="product-title">MDMA Recovery Kit – 24h Rest Mode</div>
+              <div class="product-meta-row">
+                <div class="product-price">€14,95</div>
+                <button class="product-cta" onclick="location.href='product-recovery.html'">
+                  Bekijk
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Extra dummy items (pas aan / verwijder) -->
+          <article class="product-card">
+            <div class="product-img">
+              <img src="assets/images/shop/products/hoodie-tribe.png" alt="Tribe Hoodie" />
+            </div>
+            <div class="product-body">
+              <div class="product-category">Kleding</div>
+              <div class="product-title">Tribe Hoodie – Night Shift</div>
+              <div class="product-meta-row">
+                <div class="product-price">€54,95</div>
+                <button class="product-cta">
+                  Bekijk
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-img">
+              <img src="assets/images/shop/products/flag-tribe.png" alt="Raveline Flag" />
+            </div>
+            <div class="product-body">
+              <div class="product-category">Accessoire</div>
+              <div class="product-title">Raveline Flag – One Tribe Banner</div>
+              <div class="product-meta-row">
+                <div class="product-price">€24,95</div>
+                <button class="product-cta">
+                  Bekijk
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-img">
+              <img src="assets/images/shop/products/australian-jacket.png" alt="Australian Jacket" />
+            </div>
+            <div class="product-body">
+              <div class="product-category">Australian gear</div>
+              <div class="product-title">Australian Jacket – Collab Drop</div>
+              <div class="product-meta-row">
+                <div class="product-price">€119,95</div>
+                <button class="product-cta">
+                  Bekijk
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-img">
+              <img src="assets/images/shop/products/fannypack.png" alt="Festival Fanny Pack" />
+            </div>
+            <div class="product-body">
+              <div class="product-category">Festival kit</div>
+              <div class="product-title">Festival Fanny Pack – Essentials Only</div>
+              <div class="product-meta-row">
+                <div class="product-price">€17,95</div>
+                <button class="product-cta">
+                  Bekijk
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
