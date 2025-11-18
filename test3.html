@@ -1,878 +1,775 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>Shop – Raveline Division</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RaveUp: Winter Efteling || Raveline Division</title>
 
-  <!-- Bestaande CSS / vendors van je site -->
-  <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
-  <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
-  <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
-  <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
-  <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
-  <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
-  <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
-  <link rel="stylesheet" href="assets/vendors/eventflow-icons/style.css" />
-  <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
-  <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
-  <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
-  <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
-  <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <meta name="description" content="RaveUp: Winter Efteling – Raveline Division | One Tribe, Worldwide" />
 
-  <link rel="stylesheet" href="assets/css/eventflow.css" />
-  <link rel="stylesheet" href="assets/css/eventflow-responsive.css" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --rvln-grad: linear-gradient(90deg, #ff5f00, #ffb300);
-      --rvln-card: #181325;
-      --rvln-card-soft: #1f1733;
-      --rvln-bg: #0e0a17;
-    }
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/eventflow-icons/style.css">
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
 
-    body.body-bg-color1 {
-      background-color: var(--rvln-bg);
-    }
-
-    /* SHOP HERO: meer verkoop-gericht */
-    .shop-hero-panel {
-      background: radial-gradient(circle at top left, rgba(255,95,0,0.25), transparent 50%) ,
-                  radial-gradient(circle at bottom right, rgba(255,179,0,0.15), transparent 55%) ,
-                  #120d22;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.12);
-      padding: 20px 22px;
-      margin-top: 24px;
-      margin-bottom: 22px;
-      display: grid;
-      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.3fr);
-      gap: 18px;
-      align-items: center;
-    }
-
-    .shop-hero-eyebrow {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #e5e7eb;
-      opacity: 0.85;
-    }
-
-    .shop-hero-title {
-      font-size: 24px;
-      margin: 4px 0 4px;
-      color: #f9fafb;
-    }
-
-    .shop-hero-text {
-      font-size: 14px;
-      color: #d1d5db;
-      max-width: 460px;
-      margin-bottom: 10px;
-    }
-
-    .shop-hero-usps {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 14px;
-      font-size: 11px;
-      color: #e5e7eb;
-      margin-bottom: 10px;
-    }
-
-    .shop-hero-usps span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .shop-hero-usps i {
-      color: #ffb300;
-      font-size: 12px;
-    }
-
-    .shop-hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .shop-hero-btn-main {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 16px;
-      border-radius: 999px;
-      border: none;
-      background: var(--rvln-grad);
-      color: #111827;
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .shop-hero-btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 13px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.25);
-      background: rgba(0,0,0,0.45);
-      color: #e5e7eb;
-      font-size: 12px;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .shop-hero-side {
-      padding: 12px 14px;
-      border-radius: 18px;
-      background: rgba(6,5,12,0.9);
-      border: 1px solid rgba(255,255,255,0.15);
-      font-size: 13px;
-      color: #e5e7eb;
-    }
-
-    .shop-hero-side-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 6px;
-    }
-
-    .shop-hero-side-row span.label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: #9ca3af;
-    }
-
-    .shop-hero-side-row strong {
-      font-size: 14px;
-    }
-
-    .shop-hero-side-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: rgba(24,18,45,0.9);
-      border: 1px solid rgba(255,255,255,0.16);
-      font-size: 11px;
-    }
-
-    /* CATEGORIE BALK (zoals Q-dance: Mannen / Vrouwen / Accessoires etc) */
-    .shop-top-cats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px;
-      font-size: 13px;
-    }
-
-    .shop-top-cat {
-      padding: 6px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(0,0,0,0.5);
-      color: #e5e7eb;
-      cursor: pointer;
-    }
-
-    .shop-top-cat.active {
-      background: var(--rvln-grad);
-      border-color: transparent;
-      color: #111827;
-      font-weight: 600;
-    }
-
-    .shop-top-meta {
-      font-size: 12px;
-      color: #d1d5db;
-      text-align: right;
-    }
-
-    /* Layout: sidebar + grid */
-    .shop-main-row {
-      margin-top: 10px;
-    }
-
-    .shop-sidebar-box {
-      background: var(--rvln-card-soft);
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 14px 16px;
-      color: #e5e7eb;
-      margin-bottom: 14px;
-      font-size: 13px;
-    }
-
-    .shop-sidebar-title {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-bottom: 8px;
-      color: #f9fafb;
-    }
-
-    .shop-sidebar-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .shop-sidebar-list li + li {
-      margin-top: 6px;
-    }
-
-    .shop-sidebar-link {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 5px 7px;
-      border-radius: 10px;
-      color: #e5e7eb;
-      text-decoration: none;
-      transition: 0.15s ease;
-      font-size: 13px;
-    }
-
-    .shop-sidebar-link span.count {
-      font-size: 11px;
-      opacity: 0.75;
-    }
-
-    .shop-sidebar-link:hover,
-    .shop-sidebar-link--active {
-      background: rgba(0,0,0,0.45);
-    }
-
-    .shop-filter-pill {
-      font-size: 11px;
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(0,0,0,0.45);
-      margin: 0 6px 6px 0;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      cursor: pointer;
-    }
-
-    .shop-filter-pill i {
-      font-size: 10px;
-      opacity: 0.8;
-    }
-
-    /* SORTERING BOVEN GRID */
-    .shop-sort-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 14px;
-      font-size: 12px;
-      color: #d1d5db;
-    }
-
-    .shop-sort-select select {
-      font-size: 12px;
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(0,0,0,0.6);
-      color: #f9fafb;
-    }
-
-    /* PRODUCT GRID */
-    .shop-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 22px;
-    }
-
-    .shop-item {
-      background: var(--rvln-card);
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-    }
-
-    .shop-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.6);
-      border-color: rgba(255,255,255,0.2);
-    }
-
-    .shop-item__img {
-      background: #120d22;
-      padding: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 190px;
-      position: relative;
-    }
-
-    .shop-item__img img {
-      max-width: 100%;
-      max-height: 170px;
-      object-fit: contain;
-      display: block;
-    }
-
-    .shop-item__badge {
-      position: absolute;
-      top: 10px;
-      left: 12px;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: rgba(0,0,0,0.8);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .shop-item__badge--highlight {
-      background: var(--rvln-grad);
-      border-color: transparent;
-      color: #111827;
-      font-weight: 600;
-    }
-
-    .shop-item__body {
-      padding: 14px 16px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      flex: 1;
-    }
-
-    .shop-item__category {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: #9ca3af;
-    }
-
-    .shop-item__title {
-      font-size: 15px;
-      margin: 2px 0 4px;
-      color: #f9fafb;
-    }
-
-    .shop-item__title a {
-      color: inherit;
-    }
-
-    .shop-item__text {
-      font-size: 13px;
-      color: #d1d5db;
-      margin-bottom: 6px;
-    }
-
-    .shop-item__meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: auto;
-      gap: 8px;
-    }
-
-    .shop-price {
-      font-weight: 700;
-      background: var(--rvln-grad);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      font-size: 16px;
-    }
-
-    .shop-item__buttons {
-      display: flex;
-      gap: 6px;
-    }
-
-    .shop-btn-main {
-      font-size: 12px;
-      padding: 7px 13px;
-      border-radius: 999px;
-      border: none;
-      background: var(--rvln-grad);
-      color: #111827;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .shop-btn-ghost {
-      font-size: 11px;
-      padding: 6px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(0,0,0,0.55);
-      color: #e5e7eb;
-      cursor: pointer;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    /* oranje icon-double-angle */
-    .pg-pagination .icon-double-angle,
-    .sidebar__all-category-list i.icon-double-angle {
-      background: var(--rvln-grad);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    @media (max-width: 991px) {
-      .shop-hero-panel {
-        grid-template-columns: 1fr;
-      }
-      .shop-sidebar {
-        margin-bottom: 22px;
-      }
-    }
-
-    @media (max-width: 575px) {
-      .shop-hero-panel {
-        padding: 16px;
-      }
-    }
-  </style>
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/eventflow.css" />
+    <link rel="stylesheet" href="assets/css/eventflow-responsive.css" />
 </head>
 
-<body class="body-bg-color1">
-  <div class="page-wrapper">
+<body class="body-bg-color-1">
 
-    <!-- HEADER (jouw bestaande header) -->
-    <header class="main-header main-header-three">
-      <nav class="main-menu main-menu-three">
-        <div class="main-menu__wrapper">
-          <div class="main-menu__wrapper-inner">
-            <div class="main-menu__left">
-              <div class="main-menu__logo">
-                <a href="index.html">
-                  <img src="assets/images/resources/logo-2.png" alt="Raveline Division" />
-                </a>
-              </div>
+    <div class="preloader">
+        <div class="preloader__image"></div>
+    </div>
+
+    <!-- Start sidebar widget content -->
+    <div class="xs-sidebar-group info-group info-sidebar">
+        <div class="xs-overlay xs-bg-black"></div>
+        <div class="xs-sidebar-widget">
+            <div class="sidebar-widget-container">
+                <div class="widget-heading">
+                    <a href="#" class="close-side-widget">X</a>
+                </div>
+                <div class="sidebar-textwidget">
+                    <div class="sidebar-info-contents">
+                        <div class="content-inner">
+                            <div class="logo">
+                                <a href="index.html"><img src="assets/images/resources/raveline-logo-header.png"
+                                        alt="Raveline Division" /></a>
+                            </div>
+                            <div class="content-box">
+                                <h4>Over Raveline</h4>
+                                <p>Raveline Division is een tribe-gedreven festival community. Eén geluid, één tribe –
+                                    worldwide.</p>
+                            </div>
+                            <div class="form-inner">
+                                <h4>Join the Tribe</h4>
+                                <form action="assets/inc/sendemail.php" class="contact-form-validated"
+                                    novalidate="novalidate">
+                                    <div class="form-group">
+                                        <input type="text" name="name" placeholder="Naam" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email" placeholder="Email" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea name="message"
+                                            placeholder="Vertel kort wie je bent & waarom je wil joinen..."></textarea>
+                                    </div>
+                                    <div class="form-group message-btn">
+                                        <button type="submit" class="thm-btn form-inner__btn">Versturen</button>
+                                    </div>
+                                </form>
+                                <div class="result"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="main-menu__right">
-              <div class="main-menu__main-menu-box">
-                <button class="mobile-nav__toggler">
-                  <i class="fa fa-bars"></i>
-                </button>
-                <ul class="main-menu__list">
-                  <li><a href="index.html">Home</a></li>
-                  <li class="dropdown">
-                    <a href="#">Over ons</a>
-                    <ul>
-                      <li><a href="About.html">Over ons</a></li>
-                      <li><a href="Team.html">De Crew</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#">Tribe</a>
-                    <ul>
-                      <li><a href="RaveUp&amp;Meeting.html">Meetups &amp; RaveUps</a></li>
-                      <li><a href="Friendscamps.html">FriendsCamp</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown current">
-                    <a href="#">Merch</a>
-                    <ul>
-                      <li><a href="Shop.html">Collectie</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="Vacatures.html">Vacatures</a></li>
-                  <li><a href="FAQ.html">FAQ &amp; Contact</a></li>
-                </ul>
-              </div>
-              <div class="main-menu__right-top">
-                <a href="RaveUp&amp;Meeting.html" class="thm-btn main-header__btn">
-                  Join the Tribe
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
-      </nav>
-    </header>
+    </div>
+    <!-- End sidebar widget content -->
 
-    <!-- PAGE HEADER -->
-    <section class="page-header">
-      <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/Merch.jpg);"></div>
-      <div class="page-header__shape-1 float-bob-y">
-        <img src="assets/images/shapes/page-header-shape-1.png" alt="" />
-      </div>
-      <div class="page-header__shape-2 float-bob-x">
-        <img src="assets/images/shapes/page-header-shape-2.png" alt="" />
-      </div>
-      <div class="container">
-        <div class="page-header__inner">
-          <h2>Merch &amp; Shop</h2>
-          <div class="thm-breadcrumb__box">
-            <ul class="thm-breadcrumb list-unstyled">
-              <li><a href="index.html">Home</a></li>
-              <li><span class="icon-angle-right"></span></li>
-              <li>Merch</li>
+    <div class="page-wrapper">
+        <!-- RAVELINE HEADER -->
+        <header class="main-header">
+            <nav class="main-menu">
+                <div class="main-menu__wrapper">
+                    <div class="main-menu__wrapper-inner">
+                        <div class="main-menu__left">
+                            <div class="main-menu__logo">
+                                <a href="index.html">
+                                    <img src="assets/images/resources/raveline-logo-header.png"
+                                        alt="Raveline Division">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="main-menu__main-menu-box">
+                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                            <ul class="main-menu__list">
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="about.html">Over Raveline</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#">RaveUps</a>
+                                    <ul>
+                                        <li><a href="raveups.html">Alle RaveUps</a></li>
+                                        <li><a href="winter-efteling.html">Winter Efteling RaveUp</a></li>
+                                        <li><a href="safari-raveup.html">Safari RaveUp</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#">FriendsCamp</a>
+                                    <ul>
+                                        <li><a href="friendscamp.html">Wat is FriendsCamp?</a></li>
+                                        <li><a href="friendscamp-defqon.html">Defqon.1 FriendsCamp</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#">Merch</a>
+                                    <ul>
+                                        <li><a href="shopindex.html">Raveline Merch</a></li>
+                                        <li><a href="merch-bucket-hats.html">Bucket Hats</a></li>
+                                        <li><a href="merch-kits.html">Festival & Recovery Kits</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="tribe-hub.html">Tribe Hub</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="main-menu__right">
+                            <div class="main-menu__btn-box">
+                                <a href="join-the-tribe.html" class="main-menu__btn thm-btn">
+                                    Join the Tribe
+                                    <span class="icon-arrow-right"></span>
+                                </a>
+                            </div>
+                            <div class="main-menu__cart-search-nav-sidebar-icon-and-btn-box">
+                                <a href="shopindex.html" class="main-menu__cart icon-cart"></a>
+                                <a href="#" class="main-menu__search search-toggler">
+                                    <span class="icon-loupe"></span>
+                                </a>
+                                <div class="main-menu__nav-sidebar-icon">
+                                    <a class="navSidebar-button" href="#">
+                                        <span class="icon-menu1"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div>
+        </div>
+
+        <!--Page Header Start-->
+        <section class="page-header">
+            <div class="page-header__bg"
+                style="background-image: url(assets/images/backgrounds/page-header-raveline-raveup.jpg);">
+            </div>
+            <div class="page-header__shape-1 float-bob-y">
+                <img src="assets/images/shapes/page-header-shape-1.png" alt="">
+            </div>
+            <div class="page-header__shape-2 float-bob-x">
+                <img src="assets/images/shapes/page-header-shape-2.png" alt="">
+            </div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <h2>RaveUp: Winter Efteling</h2>
+                    <div class="thm-breadcrumb__box">
+                        <ul class="thm-breadcrumb list-unstyled">
+                            <li><a href="index.html">Home</a></li>
+                            <li><span class="icon-angle-right"></span></li>
+                            <li>RaveUp: Winter Efteling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+
+        <!--Event Details Start-->
+        <section class="event-details">
+            <div class="container">
+                <div class="row">
+                    <!-- LEFT CONTENT -->
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="event-details__left">
+                            <div class="event-details__img">
+                                <!-- TODO: vervang deze afbeelding door je Winter Efteling visual -->
+                                <img src="assets/images/resources/event-details-img-1.jpg"
+                                    alt="RaveUp: Winter Efteling">
+                            </div>
+                            <div class="event-details__main-tab-box tabs-box">
+                                <ul class="tab-buttons clearfix list-unstyled">
+                                    <li data-tab="#tab-info" class="tab-btn active-btn">
+                                        <p>Info</p>
+                                    </li>
+                                    <li data-tab="#tab-programma" class="tab-btn">
+                                        <p>Programma</p>
+                                    </li>
+                                    <li data-tab="#tab-praktisch" class="tab-btn">
+                                        <p>Praktisch</p>
+                                    </li>
+                                </ul>
+                                <div class="tabs-content">
+                                    <!-- INFO TAB -->
+                                    <div class="tab active-tab" id="tab-info">
+                                        <div class="event-details__tab-content-box">
+                                            <ul class="event-details__meta list-unstyled">
+                                                <li>
+                                                    <p>
+                                                        <span class="icon-clock"></span>
+                                                        Zaterdag 3 januari 2026 · Dag-RaveUp in de Winter Efteling
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>
+                                                        <span class="icon-pin"></span>
+                                                        Efteling · Europalaan 1 · 5171 KW Kaatsheuvel (NL)
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            <h3 class="event-details__title-1">RaveUp: Winter Efteling</h3>
+                                            <p class="event-details__text-1">
+                                                De Winter Efteling verandert het park in een wereld vol lichtjes,
+                                                vuurtjes en sprookjesachtige winter vibes. Met Raveline Division
+                                                maken we er een gezamenlijke RaveUp van: één tribe, één dag, vol
+                                                achtbanen, glühwein (voor wie wil 😉) en warme kampvuurmomenten.
+                                            </p>
+                                            <p class="event-details__text-2">
+                                                Deze RaveUp is zowel voor bestaande Raveline-leden als nieuwe
+                                                gezichten die willen aansluiten. Je regelt je eigen entreeticket via
+                                                de Efteling, en via Raveline melden we je aan voor de groepsindeling,
+                                                meetpoint en – als je dat wilt – het afsluitende diner bij
+                                                <strong>Polles Keuken</strong>.
+                                            </p>
+
+                                            <div class="event-details__img-box">
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="event-details__img-box-img">
+                                                            <!-- Winter Efteling sfeerbeeld 1 -->
+                                                            <img src="assets/images/resources/event-details-img-box-img-1.jpg"
+                                                                 alt="Winter Efteling sfeerbeeld">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="event-details__img-box-img">
+                                                            <!-- Winter Efteling sfeerbeeld 2 -->
+                                                            <img src="assets/images/resources/event-details-img-box-img-2.jpg"
+                                                                 alt="Raveline Tribe in de Efteling">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="event-details__points-box">
+                                                <ul class="event-details__points list-unstyled">
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="icon-double-angle"></span>
+                                                        </div>
+                                                        <p>Samen de Winter Efteling ervaren als één tribe</p>
+                                                    </li>
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="icon-double-angle"></span>
+                                                        </div>
+                                                        <p>Open voor leden, vrienden & nieuwe faces</p>
+                                                    </li>
+                                                </ul>
+                                                <ul class="event-details__points list-unstyled">
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="icon-double-angle"></span>
+                                                        </div>
+                                                        <p>Optioneel gezamenlijk diner bij Polles Keuken</p>
+                                                    </li>
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="icon-double-angle"></span>
+                                                        </div>
+                                                        <p>Rustige, gezellige RaveUp – geen verplichtheden</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <p class="event-details__text-3">
+                                                Of je nu komt voor de achtbanen, de sprookjes, familiegevoel of
+                                                gewoon een dag weg met gelijkgestemden: deze RaveUp is bedoeld om op
+                                                een laagdrempelige manier samen te komen buiten de harde festivals om.
+                                            </p>
+                                            <p class="event-details__text-4">
+                                                Meld je ook zeker aan via het Raveline-formulier, zodat we weten wie
+                                                er komt, hoe je reist en of je mee eet. Zo kunnen we meetpoints en
+                                                groepsmomenten goed afstemmen.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- PROGRAMMA TAB -->
+                                    <div class="tab" id="tab-programma">
+                                        <div class="event-details__tab-content-box">
+                                            <ul class="event-details__meta list-unstyled">
+                                                <li>
+                                                    <p>
+                                                        <span class="icon-clock"></span>
+                                                        Indicatief dagprogramma – exacte tijden volgen in de groep
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            <h3 class="event-details__title-1">Programma (globale planning)</h3>
+                                            <p class="event-details__text-1">
+                                                De exacte tijden kunnen nog iets schuiven afhankelijk van openingstijd,
+                                                drukte en groep. In de WhatsApp-groep delen we de laatste updates.
+                                            </p>
+
+                                            <div class="event-details__points-box">
+                                                <ul class="event-details__points list-unstyled">
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="icon-double-angle"></span>
+                                                        </div>
+                                                        <p><strong>10:00 – 10:30</strong> · Verzamelen bij
+                                                            Huis van de Vijf Zintuigen (entree Efteling)</p>
+                                                    </li>
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="icon-double-angle"></span>
+                                                        </div>
+                                                        <p><strong>10:30 – 12:30</strong> · Eerste attracties
+                                                            samen (achtbanen / sprookjes / wat de groep wil)</p>
+                                                    </li>
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="icon-double-angle"></span>
+                                                        </div>
+                                                        <p><strong>12:30 – 14:00</strong> · Lunch / vrije invulling
+                                                            in kleinere groepjes</p>
+                                                    </li>
+                                                </ul>
+                                                <ul class="event-details__points list-unstyled">
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="icon-double-angle"></span>
+                                                        </div>
+                                                        <p><strong>14:00 – 17:30</strong> · Winter Efteling
+                                                            ontdekken (shows, attracties, kampvuren)</p>
+                                                    </li>
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="icon-double-angle"></span>
+                                                        </div>
+                                                        <p><strong>± 17:30 / 18:00</strong> · Gezamenlijk diner
+                                                            bij <strong>Polles Keuken</strong> (optioneel, op
+                                                            reservering)</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <p class="event-details__text-3">
+                                                Tussendoor is er genoeg ruimte om je eigen plan te trekken. We proberen
+                                                altijd een balans te houden tussen samen dingen doen en vrij laten
+                                                rondlopen. Zo voelt iedereen zich comfortabel – of je nu introvert,
+                                                extrovert of een mix bent.
+                                            </p>
+                                            <p class="event-details__text-4">
+                                                De definitieve tijden en eventuele groepsfoto-momenten delen we kort
+                                                voor de RaveUp in de WhatsApp-groep en per mail (als je je via de site
+                                                hebt aangemeld).
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- PRAKTISCH TAB -->
+                                    <div class="tab" id="tab-praktisch">
+                                        <div class="event-details__tab-content-box">
+                                            <ul class="event-details__meta list-unstyled">
+                                                <li>
+                                                    <p>
+                                                        <span class="icon-pin"></span>
+                                                        Efteling · Kaatsheuvel · Noord-Brabant, Nederland
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            <h3 class="event-details__title-1">Praktische info</h3>
+
+                                            <p class="event-details__text-1">
+                                                <strong>Tickets</strong><br>
+                                                Je koopt je <strong>eigen dagticket</strong> rechtstreeks via de
+                                                officiële Efteling website. Let er bij het boeken op dat je
+                                                ticket geldig is voor <strong>zaterdag 3 januari 2026</strong>.
+                                            </p>
+
+                                            <p class="event-details__text-2">
+                                                <strong>Aanmelden bij Raveline</strong><br>
+                                                Naast je ticket is het belangrijk dat je je ook aanmeldt bij
+                                                Raveline Division. Zo weten we:
+                                            </p>
+                                            <div class="event-details__points-box">
+                                                <ul class="event-details__points list-unstyled">
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="icon-double-angle"></span>
+                                                        </div>
+                                                        <p>Met hoeveel personen je komt</p>
+                                                    </li>
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="icon-double-angle"></span>
+                                                        </div>
+                                                        <p>Hoe je reist (OV, auto, carpool)</p>
+                                                    </li>
+                                                </ul>
+                                                <ul class="event-details__points list-unstyled">
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="icon-double-angle"></span>
+                                                        </div>
+                                                        <p>Of je wilt mee-eten bij Polles Keuken</p>
+                                                    </li>
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="icon-double-angle"></span>
+                                                        </div>
+                                                        <p>Of we rekening moeten houden met dieet/allergieën</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <p class="event-details__text-3">
+                                                <strong>Vervoer</strong><br>
+                                                Carpoolen wordt aangemoedigd – zowel voor de gezelligheid als het
+                                                milieu. In de WhatsApp-groep kijken we wie vanaf welke regio vertrekt
+                                                (NL/BE) en koppelen we waar mogelijk mensen aan elkaar.
+                                            </p>
+
+                                            <p class="event-details__text-4">
+                                                <strong>What to bring</strong><br>
+                                                Comfortabele kleding, warme laagjes (Winter Efteling = koud),
+                                                eventueel handschoenen/muts, powerbank, en natuurlijk je
+                                                Rave-fit als je wat extra festival flair wil toevoegen. 😉
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT SIDEBAR -->
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="event-details__right">
+                            <div class="event-details__speakers">
+                                <h3 class="event-details__speakers-title">Organisatie</h3>
+                                <p class="event-details__speakers-sub-title">Raveline Division RaveUp</p>
+                                <p class="event-details__speakers-text">
+                                    Deze RaveUp wordt georganiseerd door Raveline Division. Een gezellige, open
+                                    community waar iedereen welkom is – ook als je ons (nog) niet kent.
+                                </p>
+                            </div>
+
+                            <div class="event-details__ticket">
+                                <h3 class="event-details__ticket-title">Tickets voor de Efteling</h3>
+                                <p class="event-details__ticket-sub-title">Koop je eigen ticket</p>
+                                <div class="event-details__ticket-icon">
+                                    <span class="icon-call"></span>
+                                </div>
+                                <p class="event-details__ticket-sub-title-2">
+                                    Tickets regel je zelf via de officiële website van de Efteling.
+                                </p>
+                                <h3 class="event-details__ticket-number">
+                                    <a href="https://www.efteling.com/nl/tickets" target="_blank" rel="noopener">
+                                        Naar Efteling tickets
+                                    </a>
+                                </h3>
+                            </div>
+
+                            <div class="event-details__ticket-two">
+                                <h3 class="event-details__ticket-two-title">Aanmelden bij Raveline</h3>
+                                <p class="event-details__ticket-two-text">
+                                    Meld je via ons aanmeldformulier aan zodat we weten wie er komt, en we je kunnen
+                                    toevoegen aan de RaveUp-communicatie (WhatsApp / mail).
+                                </p>
+                                <div class="event-details__ticket-two-btn-box">
+                                    <!-- Gebruik hier je eigen definitieve aanmeldlink -->
+                                    <a href="https://forms.gle/92SwRveFPuLWbYVu7" target="_blank" rel="noopener"
+                                        class="event-details__ticket-two-btn thm-btn">
+                                        Aanmelden voor RaveUp
+                                        <span class="icon-arrow-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="event-details__follow-us">
+                                <h3 class="event-details__follow-us-title">Follow Us</h3>
+                                <div class="event-details__follow-us-social">
+                                    <a href="https://instagram.com" target="_blank"><span
+                                            class="icon-instagram"></span></a>
+                                    <a href="https://facebook.com" target="_blank"><span
+                                            class="icon-facebook"></span></a>
+                                    <a href="https://www.tiktok.com" target="_blank"><span
+                                            class="icon-fi"></span></a>
+                                    <a href="#"><span class="icon-linkedin-in"></span></a>
+                                </div>
+                            </div>
+
+                            <div class="event-details__location">
+                                <h3 class="event-details__location-title">Location</h3>
+                                <p>Efteling · Europalaan 1 · 5171 KW Kaatsheuvel · The Netherlands</p>
+                                <iframe
+                                    src="https://www.google.com/maps?q=Efteling%20Europalaan%201%20Kaatsheuvel&output=embed"
+                                    class="google-map__one" allowfullscreen loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Event Details End-->
+
+        <!--CTA One Start-->
+        <section class="cta-one">
+            <div class="container">
+                <div class="cta-one__inner">
+                    <h3 class="cta-one__title">Get Latest Updates – Subscribe <br> to Our Tribe Newsletter</h3>
+                    <form class="cta-one__form mc-form" data-url="MC_FORM_URL" novalidate="novalidate">
+                        <div class="cta-one__form-input-box">
+                            <input type="email" placeholder="Enter your email" name="EMAIL">
+                            <button type="submit" class="cta-one__btn"><span class="icon-paper-plan"></span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!--CTA One End-->
+
+        <!-- RAVELINE FOOTER -->
+        <footer class="site-footer">
+            <div class="site-footer__shape-1 float-bob-y">
+                <img src="assets/images/shapes/site-footer-shape-1.png" alt="">
+            </div>
+            <div class="site-footer__top">
+                <div class="container">
+                    <div class="site-footer__top-inner">
+                        <div class="site-footer__logo">
+                            <a href="index.html">
+                                <img src="assets/images/resources/raveline-logo-footer.png" alt="Raveline Division">
+                            </a>
+                        </div>
+                        <div class="site-footer__social">
+                            <a href="https://facebook.com" target="_blank"><i class="icon-facebook"></i></a>
+                            <a href="https://www.tiktok.com" target="_blank"><i class="icon-fi"></i></a>
+                            <a href="https://instagram.com" target="_blank"><i class="icon-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="icon-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="site-footer__middle">
+                <div class="container">
+                    <div class="site-footer__middle-inner">
+                        <div class="row">
+                            <!-- Upcoming RaveUps -->
+                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                                <div class="footer-widget__column footer-widget__events">
+                                    <div class="footer-widget__title-box">
+                                        <h3 class="footer-widget__title">Upcoming RaveUps</h3>
+                                    </div>
+                                    <ul class="footer-widget__events-list list-unstyled">
+                                        <li>
+                                            <p>3 januari 2026 · Winter Efteling</p>
+                                            <h5>RaveUp: Winter Efteling</h5>
+                                            <a href="winter-efteling.html">Meer info <span
+                                                    class="icon-arrow-right"></span></a>
+                                        </li>
+                                        <li>
+                                            <p>Voorjaar 2026 · Burgers’ Zoo</p>
+                                            <h5>RaveUp: Into the Wild</h5>
+                                            <a href="safari-raveup.html">Meer info <span
+                                                    class="icon-arrow-right"></span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Quick Links -->
+                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                                <div class="footer-widget__column footer-widget__link">
+                                    <div class="footer-widget__title-box">
+                                        <h3 class="footer-widget__title">Quick links</h3>
+                                    </div>
+                                    <ul class="footer-widget__link-list list-unstyled">
+                                        <li><a href="about.html">Over Raveline</a></li>
+                                        <li><a href="raveups.html">RaveUps & Meetups</a></li>
+                                        <li><a href="friendscamp.html">FriendsCamp</a></li>
+                                        <li><a href="shopindex.html">Merch</a></li>
+                                        <li><a href="join-the-tribe.html">Join the Tribe</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Join the Tribe -->
+                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                                <div class="footer-widget__column footer-widget__our-company">
+                                    <div class="footer-widget__title-box">
+                                        <h3 class="footer-widget__title">Join the Tribe</h3>
+                                    </div>
+                                    <ul class="footer-widget__link-list list-unstyled">
+                                        <li><a href="#">WhatsApp Community</a></li>
+                                        <li><a href="#">Discord Hub</a></li>
+                                        <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                                        <li><a href="https://www.tiktok.com" target="_blank">TikTok</a></li>
+                                        <li><a href="newsletter.html">Nieuwsbrief / Magazine</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Contact -->
+                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                                <div class="footer-widget__column footer-widget__contact">
+                                    <div class="footer-widget__title-box">
+                                        <h3 class="footer-widget__title">Contact</h3>
+                                    </div>
+                                    <div class="footer-widget__contact-inner">
+                                        <ul class="footer-widget__contact-list list-unstyled">
+                                            <li>
+                                                <div class="icon">
+                                                    <span class="icon-envelop"></span>
+                                                </div>
+                                                <div class="text">
+                                                    <p>
+                                                        <a href="mailto:info@ravelinehq.com">info@ravelinehq.com</a><br>
+                                                        <a
+                                                            href="mailto:compliance@ravelinehq.com">compliance@ravelinehq.com</a>
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="icon">
+                                                    <span class="icon-pin"></span>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Based in The Netherlands<br>One Tribe, Worldwide</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="icon">
+                                                    <span class="icon-call"></span>
+                                                </div>
+                                                <div class="text">
+                                                    <p><a href="tel:+31000000000">+31 (0)6 0000 0000</a></p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div> <!-- /.row -->
+                    </div>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <div class="container">
+                    <div class="site-footer__bottom-inner">
+                        <p class="site-footer__bottom-text">
+                            © Raveline Division 2025 | Rising Through Sound – United as One.
+                        </p>
+                        <ul class="list-unstyled site-footer__bottom-menu">
+                            <li><a href="terms.html">Terms & Conditions</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="contact.html">Contact & Imprint</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div><!-- /.page-wrapper -->
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box">
+                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/raveline-logo-header.png"
+                        width="150" alt="Raveline Division" /></a>
+            </div>
+
+            <div class="mobile-nav__container"></div>
+
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:info@ravelinehq.com">info@ravelinehq.com</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone-alt"></i>
+                    <a href="tel:+31000000000">+31 (0)6 0000 0000</a>
+                </li>
             </ul>
-          </div>
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="https://facebook.com" class="fab fa-facebook-square"></a>
+                    <a href="https://www.tiktok.com" class="fab fa-pinterest-p"></a>
+                    <a href="https://instagram.com" class="fab fa-instagram"></a>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
 
-    <!-- SHOP HERO -->
-    <section>
-      <div class="container">
-        <div class="shop-hero-panel">
-          <div>
-            <div class="shop-hero-eyebrow">Raveline Division • Merch store</div>
-            <h1 class="shop-hero-title">Dress like the Tribe, rave like a legend.</h1>
-            <p class="shop-hero-text">
-              Officiële Raveline gear, festival kits en recovery items. Alles wat je nodig hebt van
-              <strong>camp tot mainstage</strong> – in één shop.
-            </p>
-            <div class="shop-hero-usps">
-              <span><i class="fas fa-truck"></i> Gratis verzending vanaf €40,-</span>
-              <span><i class="fas fa-clock"></i> Besteld vóór 17:00 = snel verzonden*</span>
-              <span><i class="fas fa-shield-alt"></i> Veilig &amp; achteraf betalen</span>
-            </div>
-            <div class="shop-hero-cta-row">
-              <a href="#products" class="shop-hero-btn-main">
-                <i class="fas fa-shopping-bag"></i> Shop de collectie
-              </a>
-              <a href="#kits" class="shop-hero-btn-ghost">
-                <i class="fas fa-toolbox"></i> Bekijk festival kits
-              </a>
-            </div>
-          </div>
-          <div class="shop-hero-side">
-            <div class="shop-hero-side-row">
-              <span class="label">Nu populair</span>
-              <strong>Tribe Essentials Drop</strong>
-            </div>
-            <p style="margin-bottom:8px;">
-              T-shirts, bucket hats en fanny packs die je overal terugziet op het terrein.
-            </p>
-            <div class="shop-hero-side-row" style="margin-top:8px;">
-              <span class="shop-hero-side-pill">
-                🔥 Best sellers: T-shirt Black, Bucket Hat Orange, Festival Kit
-              </span>
-            </div>
-          </div>
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <div class="search-popup__content">
+            <form action="#">
+                <label for="search" class="sr-only">search here</label>
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="thm-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
         </div>
-      </div>
-    </section>
+    </div>
 
-    <!-- SHOP CATEGORIEBALK -->
-    <section>
-      <div class="container">
-        <div class="d-flex flex-wrap justify-content-between align-items-center mb-2">
-          <div class="shop-top-cats">
-            <button class="shop-top-cat active">Alle producten</button>
-            <button class="shop-top-cat">Kleding</button>
-            <button class="shop-top-cat">Accessoires</button>
-            <button class="shop-top-cat">Festival Kits</button>
-            <button class="shop-top-cat">Recovery</button>
-          </div>
-          <div class="shop-top-meta">
-            <span><strong>8</strong> producten • kleine oplage, geen massaproductie.</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fas fa-arrow-up"></i></a>
 
-    <!-- SHOP MAIN: SIDEBAR + GRID -->
-    <section class="blog-list shop-overview" id="products">
-      <div class="container">
-        <div class="row shop-main-row">
+    <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
+    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="assets/vendors/odometer/odometer.min.js"></script>
+    <script src="assets/vendors/swiper/swiper.min.js"></script>
+    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="assets/vendors/wow/wow.js"></script>
+    <script src="assets/vendors/isotope/isotope.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
+    <script src="assets/vendors/countdown/countdown.min.js"></script>
+    <script src="assets/vendors/marque/marquee.min.js"></script>
+    <script src="assets/vendors/sidebar-content/jquery-sidebar-content.js"></script>
 
-          <!-- Sidebar -->
-          <aside class="col-lg-3 shop-sidebar">
-            <div class="shop-sidebar-box">
-              <h3 class="shop-sidebar-title">Categorieën</h3>
-              <ul class="shop-sidebar-list">
-                <li>
-                  <a href="#products" class="shop-sidebar-link shop-sidebar-link--active">
-                    <span>Alle producten</span>
-                    <span class="count">8</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#kleding" class="shop-sidebar-link">
-                    <span>Kleding</span>
-                    <span class="count">3</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#accessoires" class="shop-sidebar-link">
-                    <span>Accessoires</span>
-                    <span class="count">2</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#kits" class="shop-sidebar-link">
-                    <span>Festival Kits</span>
-                    <span class="count">2</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#recovery" class="shop-sidebar-link">
-                    <span>Recovery</span>
-                    <span class="count">1</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="shop-sidebar-box">
-              <h3 class="shop-sidebar-title">Snelle filters</h3>
-              <div>
-                <button class="shop-filter-pill">
-                  <i class="fas fa-check"></i> Unisex fit
-                </button>
-                <button class="shop-filter-pill">
-                  <i class="fas fa-check"></i> Limited
-                </button>
-                <button class="shop-filter-pill">
-                  <i class="fas fa-check"></i> Pre-order
-                </button>
-                <button class="shop-filter-pill">
-                  <i class="fas fa-check"></i> Camp-ready
-                </button>
-              </div>
-            </div>
-
-            <div class="shop-sidebar-box">
-              <h3 class="shop-sidebar-title">Verzending &amp; support</h3>
-              <p style="margin-bottom:6px;">
-                We communiceren levertijden per drop duidelijk in de productomschrijving en
-                bevestigingsmail.
-              </p>
-              <ul class="list-unstyled" style="font-size:13px; margin-bottom:8px;">
-                <li>• Verzending vanuit NL</li>
-                <li>• Group shipping mogelijk voor FriendsCamps</li>
-                <li>• Tracking info via e-mail</li>
-              </ul>
-              <p style="font-size:13px;margin-bottom:4px;">
-                Vragen? Mail <a href="mailto:shop@ravelinehq.com">shop@ravelinehq.com</a>
-              </p>
-            </div>
-          </aside>
-
-          <!-- Producten -->
-          <div class="col-lg-9">
-            <div class="shop-sort-bar">
-              <span>Toon: alle producten</span>
-              <div class="shop-sort-select">
-                Sorteren op:
-                <select>
-                  <option>Uitgelicht</option>
-                  <option>Prijs: laag &gt; hoog</option>
-                  <option>Prijs: hoog &gt; laag</option>
-                  <option>Nieuwste eerst</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="shop-grid">
-
-              <!-- PRODUCT 1 – Kleding -->
-              <article class="shop-item" id="kleding">
-                <div class="shop-item__img">
-                  <span class="shop-item__badge shop-item__badge--highlight">Nieuw</span>
-                  <img src="assets/images/shop/products/rd-shirt-black.png"
-                       alt="Raveline Division T-Shirt – Black Edition" />
-                </div>
-                <div class="shop-item__body">
-                  <div class="shop-item__category">Kleding</div>
-                  <div class="shop-item__title">
-                    <a href="product-tshirt-black.html">
-                      Raveline Division T-Shirt – Black Edition
-                    </a>
-                  </div>
-                  <p class="shop-item__text">
-                    Zwart unisex shirt met Raveline logo. Gaat met je mee van pre-party tot after.
-                  </p>
-                  <div class="shop-item__meta">
-                    <span class="shop-price">€34,95</span>
-                    <div class="shop-item__buttons">
-                      <a href="product-tshirt-black.html" class="shop-btn-main">
-                        <i class="fas fa-shopping-cart"></i> Toevoegen
-                      </a>
-                      <a href="product-tshirt-black.html" class="shop-btn-ghost">
-                        Bekijk
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-              <!-- PRODUCT 2 – Bucket hat -->
-              <article class="shop-item" id="accessoires">
-                <div class="shop-item__img">
-                  <span class="shop-item__badge shop-item__badge--highlight">Best seller</span>
-                  <img src="assets/images/shop/products/rd-bucket-orange.png"
-                       alt="Raveline Bucket Hat – Orange Tribe" />
-                </div>
-                <div class="shop-item__body">
-                  <div class="shop-item__category">Accessoire</div>
-                  <div class="shop-item__title">
-                    <a href="product-bucket-orange.html">
-                      Raveline Bucket Hat – Orange Tribe
-                    </a>
-                  </div>
-                  <p class="shop-item__text">
-                    Dé herkenbare bucket in oranje-gradient. Spot je Tribe overal op het terrein.
-                  </p>
-                  <div class="shop-item__meta">
-                    <span class="shop-price">€29,95</span>
-                    <div class="shop-item__buttons">
-                      <a href="product-bucket-orange.html" class="shop-btn-main">
-                        <i class="fas fa-shopping-cart"></i> Toevoegen
-                      </a>
-                      <a href="product-bucket-orange.html" class="shop-btn-ghost">
-                        Bekijk
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-              <!-- PRODUCT 3 – Festival kit -->
-              <article class="shop-item" id="kits">
-                <div class="shop-item__img">
-                  <span class="shop-item__badge">Kit</span>
-                  <img src="assets/images/shop/products/festikit.png"
-                       alt="Festival Survival Kit – One Tribe Edition" />
-                </div>
-                <div class="shop-item__body">
-                  <div class="shop-item__category">Festival kit</div>
-                  <div class="shop-item__title">
-                    <a href="product-festikit.html">
-                      Festival Survival Kit – One Tribe Edition
-                    </a>
-                  </div>
-                  <p class="shop-item__text">
-                    Fanny pack + essentials. Alles in één pack zodat jij alleen nog hoeft te ragen.
-                  </p>
-                  <div class="shop-item__meta">
-                    <span class="shop-price">€19,95</span>
-                    <div class="shop-item__buttons">
-                      <a href="product-festikit.html" class="shop-btn-main">
-                        <i class="fas fa-shopping-cart"></i> Toevoegen
-                      </a>
-                      <a href="product-festikit.html" class="shop-btn-ghost">
-                        Bekijk
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-              <!-- PRODUCT 4 – Recovery kit -->
-              <article class="shop-item" id="recovery">
-                <div class="shop-item__img">
-                  <span class="shop-item__badge">Recovery</span>
-                  <img src="assets/images/shop/products/recovery-kit.png"
-                       alt="MDMA Recovery Kit – 24h Rest Mode" />
-                </div>
-                <div class="shop-item__body">
-                  <div class="shop-item__category">Recovery</div>
-                  <div class="shop-item__title">
-                    <a href="product-recovery.html">
-                      MDMA Recovery Kit – 24h Rest Mode
-                    </a>
-                  </div>
-                  <p class="shop-item__text">
-                    Day-after support: hydratatie & self-care om nét wat beter bij te komen.
-                  </p>
-                  <div class="shop-item__meta">
-                    <span class="shop-price">€14,95</span>
-                    <div class="shop-item__buttons">
-                      <a href="product-recovery.html" class="shop-btn-main">
-                        <i class="fas fa-shopping-cart"></i> Toevoegen
-                      </a>
-                      <a href="product-recovery.html" class="shop-btn-ghost">
-                        Bekijk
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-              <!-- EXTRA DUMMY PRODUCTEN – vul zelf verder aan -->
-              <article class="shop-item">
-                <div class="shop-item__img">
-                  <img src="assets/images/shop/products/hoodie-tribe.png"
-                       alt="Tribe Hoodie – Night Shift" />
-                </div>
-                <div class="shop-item__body">
-                  <div class="shop-item__category">Kleding</div>
-                  <div class="shop-item__title">
-                    <a href="#">
-                      Tribe Hoodie – Night Shift
-                    </a>
-                  </div>
-                  <p class="shop-item__text">
-                    Dikke hoodie voor koude nachten op de camping of tijdens winter RaveUps.
-                  </p>
-                  <div class="shop-item__meta">
-                    <span class="shop-price">€54,95</span>
-                    <div class="shop-item__buttons">
-                      <a href="#" class="shop-btn-main">
-                        <i class="fas fa-shopping-cart"></i> Toevoegen
-                      </a>
-                      <a href="#" class="shop-btn-ghost">
-                        Bekijk
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER – gebruik je bestaande footer -->
-    <!-- <footer class="site-footer"> ... </footer> -->
-
-  </div>
-
-  <!-- Vendor JS -->
-  <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
-  <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendors/jarallax/jarallax.min.js"></script>
-  <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
-  <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
-  <script src="assets/vendors/swiper/swiper.min.js"></script>
-  <script src="assets/vendors/wow/wow.js"></script>
-  <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
-  <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
-  <script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
-  <script src="assets/js/eventflow.js"></script>
+    <script src="assets/js/eventflow.js"></script>
 </body>
+
 </html>
